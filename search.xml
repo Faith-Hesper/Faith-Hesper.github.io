@@ -4,31 +4,10 @@
     <title>Faith Hesper</title>
     <url>/2021/07/04/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-
-        <div id="aplayer-nRSQJDkX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-nRSQJDkX"),
-            narrow: false,
-            autoplay: false,
-            showlrc: 3,
-            music: {
-              title: "歌曲名",
-              author: "歌手名",
-              url: "https://music.163.com/outchain/player?type=2&id=1841938408",
-              pic: "https://p1.music.126.net/yoPewmuaDJImMVtnvKI6jQ==/109951165943762024.jpg?param=90y90",
-              lrc: "https://music.163.com/weapi/song/lyric?csrf_token=c206645e1eafebffe6c077b659a798b6"
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=1&height=66"></iframe>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空 hexo g 生成的内容，内容在 root/public </span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span></span><br><span class="line">hexo new post 标题名称</span><br></pre></td></tr></table></figure>
 <p>1.NexT使用文档</p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html"></a></p>
-<p><a href="https://hasaik.com/posts/9b280ea3.html"></a></p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
 <p>更换主题：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
 <p>再在<em>站点</em>配置文件中修改成如下即可：</p>
