@@ -64,7 +64,10 @@
 <p>CDN配置</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">three:</span> <span class="string">//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js</span></span><br><span class="line">  <span class="attr">three_waves:</span> <span class="string">//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/three-waves.min.js</span></span><br><span class="line">  <span class="attr">canvas_lines:</span> <span class="string">//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_lines.min.js</span></span><br><span class="line">  <span class="attr">canvas_sphere:</span> <span class="string">//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_sphere.min.js</span></span><br></pre></td></tr></table></figure>
 <p>头像</p>
+<p>avatar</p>
 <p><a href="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png</a></p>
+<p>新建文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir _data</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
