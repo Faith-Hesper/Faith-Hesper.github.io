@@ -4,6 +4,7 @@
     <title>SQL查询</title>
     <url>/2021/07/05/SQL%E6%9F%A5%E8%AF%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <h3 id="模糊查询">模糊查询</h3>
 <p>部分匹配 *</p>
 <ul>
@@ -78,6 +79,7 @@
 <li>第二分辨率为12<sup>‘’</sup></li>
 </ul>
 <h2 id="立体视觉">立体视觉</h2>
+<span id="more"></span>
 <h3 id="立体视觉-v2">立体视觉</h3>
 <ul>
 <li>人眼双眼观察景物可判断其远近，得到景物的立体效应，这种现象称为人眼的立体视觉</li>
@@ -174,6 +176,7 @@
     <url>/2021/07/05/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
 <p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
+<span id="more"></span>
 <h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
 <h3 id="1-外业工作任务">1.外业工作任务</h3>
 <ul>
@@ -227,6 +230,7 @@
     <title>单张像片解析</title>
     <url>/2021/07/05/%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>单张像片解析</h1>
+<span id="more"></span>
 <h2 id="基本知识">基本知识</h2>
 <h3 id="1-航向重叠">1.航向重叠</h3>
 <ul>
@@ -488,6 +492,7 @@
 <p>求解外方位元素</p>
 <h3 id="原理">原理</h3>
 <p>共线条件方程</p>
+<span id="more"></span>
 <h3 id="要求">要求</h3>
 <ul>
 <li>
@@ -651,6 +656,7 @@
     <title>地理信息科学</title>
     <url>/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>基本概念</h1>
+<span id="more"></span>
 <h2 id="信息系统基本功能">信息系统基本功能</h2>
 <ul>
 <li>数据采集</li>
@@ -928,6 +934,7 @@
 <li>数字摄影测量</li>
 </ul>
 <p>利用数字灰度信号，采用数字相关技术量测同名像点，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
+<span id="more"></span>
 <ul>
 <li>获得数字影像的方法
 <ol>
@@ -1000,6 +1007,7 @@
 3. DRG：数字栅格
 4. DOM：数字正射影像
 </code></pre>
+<span id="more"></span>
 <h2 id="DTM-数字地面模型">DTM(数字地面模型)</h2>
 <p>DEM是DTM的子集，是DTM最基本的部分</p>
 <h2 id="DEM的表达形式">DEM的表达形式</h2>
@@ -1258,8 +1266,13 @@
     <url>/2021/07/05/%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="定义">定义</h2>
 <ul>
-<li>利用少量控制点对整个区域所有影像恢复它们的外方位元素</li>
-<li>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</li>
+<li>
+<p>利用少量控制点对整个区域所有影像恢复它们的外方位元素</p>
+</li>
+<li>
+<p>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</p>
+<span id="more"></span>
+</li>
 </ul>
 <h2 id="分类">分类</h2>
 <h3 id="根据平差范围">根据平差范围</h3>
