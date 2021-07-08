@@ -37,6 +37,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Faith Hesper</title>
+    <url>/2021/07/04/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=1&height=66"></iframe>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空 hexo g 生成的内容，内容在 root/public </span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span></span><br><span class="line">hexo new post 标题名称</span><br></pre></td></tr></table></figure>
+<p>1.NexT使用文档</p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
+<p>更换主题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
+<p>更新主题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<p>再在<em>站点</em>配置文件中修改成如下即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>如何使用emoji❓</p>
+<p>安装</p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<hr>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-emoji</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>人造立体视觉</title>
     <url>/2021/07/05/%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="人眼分辨率">人眼分辨率</h2>
@@ -143,29 +166,6 @@
         <tag>笔记</tag>
         <tag>摄影测量</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Faith Hesper</title>
-    <url>/2021/07/04/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=1&height=66"></iframe>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空 hexo g 生成的内容，内容在 root/public </span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span></span><br><span class="line">hexo new post 标题名称</span><br></pre></td></tr></table></figure>
-<p>1.NexT使用文档</p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
-<p>更换主题：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
-<p>更新主题：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<p>再在<em>站点</em>配置文件中修改成如下即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>如何使用emoji❓</p>
-<p>安装</p>
-<hr>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
-<p>配置</p>
-<hr>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-emoji</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>像片纠正及正射影像制作</title>
@@ -918,6 +918,78 @@
       </tags>
   </entry>
   <entry>
+    <title>数字摄影测量</title>
+    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
+<h3 id="概念">概念</h3>
+<ul>
+<li>数字摄影测量</li>
+</ul>
+<p>利用==数字灰度信号==，采用数字相关技术量测==同名像点==，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
+<ul>
+<li>获得数字影像的方法
+<ol>
+<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
+<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
+</ol>
+</li>
+</ul>
+<h3 id="影像采样与量化">影像采样与量化</h3>
+<h4 id="1-影像数字化过程">1. 影像数字化过程</h4>
+<ul>
+<li>影像数字化</li>
+<li>==采样==与==量化==
+<ul>
+<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
+<li>被量测的点称为==样点==，</li>
+<li>样点之间的距离即==采样间隔==。</li>
+<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-数字影像的构成">2. 数字影像的构成</h4>
+<ul>
+<li>数字影像是一个灰度矩阵</li>
+<li>矩阵中每个元素称为像素</li>
+</ul>
+<h4 id="3-数字影像内定向">3. 数字影像内定向</h4>
+<ul>
+<li>使像平面坐标x,y与其扫描坐标换算成相等的即为==数字影像内定向==</li>
+<li>即扫描坐标转换为像平面坐标系</li>
+</ul>
+<h3 id="基于灰度的影像相关">基于灰度的影像相关</h3>
+<ul>
+<li>
+<p>==数字影像相关==：从左右数字影像中寻找同名像点</p>
+</li>
+<li>
+<p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
+</li>
+<li>
+<p>方法：</p>
+<ol>
+<li>相关系数法</li>
+<li>协方差法</li>
+<li>高精度最小二乘法</li>
+</ol>
+</li>
+</ul>
+<h3 id="同名核线的确定">同名核线的确定</h3>
+<ul>
+<li>核线几何关系解析</li>
+<li>沿核线重采样</li>
+<li>核线相关</li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数字高程模型</title>
     <url>/2021/07/05/%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="4D产品">4D产品</h2>
@@ -992,78 +1064,6 @@
       </categories>
       <tags>
         <tag>GIS</tag>
-        <tag>笔记</tag>
-        <tag>摄影测量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数字摄影测量</title>
-    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
-<h3 id="概念">概念</h3>
-<ul>
-<li>数字摄影测量</li>
-</ul>
-<p>利用==数字灰度信号==，采用数字相关技术量测==同名像点==，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
-<ul>
-<li>获得数字影像的方法
-<ol>
-<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
-<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
-</ol>
-</li>
-</ul>
-<h3 id="影像采样与量化">影像采样与量化</h3>
-<h4 id="1-影像数字化过程">1. 影像数字化过程</h4>
-<ul>
-<li>影像数字化</li>
-<li>==采样==与==量化==
-<ul>
-<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
-<li>被量测的点称为==样点==，</li>
-<li>样点之间的距离即==采样间隔==。</li>
-<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-数字影像的构成">2. 数字影像的构成</h4>
-<ul>
-<li>数字影像是一个灰度矩阵</li>
-<li>矩阵中每个元素称为像素</li>
-</ul>
-<h4 id="3-数字影像内定向">3. 数字影像内定向</h4>
-<ul>
-<li>使像平面坐标x,y与其扫描坐标换算成相等的即为==数字影像内定向==</li>
-<li>即扫描坐标转换为像平面坐标系</li>
-</ul>
-<h3 id="基于灰度的影像相关">基于灰度的影像相关</h3>
-<ul>
-<li>
-<p>==数字影像相关==：从左右数字影像中寻找同名像点</p>
-</li>
-<li>
-<p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
-</li>
-<li>
-<p>方法：</p>
-<ol>
-<li>相关系数法</li>
-<li>协方差法</li>
-<li>高精度最小二乘法</li>
-</ol>
-</li>
-</ul>
-<h3 id="同名核线的确定">同名核线的确定</h3>
-<ul>
-<li>核线几何关系解析</li>
-<li>沿核线重采样</li>
-<li>核线相关</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
         <tag>笔记</tag>
         <tag>摄影测量</tag>
       </tags>
