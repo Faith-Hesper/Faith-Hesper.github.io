@@ -10,9 +10,11 @@
 <p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
 <p>更换主题：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
+<p>更新主题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
 <p>再在<em>站点</em>配置文件中修改成如下即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>如何使用emoji</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>如何使用emoji❓</p>
 <p>安装</p>
 <hr>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
