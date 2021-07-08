@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Faith Hesper</title>
-    <url>/2021/07/04/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=1&height=66"></iframe>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空 hexo g 生成的内容，内容在 root/public </span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span></span><br><span class="line">hexo new post 标题名称</span><br></pre></td></tr></table></figure>
-<p>1.NexT使用文档</p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
-<p>更换主题：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
-<p>更新主题：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<p>再在<em>站点</em>配置文件中修改成如下即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>如何使用emoji❓</p>
-<p>安装</p>
-<hr>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
-<p>配置</p>
-<hr>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-emoji</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
+    <title>SQL查询</title>
+    <url>/2021/07/05/SQL%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
+<h3 id="模糊查询">模糊查询</h3>
+<p>部分匹配 *</p>
+<ul>
+<li>数据集属性名 Like “a*”</li>
+</ul>
+<p>完全匹配</p>
+<ul>
+<li>数据集属性名 Like “Beijing”</li>
+</ul>
+<p>单字匹配 ？</p>
+<ul>
+<li>数据集属性名 Like “A?”</li>
+</ul>
+<h3 id="查询特定值">查询特定值</h3>
+<ul>
+<li>in，确定表达式的值是否等于指定列表内若干值中任意一个值</li>
+<li>数据集属性名 in (1,4)</li>
+</ul>
+<h3 id="派生字段">派生字段</h3>
+<ul>
+<li>as 取临时字段名</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>笔记</tag>
+      </tags>
   </entry>
   <entry>
     <title>人造立体视觉</title>
@@ -127,8 +140,85 @@
         <category>摄影测量</category>
       </categories>
       <tags>
-        <tag>摄影测量</tag>
         <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Faith Hesper</title>
+    <url>/2021/07/04/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=1&height=66"></iframe>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据配置文件和主题，将 root/source/_post 下的 markdown 文件生成 html 内容</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空 hexo g 生成的内容，内容在 root/public </span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地生成 url 链接推送到百度，让百度爬取其中的内容进行索引</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span></span><br><span class="line">hexo new post 标题名称</span><br></pre></td></tr></table></figure>
+<p>1.NexT使用文档</p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
+<p>更换主题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/blog/themes $ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
+<p>更新主题：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<p>再在<em>站点</em>配置文件中修改成如下即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 文件位置：~/blog/_config.yml</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>如何使用emoji❓</p>
+<p>安装</p>
+<hr>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<hr>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-emoji</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>像片纠正及正射影像制作</title>
+    <url>/2021/07/05/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
+<p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
+<h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
+<h3 id="1-外业工作任务">1.外业工作任务</h3>
+<ul>
+<li>像片野外控制测量
+<ul>
+<li>像控点：直接为摄影测量加密或测图需要，在实地测定的控制点</li>
+</ul>
+</li>
+<li>像片调绘与补测
+<ul>
+<li>像片调绘：利用像片进行判读 调查和绘注等工作的总称</li>
+<li>像片判读：根据航片上地物影像的特征，识别出于像片影像相应的地物的类别 特征和某些元素或者测算某种数据指标的过程</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-外业工作过程">2.外业工作过程</h3>
+<ul>
+<li>技术设计</li>
+<li>准备工作及拟定作业计划</li>
+<li>外业工作实施</li>
+<li>外业成果检查与验收</li>
+</ul>
+<h3 id="3-像片控制点的布设">3.像片控制点的布设</h3>
+<ol>
+<li>
+<p>控制点类型</p>
+<ul>
+<li>平面控制点</li>
+<li>高程控制点</li>
+<li>平高控制点</li>
+</ul>
+</li>
+<li>
+<p>控制点布设方案</p>
+<ul>
+<li>全野外布点</li>
+<li>非全野外布点</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
@@ -382,89 +472,8 @@
         <category>笔记</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>摄影测量</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL查询</title>
-    <url>/2021/07/05/SQL%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><p>部分匹配 *</p>
-<ul>
-<li>数据集属性名 Like “a*”</li>
-</ul>
-<p>完全匹配</p>
-<ul>
-<li>数据集属性名 Like “Beijing”</li>
-</ul>
-<p>单字匹配 ？</p>
-<ul>
-<li>数据集属性名 Like “A?”</li>
-</ul>
-<h3 id="查询特定值"><a href="#查询特定值" class="headerlink" title="查询特定值"></a>查询特定值</h3><ul>
-<li>in，确定表达式的值是否等于指定列表内若干值中任意一个值</li>
-<li>数据集属性名 in (1,4)</li>
-</ul>
-<h3 id="派生字段"><a href="#派生字段" class="headerlink" title="派生字段"></a>派生字段</h3><ul>
-<li>as 取临时字段名</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>像片纠正及正射影像制作</title>
-    <url>/2021/07/05/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="1-像片纠正的概念"><a href="#1-像片纠正的概念" class="headerlink" title="1.像片纠正的概念"></a>1.像片纠正的概念</h2><p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
-<h2 id="2-摄影测量外业工作"><a href="#2-摄影测量外业工作" class="headerlink" title="2.摄影测量外业工作"></a>2.摄影测量外业工作</h2><h3 id="1-外业工作任务"><a href="#1-外业工作任务" class="headerlink" title="1.外业工作任务"></a>1.外业工作任务</h3><ul>
-<li>像片野外控制测量<ul>
-<li>像控点：直接为摄影测量加密或测图需要，在实地测定的控制点</li>
-</ul>
-</li>
-<li>像片调绘与补测<ul>
-<li>像片调绘：利用像片进行判读 调查和绘注等工作的总称</li>
-<li>像片判读：根据航片上地物影像的特征，识别出于像片影像相应的地物的类别 特征和某些元素或者测算某种数据指标的过程</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-外业工作过程"><a href="#2-外业工作过程" class="headerlink" title="2.外业工作过程"></a>2.外业工作过程</h3><ul>
-<li>技术设计</li>
-<li>准备工作及拟定作业计划</li>
-<li>外业工作实施</li>
-<li>外业成果检查与验收</li>
-</ul>
-<h3 id="3-像片控制点的布设"><a href="#3-像片控制点的布设" class="headerlink" title="3.像片控制点的布设"></a>3.像片控制点的布设</h3><ol>
-<li><p>控制点类型</p>
-<ul>
-<li>平面控制点</li>
-<li>高程控制点</li>
-<li>平高控制点</li>
-</ul>
-</li>
-<li><p>控制点布设方案</p>
-<ul>
-<li>全野外布点</li>
-<li>非全野外布点</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>摄影测量</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -632,8 +641,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>摄影测量</tag>
         <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
@@ -904,97 +913,46 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数字摄影测量</title>
-    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<h1 id="数字摄影测量"><a href="#数字摄影测量" class="headerlink" title="数字摄影测量"></a>数字摄影测量</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>数字摄影测量</li>
-</ul>
-<p>利用==数字灰度信号==，采用数字相关技术量测==同名像点==，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
-<ul>
-<li>获得数字影像的方法<ol>
-<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
-<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
-</ol>
-</li>
-</ul>
-<h3 id="影像采样与量化"><a href="#影像采样与量化" class="headerlink" title="影像采样与量化"></a>影像采样与量化</h3><h4 id="1-影像数字化过程"><a href="#1-影像数字化过程" class="headerlink" title="1. 影像数字化过程"></a>1. 影像数字化过程</h4><ul>
-<li>影像数字化</li>
-<li>==采样==与==量化==<ul>
-<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
-<li>被量测的点称为==样点==，</li>
-<li>样点之间的距离即==采样间隔==。</li>
-<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-数字影像的构成"><a href="#2-数字影像的构成" class="headerlink" title="2. 数字影像的构成"></a>2. 数字影像的构成</h4><ul>
-<li>数字影像是一个灰度矩阵</li>
-<li>矩阵中每个元素称为像素</li>
-</ul>
-<h4 id="3-数字影像内定向"><a href="#3-数字影像内定向" class="headerlink" title="3. 数字影像内定向"></a>3. 数字影像内定向</h4><ul>
-<li>使像平面坐标x,y与其扫描坐标换算成相等的即为==数字影像内定向==</li>
-<li>即扫描坐标转换为像平面坐标系</li>
-</ul>
-<h3 id="基于灰度的影像相关"><a href="#基于灰度的影像相关" class="headerlink" title="基于灰度的影像相关"></a>基于灰度的影像相关</h3><ul>
-<li><p>==数字影像相关==：从左右数字影像中寻找同名像点</p>
-</li>
-<li><p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
-</li>
-<li><p>方法：</p>
-<ol>
-<li>相关系数法 </li>
-<li>协方差法</li>
-<li>高精度最小二乘法</li>
-</ol>
-</li>
-</ul>
-<h3 id="同名核线的确定"><a href="#同名核线的确定" class="headerlink" title="同名核线的确定"></a>同名核线的确定</h3><ul>
-<li>核线几何关系解析</li>
-<li>沿核线重采样</li>
-<li>核线相关</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>摄影测量</tag>
         <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
     <title>数字高程模型</title>
     <url>/2021/07/05/%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="4D产品"><a href="#4D产品" class="headerlink" title="4D产品"></a>4D产品</h2><pre><code>1. DEM：数字高程模型
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="4D产品">4D产品</h2>
+<pre><code>1. DEM：数字高程模型
 2. DLG：数字线划图
 3. DRG：数字栅格
 4. DOM：数字正射影像
 </code></pre>
-<h2 id="DTM-数字地面模型"><a href="#DTM-数字地面模型" class="headerlink" title="DTM(数字地面模型)"></a>DTM(数字地面模型)</h2><p>   DEM是DTM的子集，是DTM最基本的部分</p>
-<h2 id="DEM的表达形式"><a href="#DEM的表达形式" class="headerlink" title="DEM的表达形式"></a>DEM的表达形式</h2><pre><code>1. 规则矩形格网(GRID)
+<h2 id="DTM-数字地面模型">DTM(数字地面模型)</h2>
+<p>DEM是DTM的子集，是DTM最基本的部分</p>
+<h2 id="DEM的表达形式">DEM的表达形式</h2>
+<pre><code>1. 规则矩形格网(GRID)
 </code></pre>
 <ul>
-<li><p>优点：</p>
+<li>
+<p>优点：</p>
 <p>储存量小</p>
 <p>计算机处理矩阵方便，便于使用和管理</p>
 </li>
-<li><p>缺点：</p>
+<li>
+<p>缺点：</p>
 <p>不能准确表示地形的结构与细部</p>
 <p>描绘的等高线不能准确的表示地貌</p>
 </li>
 </ul>
 <ol start="2">
-<li><p>不规则三角网(TIN)</p>
+<li>
+<p>不规则三角网(TIN)</p>
 <ul>
-<li><p>优点：</p>
+<li>
+<p>优点：</p>
 <p>较好的顾及地貌特征点 线，表达复杂的地形表面比GRID要准确</p>
 </li>
-<li><p>缺点：</p>
+<li>
+<p>缺点：</p>
 <p>数据量大，数据结构复杂</p>
 <p>使用及管理复杂</p>
 <p>要存储三角形顶点和各三角形邻接关系</p>
@@ -1002,21 +960,25 @@
 </ul>
 </li>
 </ol>
-<h2 id="DEM应用"><a href="#DEM应用" class="headerlink" title="DEM应用"></a>DEM应用</h2><ul>
+<h2 id="DEM应用">DEM应用</h2>
+<ul>
 <li>摄影测量与遥感</li>
 <li>工程设计</li>
 <li>地理信息基础数据</li>
 <li>军事上用于导航或导弹制作</li>
 </ul>
-<h2 id="DEM数据获取方法"><a href="#DEM数据获取方法" class="headerlink" title="DEM数据获取方法"></a>DEM数据获取方法</h2><ol>
+<h2 id="DEM数据获取方法">DEM数据获取方法</h2>
+<ol>
 <li>野外实测获取</li>
 <li>从现有的地图上获取高程数据与地物</li>
 <li>摄影测量方法</li>
 </ol>
-<h2 id="DEM数据预处理"><a href="#DEM数据预处理" class="headerlink" title="DEM数据预处理"></a>DEM数据预处理</h2><ul>
+<h2 id="DEM数据预处理">DEM数据预处理</h2>
+<ul>
 <li>DEM数据预处理是DEM内插之前的准备工作是整个数据处理的一部分。</li>
 <li>内插与逼近指的是根据一系列的参考点上的某些信息来拟合反应该信息特征的表面，并内插出气筒点信息</li>
-<li>DEM内插方法<ul>
+<li>DEM内插方法
+<ul>
 <li>线性内插</li>
 <li>双线性多项式内插</li>
 <li>移动曲面拟合法</li>
@@ -1029,43 +991,128 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>摄影测量</tag>
-        <tag>笔记</tag>
         <tag>GIS</tag>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数字摄影测量</title>
+    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
+<h3 id="概念">概念</h3>
+<ul>
+<li>数字摄影测量</li>
+</ul>
+<p>利用==数字灰度信号==，采用数字相关技术量测==同名像点==，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
+<ul>
+<li>获得数字影像的方法
+<ol>
+<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
+<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
+</ol>
+</li>
+</ul>
+<h3 id="影像采样与量化">影像采样与量化</h3>
+<h4 id="1-影像数字化过程">1. 影像数字化过程</h4>
+<ul>
+<li>影像数字化</li>
+<li>==采样==与==量化==
+<ul>
+<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
+<li>被量测的点称为==样点==，</li>
+<li>样点之间的距离即==采样间隔==。</li>
+<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-数字影像的构成">2. 数字影像的构成</h4>
+<ul>
+<li>数字影像是一个灰度矩阵</li>
+<li>矩阵中每个元素称为像素</li>
+</ul>
+<h4 id="3-数字影像内定向">3. 数字影像内定向</h4>
+<ul>
+<li>使像平面坐标x,y与其扫描坐标换算成相等的即为==数字影像内定向==</li>
+<li>即扫描坐标转换为像平面坐标系</li>
+</ul>
+<h3 id="基于灰度的影像相关">基于灰度的影像相关</h3>
+<ul>
+<li>
+<p>==数字影像相关==：从左右数字影像中寻找同名像点</p>
+</li>
+<li>
+<p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
+</li>
+<li>
+<p>方法：</p>
+<ol>
+<li>相关系数法</li>
+<li>协方差法</li>
+<li>高精度最小二乘法</li>
+</ol>
+</li>
+</ul>
+<h3 id="同名核线的确定">同名核线的确定</h3>
+<ul>
+<li>核线几何关系解析</li>
+<li>沿核线重采样</li>
+<li>核线相关</li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
     <title>数据编辑与处理</title>
     <url>/2021/07/05/%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="数据编辑与处理"><a href="#数据编辑与处理" class="headerlink" title="数据编辑与处理"></a>数据编辑与处理</h1><h2 id="1-坐标与几何变换"><a href="#1-坐标与几何变换" class="headerlink" title="1.坐标与几何变换"></a>1.坐标与几何变换</h2><h3 id="1-几何纠正"><a href="#1-几何纠正" class="headerlink" title="1. 几何纠正"></a>1. 几何纠正</h3><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数据编辑与处理</h1>
+<h2 id="1-坐标与几何变换">1.坐标与几何变换</h2>
+<h3 id="1-几何纠正">1. 几何纠正</h3>
+<ul>
 <li>地形图纠正</li>
 <li>遥感影像纠正</li>
 </ul>
-<h3 id="2-坐标变换"><a href="#2-坐标变换" class="headerlink" title="2. 坐标变换"></a>2. 坐标变换</h3><ul>
+<h3 id="2-坐标变换">2. 坐标变换</h3>
+<ul>
 <li>投影变换</li>
 <li>仿射变换</li>
 <li>相似变换</li>
 <li>等积变换</li>
 </ul>
-<h3 id="3-栅格数据重采样"><a href="#3-栅格数据重采样" class="headerlink" title="3. 栅格数据重采样"></a>3. 栅格数据重采样</h3><ul>
+<h3 id="3-栅格数据重采样">3. 栅格数据重采样</h3>
+<ul>
 <li>最邻近法</li>
 <li>双线性内插</li>
 <li>三次卷积法</li>
 </ul>
-<h2 id="2-数据编辑-图形与属性"><a href="#2-数据编辑-图形与属性" class="headerlink" title="2.数据编辑(图形与属性)"></a>2.数据编辑(图形与属性)</h2><h3 id="1-图形数据编辑"><a href="#1-图形数据编辑" class="headerlink" title="1.图形数据编辑"></a>1.图形数据编辑</h3><h3 id="2-属性数据编辑"><a href="#2-属性数据编辑" class="headerlink" title="2.属性数据编辑"></a>2.属性数据编辑</h3><h2 id="3-图形裁剪与拼接"><a href="#3-图形裁剪与拼接" class="headerlink" title="3.图形裁剪与拼接"></a>3.图形裁剪与拼接</h2><h2 id="4-拓扑生成"><a href="#4-拓扑生成" class="headerlink" title="4.拓扑生成"></a>4.拓扑生成</h2><h2 id="5-矢量数据压缩"><a href="#5-矢量数据压缩" class="headerlink" title="5.矢量数据压缩"></a>5.矢量数据压缩</h2><p>压缩方法</p>
+<h2 id="2-数据编辑-图形与属性">2.数据编辑(图形与属性)</h2>
+<h3 id="1-图形数据编辑">1.图形数据编辑</h3>
+<h3 id="2-属性数据编辑">2.属性数据编辑</h3>
+<h2 id="3-图形裁剪与拼接">3.图形裁剪与拼接</h2>
+<h2 id="4-拓扑生成">4.拓扑生成</h2>
+<h2 id="5-矢量数据压缩">5.矢量数据压缩</h2>
+<p>压缩方法</p>
 <ul>
 <li>间隔取点法</li>
 <li>垂距法和偏角法</li>
 <li>分裂法</li>
 </ul>
-<h2 id="6-空间数据结构变换"><a href="#6-空间数据结构变换" class="headerlink" title="6.空间数据结构变换"></a>6.空间数据结构变换</h2><h2 id="7-空间数据内插"><a href="#7-空间数据内插" class="headerlink" title="7.空间数据内插"></a>7.空间数据内插</h2>]]></content>
+<h2 id="6-空间数据结构变换">6.空间数据结构变换</h2>
+<h2 id="7-空间数据内插">7.空间数据内插</h2>
+]]></content>
       <categories>
         <category>笔记</category>
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>GIS</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1200,49 +1247,60 @@
         <category>GIS</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>GIS</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
     <title>解析空中三角测量</title>
     <url>/2021/07/05/%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="定义">定义</h2>
+<ul>
 <li>利用少量控制点对整个区域所有影像恢复它们的外方位元素</li>
 <li>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</li>
 </ul>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="根据平差范围"><a href="#根据平差范围" class="headerlink" title="根据平差范围"></a>根据平差范围</h3><ul>
-<li><p>单航带法</p>
+<h2 id="分类">分类</h2>
+<h3 id="根据平差范围">根据平差范围</h3>
+<ul>
+<li>
+<p>单航带法</p>
 </li>
-<li><p>单模型法</p>
+<li>
+<p>单模型法</p>
 </li>
-<li><p>区域网法</p>
-</li>
-</ul>
-<h3 id="根据平差模型"><a href="#根据平差模型" class="headerlink" title="根据平差模型"></a>根据平差模型</h3><ul>
-<li><p>航带法</p>
-</li>
-<li><p>独立模型法</p>
-</li>
-<li><p>光束法</p>
+<li>
+<p>区域网法</p>
 </li>
 </ul>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<h3 id="根据平差模型">根据平差模型</h3>
+<ul>
+<li>
+<p>航带法</p>
+</li>
+<li>
+<p>独立模型法</p>
+</li>
+<li>
+<p>光束法</p>
+</li>
+</ul>
+<h2 id="作用">作用</h2>
+<ul>
 <li>极大地减少甚至完全免除常规空中三角测量所必须的地面控制点，以节省野外控制测量工作量 缩短航测成图周期 降低生产成本 提高生产效率</li>
 </ul>
-<h2 id="POS系统及作用"><a href="#POS系统及作用" class="headerlink" title="POS系统及作用"></a>POS系统及作用</h2><ul>
+<h2 id="POS系统及作用">POS系统及作用</h2>
+<ul>
 <li>主要包括：GPS信号接收机和惯性测量装置(IMU)</li>
 <li>作用：直接测定影像外方位元素</li>
 </ul>
 <img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210705190103.png"/>
-
 ]]></content>
       <categories>
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>摄影测量</tag>
         <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
 </search>
