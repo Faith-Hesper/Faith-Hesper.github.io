@@ -32,8 +32,8 @@
 <p>新建文件夹</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir _data</span><br></pre></td></tr></table></figure>
 <p>修改背景透明</p>
-<p>全局颜色：E:\工具\blog\hesper\themes\next\source\css_variables\base.styl</p>
-<p>颜色设置：E:\工具\blog\hesper\themes\next\source\css_colors.styl</p>
+<p>全局颜色：hesper\themes\next\source\css_variables\base.styl</p>
+<p>颜色设置：hesper\themes\next\source\css_colors.styl</p>
 ]]></content>
   </entry>
   <entry>
