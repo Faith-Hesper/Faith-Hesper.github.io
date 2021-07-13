@@ -1,6 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SQL查询</title>
+    <url>/2021/07/05/SQL%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
+<h3 id="模糊查询">模糊查询</h3>
+<p>部分匹配 *</p>
+<ul>
+<li>数据集属性名 Like “a*”</li>
+</ul>
+<p>完全匹配</p>
+<ul>
+<li>数据集属性名 Like “Beijing”</li>
+</ul>
+<p>单字匹配 ？</p>
+<ul>
+<li>数据集属性名 Like “A?”</li>
+</ul>
+<h3 id="查询特定值">查询特定值</h3>
+<ul>
+<li>in，确定表达式的值是否等于指定列表内若干值中任意一个值</li>
+<li>数据集属性名 in (1,4)</li>
+</ul>
+<h3 id="派生字段">派生字段</h3>
+<ul>
+<li>as 取临时字段名</li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人造立体视觉</title>
+    <url>/2021/07/05/%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="人眼分辨率">人眼分辨率</h2>
+<h3 id="第一分辨率">第一分辨率</h3>
+<ul>
+<li>用单眼所能观察出<strong>两点</strong>间的的最小距离</li>
+<li>大小为45<sup>‘’</sup></li>
+</ul>
+<h3 id="第二分辨率">第二分辨率</h3>
+<ul>
+<li>用单眼所能观察出两条<strong>平行线</strong>间的最小距离</li>
+<li>大小为20<sup>‘’</sup></li>
+<li>双眼观察精度比单眼高$\sqrt2$倍，第一分辨率为30<sup>‘’</sup>,</li>
+<li>第二分辨率为12<sup>‘’</sup></li>
+</ul>
+<h2 id="立体视觉">立体视觉</h2>
+<h3 id="立体视觉-v2">立体视觉</h3>
+<ul>
+<li>人眼双眼观察景物可判断其远近，得到景物的立体效应，这种现象称为人眼的立体视觉</li>
+<li>
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225706.png"/>
+</li>
+</ul>
+<h3 id="生理视差">生理视差</h3>
+<ul>
+<li>生理视差是产生立体感觉的生理基础</li>
+<li>人眼分辨远近的本质是生理视差</li>
+</ul>
+<h2 id="人造立体视觉">人造立体视觉</h2>
+<h3 id="定义">定义</h3>
+<h3 id="条件">条件</h3>
+<p>1.立体像对</p>
+<ul>
+<li>两张像片必须是在两个不同位置对同一景物摄取的立体像对(摄影测量时，规定摄影时保持像片的重叠度在60%以上)</li>
+</ul>
+<p>2.分像条件</p>
+<ul>
+<li>每只眼睛必须只能观察像对的一张像片(左眼看左片，右眼看右片)</li>
+</ul>
+<p>3.两张像片上相同景物(同名像点)的连线与眼基线应大致平行</p>
+<p>4.两张像片的比例尺(差别&lt;15%),否则需要zoom系统等进行调节</p>
+<h2 id="立体观察与量测">立体观察与量测</h2>
+<h3 id="立体观察方法">立体观察方法</h3>
+<ul>
+<li>
+<p>立体镜观察</p>
+<p>桥式立体镜</p>
+<p>反光立体镜</p>
+</li>
+<li>
+<p>双目镜观察光路的立体观察</p>
+</li>
+<li>
+<p>叠映影像立体观察</p>
+<p>红绿色互补法</p>
+<p>同步闪闭法(液晶眼镜)</p>
+<p>偏振光法</p>
+</li>
+</ul>
+<h3 id="立体量测">立体量测</h3>
+<ul>
+<li>像对立体量测目的：找出同名像点，获取同名像点的坐标</li>
+<li>左右视差 x之差</li>
+<li>上下视差 y之差</li>
+</ul>
+<h2 id="立体像对中特殊的点线面">立体像对中特殊的点线面</h2>
+<h3 id="同名像点">同名像点</h3>
+<ul>
+<li>同名光线在左右像片上的构像</li>
+</ul>
+<h3 id="同名光线">同名光线</h3>
+<ul>
+<li>同一地面点发出的两条光线</li>
+</ul>
+<h3 id="同名核线">同名核线</h3>
+<ul>
+<li>核面与左右像片面的交线</li>
+</ul>
+<h3 id="核面">核面</h3>
+<ul>
+<li>
+<p>摄影基线与某一地面点组成的平面</p>
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225614.png"/>
+</li>
+</ul>
+<h2 id="获取地面点坐标的三种方式">获取地面点坐标的三种方式</h2>
+<ul>
+<li>
+<p>后方交会+前方交会</p>
+</li>
+<li>
+<p>相对定向+绝对定向</p>
+</li>
+<li>
+<p>光束法</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>摄影测量</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>像片纠正及正射影像制作</title>
+    <url>/2021/07/05/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
+<p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
+<h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
+<h3 id="1-外业工作任务">1.外业工作任务</h3>
+<ul>
+<li>像片野外控制测量
+<ul>
+<li>像控点：直接为摄影测量加密或测图需要，在实地测定的控制点</li>
+</ul>
+</li>
+<li>像片调绘与补测
+<ul>
+<li>像片调绘：利用像片进行判读 调查和绘注等工作的总称</li>
+<li>像片判读：根据航片上地物影像的特征，识别出于像片影像相应的地物的类别 特征和某些元素或者测算某种数据指标的过程</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-外业工作过程">2.外业工作过程</h3>
+<ul>
+<li>技术设计</li>
+<li>准备工作及拟定作业计划</li>
+<li>外业工作实施</li>
+<li>外业成果检查与验收</li>
+</ul>
+<h3 id="3-像片控制点的布设">3.像片控制点的布设</h3>
+<ol>
+<li>
+<p>控制点类型</p>
+<ul>
+<li>平面控制点</li>
+<li>高程控制点</li>
+<li>平高控制点</li>
+</ul>
+</li>
+<li>
+<p>控制点布设方案</p>
+<ul>
+<li>全野外布点</li>
+<li>非全野外布点</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Faith Hesper</title>
     <url>/2021/07/04/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -37,238 +235,433 @@
 ]]></content>
   </entry>
   <entry>
-    <title>空间查询与分析</title>
-    <url>/2021/07/05/%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="空间数据查询">空间数据查询</h2>
-<h3 id="查询概述">查询概述</h3>
-<span id="more"></span>
-<h4 id="方式">方式</h4>
+    <title>单张像片解析</title>
+    <url>/2021/07/05/%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>单张像片解析</h1>
+<h2 id="基本知识">基本知识</h2>
+<h3 id="1-航向重叠">1.航向重叠</h3>
 <ul>
-<li>属性查图形</li>
-<li>图形查属性</li>
+<li>同一航线内相邻像片有一定的影像重叠</li>
 </ul>
-<h4 id="内容">内容</h4>
+<h3 id="2-旁向重叠">2.旁向重叠</h3>
 <ul>
-<li>空间对象的<strong>属性</strong>，<strong>空间位置</strong>，<strong>空间分布</strong>，<strong>几何特征</strong>，以及和其它空间对象的空间关系</li>
+<li>相邻航线也有一定的重叠</li>
 </ul>
-<h4 id="结果">结果</h4>
+<h3 id="3-航迹角">3.航迹角</h3>
 <ul>
-<li>高亮度显示，属性列表和统计图等</li>
+<li>实际航线与设计航线的夹角</li>
 </ul>
-<img src="https://i.loli.net/2021/07/03/1K5LCIHO8hS6mdZ.png" alt="数据查询" style="zoom:50%;" />
-<h3 id="矢量数据查询">矢量数据查询</h3>
+<h3 id="4-像片倾角">4.像片倾角</h3>
 <ul>
-<li>属性数据查询</li>
-<li>图形数据查询</li>
-<li>空间关系查询</li>
-<li>运算对象为字段</li>
+<li>航空摄影机主光轴与铅垂线的夹角</li>
+<li>摄影方向线与主垂线夹角</li>
+<li>竖直摄影像片倾角小于2-3度</li>
+<li>倾斜摄影像片倾角大于3度</li>
 </ul>
-<h3 id="栅格数据查询">栅格数据查询</h3>
-<ul>
-<li>运算对象为栅格本身</li>
-</ul>
-<h2 id="矢量数据分析">矢量数据分析</h2>
-<h3 id="缓冲区分析">缓冲区分析</h3>
-<ul>
-<li>指定距离之内的区域称为缓冲区</li>
-<li>应用：水库淹没范围，环境污染影响带，城市规划拆迁等</li>
-</ul>
-<h3 id="叠置分析">叠置分析</h3>
+<h3 id="5-航摄比例尺">5.航摄比例尺</h3>
 <ul>
 <li>
-<p><strong>地图叠置</strong>是指合并两个或多个要素图层的<strong>几何和属性数据</strong></p>
+<p>像片上的线段l与地面上相应的水平距L之比</p>
+<p>$\frac{1}{m}=\frac{l}{L}=\frac{f}{H}$</p>
 </li>
 <li>
-<p>叠置分析是将两层或多层地图要素进行叠加产生一个<strong>新要素层及其属性</strong>的操作。这个要素层综合了原来各图层所具有的属性</p>
+<p>在像片倾角很小 地形起伏不大时，H取平均航高，可以看成是像片的概略比例尺</p>
 </li>
 <li>
-<p>地图叠置根据目的不同分为：<span id="合成叠置">合成叠置</span>与<span id="统计叠置">统计叠置</span></p>
-</li>
-<li>
-<p>裁剪(结果数据集与裁剪数据集类型相同)</p>
-<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/img/20210704112804.png" alt=""></p>
-</li>
-<li>
-<p>擦除(结果数据集与被擦除数据集类型相同)</p>
-</li>
-<li>
-<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210704122653.png"/>
+<p>一般摄影条件下，不存在整张像片的统一比例尺。摄影航摄像片上比例尺处处不相等</p>
 </li>
 </ul>
-<h2 id="栅格数据分析">栅格数据分析</h2>
-<h3 id="代数运算">代数运算</h3>
-<ul>
-<li>输入栅格像元值的<strong>数学函数</strong>计算输出栅格的像元值</li>
-</ul>
-<h3 id="重分级">重分级</h3>
-<ul>
-<li>属性数据类别合并或转换成新类</li>
-</ul>
-<h3 id="邻域分析">邻域分析</h3>
-<ul>
-<li>邻域类型：矩形 圆形 环形 扇形</li>
-<li>应用：图像处理 <a href="#地形分析">地形分析</a></li>
-</ul>
-<h2 id="网络分析">网络分析</h2>
-<h3 id="最短路径分析">最短路径分析</h3>
-<ul>
-<li>基本思想：把图的顶点分为S，T两类，若起始点到某顶点的最短通路已求出，则将其归入S，其余归入T，随着程序运行T的元素逐个转入S，直到目标顶点转入后结束</li>
-</ul>
-<img src="https://i.loli.net/2021/07/03/j9dHbWQV41eAtr6.png" alt="Dijkstra" style="zoom:67%;" />
-<h3 id="路径分析">路径分析</h3>
-<ul>
-<li>生成耗费距离栅格</li>
-<li>规划道路 管线 沟渠 传输线路</li>
-<li>提取线性要素</li>
-</ul>
-<h3 id="网络分析-v2">网络分析</h3>
-<ul>
-<li><a href="#路径分析">路径分析</a></li>
-<li>最佳设施</li>
-<li>服务器分析</li>
-<li>资源分配</li>
-<li>选址分析</li>
-</ul>
-<h2 id="地形分析">地形分析</h2>
-<ul>
-<li>制作等高线图</li>
-<li>坡度坡向分析</li>
-<li>可视性分析</li>
-<li>地图晕渲图</li>
-<li>测高设色图</li>
-</ul>
-<h2 id="空间插值">空间插值</h2>
+<h3 id="6-航高">6.航高</h3>
 <ul>
 <li>
-<p>将离散点的测量数据转换为连续的数据曲面，以便与其它空间现象的分布模式进行比较，包括空间内插和外推两种算法</p>
+<p>摄影航高</p>
+<p>相当于摄区平均高程面的高度</p>
 </li>
 <li>
-<p>内插：在已存在观测点的区域<strong>范围之内</strong>估计未观测点的特征值的过程</p>
+<p>相对航高</p>
+<p>航摄仪物镜中心在摄影瞬间相当于某一基准面的高度</p>
 </li>
 <li>
-<p>推估：在已存在观测点的区域<strong>范围之外</strong>估计未观测点的特征值的过程</p>
-</li>
-<li>
-<p><strong>整体内插</strong>：利用每个可利用的控制点来估算未知点数据</p>
-</li>
-<li>
-<p><strong>局部内插</strong>：使用<strong>一组</strong>已知点样本估算未知点数据</p>
-</li>
-<li>
-<p>內插函数：线性内插 双线性内插 多项式内插 样条函数 多层曲面叠加</p>
-</li>
-<li>
-<p>最近邻近法–&gt;泰森多边形法</p>
-<p>采用一种极端的边界内插方法，只用<strong>最近的单个点</strong>进行区域插值(TIN)</p>
+<p>绝对航高</p>
+<p>航摄仪物镜中心S在摄影瞬间相当于大地水准面的高度</p>
+<p>H<sub>绝对</sub>=h<sub>平均</sub>+H<sub>相对</sub></p>
 </li>
 </ul>
-<p><a href="#空间数据查询">返回顶部</a></p>
+<h3 id="7-摄影基线">7.摄影基线</h3>
+<ul>
+<li>航线方向相邻两摄站点的空间距离</li>
+</ul>
+<h2 id="单张像片特殊的点线面">单张像片特殊的点线面</h2>
+<h3 id="1-焦距">1.焦距</h3>
+<ul>
+<li>物镜到焦点的距离</li>
+</ul>
+<h3 id="2-主距">2.主距</h3>
+<ul>
+<li>物镜后节点到像平面的距离</li>
+<li>航高相当于主距很大，近似于无穷远成像，所以主距约等于物镜焦距</li>
+</ul>
+<h3 id="3-特殊的点线面">3.特殊的点线面</h3>
+<ul>
+<li>
+<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703223115.png" alt=""></p>
+</li>
+<li>
+<p>主垂面</p>
+<p>包含摄影机轴SoO的铅垂面W，称为主垂面</p>
+</li>
+<li>
+<p>主纵线</p>
+<p>主垂面与像平面的交线vv称为主纵线</p>
+</li>
+<li>
+<p>摄影方向线</p>
+<p>主垂面与地平面的交线称为摄影方向线</p>
+</li>
+<li>
+<p>像底点</p>
+<p>铅垂射线SN与像平面的交点n称为像底点。</p>
+</li>
+<li>
+<p>地底点</p>
+<p>像底点n在地面上的透视对应点N称为地底点。</p>
+</li>
+<li>
+<p>透视轴</p>
+<p>将像片平面扩大与地平面相交的迹线TT称为透视轴</p>
+</li>
+</ul>
+<h2 id="常用坐标系">常用坐标系</h2>
+<h3 id="像方坐标系">像方坐标系</h3>
+<h4 id="1-像平面坐标系-右手系">1.像平面坐标系(右手系)</h4>
+<ul>
+<li>以像主点为坐标原点，坐标轴分别与框标连线平行</li>
+<li>表示像点在像平面内位置的平面直角坐标系</li>
+</ul>
+<h4 id="2-像空间坐标系-右手系-x-y-f">2.像空间坐标系(右手系)(x,y-f)</h4>
+<ul>
+<li>
+<p>摄影中心为坐标原点</p>
+</li>
+<li>
+<p>z轴与主光轴重合</p>
+</li>
+<li>
+<p>x,y轴与像平面坐标系x,y轴平行</p>
+</li>
+<li>
+<p>表示像点在像方空间位置的空间直角坐标系</p>
+</li>
+</ul>
+<h4 id="3-像空间辅助坐标系-右手系-X-Y-Z">3.像空间辅助坐标系(右手系)(X,Y,Z)</h4>
+<ul>
+<li>
+<p>各像片的像空间坐标系不统一，给计算带来了困难，为此，建立一种相对同一的坐标系</p>
+</li>
+<li>
+<p>摄影中心为坐标原点</p>
+</li>
+<li>
+<p>Z轴为铅锤方向，X轴为航向方向</p>
+</li>
+<li>
+<p>第一张像片的像空间坐标系</p>
+</li>
+<li>
+<p>X轴为摄影基线方向 XZ平面为摄影基线及左片主光轴构成的面</p>
+</li>
+</ul>
+<h3 id="物方坐标系">物方坐标系</h3>
+<h4 id="1-摄影测量坐标系-右手系">1.摄影测量坐标系(右手系)</h4>
+<ul>
+<li>像空间辅助坐标系沿着Z轴反向无限延伸到地面上的点为坐标原点</li>
+</ul>
+<h4 id="2-地面测量坐标系-左手系">2.地面测量坐标系(左手系)</h4>
+<ul>
+<li>Z轴：沿铅垂线</li>
+<li>X轴：中央子午线</li>
+<li>Y轴：赤道</li>
+<li>为国家统一坐标系，平面坐标为高斯-克吕格3度带或6度带投影(1980西安坐标系)，高程为1985黄海高程系</li>
+</ul>
+<h4 id="3-地面摄影测量坐标系-右手系">3.地面摄影测量坐标系(右手系)</h4>
+<ul>
+<li>原点为地面某一控制点</li>
+<li>Z轴与地面测量坐标系的Z轴平行</li>
+<li>X轴与航线一致</li>
+<li>摄影测量坐标系采用的是右手系，地面测量坐标系采用的是左手系，这给摄影测量坐标到地面测量坐标系的转换带来了困难，为此，在摄影测量坐标系与地面测量坐标系之间建立一种过渡性的坐标系，称为地面摄影测量坐标系</li>
+</ul>
+<h2 id="像片的内外方位元素">像片的内外方位元素</h2>
+<ul>
+<li>
+<p>像片的方位元素</p>
+<p>确定航空摄影中心与像片在地面设定的空间坐标系中的位置与姿态，描述位置和姿态的参数</p>
+</li>
+</ul>
+<h3 id="内方位元素">内方位元素</h3>
+<p>内方位元素一般已知</p>
+<ul>
+<li>恢复内方位元素可恢复摄影时的摄影光束</li>
+<li>描述摄影中心与像片之间相关位置的参数</li>
+<li>主距==f==像片框标坐标系的坐标x,y</li>
+</ul>
+<h3 id="外方位元素">外方位元素</h3>
+<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224157.png" alt=""></p>
+<ul>
+<li>
+<p>确定摄影时==像空间坐标系==在==地面摄影测量坐标系==中位置和方向的元素</p>
+</li>
+<li>
+<p>确定摄影光束空间姿态</p>
+</li>
+<li>
+<p>外方位线元素：</p>
+<p>确定像空系的==原点S==在地摄系中的坐标</p>
+</li>
+<li>
+<p>外方位角元素(三次旋转)：</p>
+<p>确定像空系==三轴==在地摄系中的方向</p>
+</li>
+</ul>
+<h2 id="中心投影构像方程">中心投影构像方程</h2>
+<h3 id="投影">投影</h3>
+<ul>
+<li>航摄像片为中心投影</li>
+<li>地形图为正射投影</li>
+</ul>
+<h3 id="共线条件方程">共线条件方程</h3>
+<ul>
+<li>在理想情况，摄影瞬间==像点== ==投影中心== ==物点==位于同一条直线上，描述这三点共线的数学表达式称之为共线条件方程</li>
+<li>$$\frac{X}{X_A-X_S}=\frac{Y}{Y_A-Y_S}=\frac{Z}{Z_A-Z_S}=\frac{1}{\lambda}$$</li>
+<li><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703222645.png" alt=""></li>
+<li>已知==地面点==坐标可以和==内外方位元素==可以求得==像点坐==标</li>
+<li>已知==像点==坐标和==内外方位元素不能==求得==地面点==坐标</li>
+<li>地面点坐标有==3个==未知数而像点坐标只有==2个==未知数</li>
+</ul>
+<h3 id="应用">应用</h3>
+<ul>
+<li>求解外方位元素</li>
+<li>计算像点位置</li>
+<li>求解地面点坐标</li>
+<li>前方交会</li>
+<li>后方交会</li>
+<li>光束法</li>
+</ul>
+<h2 id="像点位移">像点位移</h2>
+<h3 id="定义">定义</h3>
+<ul>
+<li>像点位移：当像片倾斜 地面起伏时，地面点在航摄像片上的构像相当于理想情况下的构像所产生的位置差异</li>
+<li>方向偏差：从像片上某点作出的方向线与地面对应点画出的方向线的方位角不等，这种差异称为方向偏差</li>
+</ul>
+<h3 id="起因">起因</h3>
+<h4 id="地形起伏">地形起伏</h4>
+<p>特点：</p>
+<ul>
+<li>像底点的像点不存在像点位移</li>
+<li>在保持像片摄影比例尺不变时，地形起伏像点位移之值随航高增大而减小，因此采用长焦距摄影机以增大航高进行空中摄影是有利的</li>
+<li>因地形起伏引起的像点位移常称为像片上的投影差</li>
+</ul>
+<h4 id="像片倾斜">像片倾斜</h4>
+<ul>
+<li></li>
+</ul>
+<h2 id="单张像片后方交会">单张像片后方交会</h2>
+<h3 id="定义-v2">定义</h3>
+<p>利用==3个==及以上的地面控制点及其在像片上的像点，确定一张像片==外方位元素==的方法</p>
+<h3 id="作用">作用</h3>
+<p>求解外方位元素</p>
+<h3 id="原理">原理</h3>
+<p>共线条件方程</p>
+<h3 id="要求">要求</h3>
+<ul>
+<li>
+<p>至少三个不在同一直线上的地面控制点</p>
+</li>
+<li>
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703230036.png"/>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>笔记</category>
-        <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据编辑与处理</title>
-    <url>/2021/07/05/%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数据编辑与处理</h1>
-<h2 id="1-坐标与几何变换">1.坐标与几何变换</h2>
-<h3 id="1-几何纠正">1. 几何纠正</h3>
-<ul>
-<li>地形图纠正</li>
-<li>遥感影像纠正</li>
-</ul>
-<h3 id="2-坐标变换">2. 坐标变换</h3>
-<ul>
-<li>投影变换</li>
-<li>仿射变换</li>
-<li>相似变换</li>
-<li>等积变换</li>
-</ul>
-<h3 id="3-栅格数据重采样">3. 栅格数据重采样</h3>
+    <title>双像解析</title>
+    <url>/2021/07/05/%E5%8F%8C%E5%83%8F%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="单张像片后方交会">单张像片后方交会</h2>
+<h3 id="定义">定义</h3>
+<p>利用3个及以上的地面控制点及其在像片上的像点，确定一张像片外方位元素的方法</p>
+<h3 id="作用">作用</h3>
+<p>求解外方位元素</p>
+<h3 id="原理">原理</h3>
+<p>共线条件方程</p>
+<h3 id="要求">要求</h3>
 <ul>
 <li>
-<p>最邻近法</p>
+<p>至少三个不在同一直线上的地面控制点</p>
 </li>
 <li>
-<p>双线性内插</p>
-</li>
-<li>
-<p>三次卷积法</p>
-<span id="more"></span>
+<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703220116.png"/>&quot; alt=“后方交会” style=“zoom:50%;” /&gt;</p>
 </li>
 </ul>
-<h2 id="2-数据编辑-图形与属性">2.数据编辑(图形与属性)</h2>
-<h3 id="1-图形数据编辑">1.图形数据编辑</h3>
-<h3 id="2-属性数据编辑">2.属性数据编辑</h3>
-<h2 id="3-图形裁剪与拼接">3.图形裁剪与拼接</h2>
-<h2 id="4-拓扑生成">4.拓扑生成</h2>
-<h2 id="5-矢量数据压缩">5.矢量数据压缩</h2>
-<p>压缩方法</p>
+<h2 id="立体像对前方交会">立体像对前方交会</h2>
+<h3 id="概念">概念</h3>
 <ul>
-<li>间隔取点法</li>
-<li>垂距法和偏角法</li>
-<li>分裂法</li>
+<li>由立体像对中两张像片的内外方位元素和像点坐标来确定相应地面点在物方空间坐标系中坐标的方法</li>
+<li>只有利用立体像对上的同名像点，才能得到两条同名射线在空间相交的点，即该地面点的空间位置</li>
+<li>已知立体像对中两张像片的内外方位元素和像点坐标</li>
+<li>未知相应地面点的地面坐标</li>
 </ul>
-<h2 id="6-空间数据结构变换">6.空间数据结构变换</h2>
-<h2 id="7-空间数据内插">7.空间数据内插</h2>
+<h3 id="原理-v2">原理</h3>
+<ul>
+<li>共线条件方程</li>
+<li><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224500.png"/>&quot; alt=“共线条件方程” style=“zoom:50%;” /&gt;</li>
+</ul>
+<h2 id="后交加前交">后交加前交</h2>
+<ul>
+<li>
+<p>空间后方交会与前方交会求解地面点坐标的计算方法:</p>
+</li>
+<li>
+<p>实现由单片后方交会求出左右像片的外方位元素，再利用空间前方交会公式求出待定点坐标</p>
+</li>
+<li>
+<p>后方交会的3个或3个以上地面控制点</p>
+</li>
+<li>
+<p>主要步骤</p>
+<p>野外像片控制测量(重叠部分至少四个已知地面控制点)</p>
+<p>用立体坐标量测仪量测像点坐标</p>
+<p>空间后方交会计算像片外方位元素(求6个外方位元素)</p>
+<p>空间前方交会计算未知点地面坐标</p>
+</li>
+</ul>
+<h2 id="相对定向">相对定向</h2>
+<h3 id="概念-v2">概念</h3>
+<ul>
+<li>相对定向元素(5个)：描述立体像对两张像片相对位置和姿态关系的参数</li>
+<li>解析相对定向：利用立体像对同名光线对对相交，根据量测的像点坐标，以解析法计算方法，解求两张像片相对定向元素的过程</li>
+</ul>
+<h3 id="原理-v3">原理</h3>
+<ul>
+<li>同名光线对对相交于核面内(共面条件方程)</li>
+<li>至少需要5个相对定向元素</li>
+<li>至少需要量测5对同名像点的像点坐标</li>
+</ul>
+<h4 id="1-连续法解析相对定向原理">1.连续法解析相对定向原理</h4>
+<ul>
+<li>相对定向完成标志为：上下视差为0</li>
+<li>量测5对以上的同名点可以按最小二乘平差法求相对定向元素</li>
+</ul>
+<h4 id="2-单独法解析相对定向原理">2.单独法解析相对定向原理</h4>
+<ul>
+<li>相对定向完成标志为：上下视差为0</li>
+<li>量测5对以上的同名点可以按最小二乘平差法求相对定向元素</li>
+</ul>
+<h2 id="绝对定向">绝对定向</h2>
+<h3 id="概念-v3">概念</h3>
+<ul>
+<li>相对定向建立的立体模型------像空间辅助坐标系</li>
+<li>通过像点坐标解求模型点坐标------摄影测量坐标系的坐标</li>
+<li>通过将相对定向立体模型进行缩放平移和旋转，确定立体模型在地面坐标系中的方位和大小------摄影测量坐标系与地面摄影测量坐标系转化-----立体模型的绝对定向</li>
+<li>绝对定向参数(7个)：描述立体像对在摄影瞬间的绝对位置和姿态的参数</li>
+<li>实质：模型点的摄影测量坐标向地面坐标的数学变换</li>
+</ul>
+<h3 id="原理-v4">原理</h3>
+<ul>
+<li>空间相似变换</li>
+<li>包含 旋转 平移 缩放三个内容</li>
+<li>至少需要2个平高控制点和1个高程点，且任意3个点不能位于同一条直线上</li>
+<li>为了保证精度，通常使用4个或4个以上的平高控制点列误差方程式，求解7个绝对方位元素</li>
+<li>3个控制点</li>
+<li>7个未知数</li>
+<li>7个方程</li>
+</ul>
+<h3 id="坐标重心化">坐标重心化</h3>
+<ul>
+<li>
+<p>一种数据预处理方法</p>
+</li>
+<li>
+<p>减少坐标在计算过程中的有效位数，提高精度</p>
+</li>
+<li>
+<p>简化方程式的系数，使个别项的数值为零，从而加快计算速度</p>
+</li>
+<li>
+<p>重心化坐标：将所有的摄影测量坐标的地辅系坐标分别平移到以各自重心为原点的坐标系中</p>
+</li>
+</ul>
+<h2 id="相对加绝对">相对加绝对</h2>
+<ul>
+<li>相对定向：0个控制点，至少5对以上同名像点，求解5个相对定向元素</li>
+<li>绝对定向：2个平高 ，1个高程，确定立体模型比例尺和在地面坐标系中所处方位</li>
+<li>像点及控制点，必须在立体像对内</li>
+</ul>
+<h2 id="光束法解析摄影测量">光束法解析摄影测量</h2>
+<h3 id="原理-v5">原理</h3>
+<ul>
+<li>用已知少数控制点以及待求地面点，在像对内以共线方程式为基础，未知点和控制点同时列误差方程，联合解算，同时解求两张像片的外方位元素与待定点坐标</li>
+<li>理论模型：共线条件方程</li>
+</ul>
+<h3 id="平差">平差</h3>
+<ul>
+<li>
+<p>参加平差的点：平高 平面 或高程 待求点</p>
+</li>
+<li>
+<p>平高控制点：$$dX=dY=dZ=0$$</p>
+<p>即可在重叠范围内，也可在单像内</p>
+</li>
+<li>
+<p>平面控制点($dX=dY=0$)或高程控制点($$dZ=0$$)</p>
+<p>必须在重叠范围内</p>
+</li>
+<li>
+<p>待求点</p>
+<p>必须在重叠范围内</p>
+</li>
+</ul>
+<h3 id="条件">条件</h3>
+<ul>
+<li>
+<p>已知值：像控点大地坐标系</p>
+</li>
+<li>
+<p>观测值：像控点像点坐标和待定点坐标</p>
+</li>
+<li>
+<p>未知数：6个外方位元素</p>
+<p>待定点地面摄影测量坐标 X,Y,Z</p>
+</li>
+<li>
+<p>未知数个数：6个外方位元素 * 像片数 + 待求点 * 3</p>
+</li>
+<li>
+<p>方程个数：(对应点的重叠度 * 对应点数 ) * 2个方程</p>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224713.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225041.png" style="zoom:50%;" />
+<h2 id="汇总">汇总</h2>
+<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224759.png" alt="双像解析" style="zoom:50%;" />
 ]]></content>
       <categories>
         <category>笔记</category>
-        <category>GIS</category>
       </categories>
       <tags>
-        <tag>GIS</tag>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL查询</title>
-    <url>/2021/07/05/SQL%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h3 id="模糊查询">模糊查询</h3>
-<p>部分匹配 *</p>
-<ul>
-<li>数据集属性名 Like “a*”</li>
-</ul>
-<p>完全匹配</p>
-<ul>
-<li>数据集属性名 Like “Beijing”</li>
-</ul>
-<p>单字匹配 ？</p>
-<ul>
-<li>数据集属性名 Like “A?”</li>
-</ul>
-<h3 id="查询特定值">查询特定值</h3>
-<ul>
-<li>in，确定表达式的值是否等于指定列表内若干值中任意一个值</li>
-<li>数据集属性名 in (1,4)</li>
-</ul>
-<h3 id="派生字段">派生字段</h3>
-<ul>
-<li>as 取临时字段名</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>笔记</tag>
+        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
     <title>地理信息科学</title>
     <url>/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>基本概念</h1>
-<span id="more"></span>
 <h2 id="信息系统基本功能">信息系统基本功能</h2>
 <ul>
 <li>数据采集</li>
@@ -538,6 +931,131 @@
       </tags>
   </entry>
   <entry>
+    <title>数字摄影测量</title>
+    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
+<h3 id="概念">概念</h3>
+<ul>
+<li>数字摄影测量</li>
+</ul>
+<p>利用数字灰度信号，采用数字相关技术量测同名像点，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
+<ul>
+<li>获得数字影像的方法
+<ol>
+<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
+<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
+</ol>
+</li>
+</ul>
+<h3 id="影像采样与量化">影像采样与量化</h3>
+<h4 id="1-影像数字化过程">1. 影像数字化过程</h4>
+<ul>
+<li>影像数字化</li>
+<li>==采样==与==量化==
+<ul>
+<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
+<li>被量测的点称为==样点==，</li>
+<li>样点之间的距离即==采样间隔==。</li>
+<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-数字影像的构成">2. 数字影像的构成</h4>
+<ul>
+<li>数字影像是一个灰度矩阵</li>
+<li>矩阵中每个元素称为像素</li>
+</ul>
+<h4 id="3-数字影像内定向">3. 数字影像内定向</h4>
+<ul>
+<li>使像平面坐标x,y与其扫描坐标换算成相等的即为数字影像内定向</li>
+<li>即扫描坐标转换为像平面坐标系</li>
+</ul>
+<h3 id="基于灰度的影像相关">基于灰度的影像相关</h3>
+<ul>
+<li>
+<p><strong>数字影像相关</strong>：从左右数字影像中寻找同名像点</p>
+</li>
+<li>
+<p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
+</li>
+<li>
+<p>方法：</p>
+<ol>
+<li>相关系数法</li>
+<li>协方差法</li>
+<li>高精度最小二乘法</li>
+</ol>
+</li>
+</ul>
+<h3 id="同名核线的确定">同名核线的确定</h3>
+<ul>
+<li>核线几何关系解析</li>
+<li>沿核线重采样</li>
+<li>核线相关</li>
+</ul>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>摄影测量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据编辑与处理</title>
+    <url>/2021/07/05/%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数据编辑与处理</h1>
+<h2 id="1-坐标与几何变换">1.坐标与几何变换</h2>
+<h3 id="1-几何纠正">1. 几何纠正</h3>
+<ul>
+<li>地形图纠正</li>
+<li>遥感影像纠正</li>
+</ul>
+<h3 id="2-坐标变换">2. 坐标变换</h3>
+<ul>
+<li>投影变换</li>
+<li>仿射变换</li>
+<li>相似变换</li>
+<li>等积变换</li>
+</ul>
+<h3 id="3-栅格数据重采样">3. 栅格数据重采样</h3>
+<ul>
+<li>
+<p>最邻近法</p>
+</li>
+<li>
+<p>双线性内插</p>
+</li>
+<li>
+<p>三次卷积法</p>
+</li>
+</ul>
+<h2 id="2-数据编辑-图形与属性">2.数据编辑(图形与属性)</h2>
+<h3 id="1-图形数据编辑">1.图形数据编辑</h3>
+<h3 id="2-属性数据编辑">2.属性数据编辑</h3>
+<h2 id="3-图形裁剪与拼接">3.图形裁剪与拼接</h2>
+<h2 id="4-拓扑生成">4.拓扑生成</h2>
+<h2 id="5-矢量数据压缩">5.矢量数据压缩</h2>
+<p>压缩方法</p>
+<ul>
+<li>间隔取点法</li>
+<li>垂距法和偏角法</li>
+<li>分裂法</li>
+</ul>
+<h2 id="6-空间数据结构变换">6.空间数据结构变换</h2>
+<h2 id="7-空间数据内插">7.空间数据内插</h2>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数字高程模型</title>
     <url>/2021/07/05/%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="4D产品">4D产品</h2>
@@ -546,7 +1064,6 @@
 3. DRG：数字栅格
 4. DOM：数字正射影像
 </code></pre>
-<span id="more"></span>
 <h2 id="DTM-数字地面模型">DTM(数字地面模型)</h2>
 <p>DEM是DTM的子集，是DTM最基本的部分</p>
 <h2 id="DEM的表达形式">DEM的表达形式</h2>
@@ -618,301 +1135,139 @@
       </tags>
   </entry>
   <entry>
-    <title>数字摄影测量</title>
-    <url>/2021/07/05/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
-<h3 id="概念">概念</h3>
+    <title>空间查询与分析</title>
+    <url>/2021/07/05/%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="空间数据查询">空间数据查询</h2>
+<h3 id="查询概述">查询概述</h3>
+<h4 id="方式">方式</h4>
 <ul>
-<li>数字摄影测量</li>
+<li>属性查图形</li>
+<li>图形查属性</li>
 </ul>
-<p>利用数字灰度信号，采用数字相关技术量测同名像点，在此基础上通过解析计算，进行相对定向和绝对定向，建立数字立体模型，从而建立数字高程模型 绘制等高线 制作正射影像图以及为地理信息系统提供基础信息等</p>
-<span id="more"></span>
+<h4 id="内容">内容</h4>
 <ul>
-<li>获得数字影像的方法
-<ol>
-<li>数字摄影机(CCD阵列扫描仪或摄影机)或数码相机获得的数字影像</li>
-<li>利用数字化扫描仪对像片进行扫描，称为数字化影像</li>
-</ol>
-</li>
+<li>空间对象的<strong>属性</strong>，<strong>空间位置</strong>，<strong>空间分布</strong>，<strong>几何特征</strong>，以及和其它空间对象的空间关系</li>
 </ul>
-<h3 id="影像采样与量化">影像采样与量化</h3>
-<h4 id="1-影像数字化过程">1. 影像数字化过程</h4>
+<h4 id="结果">结果</h4>
 <ul>
-<li>影像数字化</li>
-<li>==采样==与==量化==
+<li>高亮度显示，属性列表和统计图等</li>
+</ul>
+<img src="https://i.loli.net/2021/07/03/1K5LCIHO8hS6mdZ.png" alt="数据查询" style="zoom:50%;" />
+<h3 id="矢量数据查询">矢量数据查询</h3>
 <ul>
-<li>将实际的灰度函数离散化。这种对实际连续函数模型离散化的量测过程就是==采样==</li>
-<li>被量测的点称为==样点==，</li>
-<li>样点之间的距离即==采样间隔==。</li>
-<li>将各点的灰度值取为整数，这一过程称为==影像灰度的量化==</li>
+<li>属性数据查询</li>
+<li>图形数据查询</li>
+<li>空间关系查询</li>
+<li>运算对象为字段</li>
 </ul>
-</li>
-</ul>
-<h4 id="2-数字影像的构成">2. 数字影像的构成</h4>
+<h3 id="栅格数据查询">栅格数据查询</h3>
 <ul>
-<li>数字影像是一个灰度矩阵</li>
-<li>矩阵中每个元素称为像素</li>
+<li>运算对象为栅格本身</li>
 </ul>
-<h4 id="3-数字影像内定向">3. 数字影像内定向</h4>
+<h2 id="矢量数据分析">矢量数据分析</h2>
+<h3 id="缓冲区分析">缓冲区分析</h3>
 <ul>
-<li>使像平面坐标x,y与其扫描坐标换算成相等的即为数字影像内定向</li>
-<li>即扫描坐标转换为像平面坐标系</li>
+<li>指定距离之内的区域称为缓冲区</li>
+<li>应用：水库淹没范围，环境污染影响带，城市规划拆迁等</li>
 </ul>
-<h3 id="基于灰度的影像相关">基于灰度的影像相关</h3>
+<h3 id="叠置分析">叠置分析</h3>
 <ul>
 <li>
-<p><strong>数字影像相关</strong>：从左右数字影像中寻找同名像点</p>
+<p><strong>地图叠置</strong>是指合并两个或多个要素图层的<strong>几何和属性数据</strong></p>
 </li>
 <li>
-<p>影像相关是利用互相关函数，评价两块影像的相似性以确定同名点</p>
+<p>叠置分析是将两层或多层地图要素进行叠加产生一个<strong>新要素层及其属性</strong>的操作。这个要素层综合了原来各图层所具有的属性</p>
 </li>
 <li>
-<p>方法：</p>
-<ol>
-<li>相关系数法</li>
-<li>协方差法</li>
-<li>高精度最小二乘法</li>
-</ol>
+<p>地图叠置根据目的不同分为：<span id="合成叠置">合成叠置</span>与<span id="统计叠置">统计叠置</span></p>
+</li>
+<li>
+<p>裁剪(结果数据集与裁剪数据集类型相同)</p>
+<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/img/20210704112804.png" alt=""></p>
+</li>
+<li>
+<p>擦除(结果数据集与被擦除数据集类型相同)</p>
+</li>
+<li>
+<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210704122653.png"/>
 </li>
 </ul>
-<h3 id="同名核线的确定">同名核线的确定</h3>
+<h2 id="栅格数据分析">栅格数据分析</h2>
+<h3 id="代数运算">代数运算</h3>
 <ul>
-<li>核线几何关系解析</li>
-<li>沿核线重采样</li>
-<li>核线相关</li>
+<li>输入栅格像元值的<strong>数学函数</strong>计算输出栅格的像元值</li>
 </ul>
+<h3 id="重分级">重分级</h3>
+<ul>
+<li>属性数据类别合并或转换成新类</li>
+</ul>
+<h3 id="邻域分析">邻域分析</h3>
+<ul>
+<li>邻域类型：矩形 圆形 环形 扇形</li>
+<li>应用：图像处理 <a href="#地形分析">地形分析</a></li>
+</ul>
+<h2 id="网络分析">网络分析</h2>
+<h3 id="最短路径分析">最短路径分析</h3>
+<ul>
+<li>基本思想：把图的顶点分为S，T两类，若起始点到某顶点的最短通路已求出，则将其归入S，其余归入T，随着程序运行T的元素逐个转入S，直到目标顶点转入后结束</li>
+</ul>
+<img src="https://i.loli.net/2021/07/03/j9dHbWQV41eAtr6.png" alt="Dijkstra" style="zoom:67%;" />
+<h3 id="路径分析">路径分析</h3>
+<ul>
+<li>生成耗费距离栅格</li>
+<li>规划道路 管线 沟渠 传输线路</li>
+<li>提取线性要素</li>
+</ul>
+<h3 id="网络分析-v2">网络分析</h3>
+<ul>
+<li><a href="#路径分析">路径分析</a></li>
+<li>最佳设施</li>
+<li>服务器分析</li>
+<li>资源分配</li>
+<li>选址分析</li>
+</ul>
+<h2 id="地形分析">地形分析</h2>
+<ul>
+<li>制作等高线图</li>
+<li>坡度坡向分析</li>
+<li>可视性分析</li>
+<li>地图晕渲图</li>
+<li>测高设色图</li>
+</ul>
+<h2 id="空间插值">空间插值</h2>
+<ul>
+<li>
+<p>将离散点的测量数据转换为连续的数据曲面，以便与其它空间现象的分布模式进行比较，包括空间内插和外推两种算法</p>
+</li>
+<li>
+<p>内插：在已存在观测点的区域<strong>范围之内</strong>估计未观测点的特征值的过程</p>
+</li>
+<li>
+<p>推估：在已存在观测点的区域<strong>范围之外</strong>估计未观测点的特征值的过程</p>
+</li>
+<li>
+<p><strong>整体内插</strong>：利用每个可利用的控制点来估算未知点数据</p>
+</li>
+<li>
+<p><strong>局部内插</strong>：使用<strong>一组</strong>已知点样本估算未知点数据</p>
+</li>
+<li>
+<p>內插函数：线性内插 双线性内插 多项式内插 样条函数 多层曲面叠加</p>
+</li>
+<li>
+<p>最近邻近法–&gt;泰森多边形法</p>
+<p>采用一种极端的边界内插方法，只用<strong>最近的单个点</strong>进行区域插值(TIN)</p>
+</li>
+</ul>
+<p><a href="#空间数据查询">返回顶部</a></p>
 ]]></content>
       <categories>
         <category>笔记</category>
+        <category>GIS</category>
       </categories>
       <tags>
+        <tag>GIS</tag>
         <tag>笔记</tag>
-        <tag>摄影测量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>像片纠正及正射影像制作</title>
-    <url>/2021/07/05/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
-<p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
-<span id="more"></span>
-<h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
-<h3 id="1-外业工作任务">1.外业工作任务</h3>
-<ul>
-<li>像片野外控制测量
-<ul>
-<li>像控点：直接为摄影测量加密或测图需要，在实地测定的控制点</li>
-</ul>
-</li>
-<li>像片调绘与补测
-<ul>
-<li>像片调绘：利用像片进行判读 调查和绘注等工作的总称</li>
-<li>像片判读：根据航片上地物影像的特征，识别出于像片影像相应的地物的类别 特征和某些元素或者测算某种数据指标的过程</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-外业工作过程">2.外业工作过程</h3>
-<ul>
-<li>技术设计</li>
-<li>准备工作及拟定作业计划</li>
-<li>外业工作实施</li>
-<li>外业成果检查与验收</li>
-</ul>
-<h3 id="3-像片控制点的布设">3.像片控制点的布设</h3>
-<ol>
-<li>
-<p>控制点类型</p>
-<ul>
-<li>平面控制点</li>
-<li>高程控制点</li>
-<li>平高控制点</li>
-</ul>
-</li>
-<li>
-<p>控制点布设方案</p>
-<ul>
-<li>全野外布点</li>
-<li>非全野外布点</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>摄影测量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>双像解析</title>
-    <url>/2021/07/05/%E5%8F%8C%E5%83%8F%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="单张像片后方交会">单张像片后方交会</h2>
-<h3 id="定义">定义</h3>
-<p>利用3个及以上的地面控制点及其在像片上的像点，确定一张像片外方位元素的方法</p>
-<h3 id="作用">作用</h3>
-<p>求解外方位元素</p>
-<h3 id="原理">原理</h3>
-<p>共线条件方程</p>
-<span id="more"></span>
-<h3 id="要求">要求</h3>
-<ul>
-<li>
-<p>至少三个不在同一直线上的地面控制点</p>
-</li>
-<li>
-<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703220116.png"/>&quot; alt=“后方交会” style=“zoom:50%;” /&gt;</p>
-</li>
-</ul>
-<h2 id="立体像对前方交会">立体像对前方交会</h2>
-<h3 id="概念">概念</h3>
-<ul>
-<li>由立体像对中两张像片的内外方位元素和像点坐标来确定相应地面点在物方空间坐标系中坐标的方法</li>
-<li>只有利用立体像对上的同名像点，才能得到两条同名射线在空间相交的点，即该地面点的空间位置</li>
-<li>已知立体像对中两张像片的内外方位元素和像点坐标</li>
-<li>未知相应地面点的地面坐标</li>
-</ul>
-<h3 id="原理-v2">原理</h3>
-<ul>
-<li>共线条件方程</li>
-<li><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224500.png"/>&quot; alt=“共线条件方程” style=“zoom:50%;” /&gt;</li>
-</ul>
-<h2 id="后交加前交">后交加前交</h2>
-<ul>
-<li>
-<p>空间后方交会与前方交会求解地面点坐标的计算方法:</p>
-</li>
-<li>
-<p>实现由单片后方交会求出左右像片的外方位元素，再利用空间前方交会公式求出待定点坐标</p>
-</li>
-<li>
-<p>后方交会的3个或3个以上地面控制点</p>
-</li>
-<li>
-<p>主要步骤</p>
-<p>野外像片控制测量(重叠部分至少四个已知地面控制点)</p>
-<p>用立体坐标量测仪量测像点坐标</p>
-<p>空间后方交会计算像片外方位元素(求6个外方位元素)</p>
-<p>空间前方交会计算未知点地面坐标</p>
-</li>
-</ul>
-<h2 id="相对定向">相对定向</h2>
-<h3 id="概念-v2">概念</h3>
-<ul>
-<li>相对定向元素(5个)：描述立体像对两张像片相对位置和姿态关系的参数</li>
-<li>解析相对定向：利用立体像对同名光线对对相交，根据量测的像点坐标，以解析法计算方法，解求两张像片相对定向元素的过程</li>
-</ul>
-<h3 id="原理-v3">原理</h3>
-<ul>
-<li>同名光线对对相交于核面内(共面条件方程)</li>
-<li>至少需要5个相对定向元素</li>
-<li>至少需要量测5对同名像点的像点坐标</li>
-</ul>
-<h4 id="1-连续法解析相对定向原理">1.连续法解析相对定向原理</h4>
-<ul>
-<li>相对定向完成标志为：上下视差为0</li>
-<li>量测5对以上的同名点可以按最小二乘平差法求相对定向元素</li>
-</ul>
-<h4 id="2-单独法解析相对定向原理">2.单独法解析相对定向原理</h4>
-<ul>
-<li>相对定向完成标志为：上下视差为0</li>
-<li>量测5对以上的同名点可以按最小二乘平差法求相对定向元素</li>
-</ul>
-<h2 id="绝对定向">绝对定向</h2>
-<h3 id="概念-v3">概念</h3>
-<ul>
-<li>相对定向建立的立体模型------像空间辅助坐标系</li>
-<li>通过像点坐标解求模型点坐标------摄影测量坐标系的坐标</li>
-<li>通过将相对定向立体模型进行缩放平移和旋转，确定立体模型在地面坐标系中的方位和大小------摄影测量坐标系与地面摄影测量坐标系转化-----立体模型的绝对定向</li>
-<li>绝对定向参数(7个)：描述立体像对在摄影瞬间的绝对位置和姿态的参数</li>
-<li>实质：模型点的摄影测量坐标向地面坐标的数学变换</li>
-</ul>
-<h3 id="原理-v4">原理</h3>
-<ul>
-<li>空间相似变换</li>
-<li>包含 旋转 平移 缩放三个内容</li>
-<li>至少需要2个平高控制点和1个高程点，且任意3个点不能位于同一条直线上</li>
-<li>为了保证精度，通常使用4个或4个以上的平高控制点列误差方程式，求解7个绝对方位元素</li>
-<li>3个控制点</li>
-<li>7个未知数</li>
-<li>7个方程</li>
-</ul>
-<h3 id="坐标重心化">坐标重心化</h3>
-<ul>
-<li>
-<p>一种数据预处理方法</p>
-</li>
-<li>
-<p>减少坐标在计算过程中的有效位数，提高精度</p>
-</li>
-<li>
-<p>简化方程式的系数，使个别项的数值为零，从而加快计算速度</p>
-</li>
-<li>
-<p>重心化坐标：将所有的摄影测量坐标的地辅系坐标分别平移到以各自重心为原点的坐标系中</p>
-</li>
-</ul>
-<h2 id="相对加绝对">相对加绝对</h2>
-<ul>
-<li>相对定向：0个控制点，至少5对以上同名像点，求解5个相对定向元素</li>
-<li>绝对定向：2个平高 ，1个高程，确定立体模型比例尺和在地面坐标系中所处方位</li>
-<li>像点及控制点，必须在立体像对内</li>
-</ul>
-<h2 id="光束法解析摄影测量">光束法解析摄影测量</h2>
-<h3 id="原理-v5">原理</h3>
-<ul>
-<li>用已知少数控制点以及待求地面点，在像对内以共线方程式为基础，未知点和控制点同时列误差方程，联合解算，同时解求两张像片的外方位元素与待定点坐标</li>
-<li>理论模型：共线条件方程</li>
-</ul>
-<h3 id="平差">平差</h3>
-<ul>
-<li>
-<p>参加平差的点：平高 平面 或高程 待求点</p>
-</li>
-<li>
-<p>平高控制点：$$dX=dY=dZ=0$$</p>
-<p>即可在重叠范围内，也可在单像内</p>
-</li>
-<li>
-<p>平面控制点($dX=dY=0$)或高程控制点($$dZ=0$$)</p>
-<p>必须在重叠范围内</p>
-</li>
-<li>
-<p>待求点</p>
-<p>必须在重叠范围内</p>
-</li>
-</ul>
-<h3 id="条件">条件</h3>
-<ul>
-<li>
-<p>已知值：像控点大地坐标系</p>
-</li>
-<li>
-<p>观测值：像控点像点坐标和待定点坐标</p>
-</li>
-<li>
-<p>未知数：6个外方位元素</p>
-<p>待定点地面摄影测量坐标 X,Y,Z</p>
-</li>
-<li>
-<p>未知数个数：6个外方位元素 * 像片数 + 待求点 * 3</p>
-</li>
-<li>
-<p>方程个数：(对应点的重叠度 * 对应点数 ) * 2个方程</p>
-</li>
-</ul>
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224713.png" style="zoom:50%;" />
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225041.png" style="zoom:50%;" />
-<h2 id="汇总">汇总</h2>
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224759.png" alt="双像解析" style="zoom:50%;" />
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>摄影测量</tag>
       </tags>
   </entry>
   <entry>
@@ -925,7 +1280,6 @@
 </li>
 <li>
 <p>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</p>
-<span id="more"></span>
 </li>
 </ul>
 <h2 id="分类">分类</h2>
@@ -973,368 +1327,42 @@
       </tags>
   </entry>
   <entry>
-    <title>人造立体视觉</title>
-    <url>/2021/07/05/%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="人眼分辨率">人眼分辨率</h2>
-<h3 id="第一分辨率">第一分辨率</h3>
-<ul>
-<li>用单眼所能观察出<strong>两点</strong>间的的最小距离</li>
-<li>大小为45<sup>‘’</sup></li>
-</ul>
-<h3 id="第二分辨率">第二分辨率</h3>
-<ul>
-<li>用单眼所能观察出两条<strong>平行线</strong>间的最小距离</li>
-<li>大小为20<sup>‘’</sup></li>
-<li>双眼观察精度比单眼高$\sqrt2$倍，第一分辨率为30<sup>‘’</sup>,</li>
-<li>第二分辨率为12<sup>‘’</sup></li>
-</ul>
-<h2 id="立体视觉">立体视觉</h2>
-<span id="more"></span>
-<h3 id="立体视觉-v2">立体视觉</h3>
-<ul>
-<li>人眼双眼观察景物可判断其远近，得到景物的立体效应，这种现象称为人眼的立体视觉</li>
-<li>
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225706.png"/>
-</li>
-</ul>
-<h3 id="生理视差">生理视差</h3>
-<ul>
-<li>生理视差是产生立体感觉的生理基础</li>
-<li>人眼分辨远近的本质是生理视差</li>
-</ul>
-<h2 id="人造立体视觉">人造立体视觉</h2>
-<h3 id="定义">定义</h3>
-<h3 id="条件">条件</h3>
-<p>1.立体像对</p>
-<ul>
-<li>两张像片必须是在两个不同位置对同一景物摄取的立体像对(摄影测量时，规定摄影时保持像片的重叠度在60%以上)</li>
-</ul>
-<p>2.分像条件</p>
-<ul>
-<li>每只眼睛必须只能观察像对的一张像片(左眼看左片，右眼看右片)</li>
-</ul>
-<p>3.两张像片上相同景物(同名像点)的连线与眼基线应大致平行</p>
-<p>4.两张像片的比例尺(差别&lt;15%),否则需要zoom系统等进行调节</p>
-<h2 id="立体观察与量测">立体观察与量测</h2>
-<h3 id="立体观察方法">立体观察方法</h3>
-<ul>
-<li>
-<p>立体镜观察</p>
-<p>桥式立体镜</p>
-<p>反光立体镜</p>
-</li>
-<li>
-<p>双目镜观察光路的立体观察</p>
-</li>
-<li>
-<p>叠映影像立体观察</p>
-<p>红绿色互补法</p>
-<p>同步闪闭法(液晶眼镜)</p>
-<p>偏振光法</p>
-</li>
-</ul>
-<h3 id="立体量测">立体量测</h3>
-<ul>
-<li>像对立体量测目的：找出同名像点，获取同名像点的坐标</li>
-<li>左右视差 x之差</li>
-<li>上下视差 y之差</li>
-</ul>
-<h2 id="立体像对中特殊的点线面">立体像对中特殊的点线面</h2>
-<h3 id="同名像点">同名像点</h3>
-<ul>
-<li>同名光线在左右像片上的构像</li>
-</ul>
-<h3 id="同名光线">同名光线</h3>
-<ul>
-<li>同一地面点发出的两条光线</li>
-</ul>
-<h3 id="同名核线">同名核线</h3>
-<ul>
-<li>核面与左右像片面的交线</li>
-</ul>
-<h3 id="核面">核面</h3>
-<ul>
-<li>
-<p>摄影基线与某一地面点组成的平面</p>
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703225614.png"/>
-</li>
-</ul>
-<h2 id="获取地面点坐标的三种方式">获取地面点坐标的三种方式</h2>
-<ul>
-<li>
-<p>后方交会+前方交会</p>
-</li>
-<li>
-<p>相对定向+绝对定向</p>
-</li>
-<li>
-<p>光束法</p>
-</li>
-</ul>
+    <title>youtube-dl命令</title>
+    <url>/2021/07/13/youtube-dl%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>实例</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">youtube-dl --proxy http://127.0.0.1:10809 <span class="string">&quot;https://www.youtube.com/watch?v=6k8cpUkKK4c&quot;</span></span><br><span class="line">--merge-output-format mp4 --write-auto-sub --sub-lang zh-Hans --embed-sub -i </span><br><span class="line">youtube-dl --proxy http://127.0.0.1:10809  --write-auto-sub --embed-subs --embed-thumbnail XyaBFh_6b-8</span><br></pre></td></tr></table></figure>
+<p>通用选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-h, --<span class="built_in">help</span>                       打印帮助文档</span><br><span class="line">    --version                        打印版本信息</span><br><span class="line">    -U, --update                     更新到最新版(需要权限)</span><br><span class="line">    -i, --ignore-errors              遇到下载错误时跳过</span><br><span class="line">    --abort-on-error                 遇到下载错误时终止</span><br><span class="line">    --dump-user-agent                显示当前使用的浏览器(User-agent)</span><br><span class="line">    --list-extractors                列出所有的提取器(支持的网站)</span><br><span class="line">    --extractor-descriptions         同上</span><br><span class="line">    --force-generic-extractor        强制使用通用提取器下载</span><br><span class="line">    --default-search PREFIX          使用此前缀补充不完整的URLs，例如：<span class="string">&quot;ytsearch2 yt-dl&quot;</span> 从youtube搜索并下载两个关于yt-dl视频. 使用<span class="string">&quot;auto&quot;</span>youtube-dl就会猜一个，一般效果等价于<span class="string">&quot;ytsearch&quot;</span>(<span class="string">&quot;auto_warning&quot;</span>猜测时加入警告).我已知支持的PREFIX：ytsearch (youtube), ytsearchdate (youtube), yvsearch (yahoo videos), gvsearch (google videos) </span><br><span class="line">    --ignore-config                  不读取配置文件，当时用了全局配置文件/etc/youtube-dl.conf:不再读取 ~/.config/youtube-dl/config (%APPDATA%/youtube-dl/config.txt on Windows)</span><br><span class="line">    --config-location PATH           使用指定路径下的配置文件</span><br><span class="line">    --flat-playlist                  列出列表视频但不下载</span><br><span class="line">    --mark-watched                   标记看过此视频 (YouTube only)</span><br><span class="line">    --no-mark-watched                不标记看过此视频 (YouTube only)</span><br><span class="line">    --no-color                       打印到屏幕上的代码不带色</span><br></pre></td></tr></table></figure>
+<p>网络选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--proxy URL                      使用HTTP/HTTPS/SOCKS协议的代理.如：socks5://127.0.0.1:1080/.</span><br><span class="line">   --socket-timeout SECONDS         放弃连接前等待时间</span><br><span class="line">   --source-address IP              绑定的客户端IP地址</span><br><span class="line">   -4, --force-ipv4                 所有连接通过IPv4</span><br><span class="line">   -6, --force-ipv6                 所有连接通过IPv6</span><br></pre></td></tr></table></figure>
+<p>代理设置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--geo-verification-proxy URL     使用此代理地址测试一些有地理限制的地址</span><br><span class="line"> --geo-bypass                     绕过地理限制通过伪装X-Forwarded-For HTTP头部的客户端ip</span><br><span class="line"> --no-geo-bypass                  不 绕过地理限制通过伪装X-Forwarded-For HTTP头部的客户端ip</span><br><span class="line"> --geo-bypass-country CODE        强制绕过地理限制通过提供准确的ISO 3166-2标准的国别代码</span><br><span class="line"> --geo-bypass-ip-block IP_BLOCK   强制绕过地理限制通过提供精确的无类别域间路由IP段(2018.09.13更新)</span><br></pre></td></tr></table></figure>
+<p>视频选择</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--playlist-start NUMBER          指定列表中开始下载的视频(默认为1)</span><br><span class="line"> --playlist-end NUMBER            指定列表中结束的视频(默认为last)</span><br><span class="line"> --playlist-items ITEM_SPEC       指定列表中要下载的视频项目编号.如：<span class="string">&quot;--playlist-items 1,2,5,8&quot;</span>或<span class="string">&quot;--playlist-items 1-3,7,10-13&quot;</span></span><br><span class="line"> --match-title REGEX              下载标题匹配的视频(正则表达式或区分大小写的字符串)</span><br><span class="line"> --reject-title REGEX             跳过下载标题匹配的视频(正则表达式或区分大小写的字符串)</span><br><span class="line"> --max-downloads NUMBER           下载NUMBER个视频后停止</span><br><span class="line"> --min-filesize SIZE              不下载小于SIZE的视频(e.g. 50k or 44.6m)</span><br><span class="line"> --max-filesize SIZE              不下载大于SIZE的视频(e.g. 50k or 44.6m)</span><br><span class="line"> --date DATE                      仅下载上传日期在指定日期的视频</span><br><span class="line"> --datebefore DATE                仅下载上传日期在指定日期或之前的视频 (i.e. inclusive)</span><br><span class="line"> --dateafter DATE                 仅下载上传日期在指定日期或之后的视频 (i.e. inclusive)</span><br><span class="line"> --min-views COUNT                不下载观影数小于指定值的视频</span><br><span class="line"> --max-views COUNT                不下载观影数大于指定值的视频</span><br><span class="line"> --match-filter FILTER            通用视频过滤器. </span><br><span class="line"> --no-playlist                    当视频链接到一个视频和一个播放列表时，仅下载视频</span><br><span class="line"> --yes-playlist                   当视频链接到一个视频和一个播放列表时，下载视频和播放列表</span><br><span class="line"> --age-limit YEARS                下载合适上传年限的视频</span><br><span class="line"> --download-archive FILE          仅下载档案文件中未列出的影片，已下载的记录ID</span><br><span class="line"> --include-ads                    同时下载广告(实验)</span><br></pre></td></tr></table></figure>
+<p>下载选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-r, --limit-rate RATE            最大bps (e.g. 50K or 4.2M)</span><br><span class="line">-R, --retries RETRIES            重试次数 (默认10), or <span class="string">&quot;infinite&quot;</span>.</span><br><span class="line">--fragment-retries RETRIES       一个分段的最大重试次数(default is 10), or <span class="string">&quot;infinite&quot;</span> (DASH, hlsnative and ISM)</span><br><span class="line">--skip-unavailable-fragments     跳过不可用分段(DASH, hlsnative and ISM)</span><br><span class="line">--abort-on-unavailable-fragment  放弃某个分段当不可获取时</span><br><span class="line">--keep-fragments                 下载完成后，将下载的片段保存在磁盘上; 片段默认被删除</span><br><span class="line">--buffer-size SIZE               设置缓冲区大小buffer (e.g. 1024 or 16K) (default is 1024)</span><br><span class="line">--no-resize-buffer               不自动调整缓冲区大小.默认情况下自动调整</span><br><span class="line">--playlist-reverse               以相反的顺序下载播放列表视频</span><br><span class="line">--playlist-random                以随机的顺序下载播放列表视频</span><br><span class="line">--xattr-set-filesize             Set file xattribute ytdl.filesize with expected file size (experimental)</span><br><span class="line">--hls-prefer-native              使用本机默认HLS下载器而不是ffmpeg</span><br><span class="line">--hls-prefer-ffmpeg              使用ffmpeg而不是本机HLS下载器</span><br><span class="line">--hls-use-mpegts                 使用TS流容器来存放HLS视频,一些高级播放器允许在下载的同时播放视频</span><br><span class="line">--external-downloader COMMAND    使用指定的第三方下载工具,当前支持：aria2c,avconv,axel,curl,ffmpeg,httpie,wget</span><br><span class="line">--external-downloader-args ARGS  给第三方下载工具指定参数，如：--external-downloader aria2c --external-downloader-args -j8</span><br></pre></td></tr></table></figure>
+<p>文件系统选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-a, --batch-file FILE            文件中包含需要下载的URL</span><br><span class="line">--id                             仅使用文件名中的视频ID</span><br><span class="line">-o, --output TEMPLATE            Output filename template, see the <span class="string">&quot;OUTPUT TEMPLATE&quot;</span> <span class="keyword">for</span> all the info</span><br><span class="line">--autonumber-start NUMBER        指定%(autonumber)s的起始值(默认为1)</span><br><span class="line">--restrict-filenames             将文件名限制为ASCII字符，并避免文件名中的“＆”和空格</span><br><span class="line">-w, --no-overwrites              不要覆盖文件</span><br><span class="line">-c, --<span class="built_in">continue</span>                   强制恢复部分下载的文件。 默认情况下，youtube-dl仅在可能时将恢复下载。</span><br><span class="line">--no-continue                    不要恢复部分下载的文件(从头开始重新启动)</span><br><span class="line">--no-part                        不使用.part文件 - 直接写入输出文件</span><br><span class="line">--no-mtime                       不使用Last-modified header来设置文件最后修改时间</span><br><span class="line">--write-description              将视频描述写入.description文件</span><br><span class="line">--write-info-json                将视频元数据写入.info.json文件</span><br><span class="line">--write-annotations              将视频注释写入.annotations.xml文件</span><br><span class="line">--load-info-json FILE            包含视频信息的JSON文件(使用“--write-info-json”选项创建)</span><br><span class="line">--cookies FILE                   文件从中读取Cookie(经测试，<span class="built_in">export</span> cookies插件可以使用，但firebug导出的cookies导致错误,chrome下请用cookies.txt)注意：不同平台windows、Linux、OSX之间需要转换CE LF才能使用！</span><br><span class="line">--cache-dir DIR                  文件存储位置。youtube-dl需要永久保存一些下载的信息。默认为<span class="variable">$XDG_CACHE_HOME</span>/youtube-dl或/.cache/youtube-dl。目前，只有YouTube播放器文件（对于具有模糊签名的视频）进行缓存，但可能会发生变化。</span><br><span class="line">--no-cache-dir                   不用缓存</span><br><span class="line">--rm-cache-dir                   删除所有缓存文件</span><br></pre></td></tr></table></figure>
+<p>缩略图</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--write-thumbnail                把缩略图写入硬盘</span><br><span class="line">--write-all-thumbnails           将所有缩略图写入磁盘</span><br><span class="line">--list-thumbnails                列出所有可用的缩略图格式</span><br></pre></td></tr></table></figure>
+<p>详细/模拟选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-q, --quiet                      激活退出模式</span><br><span class="line">--no-warnings                    忽略警告</span><br><span class="line">-s, --simulate                   不下载不存储任何文件到硬盘，模拟下载模式</span><br><span class="line">--skip-download                  不下载视频</span><br><span class="line">-g, --get-url                    模拟下载获取视频直连</span><br><span class="line">-e, --get-title                  模拟下载获取标题</span><br><span class="line">--get-id                         模拟下载获取id</span><br><span class="line">--get-thumbnail                  模拟下载获取缩略图URL</span><br><span class="line">--get-description                模拟下载获取视频描述</span><br><span class="line">--get-duration                   模拟下载获取视频长度</span><br><span class="line">--get-filename                   模拟下载获取输出视频文件名</span><br><span class="line">--get-format                     模拟下载获取输出视频格式</span><br><span class="line">-j, --dump-json                  模拟下载获取JSON information.</span><br><span class="line">-J, --dump-single-json           模拟下载获取每条命令行参数的JSON information.如果是个播放列表，就获取整个播放列表的JSON</span><br><span class="line">--print-json                     下载的同时获取视频信息的JSON</span><br><span class="line">--newline                        进度条在新行输出</span><br><span class="line">--no-progress                    不打印进度条</span><br><span class="line">--console-title                  在控制台标题栏显示进度</span><br><span class="line">-v, --verbose                    打印各种调试信息</span><br><span class="line">--dump-pages                     打印下载下来的使用base64编码的页面来调试问题（非常冗长）</span><br><span class="line">--write-pages                    将下载的中间页以文件的形式写入当前目录中以调试问题</span><br><span class="line">--print-traffic                  显示发送和读取HTTP流量</span><br><span class="line">-C, --call-home                  联系youtube-dl服务器进行调试</span><br><span class="line">--no-call-home                   不联系youtube-dl服务器进行调试</span><br></pre></td></tr></table></figure>
+<p>解决方法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--encoding ENCODING              强制指定编码(实验)</span><br><span class="line">--no-check-certificate           禁止HTTPS证书验证</span><br><span class="line">--prefer-insecure                使用未加密的连接来检索有关视频的信息(目前仅支持YouTube)</span><br><span class="line">--user-agent UA                  指定user agent</span><br><span class="line">--referer URL                    指定自定义的referer,仅限视频来源于同一网站</span><br><span class="line">--add-header FIELD:VALUE         指定一个自定义值的HTTP头文件,使用分号分割,可以多次使用此选项</span><br><span class="line">--bidi-workaround                围绕缺少双向文本支持的终端工作。需要在PATH中有bidiv或fribidi可执行文件</span><br><span class="line">--sleep-interval SECONDS         在每次下载之前休眠的秒数，或者每次下载之前的随机睡眠的范围的下限(最小可能的睡眠秒数)与-max-sleep-interval一起使用。</span><br><span class="line">--max-sleep-interval SECONDS     每次下载前随机睡眠范围的上限(最大可能睡眠秒数)。只能与--min-sleep-interval一起使用。</span><br></pre></td></tr></table></figure>
+<p>视频格式选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-f, --format FORMAT              视频格式代码,查看<span class="string">&quot;FORMAT SELECTION&quot;</span>获取所有信息</span><br><span class="line">--all-formats                    获取所有视频格式</span><br><span class="line">--prefer-free-formats            开源的视频格式优先，除非有特定的请求</span><br><span class="line">-F, --list-formats               列出请求视频的所有可用格式</span><br><span class="line">--youtube-skip-dash-manifest     不要下载关于YouTube视频的DASH清单和相关数据</span><br><span class="line">--merge-output-format FORMAT     如果需要合并(例如bestvideo + bestaudio)，则输出到给定的容器格式。mkv，mp4，ogg，webm，flv之一。如果不需要合并，则忽略</span><br></pre></td></tr></table></figure>
+<p>字幕选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--write-sub                      下载字幕文件</span><br><span class="line">--write-auto-sub                 下载自动生成的字幕文件 (YouTube only)</span><br><span class="line">--all-subs                       下载所有可用的字幕</span><br><span class="line">--list-subs                      列出所有字幕</span><br><span class="line">--sub-format FORMAT              字幕格式,接受格式偏好,如：<span class="string">&quot;srt&quot;</span> or <span class="string">&quot;ass/srt/best&quot;</span></span><br><span class="line">--sub-lang LANGS                 要下载的字幕的语言(可选)用逗号分隔,请使用--list-subs表示可用的语言标签</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<p>验证选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> -u, --username USERNAME          使用ID登录</span><br><span class="line">  -p, --password PASSWORD          账户密码,如果此选项未使用,youtube-dl将交互式地询问。</span><br><span class="line">  -2, --twofactor TWOFACTOR        双因素认证码</span><br><span class="line">  -n, --netrc                      使用.netrc认证数据</span><br><span class="line">  --video-password PASSWORD        视频密码(vimeo, smotri, youku)</span><br><span class="line">Adobe Pass Options:</span><br><span class="line">  --ap-mso MSO                     Adobe Pass多系统运营商(电视提供商)标识符,使用--ap-list-mso列出可用的MSO</span><br><span class="line">  --ap-username USERNAME           MSO账号登录</span><br><span class="line">  --ap-password PASSWORD           账户密码,如果此选项未使用,youtube-dl将交互式地询问。</span><br><span class="line">  --ap-list-mso                    列出所有支持的MSO</span><br></pre></td></tr></table></figure>
+<p>后处理选项</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-x, --extract-audio              将视频文件转换为纯音频文件(需要ffmpeg或avconv和ffprobe或avprobe)</span><br><span class="line">--audio-format FORMAT            指定音频格式: <span class="string">&quot;best&quot;</span>, <span class="string">&quot;aac&quot;</span>, <span class="string">&quot;flac&quot;</span>, <span class="string">&quot;mp3&quot;</span>, <span class="string">&quot;m4a&quot;</span>, <span class="string">&quot;opus&quot;</span>, <span class="string">&quot;vorbis&quot;</span>, or <span class="string">&quot;wav&quot;</span>; <span class="string">&quot;best&quot;</span> by default;-x存在时无效</span><br><span class="line">--audio-quality QUALITY          指定ffmpeg/avconv音频质量,为VBR插入一个0(best)-9(worse)的值(默认5),或者指定比特率</span><br><span class="line">--recode-video FORMAT            必要时将视频转码为其他格式(当前支持: mp4|flv|ogg|webm|mkv|avi)</span><br><span class="line">--postprocessor-args ARGS        给后处理器提供这些参数</span><br><span class="line">-k, --keep-video                 视频文件在后处理后保存在磁盘上; 该视频默认被删除</span><br><span class="line">--no-post-overwrites             不要覆盖后处理文件; 默认情况下,后处理文件将被覆盖</span><br><span class="line">--embed-subs                     在视频中嵌入字幕(仅适用于mp4,webm和mkv视频）</span><br><span class="line">--embed-thumbnail                将缩略图嵌入音频作为封面艺术</span><br><span class="line">--add-metadata                   将元数据写入视频文件</span><br><span class="line">--metadata-from-title FORMAT     从视频标题中解析附加元数据，如歌曲标题/艺术家。格式语法和--output相似.也可以使用带有命名捕获组的正则表达式。解析的参数替换现有值。Example: --metadata-from-title <span class="string">&quot;%(artist)s - %(title)s&quot;</span> matches a title like <span class="string">&quot;Coldplay - Paradise&quot;</span>. Example (regex): --metadata-from-title <span class="string">&quot;(?P&lt;artist&gt;.+?) - (?P&lt;title&gt;.+)&quot;</span> </span><br><span class="line">--xattrs                         将元数据写入视频文件的xattrs(使用dublin core 和 xdg标准)</span><br><span class="line">--fixup POLICY                   自动更正文件的已知故障。never(不做警告), warn(只发出警告), detect_or_warn (默认;如果可以的话修复文件,否则警告)</span><br><span class="line">--prefer-avconv                  后处理时相较ffmpeg偏向于avconv</span><br><span class="line">--prefer-ffmpeg                  后处理优先使用ffmpeg</span><br><span class="line">--ffmpeg-location PATH           ffmpeg/avconv程序位置;PATH为二进制所在文件夹或者目录.</span><br><span class="line">--<span class="built_in">exec</span> CMD                       在下载后对文件执行命令,类似于find -<span class="built_in">exec</span>语法.示例：--<span class="built_in">exec</span><span class="string">&#x27;adb push &#123;&#125; /sdcard/Music/ &amp;&amp; rm &#123;&#125;&#x27;</span></span><br><span class="line">--convert-subs FORMAT            转换字幕格式(当前支持: srt|ass|vtt)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>笔记</category>
-        <category>摄影测量</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>摄影测量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单张像片解析</title>
-    <url>/2021/07/05/%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>单张像片解析</h1>
-<span id="more"></span>
-<h2 id="基本知识">基本知识</h2>
-<h3 id="1-航向重叠">1.航向重叠</h3>
-<ul>
-<li>同一航线内相邻像片有一定的影像重叠</li>
-</ul>
-<h3 id="2-旁向重叠">2.旁向重叠</h3>
-<ul>
-<li>相邻航线也有一定的重叠</li>
-</ul>
-<h3 id="3-航迹角">3.航迹角</h3>
-<ul>
-<li>实际航线与设计航线的夹角</li>
-</ul>
-<h3 id="4-像片倾角">4.像片倾角</h3>
-<ul>
-<li>航空摄影机主光轴与铅垂线的夹角</li>
-<li>摄影方向线与主垂线夹角</li>
-<li>竖直摄影像片倾角小于2-3度</li>
-<li>倾斜摄影像片倾角大于3度</li>
-</ul>
-<h3 id="5-航摄比例尺">5.航摄比例尺</h3>
-<ul>
-<li>
-<p>像片上的线段l与地面上相应的水平距L之比</p>
-<p>$\frac{1}{m}=\frac{l}{L}=\frac{f}{H}$</p>
-</li>
-<li>
-<p>在像片倾角很小 地形起伏不大时，H取平均航高，可以看成是像片的概略比例尺</p>
-</li>
-<li>
-<p>一般摄影条件下，不存在整张像片的统一比例尺。摄影航摄像片上比例尺处处不相等</p>
-</li>
-</ul>
-<h3 id="6-航高">6.航高</h3>
-<ul>
-<li>
-<p>摄影航高</p>
-<p>相当于摄区平均高程面的高度</p>
-</li>
-<li>
-<p>相对航高</p>
-<p>航摄仪物镜中心在摄影瞬间相当于某一基准面的高度</p>
-</li>
-<li>
-<p>绝对航高</p>
-<p>航摄仪物镜中心S在摄影瞬间相当于大地水准面的高度</p>
-<p>H<sub>绝对</sub>=h<sub>平均</sub>+H<sub>相对</sub></p>
-</li>
-</ul>
-<h3 id="7-摄影基线">7.摄影基线</h3>
-<ul>
-<li>航线方向相邻两摄站点的空间距离</li>
-</ul>
-<h2 id="单张像片特殊的点线面">单张像片特殊的点线面</h2>
-<h3 id="1-焦距">1.焦距</h3>
-<ul>
-<li>物镜到焦点的距离</li>
-</ul>
-<h3 id="2-主距">2.主距</h3>
-<ul>
-<li>物镜后节点到像平面的距离</li>
-<li>航高相当于主距很大，近似于无穷远成像，所以主距约等于物镜焦距</li>
-</ul>
-<h3 id="3-特殊的点线面">3.特殊的点线面</h3>
-<ul>
-<li>
-<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703223115.png" alt=""></p>
-</li>
-<li>
-<p>主垂面</p>
-<p>包含摄影机轴SoO的铅垂面W，称为主垂面</p>
-</li>
-<li>
-<p>主纵线</p>
-<p>主垂面与像平面的交线vv称为主纵线</p>
-</li>
-<li>
-<p>摄影方向线</p>
-<p>主垂面与地平面的交线称为摄影方向线</p>
-</li>
-<li>
-<p>像底点</p>
-<p>铅垂射线SN与像平面的交点n称为像底点。</p>
-</li>
-<li>
-<p>地底点</p>
-<p>像底点n在地面上的透视对应点N称为地底点。</p>
-</li>
-<li>
-<p>透视轴</p>
-<p>将像片平面扩大与地平面相交的迹线TT称为透视轴</p>
-</li>
-</ul>
-<h2 id="常用坐标系">常用坐标系</h2>
-<h3 id="像方坐标系">像方坐标系</h3>
-<h4 id="1-像平面坐标系-右手系">1.像平面坐标系(右手系)</h4>
-<ul>
-<li>以像主点为坐标原点，坐标轴分别与框标连线平行</li>
-<li>表示像点在像平面内位置的平面直角坐标系</li>
-</ul>
-<h4 id="2-像空间坐标系-右手系-x-y-f">2.像空间坐标系(右手系)(x,y-f)</h4>
-<ul>
-<li>
-<p>摄影中心为坐标原点</p>
-</li>
-<li>
-<p>z轴与主光轴重合</p>
-</li>
-<li>
-<p>x,y轴与像平面坐标系x,y轴平行</p>
-</li>
-<li>
-<p>表示像点在像方空间位置的空间直角坐标系</p>
-</li>
-</ul>
-<h4 id="3-像空间辅助坐标系-右手系-X-Y-Z">3.像空间辅助坐标系(右手系)(X,Y,Z)</h4>
-<ul>
-<li>
-<p>各像片的像空间坐标系不统一，给计算带来了困难，为此，建立一种相对同一的坐标系</p>
-</li>
-<li>
-<p>摄影中心为坐标原点</p>
-</li>
-<li>
-<p>Z轴为铅锤方向，X轴为航向方向</p>
-</li>
-<li>
-<p>第一张像片的像空间坐标系</p>
-</li>
-<li>
-<p>X轴为摄影基线方向 XZ平面为摄影基线及左片主光轴构成的面</p>
-</li>
-</ul>
-<h3 id="物方坐标系">物方坐标系</h3>
-<h4 id="1-摄影测量坐标系-右手系">1.摄影测量坐标系(右手系)</h4>
-<ul>
-<li>像空间辅助坐标系沿着Z轴反向无限延伸到地面上的点为坐标原点</li>
-</ul>
-<h4 id="2-地面测量坐标系-左手系">2.地面测量坐标系(左手系)</h4>
-<ul>
-<li>Z轴：沿铅垂线</li>
-<li>X轴：中央子午线</li>
-<li>Y轴：赤道</li>
-<li>为国家统一坐标系，平面坐标为高斯-克吕格3度带或6度带投影(1980西安坐标系)，高程为1985黄海高程系</li>
-</ul>
-<h4 id="3-地面摄影测量坐标系-右手系">3.地面摄影测量坐标系(右手系)</h4>
-<ul>
-<li>原点为地面某一控制点</li>
-<li>Z轴与地面测量坐标系的Z轴平行</li>
-<li>X轴与航线一致</li>
-<li>摄影测量坐标系采用的是右手系，地面测量坐标系采用的是左手系，这给摄影测量坐标到地面测量坐标系的转换带来了困难，为此，在摄影测量坐标系与地面测量坐标系之间建立一种过渡性的坐标系，称为地面摄影测量坐标系</li>
-</ul>
-<h2 id="像片的内外方位元素">像片的内外方位元素</h2>
-<ul>
-<li>
-<p>像片的方位元素</p>
-<p>确定航空摄影中心与像片在地面设定的空间坐标系中的位置与姿态，描述位置和姿态的参数</p>
-</li>
-</ul>
-<h3 id="内方位元素">内方位元素</h3>
-<p>内方位元素一般已知</p>
-<ul>
-<li>恢复内方位元素可恢复摄影时的摄影光束</li>
-<li>描述摄影中心与像片之间相关位置的参数</li>
-<li>主距==f==像片框标坐标系的坐标x,y</li>
-</ul>
-<h3 id="外方位元素">外方位元素</h3>
-<p><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703224157.png" alt=""></p>
-<ul>
-<li>
-<p>确定摄影时==像空间坐标系==在==地面摄影测量坐标系==中位置和方向的元素</p>
-</li>
-<li>
-<p>确定摄影光束空间姿态</p>
-</li>
-<li>
-<p>外方位线元素：</p>
-<p>确定像空系的==原点S==在地摄系中的坐标</p>
-</li>
-<li>
-<p>外方位角元素(三次旋转)：</p>
-<p>确定像空系==三轴==在地摄系中的方向</p>
-</li>
-</ul>
-<h2 id="中心投影构像方程">中心投影构像方程</h2>
-<h3 id="投影">投影</h3>
-<ul>
-<li>航摄像片为中心投影</li>
-<li>地形图为正射投影</li>
-</ul>
-<h3 id="共线条件方程">共线条件方程</h3>
-<ul>
-<li>在理想情况，摄影瞬间==像点== ==投影中心== ==物点==位于同一条直线上，描述这三点共线的数学表达式称之为共线条件方程</li>
-<li>$$\frac{X}{X_A-X_S}=\frac{Y}{Y_A-Y_S}=\frac{Z}{Z_A-Z_S}=\frac{1}{\lambda}$$</li>
-<li><img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703222645.png" alt=""></li>
-<li>已知==地面点==坐标可以和==内外方位元素==可以求得==像点坐==标</li>
-<li>已知==像点==坐标和==内外方位元素不能==求得==地面点==坐标</li>
-<li>地面点坐标有==3个==未知数而像点坐标只有==2个==未知数</li>
-</ul>
-<h3 id="应用">应用</h3>
-<ul>
-<li>求解外方位元素</li>
-<li>计算像点位置</li>
-<li>求解地面点坐标</li>
-<li>前方交会</li>
-<li>后方交会</li>
-<li>光束法</li>
-</ul>
-<h2 id="像点位移">像点位移</h2>
-<h3 id="定义">定义</h3>
-<ul>
-<li>像点位移：当像片倾斜 地面起伏时，地面点在航摄像片上的构像相当于理想情况下的构像所产生的位置差异</li>
-<li>方向偏差：从像片上某点作出的方向线与地面对应点画出的方向线的方位角不等，这种差异称为方向偏差</li>
-</ul>
-<h3 id="起因">起因</h3>
-<h4 id="地形起伏">地形起伏</h4>
-<p>特点：</p>
-<ul>
-<li>像底点的像点不存在像点位移</li>
-<li>在保持像片摄影比例尺不变时，地形起伏像点位移之值随航高增大而减小，因此采用长焦距摄影机以增大航高进行空中摄影是有利的</li>
-<li>因地形起伏引起的像点位移常称为像片上的投影差</li>
-</ul>
-<h4 id="像片倾斜">像片倾斜</h4>
-<ul>
-<li></li>
-</ul>
-<h2 id="单张像片后方交会">单张像片后方交会</h2>
-<h3 id="定义-v2">定义</h3>
-<p>利用==3个==及以上的地面控制点及其在像片上的像点，确定一张像片==外方位元素==的方法</p>
-<h3 id="作用">作用</h3>
-<p>求解外方位元素</p>
-<h3 id="原理">原理</h3>
-<p>共线条件方程</p>
-<h3 id="要求">要求</h3>
-<ul>
-<li>
-<p>至少三个不在同一直线上的地面控制点</p>
-</li>
-<li>
-<img src="https://raw.githubusercontent.com/three-body2/Note/main/20210703230036.png"/>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>摄影测量</tag>
+        <tag>youtube-dl</tag>
       </tags>
   </entry>
 </search>
