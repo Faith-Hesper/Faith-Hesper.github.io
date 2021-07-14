@@ -426,6 +426,10 @@
 <p>crs 坐标系</p>
 <p>center 初始化地图位置</p>
 <p>zoom 设置缩放级别</p>
+<h1><a href="https://iclient.supermap.io/docs/leaflet/L.html">L</a><a href="https://iclient.supermap.io/docs/leaflet/L.supermap.html">.supermap</a>.themeService</h1>
+<p><code>专题图服务</code></p>
+<h4 id="L-supermap-themeService-url-options">L.supermap.themeService(url, options)</h4>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">L.supermap.themeService(url,&#123;</span><br><span class="line">     projection:projection</span><br><span class="line"> &#125;).getThemeInfo(params,function(result)&#123;</span><br><span class="line">     //doSomething</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Supermap</category>
