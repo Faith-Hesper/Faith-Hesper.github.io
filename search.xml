@@ -417,6 +417,15 @@
 <h2 id="终止iServer服务">终止iServer服务</h2>
 <p><code>root\supermap-iserver-10.1.1-win64-zip\bin\shutdown</code></p>
 <p><a href="https://wx.vzan.com/live/pc/index?liveId=1149463133&amp;shareuid=0">官方教学网址</a></p>
+<h1>Map</h1>
+<p>创建一幅地图</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// initialize the map on the &quot;map&quot; div with a given center and zoom</span><br><span class="line">var map = L.map(&#x27;map&#x27;, &#123;</span><br><span class="line">    center: [51.505, -0.09],</span><br><span class="line">    zoom: 13</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><a href="https://leafletjs.com/reference-1.7.1.html#map-option">用法</a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">L.map(<span class="tag">&lt;<span class="name">String</span>&gt;</span> id, <span class="tag">&lt;<span class="name">Map</span> <span class="attr">options</span>&gt;</span> options?)</span><br><span class="line">L.map(<span class="tag">&lt;<span class="name">HTMLElement</span>&gt;</span> el, <span class="tag">&lt;<span class="name">Map</span> <span class="attr">options</span>&gt;</span> options?)</span><br></pre></td></tr></table></figure>
+<p>Options</p>
+<p>crs 坐标系</p>
+<p>center 初始化地图位置</p>
+<p>zoom 设置缩放级别</p>
 ]]></content>
       <categories>
         <category>Supermap</category>
