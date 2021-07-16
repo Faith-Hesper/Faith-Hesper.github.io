@@ -37,6 +37,33 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Supermap实例</title>
+    <url>/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="leaflet引用">leaflet引用</h2>
+<p>引入 Leaflet CSS 文件和 JS 文件，填入 BootCDN 的托管地址</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>引入 iclient-leaflet CSS 文件和 JS 文件，填入 SuperMap iClient for Leaflet 在线站点地址：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://iclient.supermap.io/dist/leaflet/iclient-leaflet.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://iclient.supermap.io/dist/leaflet/iclient-leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="地图链接">地图链接</h2>
+<p>端口号</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal ? <span class="built_in">window</span>.server : <span class="string">&quot;https://iserver.supermap.io&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>链接</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">url = host + <span class="string">&quot;/iserver/services/map-China/rest/maps/China&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="矢量图层">矢量图层</h2>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal ? <span class="built_in">window</span>.server : <span class="string">&quot;https://iserver.supermap.io&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> map, themeService, themeRange, ThemeParameters, thmemLayer, url = host +</span><br><span class="line">    <span class="string">&quot;/iserver/services/map-China/rest/maps/China&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> resultLayer,dataurl = host+<span class="string">&quot;/iserver/services/data-China/rest/data&quot;</span>; <span class="comment">//数据服务地址</span></span><br><span class="line"></span><br><span class="line">map = L.map(<span class="string">&#x27;map&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">center</span>: [<span class="number">20</span>, <span class="number">100</span>],</span><br><span class="line">    <span class="attr">preferCanvas</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">crs</span>: L.CRS.EPSG3857, <span class="comment">//坐标系设置错误不显示</span></span><br><span class="line">    <span class="attr">maxZoom</span>: <span class="number">18</span>,  <span class="comment">// 最大缩放级别</span></span><br><span class="line">    <span class="attr">zoom</span>: <span class="number">2</span>  <span class="comment">// 缩放级别</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> selectId, selectLayerName, vectorLayer = L.supermap.tiledVectorLayer(url, &#123;</span><br><span class="line">    <span class="attr">noWrap</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">cacheEnabled</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">returnAttributes</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">attribution</span>: <span class="string">&quot;Tile Data©SuperMap iServer with©SuperMap iClient&quot;</span></span><br><span class="line">    <span class="comment">// transparent: true</span></span><br><span class="line">&#125;).addTo(map);</span><br><span class="line"><span class="comment">// 为矢量图层注册点击事件</span></span><br><span class="line">vectorLayer.on(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = evt.layer.properties.id;</span><br><span class="line">    <span class="keyword">var</span> layerName = evt.layer.layerName;</span><br><span class="line">    clearHighlight(); <span class="comment">// 判断是否有选中矢量数据，有则取消高亮</span></span><br><span class="line">    selectId = id;</span><br><span class="line">    <span class="comment">// alert(id);</span></span><br><span class="line">    selectLayerName = layerName;</span><br><span class="line">    <span class="keyword">var</span> selectStyle = &#123;</span><br><span class="line">        <span class="attr">fillColor</span>: <span class="string">&#x27;#800026&#x27;</span>,</span><br><span class="line">        <span class="attr">fillOpacity</span>: <span class="number">0.5</span>,</span><br><span class="line">        <span class="attr">stroke</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">fill</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">        <span class="attr">opacity</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">weight</span>: <span class="number">2</span></span><br><span class="line">    &#125;;</span><br><span class="line">    vectorLayer.setFeatureStyle(id, layerName, selectStyle);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearHighlight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (selectId &amp;&amp; selectLayerName) &#123;</span><br><span class="line">        vectorLayer.resetFeatureStyle(selectId, selectLayerName);</span><br><span class="line">    &#125;</span><br><span class="line">    selectId = <span class="literal">null</span>;</span><br><span class="line">    selectLayerName = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>图层切换</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> baseMaps = &#123;</span><br><span class="line">    <span class="string">&quot;China&quot;</span>: China,</span><br><span class="line">    <span class="comment">// &quot;vectorLayer&quot;: vectorLayer</span></span><br><span class="line">&#125;</span><br><span class="line">L.control.zoom().addTo(map); <span class="comment">// 缩放控件</span></span><br><span class="line"><span class="keyword">var</span> overmaps = &#123;</span><br><span class="line">    <span class="string">&quot;vectorLayer&quot;</span>: vectorLayer</span><br><span class="line">&#125;</span><br><span class="line">L.control.layers(baseMaps, overmaps, &#123;</span><br><span class="line">            <span class="attr">position</span>: <span class="string">&quot;topleft&quot;</span> <span class="comment">//图标位置</span></span><br><span class="line">        &#125;).addTo(map);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Supermap</category>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Supermap</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>命题开发组规则</title>
     <url>/2021/07/16/%E5%91%BD%E9%A2%98%E5%BC%80%E5%8F%91%E7%BB%84%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>2021 SuperMap杯全国高校GIS大赛赛制</strong></p>
@@ -994,6 +1021,31 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> baseLayers = &#123;</span><br><span class="line">    <span class="string">&quot;Mapbox&quot;</span>: mapbox,</span><br><span class="line">    <span class="string">&quot;OpenStreetMap&quot;</span>: osm</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> overlays = &#123;</span><br><span class="line">    <span class="string">&quot;Marker&quot;</span>: marker,</span><br><span class="line">    <span class="string">&quot;Roads&quot;</span>: roadsLayer</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">L.control.layers(baseLayers, overlays).addTo(map);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">collapsed <span class="comment">// 折叠</span></span><br></pre></td></tr></table></figure>
+<h2 id="GEOJSON"><a href="https://leafletjs.com/reference-1.7.1.html#geojson">GEOJSON</a></h2>
+<p>地图Json数据解析</p>
+<p>example</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">L.geoJSON(data, &#123;</span><br><span class="line">    <span class="attr">style</span>: <span class="function"><span class="keyword">function</span> (<span class="params">feature</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="attr">color</span>: feature.properties.color&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).bindPopup(<span class="function"><span class="keyword">function</span> (<span class="params">layer</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> layer.feature.properties.description;</span><br><span class="line">&#125;).addTo(map);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Creation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onEachFeature</td>
+<td>function (feature, layer) {}</td>
+<td>新创建事件是调用函数</td>
+</tr>
+<tr>
+<td>style</td>
+<td>function (geoJsonFeature) {    return {} }</td>
+<td>添加数据时定义Json样式</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>Supermap</category>

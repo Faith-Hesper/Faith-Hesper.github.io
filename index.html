@@ -313,6 +313,126 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+      <meta itemprop="name" content="Faith Hesper">
+      <meta itemprop="description" content="Hesper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/" class="post-title-link" itemprop="url">Supermap实例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-16 16:00:31 / 修改时间：21:49:20" itemprop="dateCreated datePublished" datetime="2021-07-16T16:00:31+08:00">2021-07-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Supermap/" itemprop="url" rel="index"><span itemprop="name">Supermap</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Supermap/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/" class="post-meta-item leancloud_visitors" data-flag-title="Supermap实例" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count">|</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长：</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="leaflet引用">leaflet引用</h2>
+<p>引入 Leaflet CSS 文件和 JS 文件，填入 BootCDN 的托管地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>引入 iclient-leaflet CSS 文件和 JS 文件，填入 SuperMap iClient for Leaflet 在线站点地址：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://iclient.supermap.io/dist/leaflet/iclient-leaflet.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://iclient.supermap.io/dist/leaflet/iclient-leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="地图链接">地图链接</h2>
+<p>端口号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal ? <span class="built_in">window</span>.server : <span class="string">&quot;https://iserver.supermap.io&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>链接</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = host + <span class="string">&quot;/iserver/services/map-China/rest/maps/China&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="矢量图层">矢量图层</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal ? <span class="built_in">window</span>.server : <span class="string">&quot;https://iserver.supermap.io&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> map, themeService, themeRange, ThemeParameters, thmemLayer, url = host +</span><br><span class="line">    <span class="string">&quot;/iserver/services/map-China/rest/maps/China&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> resultLayer,dataurl = host+<span class="string">&quot;/iserver/services/data-China/rest/data&quot;</span>; <span class="comment">//数据服务地址</span></span><br><span class="line"></span><br><span class="line">map = L.map(<span class="string">&#x27;map&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">center</span>: [<span class="number">20</span>, <span class="number">100</span>],</span><br><span class="line">    <span class="attr">preferCanvas</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">crs</span>: L.CRS.EPSG3857, <span class="comment">//坐标系设置错误不显示</span></span><br><span class="line">    <span class="attr">maxZoom</span>: <span class="number">18</span>,  <span class="comment">// 最大缩放级别</span></span><br><span class="line">    <span class="attr">zoom</span>: <span class="number">2</span>  <span class="comment">// 缩放级别</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> selectId, selectLayerName, vectorLayer = L.supermap.tiledVectorLayer(url, &#123;</span><br><span class="line">    <span class="attr">noWrap</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">cacheEnabled</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">returnAttributes</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">attribution</span>: <span class="string">&quot;Tile Data©SuperMap iServer with©SuperMap iClient&quot;</span></span><br><span class="line">    <span class="comment">// transparent: true</span></span><br><span class="line">&#125;).addTo(map);</span><br><span class="line"><span class="comment">// 为矢量图层注册点击事件</span></span><br><span class="line">vectorLayer.on(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = evt.layer.properties.id;</span><br><span class="line">    <span class="keyword">var</span> layerName = evt.layer.layerName;</span><br><span class="line">    clearHighlight(); <span class="comment">// 判断是否有选中矢量数据，有则取消高亮</span></span><br><span class="line">    selectId = id;</span><br><span class="line">    <span class="comment">// alert(id);</span></span><br><span class="line">    selectLayerName = layerName;</span><br><span class="line">    <span class="keyword">var</span> selectStyle = &#123;</span><br><span class="line">        <span class="attr">fillColor</span>: <span class="string">&#x27;#800026&#x27;</span>,</span><br><span class="line">        <span class="attr">fillOpacity</span>: <span class="number">0.5</span>,</span><br><span class="line">        <span class="attr">stroke</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">fill</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">        <span class="attr">opacity</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">weight</span>: <span class="number">2</span></span><br><span class="line">    &#125;;</span><br><span class="line">    vectorLayer.setFeatureStyle(id, layerName, selectStyle);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearHighlight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (selectId &amp;&amp; selectLayerName) &#123;</span><br><span class="line">        vectorLayer.resetFeatureStyle(selectId, selectLayerName);</span><br><span class="line">    &#125;</span><br><span class="line">    selectId = <span class="literal">null</span>;</span><br><span class="line">    selectLayerName = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>图层切换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> baseMaps = &#123;</span><br><span class="line">    <span class="string">&quot;China&quot;</span>: China,</span><br><span class="line">    <span class="comment">// &quot;vectorLayer&quot;: vectorLayer</span></span><br><span class="line">&#125;</span><br><span class="line">L.control.zoom().addTo(map); <span class="comment">// 缩放控件</span></span><br><span class="line"><span class="keyword">var</span> overmaps = &#123;</span><br><span class="line">    <span class="string">&quot;vectorLayer&quot;</span>: vectorLayer</span><br><span class="line">&#125;</span><br><span class="line">L.control.layers(baseMaps, overmaps, &#123;</span><br><span class="line">            <span class="attr">position</span>: <span class="string">&quot;topleft&quot;</span> <span class="comment">//图标位置</span></span><br><span class="line">        &#125;).addTo(map);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/2021/07/16/%E5%91%BD%E9%A2%98%E5%BC%80%E5%8F%91%E7%BB%84%E8%A7%84%E5%88%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -674,7 +794,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-15 17:39:13" itemprop="dateModified" datetime="2021-07-15T17:39:13+08:00">2021-07-15</time>
+                <time title="修改时间：2021-07-16 19:00:04" itemprop="dateModified" datetime="2021-07-16T19:00:04+08:00">2021-07-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -713,14 +833,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长：</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -1225,126 +1345,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
-      <meta itemprop="name" content="Faith Hesper">
-      <meta itemprop="description" content="Hesper">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/" class="post-title-link" itemprop="url">地理信息科学</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-05 19:11:46" itemprop="dateCreated datePublished" datetime="2021-07-05T19:11:46+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-13 09:09:16" itemprop="dateModified" datetime="2021-07-13T09:09:16+08:00">2021-07-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/GIS/" itemprop="url" rel="index"><span itemprop="name">GIS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/" class="post-meta-item leancloud_visitors" data-flag-title="地理信息科学" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count">|</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长：</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>地理信息科学</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/05/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1416,14 +1416,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1510,12 +1510,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">34k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div>
 
 
