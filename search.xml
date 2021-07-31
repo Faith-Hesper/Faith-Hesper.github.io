@@ -631,31 +631,43 @@
 <td>复制行（空选定）Copy line (empty selection)</td>
 </tr>
 <tr>
-<td>Alt+ ↑ / ↓</td>
+<td><strong>Ctrl+←/→</strong></td>
+<td>移动一个单词的距离</td>
+</tr>
+<tr>
+<td><strong>Ctrl+D</strong></td>
+<td>选中一个单词</td>
+</tr>
+<tr>
+<td><strong>Ctrl+L</strong></td>
+<td>选中一行</td>
+</tr>
+<tr>
+<td><strong>Alt+ ↑ / ↓</strong></td>
 <td>向上/向下移动行 Move line up/down</td>
 </tr>
 <tr>
-<td>Shift+Alt + ↓ / ↑</td>
+<td><strong>Shift+Alt + ↓ / ↑</strong></td>
 <td>向上/向下复制行 Copy line up/down</td>
 </tr>
 <tr>
-<td>Ctrl+Shift+K</td>
+<td><strong>Ctrl+Shift+K</strong></td>
 <td>删除行 Delete line</td>
 </tr>
 <tr>
-<td>Shift+Alt +F</td>
+<td><strong>Shift+Alt +F</strong></td>
 <td>格式化文档</td>
 </tr>
 <tr>
-<td>Ctrl+Enter</td>
+<td><strong>Ctrl+Enter</strong></td>
 <td>在下面插入行 Insert line below</td>
 </tr>
 <tr>
-<td>Ctrl+Shift+Enter</td>
+<td><strong>Ctrl+Shift+Enter</strong></td>
 <td>在上面插入行 Insert line above</td>
 </tr>
 <tr>
-<td>Ctrl+Shift+\</td>
+<td>*<em>Ctrl+Shift+*</em></td>
 <td>跳到匹配的括号 Jump to matching bracket</td>
 </tr>
 <tr>
@@ -719,11 +731,11 @@
 <td>删除行注释 Remove line comment</td>
 </tr>
 <tr>
-<td>Ctrl+/</td>
+<td><strong>Ctrl+/</strong></td>
 <td>切换行注释 Toggle line comment</td>
 </tr>
 <tr>
-<td>Shift+Alt+A</td>
+<td><strong>Shift+Alt+A</strong></td>
 <td>切换块注释 Toggle block comment</td>
 </tr>
 <tr>
@@ -798,6 +810,23 @@
 </tr>
 </tbody>
 </table>
+<h1>插件</h1>
+<ul>
+<li>Auto Close Tag</li>
+<li>Auto Rename Tag</li>
+<li>Bracket Pair Colorizer</li>
+<li>Chinese (Simplified) Language Pack for Visual Studio Code</li>
+<li>Debugger for Chrome</li>
+<li>Debugger for Firefox</li>
+<li>HTML CSS Support</li>
+<li>JavaScript and TypeScript Nightly</li>
+<li>JavaScript and TypeScript Nightly</li>
+<li>open in browser</li>
+<li>Path Intellisense</li>
+<li>Prettier - Code formatter</li>
+<li>Sass/Less/Stylus/Pug/Jade/Typescript/Javascript Compile Hero Pro</li>
+<li>Visual Studio IntelliCode</li>
+</ul>
 ]]></content>
       <categories>
         <category>编程</category>
