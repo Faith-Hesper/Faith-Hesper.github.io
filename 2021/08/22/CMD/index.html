@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"faith-hesper.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"swoopIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="cmd的基本使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CMD">
+<meta property="og:url" content="https://faith-hesper.github.io/2021/08/22/CMD/">
+<meta property="og:site_name" content="Faith">
+<meta property="og:description" content="cmd的基本使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-22T01:14:47.000Z">
+<meta property="article:modified_time" content="2021-08-22T01:15:43.691Z">
+<meta property="article:author" content="Faith Hesper">
+<meta property="article:tag" content="CMD">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://faith-hesper.github.io/2021/08/22/CMD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<span style="color:#333333"><script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("Faith-hesper.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script></span>
+  <title>CMD | Faith</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Faith</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Faith-Hesper" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/2021/08/22/CMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+      <meta itemprop="name" content="Faith Hesper">
+      <meta itemprop="description" content="Hesper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CMD
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-22 09:14:47 / 修改时间：09:15:43" itemprop="dateCreated datePublished" datetime="2021-08-22T09:14:47+08:00">2021-08-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/22/CMD/" class="post-meta-item leancloud_visitors" data-flag-title="CMD" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count">|</span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/22/CMD/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/22/CMD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长：</span>
+              <span>2 分钟</span>
+            </span>
+            <div class="post-description">cmd的基本使用</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>启动</h1>
+<ul>
+<li>win + r 输入 cmd</li>
+</ul>
+<h1>命令</h1>
+<ul>
+<li>cmd大小写不敏感</li>
+<li>输入文件或者文件名的首字母<strong>Tab</strong>键补全文件名</li>
+<li><strong>↑</strong> <strong>↓</strong> 查看历史命令</li>
+<li>ESC 清除当前命令</li>
+<li>CLS 清屏</li>
+<li>mkdir 创建文件夹</li>
+<li>exit 退出</li>
+<li>/? 查看命令帮助 cd/?</li>
+<li>cd \ 回到根目录</li>
+<li>cd, 返回上级目录</li>
+<li>REM：命令后内容不执行但回显</li>
+<li>:: 不回显注释</li>
+<li>@控制该行命令是否回显</li>
+<li>echo on off 控制是否回显</li>
+<li>echo ^G鸣响</li>
+<li>title 设置cmd窗口标题</li>
+<li>color 1A 设置控制台前景和背景颜色</li>
+<li>goto :</li>
+<li>start firefox 启动</li>
+<li>pause 暂停</li>
+<li>if string1==string2 command</li>
+<li>if exist filename command</li>
+<li>**&gt;**将运行结果传递到后面</li>
+<li>echo hello &gt; 1.txt 建立一个文件内容为“hello“</li>
+<li>**&gt;&gt;**传递并末尾追加</li>
+<li>command1|command2 第一条命令的结果作为第二条命令的参数</li>
+<li>fortune | cowsay</li>
+<li>^ 转义字符 对&lt;,&gt;,&amp; 进行转义，去除其特殊功能</li>
+<li>&quot;&quot;允许文件名有空格(“fortune cowsay”)</li>
+<li>! 变量延迟问题中表示变量 !var!</li>
+<li></li>
+</ul>
+<h1>程序</h1>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>calc</td>
+<td>计算器</td>
+</tr>
+<tr>
+<td>clipbrd</td>
+<td>剪切板</td>
+</tr>
+<tr>
+<td>notepad</td>
+<td>记事本</td>
+</tr>
+<tr>
+<td>ipconfig</td>
+<td>ip配置</td>
+</tr>
+</tbody>
+</table>
+<h1>帮助</h1>
+<p>有关某个命令的详细信息，请键入 HELP 命令名<br>
+ASSOC          显示或修改文件扩展名关联。<br>
+ATTRIB         显示或更改文件属性。<br>
+BREAK          设置或清除扩展式 CTRL+C 检查。<br>
+BCDEDIT        设置启动数据库中的属性以控制启动加载。<br>
+CACLS          显示或修改文件的访问控制列表(ACL)。<br>
+CALL           从另一个批处理程序调用这一个。<br>
+CD             显示当前目录的名称或将其更改。<br>
+CHCP           显示或设置活动代码页数。<br>
+CHDIR          显示当前目录的名称或将其更改。<br>
+CHKDSK         检查磁盘并显示状态报告。<br>
+CHKNTFS        显示或修改启动时间磁盘检查。<br>
+CLS            清除屏幕。<br>
+CMD            打开另一个 Windows 命令解释程序窗口。<br>
+COLOR          设置默认控制台前景和背景颜色。<br>
+COMP           比较两个或两套文件的内容。<br>
+COMPACT        显示或更改 NTFS 分区上文件的压缩。<br>
+CONVERT        将 FAT 卷转换成 NTFS。你不能转换<br>
+当前驱动器。<br>
+COPY           将至少一个文件复制到另一个位置。<br>
+DATE           显示或设置日期。<br>
+DEL            删除至少一个文件。<br>
+DIR            显示一个目录中的文件和子目录。<br>
+DISKPART       显示或配置磁盘分区属性。<br>
+DOSKEY         编辑命令行、撤回 Windows 命令并<br>
+创建宏。<br>
+DRIVERQUERY    显示当前设备驱动程序状态和属性。<br>
+ECHO           显示消息，或将命令回显打开或关闭。<br>
+ENDLOCAL       结束批文件中环境更改的本地化。<br>
+ERASE          删除一个或多个文件。<br>
+EXIT           退出 CMD.EXE 程序(命令解释程序)。<br>
+FC             比较两个文件或两个文件集并显示<br>
+它们之间的不同。<br>
+FIND           在一个或多个文件中搜索一个文本字符串。<br>
+FINDSTR        在多个文件中搜索字符串。<br>
+FOR            为一组文件中的每个文件运行一个指定的命令。<br>
+FORMAT         格式化磁盘，以便用于 Windows。<br>
+FSUTIL         显示或配置文件系统属性。<br>
+FTYPE          显示或修改在文件扩展名关联中使用的文件<br>
+类型。<br>
+GOTO           将 Windows 命令解释程序定向到批处理程序<br>
+中某个带标签的行。<br>
+GPRESULT       显示计算机或用户的组策略信息。<br>
+GRAFTABL       使 Windows 在图形模式下显示扩展<br>
+字符集。<br>
+HELP           提供 Windows 命令的帮助信息。<br>
+ICACLS         显示、修改、备份或还原文件和<br>
+目录的 ACL。<br>
+IF             在批处理程序中执行有条件的处理操作。<br>
+LABEL          创建、更改或删除磁盘的卷标。<br>
+MD             创建一个目录。<br>
+MKDIR          创建一个目录。<br>
+MKLINK         创建符号链接和硬链接<br>
+MODE           配置系统设备。<br>
+MORE           逐屏显示输出。<br>
+MOVE           将一个或多个文件从一个目录移动到另一个<br>
+目录。<br>
+OPENFILES      显示远程用户为了文件共享而打开的文件。<br>
+PATH           为可执行文件显示或设置搜索路径。<br>
+PAUSE          暂停批处理文件的处理并显示消息。<br>
+POPD           还原通过 PUSHD 保存的当前目录的上一个<br>
+值。<br>
+PRINT          打印一个文本文件。<br>
+PROMPT         更改 Windows 命令提示。<br>
+PUSHD          保存当前目录，然后对其进行更改。<br>
+RD             删除目录。<br>
+RECOVER        从损坏的或有缺陷的磁盘中恢复可读信息。<br>
+REM            记录批处理文件或 CONFIG.SYS 中的注释(批注)。<br>
+REN            重命名文件。<br>
+RENAME         重命名文件。<br>
+REPLACE        替换文件。<br>
+RMDIR          删除目录。<br>
+ROBOCOPY       复制文件和目录树的高级实用工具<br>
+SET            显示、设置或删除 Windows 环境变量。<br>
+SETLOCAL       开始本地化批处理文件中的环境更改。<br>
+SC             显示或配置服务(后台进程)。<br>
+SCHTASKS       安排在一台计算机上运行命令和程序。<br>
+SHIFT          调整批处理文件中可替换参数的位置。<br>
+SHUTDOWN       允许通过本地或远程方式正确关闭计算机。<br>
+SORT           对输入排序。<br>
+START          启动单独的窗口以运行指定的程序或命令。<br>
+SUBST          将路径与驱动器号关联。<br>
+SYSTEMINFO     显示计算机的特定属性和配置。<br>
+TASKLIST       显示包括服务在内的所有当前运行的任务。<br>
+TASKKILL       中止或停止正在运行的进程或应用程序。<br>
+TIME           显示或设置系统时间。<br>
+TITLE          设置 CMD.EXE 会话的窗口标题。<br>
+TREE           以图形方式显示驱动程序或路径的目录<br>
+结构。<br>
+TYPE           显示文本文件的内容。<br>
+VER            显示 Windows 的版本。<br>
+VERIFY         告诉 Windows 是否进行验证，以确保文件<br>
+正确写入磁盘。<br>
+VOL            显示磁盘卷标和序列号。<br>
+XCOPY          复制文件和目录树。<br>
+WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
+<h1>通配符</h1>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配任意长度任意字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配任意单个字符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配指定字符范围外的任意单个字符</td>
+</tr>
+</tbody>
+</table>
+<h1>设置环境变量</h1>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setx <span class="literal">-m</span> name <span class="string">&quot;%name%;value&quot;</span></span><br><span class="line">setx /m PATH <span class="string">&quot;%PATH%;D:\phpStudy\nginx&quot;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png" alt="Faith Hesper 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="//note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210556.jpg" alt="Faith Hesper 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Faith Hesper
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://faith-hesper.github.io/2021/08/22/CMD/" title="CMD">https://faith-hesper.github.io/2021/08/22/CMD/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CMD/" rel="tag"><i class="fa fa-tag"></i> CMD</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/16/Supermap%E5%AE%9E%E4%BE%8B/" rel="prev" title="Supermap实例">
+      <i class="fa fa-chevron-left"></i> Supermap实例
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/22/PowerShell/" rel="next" title="PowerShell">
+      PowerShell <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">帮助</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">设置环境变量</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Faith Hesper"
+      src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+  <p class="site-author-name" itemprop="name">Faith Hesper</p>
+  <div class="site-description" itemprop="description">Hesper</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/faith-hesper" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/623430957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;623430957" rel="noopener" target="_blank"><i class="fab fa-book-open fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=0&height=66">
+    </iframe>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/faith-hesper" title="https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank">GitHub</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="mailto:yourname@gmail.com" title="mailto:yourname@gmail.com" rel="noopener" target="_blank">E-Mail</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">Bilibili</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plus.google.com/yourname" title="https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stackoverflow.com/yourname" title="https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank">StackOverflow</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://youtube.com/yourname" title="https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank">YouTube</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love id="heart"">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Faith Hesper</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">61k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">56 分钟</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
+      appKey     : 'GX4zcj14jkoD4ovKmt1DThwF',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
