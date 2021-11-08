@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"faith-hesper.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"swoopIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="youtube-dl基于python实现，使用前先安装python并加入环境变量，再安装youtube-dl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="youtube-dl命令">
+<meta property="og:url" content="https://faith-hesper.github.io/archives/youtube-dl%E5%91%BD%E4%BB%A4/">
+<meta property="og:site_name" content="Faith">
+<meta property="og:description" content="youtube-dl基于python实现，使用前先安装python并加入环境变量，再安装youtube-dl">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-13T00:25:37.000Z">
+<meta property="article:modified_time" content="2021-07-13T01:15:54.518Z">
+<meta property="article:author" content="Faith Hesper">
+<meta property="article:tag" content="youtube-dl">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://faith-hesper.github.io/archives/youtube-dl%E5%91%BD%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<span style="color:#333333"><script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("Faith-hesper.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script></span>
+  <title>youtube-dl命令 | Faith</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Faith</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Faith-Hesper" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/archives/youtube-dl%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+      <meta itemprop="name" content="Faith Hesper">
+      <meta itemprop="description" content="Hesper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          youtube-dl命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-13 08:25:37 / 修改时间：09:15:54" itemprop="dateCreated datePublished" datetime="2021-07-13T08:25:37+08:00">2021-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/archives/youtube-dl%E5%91%BD%E4%BB%A4/" class="post-meta-item leancloud_visitors" data-flag-title="youtube-dl命令" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count">|</span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/youtube-dl%E5%91%BD%E4%BB%A4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/youtube-dl%E5%91%BD%E4%BB%A4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长：</span>
+              <span>7 分钟</span>
+            </span>
+            <div class="post-description">youtube-dl基于python实现，使用前先安装python并加入环境变量，再安装youtube-dl</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">youtube-dl --proxy http://127.0.0.1:10809 <span class="string">&quot;https://www.youtube.com/watch?v=6k8cpUkKK4c&quot;</span></span><br><span class="line">--merge-output-format mp4 --write-auto-sub --sub-lang zh-Hans --embed-sub -i </span><br><span class="line">youtube-dl --proxy http://127.0.0.1:10809  --write-auto-sub --embed-subs --embed-thumbnail XyaBFh_6b-8</span><br></pre></td></tr></table></figure>
+<p>通用选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-h, --<span class="built_in">help</span>                       打印帮助文档</span><br><span class="line">    --version                        打印版本信息</span><br><span class="line">    -U, --update                     更新到最新版(需要权限)</span><br><span class="line">    -i, --ignore-errors              遇到下载错误时跳过</span><br><span class="line">    --abort-on-error                 遇到下载错误时终止</span><br><span class="line">    --dump-user-agent                显示当前使用的浏览器(User-agent)</span><br><span class="line">    --list-extractors                列出所有的提取器(支持的网站)</span><br><span class="line">    --extractor-descriptions         同上</span><br><span class="line">    --force-generic-extractor        强制使用通用提取器下载</span><br><span class="line">    --default-search PREFIX          使用此前缀补充不完整的URLs，例如：<span class="string">&quot;ytsearch2 yt-dl&quot;</span> 从youtube搜索并下载两个关于yt-dl视频. 使用<span class="string">&quot;auto&quot;</span>youtube-dl就会猜一个，一般效果等价于<span class="string">&quot;ytsearch&quot;</span>(<span class="string">&quot;auto_warning&quot;</span>猜测时加入警告).我已知支持的PREFIX：ytsearch (youtube), ytsearchdate (youtube), yvsearch (yahoo videos), gvsearch (google videos) </span><br><span class="line">    --ignore-config                  不读取配置文件，当时用了全局配置文件/etc/youtube-dl.conf:不再读取 ~/.config/youtube-dl/config (%APPDATA%/youtube-dl/config.txt on Windows)</span><br><span class="line">    --config-location PATH           使用指定路径下的配置文件</span><br><span class="line">    --flat-playlist                  列出列表视频但不下载</span><br><span class="line">    --mark-watched                   标记看过此视频 (YouTube only)</span><br><span class="line">    --no-mark-watched                不标记看过此视频 (YouTube only)</span><br><span class="line">    --no-color                       打印到屏幕上的代码不带色</span><br></pre></td></tr></table></figure>
+<p>网络选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--proxy URL                      使用HTTP/HTTPS/SOCKS协议的代理.如：socks5://127.0.0.1:1080/.</span><br><span class="line">   --socket-timeout SECONDS         放弃连接前等待时间</span><br><span class="line">   --source-address IP              绑定的客户端IP地址</span><br><span class="line">   -4, --force-ipv4                 所有连接通过IPv4</span><br><span class="line">   -6, --force-ipv6                 所有连接通过IPv6</span><br></pre></td></tr></table></figure>
+<p>代理设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--geo-verification-proxy URL     使用此代理地址测试一些有地理限制的地址</span><br><span class="line"> --geo-bypass                     绕过地理限制通过伪装X-Forwarded-For HTTP头部的客户端ip</span><br><span class="line"> --no-geo-bypass                  不 绕过地理限制通过伪装X-Forwarded-For HTTP头部的客户端ip</span><br><span class="line"> --geo-bypass-country CODE        强制绕过地理限制通过提供准确的ISO 3166-2标准的国别代码</span><br><span class="line"> --geo-bypass-ip-block IP_BLOCK   强制绕过地理限制通过提供精确的无类别域间路由IP段(2018.09.13更新)</span><br></pre></td></tr></table></figure>
+<p>视频选择</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">--playlist-start NUMBER          指定列表中开始下载的视频(默认为1)</span><br><span class="line"> --playlist-end NUMBER            指定列表中结束的视频(默认为last)</span><br><span class="line"> --playlist-items ITEM_SPEC       指定列表中要下载的视频项目编号.如：<span class="string">&quot;--playlist-items 1,2,5,8&quot;</span>或<span class="string">&quot;--playlist-items 1-3,7,10-13&quot;</span></span><br><span class="line"> --match-title REGEX              下载标题匹配的视频(正则表达式或区分大小写的字符串)</span><br><span class="line"> --reject-title REGEX             跳过下载标题匹配的视频(正则表达式或区分大小写的字符串)</span><br><span class="line"> --max-downloads NUMBER           下载NUMBER个视频后停止</span><br><span class="line"> --min-filesize SIZE              不下载小于SIZE的视频(e.g. 50k or 44.6m)</span><br><span class="line"> --max-filesize SIZE              不下载大于SIZE的视频(e.g. 50k or 44.6m)</span><br><span class="line"> --date DATE                      仅下载上传日期在指定日期的视频</span><br><span class="line"> --datebefore DATE                仅下载上传日期在指定日期或之前的视频 (i.e. inclusive)</span><br><span class="line"> --dateafter DATE                 仅下载上传日期在指定日期或之后的视频 (i.e. inclusive)</span><br><span class="line"> --min-views COUNT                不下载观影数小于指定值的视频</span><br><span class="line"> --max-views COUNT                不下载观影数大于指定值的视频</span><br><span class="line"> --match-filter FILTER            通用视频过滤器. </span><br><span class="line"> --no-playlist                    当视频链接到一个视频和一个播放列表时，仅下载视频</span><br><span class="line"> --yes-playlist                   当视频链接到一个视频和一个播放列表时，下载视频和播放列表</span><br><span class="line"> --age-limit YEARS                下载合适上传年限的视频</span><br><span class="line"> --download-archive FILE          仅下载档案文件中未列出的影片，已下载的记录ID</span><br><span class="line"> --include-ads                    同时下载广告(实验)</span><br></pre></td></tr></table></figure>
+<p>下载选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-r, --limit-rate RATE            最大bps (e.g. 50K or 4.2M)</span><br><span class="line">-R, --retries RETRIES            重试次数 (默认10), or <span class="string">&quot;infinite&quot;</span>.</span><br><span class="line">--fragment-retries RETRIES       一个分段的最大重试次数(default is 10), or <span class="string">&quot;infinite&quot;</span> (DASH, hlsnative and ISM)</span><br><span class="line">--skip-unavailable-fragments     跳过不可用分段(DASH, hlsnative and ISM)</span><br><span class="line">--abort-on-unavailable-fragment  放弃某个分段当不可获取时</span><br><span class="line">--keep-fragments                 下载完成后，将下载的片段保存在磁盘上; 片段默认被删除</span><br><span class="line">--buffer-size SIZE               设置缓冲区大小buffer (e.g. 1024 or 16K) (default is 1024)</span><br><span class="line">--no-resize-buffer               不自动调整缓冲区大小.默认情况下自动调整</span><br><span class="line">--playlist-reverse               以相反的顺序下载播放列表视频</span><br><span class="line">--playlist-random                以随机的顺序下载播放列表视频</span><br><span class="line">--xattr-set-filesize             Set file xattribute ytdl.filesize with expected file size (experimental)</span><br><span class="line">--hls-prefer-native              使用本机默认HLS下载器而不是ffmpeg</span><br><span class="line">--hls-prefer-ffmpeg              使用ffmpeg而不是本机HLS下载器</span><br><span class="line">--hls-use-mpegts                 使用TS流容器来存放HLS视频,一些高级播放器允许在下载的同时播放视频</span><br><span class="line">--external-downloader COMMAND    使用指定的第三方下载工具,当前支持：aria2c,avconv,axel,curl,ffmpeg,httpie,wget</span><br><span class="line">--external-downloader-args ARGS  给第三方下载工具指定参数，如：--external-downloader aria2c --external-downloader-args -j8</span><br></pre></td></tr></table></figure>
+<p>文件系统选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-a, --batch-file FILE            文件中包含需要下载的URL</span><br><span class="line">--id                             仅使用文件名中的视频ID</span><br><span class="line">-o, --output TEMPLATE            Output filename template, see the <span class="string">&quot;OUTPUT TEMPLATE&quot;</span> <span class="keyword">for</span> all the info</span><br><span class="line">--autonumber-start NUMBER        指定%(autonumber)s的起始值(默认为1)</span><br><span class="line">--restrict-filenames             将文件名限制为ASCII字符，并避免文件名中的“＆”和空格</span><br><span class="line">-w, --no-overwrites              不要覆盖文件</span><br><span class="line">-c, --<span class="built_in">continue</span>                   强制恢复部分下载的文件。 默认情况下，youtube-dl仅在可能时将恢复下载。</span><br><span class="line">--no-continue                    不要恢复部分下载的文件(从头开始重新启动)</span><br><span class="line">--no-part                        不使用.part文件 - 直接写入输出文件</span><br><span class="line">--no-mtime                       不使用Last-modified header来设置文件最后修改时间</span><br><span class="line">--write-description              将视频描述写入.description文件</span><br><span class="line">--write-info-json                将视频元数据写入.info.json文件</span><br><span class="line">--write-annotations              将视频注释写入.annotations.xml文件</span><br><span class="line">--load-info-json FILE            包含视频信息的JSON文件(使用“--write-info-json”选项创建)</span><br><span class="line">--cookies FILE                   文件从中读取Cookie(经测试，<span class="built_in">export</span> cookies插件可以使用，但firebug导出的cookies导致错误,chrome下请用cookies.txt)注意：不同平台windows、Linux、OSX之间需要转换CE LF才能使用！</span><br><span class="line">--cache-dir DIR                  文件存储位置。youtube-dl需要永久保存一些下载的信息。默认为<span class="variable">$XDG_CACHE_HOME</span>/youtube-dl或/.cache/youtube-dl。目前，只有YouTube播放器文件（对于具有模糊签名的视频）进行缓存，但可能会发生变化。</span><br><span class="line">--no-cache-dir                   不用缓存</span><br><span class="line">--rm-cache-dir                   删除所有缓存文件</span><br></pre></td></tr></table></figure>
+<p>缩略图</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--write-thumbnail                把缩略图写入硬盘</span><br><span class="line">--write-all-thumbnails           将所有缩略图写入磁盘</span><br><span class="line">--list-thumbnails                列出所有可用的缩略图格式</span><br></pre></td></tr></table></figure>
+<p>详细/模拟选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-q, --quiet                      激活退出模式</span><br><span class="line">--no-warnings                    忽略警告</span><br><span class="line">-s, --simulate                   不下载不存储任何文件到硬盘，模拟下载模式</span><br><span class="line">--skip-download                  不下载视频</span><br><span class="line">-g, --get-url                    模拟下载获取视频直连</span><br><span class="line">-e, --get-title                  模拟下载获取标题</span><br><span class="line">--get-id                         模拟下载获取id</span><br><span class="line">--get-thumbnail                  模拟下载获取缩略图URL</span><br><span class="line">--get-description                模拟下载获取视频描述</span><br><span class="line">--get-duration                   模拟下载获取视频长度</span><br><span class="line">--get-filename                   模拟下载获取输出视频文件名</span><br><span class="line">--get-format                     模拟下载获取输出视频格式</span><br><span class="line">-j, --dump-json                  模拟下载获取JSON information.</span><br><span class="line">-J, --dump-single-json           模拟下载获取每条命令行参数的JSON information.如果是个播放列表，就获取整个播放列表的JSON</span><br><span class="line">--print-json                     下载的同时获取视频信息的JSON</span><br><span class="line">--newline                        进度条在新行输出</span><br><span class="line">--no-progress                    不打印进度条</span><br><span class="line">--console-title                  在控制台标题栏显示进度</span><br><span class="line">-v, --verbose                    打印各种调试信息</span><br><span class="line">--dump-pages                     打印下载下来的使用base64编码的页面来调试问题（非常冗长）</span><br><span class="line">--write-pages                    将下载的中间页以文件的形式写入当前目录中以调试问题</span><br><span class="line">--print-traffic                  显示发送和读取HTTP流量</span><br><span class="line">-C, --call-home                  联系youtube-dl服务器进行调试</span><br><span class="line">--no-call-home                   不联系youtube-dl服务器进行调试</span><br></pre></td></tr></table></figure>
+<p>解决方法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--encoding ENCODING              强制指定编码(实验)</span><br><span class="line">--no-check-certificate           禁止HTTPS证书验证</span><br><span class="line">--prefer-insecure                使用未加密的连接来检索有关视频的信息(目前仅支持YouTube)</span><br><span class="line">--user-agent UA                  指定user agent</span><br><span class="line">--referer URL                    指定自定义的referer,仅限视频来源于同一网站</span><br><span class="line">--add-header FIELD:VALUE         指定一个自定义值的HTTP头文件,使用分号分割,可以多次使用此选项</span><br><span class="line">--bidi-workaround                围绕缺少双向文本支持的终端工作。需要在PATH中有bidiv或fribidi可执行文件</span><br><span class="line">--sleep-interval SECONDS         在每次下载之前休眠的秒数，或者每次下载之前的随机睡眠的范围的下限(最小可能的睡眠秒数)与-max-sleep-interval一起使用。</span><br><span class="line">--max-sleep-interval SECONDS     每次下载前随机睡眠范围的上限(最大可能睡眠秒数)。只能与--min-sleep-interval一起使用。</span><br></pre></td></tr></table></figure>
+<p>视频格式选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-f, --format FORMAT              视频格式代码,查看<span class="string">&quot;FORMAT SELECTION&quot;</span>获取所有信息</span><br><span class="line">--all-formats                    获取所有视频格式</span><br><span class="line">--prefer-free-formats            开源的视频格式优先，除非有特定的请求</span><br><span class="line">-F, --list-formats               列出请求视频的所有可用格式</span><br><span class="line">--youtube-skip-dash-manifest     不要下载关于YouTube视频的DASH清单和相关数据</span><br><span class="line">--merge-output-format FORMAT     如果需要合并(例如bestvideo + bestaudio)，则输出到给定的容器格式。mkv，mp4，ogg，webm，flv之一。如果不需要合并，则忽略</span><br></pre></td></tr></table></figure>
+<p>字幕选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--write-sub                      下载字幕文件</span><br><span class="line">--write-auto-sub                 下载自动生成的字幕文件 (YouTube only)</span><br><span class="line">--all-subs                       下载所有可用的字幕</span><br><span class="line">--list-subs                      列出所有字幕</span><br><span class="line">--sub-format FORMAT              字幕格式,接受格式偏好,如：<span class="string">&quot;srt&quot;</span> or <span class="string">&quot;ass/srt/best&quot;</span></span><br><span class="line">--sub-lang LANGS                 要下载的字幕的语言(可选)用逗号分隔,请使用--list-subs表示可用的语言标签</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<p>验证选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> -u, --username USERNAME          使用ID登录</span><br><span class="line">  -p, --password PASSWORD          账户密码,如果此选项未使用,youtube-dl将交互式地询问。</span><br><span class="line">  -2, --twofactor TWOFACTOR        双因素认证码</span><br><span class="line">  -n, --netrc                      使用.netrc认证数据</span><br><span class="line">  --video-password PASSWORD        视频密码(vimeo, smotri, youku)</span><br><span class="line">Adobe Pass Options:</span><br><span class="line">  --ap-mso MSO                     Adobe Pass多系统运营商(电视提供商)标识符,使用--ap-list-mso列出可用的MSO</span><br><span class="line">  --ap-username USERNAME           MSO账号登录</span><br><span class="line">  --ap-password PASSWORD           账户密码,如果此选项未使用,youtube-dl将交互式地询问。</span><br><span class="line">  --ap-list-mso                    列出所有支持的MSO</span><br></pre></td></tr></table></figure>
+<p>后处理选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-x, --extract-audio              将视频文件转换为纯音频文件(需要ffmpeg或avconv和ffprobe或avprobe)</span><br><span class="line">--audio-format FORMAT            指定音频格式: <span class="string">&quot;best&quot;</span>, <span class="string">&quot;aac&quot;</span>, <span class="string">&quot;flac&quot;</span>, <span class="string">&quot;mp3&quot;</span>, <span class="string">&quot;m4a&quot;</span>, <span class="string">&quot;opus&quot;</span>, <span class="string">&quot;vorbis&quot;</span>, or <span class="string">&quot;wav&quot;</span>; <span class="string">&quot;best&quot;</span> by default;-x存在时无效</span><br><span class="line">--audio-quality QUALITY          指定ffmpeg/avconv音频质量,为VBR插入一个0(best)-9(worse)的值(默认5),或者指定比特率</span><br><span class="line">--recode-video FORMAT            必要时将视频转码为其他格式(当前支持: mp4|flv|ogg|webm|mkv|avi)</span><br><span class="line">--postprocessor-args ARGS        给后处理器提供这些参数</span><br><span class="line">-k, --keep-video                 视频文件在后处理后保存在磁盘上; 该视频默认被删除</span><br><span class="line">--no-post-overwrites             不要覆盖后处理文件; 默认情况下,后处理文件将被覆盖</span><br><span class="line">--embed-subs                     在视频中嵌入字幕(仅适用于mp4,webm和mkv视频）</span><br><span class="line">--embed-thumbnail                将缩略图嵌入音频作为封面艺术</span><br><span class="line">--add-metadata                   将元数据写入视频文件</span><br><span class="line">--metadata-from-title FORMAT     从视频标题中解析附加元数据，如歌曲标题/艺术家。格式语法和--output相似.也可以使用带有命名捕获组的正则表达式。解析的参数替换现有值。Example: --metadata-from-title <span class="string">&quot;%(artist)s - %(title)s&quot;</span> matches a title like <span class="string">&quot;Coldplay - Paradise&quot;</span>. Example (regex): --metadata-from-title <span class="string">&quot;(?P&lt;artist&gt;.+?) - (?P&lt;title&gt;.+)&quot;</span> </span><br><span class="line">--xattrs                         将元数据写入视频文件的xattrs(使用dublin core 和 xdg标准)</span><br><span class="line">--fixup POLICY                   自动更正文件的已知故障。never(不做警告), warn(只发出警告), detect_or_warn (默认;如果可以的话修复文件,否则警告)</span><br><span class="line">--prefer-avconv                  后处理时相较ffmpeg偏向于avconv</span><br><span class="line">--prefer-ffmpeg                  后处理优先使用ffmpeg</span><br><span class="line">--ffmpeg-location PATH           ffmpeg/avconv程序位置;PATH为二进制所在文件夹或者目录.</span><br><span class="line">--<span class="built_in">exec</span> CMD                       在下载后对文件执行命令,类似于find -<span class="built_in">exec</span>语法.示例：--<span class="built_in">exec</span><span class="string">&#x27;adb push &#123;&#125; /sdcard/Music/ &amp;&amp; rm &#123;&#125;&#x27;</span></span><br><span class="line">--convert-subs FORMAT            转换字幕格式(当前支持: srt|ass|vtt)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png" alt="Faith Hesper 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="//note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210556.jpg" alt="Faith Hesper 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Faith Hesper
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://faith-hesper.github.io/archives/youtube-dl%E5%91%BD%E4%BB%A4/" title="youtube-dl命令">https://faith-hesper.github.io/archives/youtube-dl命令/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/youtube-dl/" rel="tag"><i class="fa fa-tag"></i> youtube-dl</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/" rel="prev" title="空间查询与分析">
+      <i class="fa fa-chevron-left"></i> 空间查询与分析
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/Supermap/" rel="next" title="Supermap">
+      Supermap <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Faith Hesper"
+      src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+  <p class="site-author-name" itemprop="name">Faith Hesper</p>
+  <div class="site-description" itemprop="description">Hesper</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/faith-hesper" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/623430957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;623430957" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=0&height=66">
+    </iframe>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/faith-hesper" title="https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank">GitHub</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="mailto:yourname@gmail.com" title="mailto:yourname@gmail.com" rel="noopener" target="_blank">E-Mail</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">Bilibili</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plus.google.com/" title="https:&#x2F;&#x2F;plus.google.com" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stackoverflow.com/" title="https:&#x2F;&#x2F;stackoverflow.com" rel="noopener" target="_blank">StackOverflow</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://youtube.com/" title="https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank">YouTube</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">冀ICP备2021022214号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love id="heart"">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Faith Hesper</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">73k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:06</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/clicklove.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
+      appKey     : 'GX4zcj14jkoD4ovKmt1DThwF',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":true},"log":false});</script></body>
+</html>
+

@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Faith Hesper</title>
-    <url>//hello-world/</url>
+    <url>//archives/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=450 height=86 src="//music.163.com/outchain/player?type=2&id=1857288529&auto=1&height=66"></iframe>
@@ -39,7 +39,7 @@
   </entry>
   <entry>
     <title>辐射分辨率</title>
-    <url>//%E8%BE%90%E5%B0%84%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <url>//archives/%E8%BE%90%E5%B0%84%E5%88%86%E8%BE%A8%E7%8E%87/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-定义">1. 定义</h2>
 <p>辐射分辨率：传感器接收波谱信号时，能分辨的最小辐射度差 (传感器的灵敏度)</p>
 <p>表达了传感器对不同能量、强度的分辨能力</p>
@@ -70,7 +70,7 @@
   </entry>
   <entry>
     <title>光谱分辨率</title>
-    <url>//%E5%85%89%E8%B0%B1%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <url>//archives/%E5%85%89%E8%B0%B1%E5%88%86%E8%BE%A8%E7%8E%87/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>
 	<span id="光谱分辨率">
 		<center>光谱分辨率</center>
@@ -115,7 +115,7 @@
   </entry>
   <entry>
     <title>时间分辨率</title>
-    <url>//%E6%97%B6%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <url>//archives/%E6%97%B6%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>
 	<span id="时间分辨率">
     	<center>时间分辨率</center>
@@ -144,7 +144,7 @@
   </entry>
   <entry>
     <title>空间分辨率</title>
-    <url>//%E7%A9%BA%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <url>//archives/%E7%A9%BA%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1> 
 	<span id="空间分辨率">
 		<center>空间分辨率<center>
@@ -169,10 +169,10 @@
 <p>线对指一对同等大小的<strong>明暗条纹</strong>或<strong>规则间隔的明暗条对</strong></p>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211104091441.png" alt="线对数"></p>
 <p>$R<sub>g</sub>=\frac{R<sub>s</sub>f}{H}$</p>
-<p>R<sub>s</sub>：胶片的分辨率和摄影镜头的分辨率所构成的系统分辨率，单位线对/mm</p>
+<p>$R<sub>s</sub>$：胶片的分辨率和摄影镜头的分辨率所构成的系统分辨率，单位线对/mm</p>
 <p>H：摄影机距地面高度，单位m</p>
 <p>f：摄影焦距，单位mm</p>
-<p>R<sub>g</sub>：地面分辨率，单位线对/mm</p>
+<p>$R<sub>g</sub>$：地面分辨率，单位线对/mm</p>
 <h3 id="3-3-瞬时视场角-IFOV">3.3 瞬时视场角(IFOV)</h3>
 <p>瞬时视场角是从<strong>传感器</strong>的角度考虑的空间分辨率表示方法，指遥感器内单个探测元件的受光角度或观测视野，单位为毫弧度(mrad)</p>
 <p>IFOV越小，最小可分辨单元(可分像素)越小，空间分辨率越高<br>
@@ -201,7 +201,7 @@ GR：空间分辨率</p>
   </entry>
   <entry>
     <title>Markdown</title>
-    <url>//Markdown/</url>
+    <url>//archives/Markdown/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>Gigthub markdown语法</h1>
 <p>该文件用来测试和展示书写README的各种markdown语法。<br>
 GitHub的markdown语法在标准的markdown语法基础上做了扩充，<br>
@@ -980,7 +980,7 @@ H<sub>2</sub>O</p>
   </entry>
   <entry>
     <title>freenom搭建网站</title>
-    <url>//freenom%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/</url>
+    <url>//archives/freenom%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>申请freenom免费域名<br>
 [freenom]:<a href="https://www.freenom.com/zh/index.html?lang=zh">https://www.freenom.com/zh/index.html?lang=zh</a> “freenom网址”<br>
 DNSPOD解析域名<br>
@@ -1004,7 +1004,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>linux命令</title>
-    <url>//linux%E5%91%BD%E4%BB%A4/</url>
+    <url>//archives/linux%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://wangchujiang.com/linux-command/">Linux命令搜索工具</a></p>
 <p><a href="https://juejin.cn/post/6844904122244677639">ssh暴力破解防护</a></p>
 <p><a href="https://juejin.cn/post/6844904122244677639">ssh暴力破解防护</a></p>
@@ -1030,7 +1030,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>git技巧</title>
-    <url>//git%E6%8A%80%E5%B7%A7/</url>
+    <url>//archives/git%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="git-命令">git 命令</h2>
 <ul>
 <li>mkdir filename 创建文件夹 Linux 命令</li>
@@ -1115,7 +1115,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>comments</title>
-    <url>//comments/</url>
+    <url>//archives/comments/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/***                                                                    </span></span><br><span class="line"><span class="comment"> *            .,,       .,:;;iiiiiiiii;;:,,.     .,,                   </span></span><br><span class="line"><span class="comment"> *          rGB##HS,.;iirrrrriiiiiiiiiirrrrri;,s&amp;##MAS,                </span></span><br><span class="line"><span class="comment"> *         r5s;:r3AH5iiiii;;;;;;;;;;;;;;;;iiirXHGSsiih1,               </span></span><br><span class="line"><span class="comment"> *            .;i;;s91;;;;;;::::::::::::;;;;iS5;;;ii:                  </span></span><br><span class="line"><span class="comment"> *          :rsriii;;r::::::::::::::::::::::;;,;;iiirsi,               </span></span><br><span class="line"><span class="comment"> *       .,iri;;::::;;;;;;::,,,,,,,,,,,,,..,,;;;;;;;;iiri,,.           </span></span><br><span class="line"><span class="comment"> *    ,9BM&amp;,            .,:;;:,,,,,,,,,,,hXA8:            ..,,,.       </span></span><br><span class="line"><span class="comment"> *   ,;&amp;@@#r:;;;;;::::,,.   ,r,,,,,,,,,,iA@@@s,,:::;;;::,,.   .;.      </span></span><br><span class="line"><span class="comment"> *    :ih1iii;;;;;::::;;;;;;;:,,,,,,,,,,;i55r;;;;;;;;;iiirrrr,..       </span></span><br><span class="line"><span class="comment"> *   .ir;;iiiiiiiiii;;;;::::::,,,,,,,:::::,,:;;;iiiiiiiiiiiiri         </span></span><br><span class="line"><span class="comment"> *   iriiiiiiiiiiiiiiii;;;::::::::::::::::;;;iiiiiiiiiiiiiiiir;        </span></span><br><span class="line"><span class="comment"> *  ,riii;;;;;;;;;;;;;:::::::::::::::::::::::;;;;;;;;;;;;;;iiir.       </span></span><br><span class="line"><span class="comment"> *  iri;;;::::,,,,,,,,,,:::::::::::::::::::::::::,::,,::::;;iir:       </span></span><br><span class="line"><span class="comment"> * .rii;;::::,,,,,,,,,,,,:::::::::::::::::,,,,,,,,,,,,,::::;;iri       </span></span><br><span class="line"><span class="comment"> * ,rii;;;::,,,,,,,,,,,,,:::::::::::,:::::,,,,,,,,,,,,,:::;;;iir.      </span></span><br><span class="line"><span class="comment"> * ,rii;;i::,,,,,,,,,,,,,:::::::::::::::::,,,,,,,,,,,,,,::i;;iir.      </span></span><br><span class="line"><span class="comment"> * ,rii;;r::,,,,,,,,,,,,,:,:::::,:,:::::::,,,,,,,,,,,,,::;r;;iir.      </span></span><br><span class="line"><span class="comment"> * .rii;;rr,:,,,,,,,,,,,,,,:::::::::::::::,,,,,,,,,,,,,:,si;;iri       </span></span><br><span class="line"><span class="comment"> *  ;rii;:1i,,,,,,,,,,,,,,,,,,:::::::::,,,,,,,,,,,,,,,:,ss:;iir:       </span></span><br><span class="line"><span class="comment"> *  .rii;;;5r,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,sh:;;iri        </span></span><br><span class="line"><span class="comment"> *   ;rii;:;51,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,.:hh:;;iir,        </span></span><br><span class="line"><span class="comment"> *    irii;::hSr,.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,.,sSs:;;iir:         </span></span><br><span class="line"><span class="comment"> *     irii;;:iSSs:.,,,,,,,,,,,,,,,,,,,,,,,,,,,..:135;:;;iir:          </span></span><br><span class="line"><span class="comment"> *      ;rii;;:,r535r:...,,,,,,,,,,,,,,,,,,..,;sS35i,;;iirr:           </span></span><br><span class="line"><span class="comment"> *       :rrii;;:,;1S3Shs;:,............,:is533Ss:,;;;iiri,            </span></span><br><span class="line"><span class="comment"> *        .;rrii;;;:,;rhS393S55hh11hh5S3393Shr:,:;;;iirr:              </span></span><br><span class="line"><span class="comment"> *          .;rriii;;;::,:;is1h555555h1si;:,::;;;iirri:.               </span></span><br><span class="line"><span class="comment"> *            .:irrrii;;;;;:::,,,,,,,,:::;;;;iiirrr;,                  </span></span><br><span class="line"><span class="comment"> *               .:irrrriiiiii;;;;;;;;iiiiiirrrr;,.                    </span></span><br><span class="line"><span class="comment"> *                  .,:;iirrrrrrrrrrrrrrrrri;:.                        </span></span><br><span class="line"><span class="comment"> *                        ..,:::;;;;:::,,.                             </span></span><br><span class="line"><span class="comment"> */</span>  </span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> *               ii.                                         ;9ABH,          </span></span><br><span class="line"><span class="comment"> *              SA391,                                    .r9GG35&amp;G          </span></span><br><span class="line"><span class="comment"> *              &amp;#ii13Gh;                               i3X31i;:,rB1         </span></span><br><span class="line"><span class="comment"> *              iMs,:,i5895,                         .5G91:,:;:s1:8A         </span></span><br><span class="line"><span class="comment"> *               33::::,,;5G5,                     ,58Si,,:::,sHX;iH1        </span></span><br><span class="line"><span class="comment"> *                Sr.,:;rs13BBX35hh11511h5Shhh5S3GAXS:.,,::,,1AG3i,GG        </span></span><br><span class="line"><span class="comment"> *                .G51S511sr;;iiiishS8G89Shsrrsh59S;.,,,,,..5A85Si,h8        </span></span><br><span class="line"><span class="comment"> *               :SB9s:,............................,,,.,,,SASh53h,1G.       </span></span><br><span class="line"><span class="comment"> *            .r18S;..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,....,,.1H315199,rX,       </span></span><br><span class="line"><span class="comment"> *          ;S89s,..,,,,,,,,,,,,,,,,,,,,,,,....,,.......,,,;r1ShS8,;Xi       </span></span><br><span class="line"><span class="comment"> *        i55s:.........,,,,,,,,,,,,,,,,.,,,......,.....,,....r9&amp;5.:X1       </span></span><br><span class="line"><span class="comment"> *       59;.....,.     .,,,,,,,,,,,...        .............,..:1;.:&amp;s       </span></span><br><span class="line"><span class="comment"> *      s8,..;53S5S3s.   .,,,,,,,.,..      i15S5h1:.........,,,..,,:99       </span></span><br><span class="line"><span class="comment"> *      93.:39s:rSGB@A;  ..,,,,.....    .SG3hhh9G&amp;BGi..,,,,,,,,,,,,.,83      </span></span><br><span class="line"><span class="comment"> *      G5.G8  9#@@@@@X. .,,,,,,.....  iA9,.S&amp;B###@@Mr...,,,,,,,,..,.;Xh     </span></span><br><span class="line"><span class="comment"> *      Gs.X8 S@@@@@@@B:..,,,,,,,,,,. rA1 ,A@@@@@@@@@H:........,,,,,,.iX:    </span></span><br><span class="line"><span class="comment"> *     ;9. ,8A#@@@@@@#5,.,,,,,,,,,... 9A. 8@@@@@@@@@@M;    ....,,,,,,,,S8    </span></span><br><span class="line"><span class="comment"> *     X3    iS8XAHH8s.,,,,,,,,,,...,..58hH@@@@@@@@@Hs       ...,,,,,,,:Gs   </span></span><br><span class="line"><span class="comment"> *    r8,        ,,,...,,,,,,,,,,.....  ,h8XABMMHX3r.          .,,,,,,,.rX:  </span></span><br><span class="line"><span class="comment"> *   :9, .    .:,..,:;;;::,.,,,,,..          .,,.               ..,,,,,,.59  </span></span><br><span class="line"><span class="comment"> *  .Si      ,:.i8HBMMMMMB&amp;5,....                    .            .,,,,,.sMr</span></span><br><span class="line"><span class="comment"> *  SS       :: h@@@@@@@@@@#; .                     ...  .         ..,,,,iM5</span></span><br><span class="line"><span class="comment"> *  91  .    ;:.,1&amp;@@@@@@MXs.                            .          .,,:,:&amp;S</span></span><br><span class="line"><span class="comment"> *  hS ....  .:;,,,i3MMS1;..,..... .  .     ...                     ..,:,.99</span></span><br><span class="line"><span class="comment"> *  ,8; ..... .,:,..,8Ms:;,,,...                                     .,::.83</span></span><br><span class="line"><span class="comment"> *   s&amp;: ....  .sS553B@@HX3s;,.    .,;13h.                            .:::&amp;1</span></span><br><span class="line"><span class="comment"> *    SXr  .  ...;s3G99XA&amp;X88Shss11155hi.                             ,;:h&amp;,</span></span><br><span class="line"><span class="comment"> *     iH8:  . ..   ,;iiii;,::,,,,,.                                 .;irHA  </span></span><br><span class="line"><span class="comment"> *      ,8X5;   .     .......                                       ,;iihS8Gi</span></span><br><span class="line"><span class="comment"> *         1831,                                                 .,;irrrrrs&amp;@</span></span><br><span class="line"><span class="comment"> *           ;5A8r.                                            .:;iiiiirrss1H</span></span><br><span class="line"><span class="comment"> *             :X@H3s.......                                .,:;iii;iiiiirsrh</span></span><br><span class="line"><span class="comment"> *              r#h:;,...,,.. .,,:;;;;;:::,...              .:;;;;;;iiiirrss1</span></span><br><span class="line"><span class="comment"> *             ,M8 ..,....,.....,,::::::,,...         .     .,;;;iiiiiirss11h</span></span><br><span class="line"><span class="comment"> *             8B;.,,,,,,,.,.....          .           ..   .:;;;;iirrsss111h</span></span><br><span class="line"><span class="comment"> *            i@5,:::,,,,,,,,.... .                   . .:::;;;;;irrrss111111</span></span><br><span class="line"><span class="comment"> *            9Bi,:,,,,......                        ..r91;;;;;iirrsss1ss1111</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment"> *  佛曰:</span></span><br><span class="line"><span class="comment"> *          写字楼里写字间，写字间里程序员；</span></span><br><span class="line"><span class="comment"> *          程序人员写程序，又拿程序换酒钱。</span></span><br><span class="line"><span class="comment"> *          酒醒只在网上坐，酒醉还来网下眠；</span></span><br><span class="line"><span class="comment"> *          酒醉酒醒日复日，网上网下年复年。</span></span><br><span class="line"><span class="comment"> *          但愿老死电脑间，不愿鞠躬老板前；</span></span><br><span class="line"><span class="comment"> *          奔驰宝马贵者趣，公交自行程序员。</span></span><br><span class="line"><span class="comment"> *          别人笑我忒疯癫，我笑自己命太贱；</span></span><br><span class="line"><span class="comment"> *          不见满街漂亮妹，哪个归得程序员？</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
@@ -1134,7 +1134,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>Google Search tips</title>
-    <url>//Google%20Search%20tips/</url>
+    <url>//archives/Google%20Search%20tips/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Google-search-tips">Google search tips</h2>
 <ul>
 <li>related:youtube.com</li>
@@ -1155,7 +1155,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>tools</title>
-    <url>//tools/</url>
+    <url>//archives/tools/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><center style='font-size:28px; font-weight: bold' >List</center>
 <table>
 <thead>
@@ -1258,7 +1258,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>PowerShell</title>
-    <url>//PowerShell/</url>
+    <url>//archives/PowerShell/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>筛选</h1>
 <h3 id="列出所有包含的项-Recurse">列出所有包含的项 (-Recurse)</h3>
 <h3 id="按名称筛选项-Name">按名称筛选项 (-Name)</h3>
@@ -1301,7 +1301,7 @@ netlify添加自定义域名</p>
   </entry>
   <entry>
     <title>CMD</title>
-    <url>//CMD/</url>
+    <url>//archives/CMD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>启动</h1>
 <ul>
 <li>win + r 输入 cmd</li>
@@ -1499,7 +1499,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>Supermap实例</title>
-    <url>//Supermap%E5%AE%9E%E4%BE%8B/</url>
+    <url>//archives/Supermap%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="leaflet引用">leaflet引用</h2>
 <p>引入 Leaflet CSS 文件和 JS 文件，填入 BootCDN 的托管地址</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1534,7 +1534,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>命题开发组规则</title>
-    <url>//%E5%91%BD%E9%A2%98%E5%BC%80%E5%8F%91%E7%BB%84%E8%A7%84%E5%88%99/</url>
+    <url>//archives/%E5%91%BD%E9%A2%98%E5%BC%80%E5%8F%91%E7%BB%84%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>2021 SuperMap杯全国高校GIS大赛赛制</strong></p>
 <p><strong>命题开发组</strong></p>
 <p>作品要求根据给定的题目，使用SuperMap系列软件制作数据、开发并实现题目命题要求的GIS应用功能，综合考察参赛选手的GIS基础知识储备、软件操作能力和开发编程能力。</p>
@@ -2084,7 +2084,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>vscode快捷键</title>
-    <url>//vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <url>//archives/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>基础编辑</h1>
 <table>
 <thead>
@@ -2305,7 +2305,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>Supermap代码编写原则</title>
-    <url>//Supermap%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99%E5%8E%9F%E5%88%99/</url>
+    <url>//archives/Supermap%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99%E5%8E%9F%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="范例编写原则说明">范例编写原则说明</h2>
 <span id="more"></span>
 <ol>
@@ -2476,7 +2476,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>Supermap</title>
-    <url>//Supermap/</url>
+    <url>//archives/Supermap/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>iServer食用方法🤔:</h1>
 <span id="more"></span>
 <h2 id="iSever帮助文档路径">iSever帮助文档路径</h2>
@@ -2554,7 +2554,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>youtube-dl命令</title>
-    <url>//youtube-dl%E5%91%BD%E4%BB%A4/</url>
+    <url>//archives/youtube-dl%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>实例</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">youtube-dl --proxy http://127.0.0.1:10809 <span class="string">&quot;https://www.youtube.com/watch?v=6k8cpUkKK4c&quot;</span></span><br><span class="line">--merge-output-format mp4 --write-auto-sub --sub-lang zh-Hans --embed-sub -i </span><br><span class="line">youtube-dl --proxy http://127.0.0.1:10809  --write-auto-sub --embed-subs --embed-thumbnail XyaBFh_6b-8</span><br></pre></td></tr></table></figure>
 <p>通用选项</p>
@@ -2593,7 +2593,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>空间查询与分析</title>
-    <url>//%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/</url>
+    <url>//archives/%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="空间数据查询">空间数据查询</h2>
 <h3 id="查询概述">查询概述</h3>
 <h4 id="方式">方式</h4>
@@ -2729,7 +2729,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>数据编辑与处理</title>
-    <url>//%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
+    <url>//archives/%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数据编辑与处理</h1>
 <h2 id="1-坐标与几何变换">1.坐标与几何变换</h2>
 <h3 id="1-几何纠正">1. 几何纠正</h3>
@@ -2782,7 +2782,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>SQL查询</title>
-    <url>//SQL%E6%9F%A5%E8%AF%A2/</url>
+    <url>//archives/SQL%E6%9F%A5%E8%AF%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span> 属性列表 attribute list <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span> 关系表 relation <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span> 条件 <span class="keyword">condition</span> <span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">AND</span> (交集) <span class="keyword">OR</span>(并集) XOR(异或) <span class="keyword">NOT</span> (补集)</span><br></pre></td></tr></table></figure>
 <h3 id="模糊查询">模糊查询</h3>
 <p>部分匹配 *</p>
@@ -2818,7 +2818,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>地理信息科学</title>
-    <url>//%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/</url>
+    <url>//archives/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>基本概念</h1>
 <h2 id="信息系统基本功能">信息系统基本功能</h2>
 <ul>
@@ -3090,7 +3090,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>数字高程模型</title>
-    <url>//%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
+    <url>//archives/%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="4D产品">4D产品</h2>
 <pre><code>1. DEM：数字高程模型
 2. DLG：数字线划图
@@ -3169,7 +3169,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>数字摄影测量</title>
-    <url>//%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
+    <url>//archives/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>数字摄影测量</h1>
 <h3 id="概念">概念</h3>
 <ul>
@@ -3241,7 +3241,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>像片纠正及正射影像制作</title>
-    <url>//%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
+    <url>//archives/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
 <p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
 <h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
@@ -3295,7 +3295,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>双像解析</title>
-    <url>//%E5%8F%8C%E5%83%8F%E8%A7%A3%E6%9E%90/</url>
+    <url>//archives/%E5%8F%8C%E5%83%8F%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="单张像片后方交会">单张像片后方交会</h2>
 <h3 id="定义">定义</h3>
 <p>利用3个及以上的地面控制点及其在像片上的像点，确定一张像片外方位元素的方法</p>
@@ -3464,7 +3464,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>解析空中三角测量</title>
-    <url>//%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/</url>
+    <url>//archives/%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="定义">定义</h2>
 <ul>
 <li>
@@ -3520,7 +3520,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>人造立体视觉</title>
-    <url>//%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
+    <url>//archives/%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="人眼分辨率">人眼分辨率</h2>
 <h3 id="第一分辨率">第一分辨率</h3>
 <ul>
@@ -3628,7 +3628,7 @@ WMIC           在交互式命令 shell 中显示 WMI 信息。</p>
   </entry>
   <entry>
     <title>单张像片解析</title>
-    <url>//%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
+    <url>//archives/%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>单张像片解析</h1>
 <h2 id="基本知识">基本知识</h2>
 <h3 id="1-航向重叠">1.航向重叠</h3>
