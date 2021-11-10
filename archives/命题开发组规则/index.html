@@ -280,7 +280,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -306,18 +306,16 @@
 <p>本赛组将提供一个实际应用题目，并提供配套的原始数据。参赛作品必须使用提供的数据，自选系统开发方向，完成作品。</p>
 <p><strong>一、</strong> <strong>基本要求</strong></p>
 <ol>
-<li>
-<p>作品必须经过完整性和有效性验证，通过代码查重，方可进入评审阶段。</p>
+<li><p>作品必须经过完整性和有效性验证，通过代码查重，方可进入评审阶段。</p>
 </li>
-<li>
-<p>作品必须为原创，且符合开源规则。版权归属原作者，大赛组委会有权公示和宣传。</p>
+<li><p>作品必须为原创，且符合开源规则。版权归属原作者，大赛组委会有权公示和宣传。</p>
 </li>
-<li>
-<p>如有参考或引用，请注明。如侵犯第三方权益，由作品提交团队承担相应责任，大赛组委会有权因此取消该作品获得的奖项，要求归还证书和奖金，并向所属学校通报。</p>
+<li><p>如有参考或引用，请注明。如侵犯第三方权益，由作品提交团队承担相应责任，大赛组委会有权因此取消该作品获得的奖项，要求归还证书和奖金，并向所属学校通报。</p>
 </li>
 </ol>
-<p><strong>二、</strong> <em><strong>软件要求</strong></em></p>
+<p><strong>二、</strong> <strong><em>软件要求</em></strong></p>
 <p>作品必须基于SuperMap系列软件完成，请使用以下任意一款或多款软件，版本使用10i(2020) SP1（即v10.1.1版本）或以上版本：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -332,10 +330,10 @@
 </tr>
 <tr>
 <td>SuperMap iObjects .NET/ SuperMap iObjects Java</td>
-<td></td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>技术支持电话：400-8900-866。</p>
 <p><strong>三、</strong> <strong>命题要求</strong></p>
 <p>背景：近年来，气候变暖的速度持续攀升，造成了如海平面上升、冰川融化、极端天气频繁出现等方面的影响。极端天气肆虐,我国也未能幸免， 比如部分城市平均气温上升、干旱和洪灾发生频繁，造成了生命财产损失。因此，设计一个展示、分析我国气候变化情况的信息系统，在当下应对气候变暖就显得尤为重要。同学们，请根据所学知识，使用提供的数据，自选系统开发方向，设计并制作一个全国气候分布情况展示系统。</p>
@@ -345,14 +343,13 @@
 <p>基于B/S（浏览器/服务器）结构的全国气候分布情况展示系统；</p>
 <p>基于M/S（移动端/服务器）结构的全国气候分布情况展示系统；</p>
 <p>基于C/S（客户端/服务器）结构的全国气候分布情况展示系统；</p>
-<ol start="2">
+<ol>
 <li>数据制作要求：</li>
 </ol>
-<ol>
-<li>基于提供的原始数据（“Data”文件夹）制作所需数据，</li>
-</ol>
+<p>1) 基于提供的原始数据（“Data”文件夹）制作所需数据，</p>
 <p>① “全国省会城市气象数据表.xlsx”文件提供气候数据；</p>
 <p>② “ChinaClimate.udbx”文件提供地图数据，其数据集情况如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -617,38 +614,24 @@
 </tr>
 </tbody>
 </table>
-<ol start="2">
-<li>数据制作要求：</li>
-</ol>
+</div>
+<p>2) 数据制作要求：</p>
 <p>① 使用给定数据中除“ChinaRegion”数据集以外的数据制作一幅中国地图作为底图，保存地图，命名为“China”，具体制作方法参考“SuperMap iDesktop 联机帮助-&gt;产品入门-&gt;示例地图说明-&gt;电子地图-&gt;中国电子地图”；</p>
 <p>② 将“全国省会城市气象数据表.xlsx”文件导入数据源中；</p>
 <p>③ 保存工作空间，命名为“ChinaClimate”。</p>
-<ol start="3">
+<ol>
 <li>GIS服务要求：</li>
 </ol>
+<p>1) 若选择开发B/S结构的系统，请将上述成果数据和工作空间发布为GIS服务；</p>
+<p>2) M/S、C/S结构的系统对是否发布为GIS服务不做要求。</p>
 <ol>
-<li>
-<p>若选择开发B/S结构的系统，请将上述成果数据和工作空间发布为GIS服务；</p>
-</li>
-<li>
-<p>M/S、C/S结构的系统对是否发布为GIS服务不做要求。</p>
-</li>
-</ol>
-<ol start="4">
 <li>系统开发功能：</li>
 </ol>
-<ol>
-<li>
-<p>基础浏览功能：加载China地图作为底图，实现地图浏览的基本功能，包括放大、缩小、平移和全图显示；</p>
-</li>
-<li>
-<p>查询功能：选择日期，在地图上点选某一省会城市，查询该城市当天的气温、相对湿度、AQI、PM2.5浓度、天气状况、本地日降水量，并在该城市的位置上弹窗展示查询结果；</p>
-</li>
-<li>
-<p>分析功能：</p>
-</li>
-</ol>
+<p>1) 基础浏览功能：加载China地图作为底图，实现地图浏览的基本功能，包括放大、缩小、平移和全图显示；</p>
+<p>2) 查询功能：选择日期，在地图上点选某一省会城市，查询该城市当天的气温、相对湿度、AQI、PM2.5浓度、天气状况、本地日降水量，并在该城市的位置上弹窗展示查询结果；</p>
+<p>3) 分析功能：</p>
 <p>① 全国日降雨量等值线图：选中某一日期，根据查询得到的当天所有省会城市雨量信息生成全国日降雨量等值线图，并将结果展示到地图中,等值线值请按照如下表格中雨量值进行追踪；</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -683,18 +666,18 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>② 全国日平均气温热力图：选中某一日期，获取所有省会城市当天的平均气温并生成全国日平均气温热力图，将结果添加到地图中显示；</p>
 <p>③ 全国日平均气温等值线图：选中某一日期，根据各个省会城市当日气温数据生成全国日平均气温等值线图，并将结果展示到地图中。</p>
-<ol start="4">
-<li>扩展功能：围绕系统主题，自行设计并实现的GIS功能</li>
-</ol>
+<p>4) 扩展功能：围绕系统主题，自行设计并实现的GIS功能</p>
 <p><strong>四、</strong> <strong>评分细则</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><strong>项目</strong>*</th>
+<th><strong>项目*</strong></th>
 <th><strong>要求</strong></th>
-<th><em><strong>*分值*</strong></em></th>
+<th><strong><em>\</em>分值**</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -785,18 +768,17 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>五、</strong> <strong>提交要求</strong></p>
 <ol>
-<li>
-<p>请严格按照文件夹的层级和名称、文件的名称和内容的要求提交。</p>
+<li><p>请严格按照文件夹的层级和名称、文件的名称和内容的要求提交。</p>
 </li>
-<li>
-<p>根文件夹的命名规则为“PD+组长手机”，如“PD13012345678”。</p>
+<li><p>根文件夹的命名规则为“PD+组长手机”，如“PD13012345678”。</p>
 </li>
-<li>
-<p>提交内容：</p>
+<li><p>提交内容：</p>
 </li>
 </ol>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -824,11 +806,11 @@
 <tr>
 <td>4演示录像</td>
 <td>时间在10分钟以内，展示系统操作步骤和功能实现结果，可配上字幕或语音解说</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<ol start="4">
+</div>
+<ol>
 <li>所有DOC格式的文件使用统一封面，参考如下：</li>
 </ol>
 <p><strong>SuperMap杯第</strong>十九届全国高校GIS大赛</p>
@@ -1005,20 +987,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1101,12 +1083,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">75k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:06</span>
+    <span title="站点阅读时长">1:08</span>
 </div>
 
 

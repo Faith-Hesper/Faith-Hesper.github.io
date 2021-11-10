@@ -31,9 +31,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210705190103.png">
 <meta property="article:published_time" content="2021-07-05T11:00:24.000Z">
-<meta property="article:modified_time" content="2021-07-13T01:10:34.021Z">
+<meta property="article:modified_time" content="2021-11-10T11:18:52.463Z">
 <meta property="article:author" content="Faith Hesper">
-<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="摄影测量">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210705190103.png">
@@ -243,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-13 09:10:34" itemprop="dateModified" datetime="2021-07-13T09:10:34+08:00">2021-07-13</time>
+                <time title="修改时间：2021-11-10 19:18:52" itemprop="dateModified" datetime="2021-11-10T19:18:52+08:00">2021-11-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,7 +250,15 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/categories/GIS/" itemprop="url" rel="index"><span itemprop="name">GIS</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GIS/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/" itemprop="url" rel="index"><span itemprop="name">摄影测量</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GIS/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/" itemprop="url" rel="index"><span itemprop="name">解析空中三角测量</span></a>
                 </span>
             </span>
 
@@ -309,50 +316,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="定义">定义</h2>
-<ul>
-<li>
-<p>利用少量控制点对整个区域所有影像恢复它们的外方位元素</p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li><p>利用少量控制点对整个区域所有影像恢复它们的外方位元素</p>
 </li>
-<li>
-<p>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</p>
+<li><p>利用计算的方法，根据航摄像片上所量测的像点坐标以及少量的地面控制点求出地面加密点的物方空间坐标，称之为解析空中三角测量，俗称摄影测量加密</p>
 </li>
 </ul>
-<h2 id="分类">分类</h2>
-<h3 id="根据平差范围">根据平差范围</h3>
-<ul>
-<li>
-<p>单航带法</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="根据平差范围"><a href="#根据平差范围" class="headerlink" title="根据平差范围"></a>根据平差范围</h3><ul>
+<li><p>单航带法</p>
 </li>
-<li>
-<p>单模型法</p>
+<li><p>单模型法</p>
 </li>
-<li>
-<p>区域网法</p>
+<li><p>区域网法</p>
 </li>
 </ul>
-<h3 id="根据平差模型">根据平差模型</h3>
-<ul>
-<li>
-<p>航带法</p>
+<h3 id="根据平差模型"><a href="#根据平差模型" class="headerlink" title="根据平差模型"></a>根据平差模型</h3><ul>
+<li><p>航带法</p>
 </li>
-<li>
-<p>独立模型法</p>
+<li><p>独立模型法</p>
 </li>
-<li>
-<p>光束法</p>
+<li><p>光束法</p>
 </li>
 </ul>
-<h2 id="作用">作用</h2>
-<ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
 <li>极大地减少甚至完全免除常规空中三角测量所必须的地面控制点，以节省野外控制测量工作量 缩短航测成图周期 降低生产成本 提高生产效率</li>
 </ul>
-<h2 id="POS系统及作用">POS系统及作用</h2>
-<ul>
+<h2 id="POS系统及作用"><a href="#POS系统及作用" class="headerlink" title="POS系统及作用"></a>POS系统及作用</h2><ul>
 <li>主要包括：GPS信号接收机和惯性测量装置(IMU)</li>
 <li>作用：直接测定影像外方位元素</li>
 </ul>
-<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210705190103.png"/>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210705190103.png"/></p>
 
     </div>
 
@@ -429,7 +422,6 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
               <a href="/tags/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/" rel="tag"><i class="fa fa-tag"></i> 摄影测量</a>
           </div>
 
@@ -521,20 +513,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -617,12 +609,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">73k</span>
+    <span title="站点总字数">75k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:06</span>
+    <span title="站点阅读时长">1:08</span>
 </div>
 
 
