@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"faith-hesper.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"swoopIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="表面与三维空间分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表面与三维空间分析">
+<meta property="og:url" content="https://faith-hesper.github.io/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">
+<meta property="og:site_name" content="Faith">
+<meta property="og:description" content="表面与三维空间分析">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112105412.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112105459.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112155907.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194620.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194823.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194924.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112200620.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112200926.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202010.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202538.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202712.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202858.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190012.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190051.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190156.png">
+<meta property="article:published_time" content="2021-11-12T02:27:31.000Z">
+<meta property="article:modified_time" content="2021-11-13T12:48:24.192Z">
+<meta property="article:author" content="Faith Hesper">
+<meta property="article:tag" content="GIS空间分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112105412.png">
+
+<link rel="canonical" href="https://faith-hesper.github.io/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<span style="color:#333333"><script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("Faith-hesper.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script></span>
+  <title>表面与三维空间分析 | Faith</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Faith</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/Faith-Hesper" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://faith-hesper.github.io/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+      <meta itemprop="name" content="Faith Hesper">
+      <meta itemprop="description" content="Hesper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          表面与三维空间分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-12 10:27:31" itemprop="dateCreated datePublished" datetime="2021-11-12T10:27:31+08:00">2021-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-13 20:48:24" itemprop="dateModified" datetime="2021-11-13T20:48:24+08:00">2021-11-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GIS/" itemprop="url" rel="index"><span itemprop="name">GIS</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">GIS空间分析</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">表面与三维空间分析</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" class="post-meta-item leancloud_visitors" data-flag-title="表面与三维空间分析" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count">|</span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长：</span>
+              <span>2 分钟</span>
+            </span>
+            <div class="post-description">表面与三维空间分析</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="地形表面参数计算"><a href="#地形表面参数计算" class="headerlink" title="地形表面参数计算"></a>地形表面参数计算</h2><h3 id="数字地面模型-DTM"><a href="#数字地面模型-DTM" class="headerlink" title="数字地面模型(DTM)"></a><strong>数字地面模型(<span id="DTM">DTM</span>)</strong></h3><p>DTM是指地球表面形态多种信息空间分布的有序数值阵列</p>
+<h3 id="数字高程模型-DEM"><a href="#数字高程模型-DEM" class="headerlink" title="数字高程模型(DEM)"></a><strong>数字高程模型(DEM)</strong></h3><p><strong>DEM是DTM的一个特例或者子集</strong></p>
+<p>DEM是DTM中基本的部分，是<strong>对地球表面地形地貌的一种离散的数学表达</strong></p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><ol>
+<li><p>测绘</p>
+<blockquote>
+<p>绘制等高线、坡度图、坡向图、立体透视图、立体景观图、制作正射影像图、立体匹配图、立体地形模型及地图的修测</p>
+</blockquote>
+</li>
+<li><p>工程应用</p>
+<blockquote>
+<p>体积和面积的计算、各种剖面图的绘制及线路的设计</p>
+</blockquote>
+</li>
+<li><p>军事</p>
+<blockquote>
+<p>导航、通讯、作战任务的计划</p>
+</blockquote>
+</li>
+<li><p>遥感</p>
+<blockquote>
+<p>分类的辅助数据</p>
+</blockquote>
+</li>
+<li><p>环境与规划</p>
+<blockquote>
+<p>土地现状分析、规划及洪水险情预报</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="主要表示模型"><a href="#主要表示模型" class="headerlink" title="主要表示模型"></a>主要表示模型</h4><h5 id="规则格网"><a href="#规则格网" class="headerlink" title="规则格网"></a>规则格网</h5><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112105412.png" alt="规则格网"></p>
+<p>优点：</p>
+<ul>
+<li><strong>结构简单、易于计算机处理</strong>，特别是栅格数据结构的地理信息系统</li>
+<li>可以很容易地计算等高线、坡度、坡向、山坡阴影和自动提取流域地形</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li><strong>地形简单的地区存在大量冗余数据</strong></li>
+<li><strong>地形起伏差别大的地区无法适用</strong></li>
+<li>对某些特殊计算(如视线计算)的格网轴线方向被夸大</li>
+<li>如栅格过于粗略，则不能精确表示地形的关键特征，如山峰、坑洼、山脊、山谷等</li>
+</ul>
+<h5 id="不规则三角网-TIN"><a href="#不规则三角网-TIN" class="headerlink" title="不规则三角网(TIN)"></a>不规则三角网(TIN)</h5><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112105459.png" alt="不规则三角网"><br>        优点：</p>
+<ul>
+<li>可根据地形的复杂程度确定采样点的密度和位置，能充分表示地形特征点和线，减少地形较平坦地区的数据冗余</li>
+<li>在显示速度及表示精度方面优于规则格网</li>
+<li>TIN是一种<strong>变精度表示方法</strong>：平坦地区数据点较少，地形起伏度较大的地区密度较大。这种机制使得TIN数据可用较小的数据量实现较高的表达精度</li>
+</ul>
+<h5 id="等高线模型"><a href="#等高线模型" class="headerlink" title="等高线模型"></a>等高线模型</h5><p>将采集的相同高程的地形特征点连接成线，采样间隔(等高间距)是最核心的参数，等高线的分布疏密反映了地形起伏程度</p>
+<p>一系列<strong>等高线集合</strong>和它们的<strong>高程值</strong>一起就构成了一种地面高程模型</p>
+<p>等高线通常被存为一个<strong>有序的坐标点对序列</strong>，可以认为是一条<strong>带有高程值属性的简单多边形或多边形弧段</strong></p>
+<p>等高线模型只表达了<strong>区域的部分高程值</strong>，往往需要<strong>插值</strong>方法来计算落在等高线外的其他点的高程</p>
+<h4 id="数字地形分析-DTA"><a href="#数字地形分析-DTA" class="headerlink" title="数字地形分析(DTA)"></a>数字地形分析(DTA)</h4><blockquote>
+<p>指在数字高程模型上进行<strong>地形属性计算和特征提取</strong>的数字信息处理技术</p>
+<p>DTA技术是各种与地形因素相关<strong>空间模拟</strong>技术的基础</p>
+<p>主要包含：提取描述地形属性和特征的因子；<a href="#DTM">DTM</a>的可视化分析</p>
+</blockquote>
+<h4 id="高程"><a href="#高程" class="headerlink" title="高程"></a>高程</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112155907.png" alt="高程"></p>
+<h4 id="坡度、坡向"><a href="#坡度、坡向" class="headerlink" title="坡度、坡向"></a>坡度、坡向</h4><p>坡度：某点在曲面上的<strong>法线方向</strong>与<strong>垂直分析</strong>的夹角，是地面特定点高度变化比率的度量</p>
+<p>坡向：<strong>法线的正方向在平面上的投影</strong>与<strong>正北方向的夹角</strong></p>
+<p>应用</p>
+<p>​      坡度：</p>
+<ul>
+<li><p>地形描述中常用的参数，是一个具有方向与大小的矢量</p>
+</li>
+<li><p>能<strong>间接表示地形起伏形态</strong></p>
+</li>
+<li><p>建滑雪娱乐场，选择不同的坡度的区域</p>
+<p>坡向：</p>
+</li>
+<li><p>植被分析、环境评价等领域具有主要意义</p>
+</li>
+<li><p>在一个区域内提取所有朝南的坡面，为房地产建设选址提供最佳位置</p>
+</li>
+</ul>
+<h4 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h4><p>定义：地形曲面在各个界面方向上的形状，凹凸变化的反映，是平面点位的函数</p>
+<p>反映了地形结构和形态。影响着土壤有机物含量的分布，在地表过程模拟、水文、土壤等领域有着重要的应用价值和意义</p>
+<p>坡度变率：地面坡度在微分空间的变化率，是依据坡度的求算原理，在所提取的坡度值的基础上对地面每一点再求算一次坡度，即坡度之坡度</p>
+<p>坡向变率：在地表的坡向提取基础之上，进行对坡向变化率值的二次提取，即坡向之坡向</p>
+<h4 id="坡长"><a href="#坡长" class="headerlink" title="坡长"></a>坡长</h4><h4 id="面积"><a href="#面积" class="headerlink" title="面积"></a>面积</h4><p>分块曲面拟合：曲面表面积由分块曲面表面积之和给出</p>
+<p>全局拟合的曲面：将计算区域分成若干规则单元，先计算每个单元的面积，再累积计算总面积。</p>
+<h4 id="体积"><a href="#体积" class="headerlink" title="体积"></a>体积</h4><h4 id="地形起伏度、粗糙度、切割深度"><a href="#地形起伏度、粗糙度、切割深度" class="headerlink" title="地形起伏度、粗糙度、切割深度"></a>地形起伏度、粗糙度、切割深度</h4><p>地形起伏度：</p>
+<blockquote>
+<p>是指在一个特定区域内，最高点海拔高度与最低点海拔高度的差值</p>
+</blockquote>
+<p>地面粗糙度：</p>
+<blockquote>
+<p>反映地表起伏变化和侵蚀程度的指标</p>
+<p>一般定义为地表单元的曲面面积与其在水平面上的投影面积之比</p>
+</blockquote>
+<p>基于规则格网的粗糙度计算</p>
+<blockquote>
+<p>$R = \frac{S_{曲面}}{S_{水平}}$</p>
+<p>S为曲率，Areas为格点面元趋势面面积，AreaH为格点面元面积</p>
+<p>实际应用时，当分析窗口为3*3时，可采用以下公式近似计算</p>
+<ol>
+<li>根据DEM提取坡度因子S</li>
+<li>粗糙度：$R = \frac{1}{\cos(S)}$</li>
+</ol>
+</blockquote>
+<p>地表切割深度</p>
+<blockquote>
+<p>地表切割深度是指地面某点的<strong>领域范围的平均高程</strong>与该领域范围内的<strong>最小高程的差值</strong></p>
+</blockquote>
+<h2 id="地形形态特征分析"><a href="#地形形态特征分析" class="headerlink" title="地形形态特征分析"></a>地形形态特征分析</h2><ul>
+<li><p>地形特征提取</p>
+<ul>
+<li>地形特征点：山峰、谷底、鞍部点等</li>
+<li>地形特征线：山脊线、山谷线等</li>
+</ul>
+</li>
+<li><p>水系特征提取</p>
+<ul>
+<li>分水线：类似山脊线</li>
+<li>合水线：类似山谷线</li>
+</ul>
+</li>
+<li><p>谷：地势中相对<strong>最低点</strong>的集合</p>
+</li>
+<li><p>脊：地势相对<strong>最高点</strong>的集合</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194620.png" alt="山谷山脊"></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194823.png" alt=""></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112194924.png" alt=""></p>
+</li>
+</ul>
+<h3 id="水文分析"><a href="#水文分析" class="headerlink" title="水文分析"></a>水文分析</h3><p>水文分析是对所研究的水文变量或过程，作出尽可能正确的概率描述，对防止水旱和开发、利用、保护水资源的工程或非工程措施的规划、设计、施工3以及管理运用有着重要的意义，也是DEM数据应用的一个重要方面</p>
+<p>主要用于<strong>研究与地表水流有关的各种自然现象</strong></p>
+<p>比如：洪水水位及泛滥情况或者可以划定受污染源影响的地区</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112200620.png" alt=""></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112200926.png" alt=""></p>
+<h4 id="水流方向"><a href="#水流方向" class="headerlink" title="水流方向"></a>水流方向</h4><ol>
+<li><p>水流方向提取</p>
+<p>水流方向是指<strong>水流离开每一个栅格单元时的指向</strong>。在GIS中通过将中心栅格的<strong>8</strong>个领域栅格编码，水流方向便可以其中的某一值来确定，栅格方向编码如图所示。例如：如果中心栅格的水流流向左边，则其水流方向被赋值为<strong>16</strong></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202010.png" alt=""></p>
+</li>
+<li><p>D8算法</p>
+</li>
+</ol>
+<ul>
+<li><p>如果最大落差值<strong>小于0</strong>，则赋以负值以表明此格网方向<strong>未定</strong>;</p>
+</li>
+<li><p>如果最大落差值<strong>大于或等于0</strong>，<strong>且最大值只有一个</strong>，则将对应此最大值的方向值作为中心格网处的方向值;</p>
+</li>
+<li><p>如果最大落差<strong>等于0</strong>，<strong>且有一个以上的0值</strong>，则以这些0值所对应的方向值相加·在极端情况下，如果8个邻域高程值都与中心格网高程值相同，则中心格网方向值赋以<strong>255</strong> ;</p>
+</li>
+<li><p>如果最大落差值大于0，且有一个以上的最大值，则任选一个方向作为水流方向。</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202538.png" alt=""></p>
+</li>
+</ul>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202712.png" alt=""></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211112202858.png" alt=""></p>
+<h4 id="汇流累积量"><a href="#汇流累积量" class="headerlink" title="汇流累积量"></a>汇流累积量</h4><blockquote>
+<p>区域地形每点的流水累积量，它可以用区域地形表面的流水模拟方法获得</p>
+<p>规则格网表示的数字地面高程模型每点处有一个单位的水量，按照自然水流从高处流到低处的自然规律，根据区域地形的水流方向数字矩阵计算每点处所流过的水量数值，便可以得到该区域汇流累积量。</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190012.png" alt=""></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190051.png" alt=""></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211113190156.png" alt=""></p>
+<h4 id="水流长度"><a href="#水流长度" class="headerlink" title="水流长度"></a>水流长度</h4><p>水流长度：地面上一点沿水流方向到其流向起点(或终点)间的最大地面距离在水平面上的投影长度</p>
+<p>水流长度是水土保持上的主要因子之一，当其他条件相同时，水力侵蚀的强度依据坡的长度来决定，破面越长，汇聚的流量越大，其侵蚀力就越强，水流长度直接影响地面径流的速度，从而影响对地面土壤的侵蚀力。因此，对于水流长度的提取和分析，水土保持工作有很主要的作用。</p>
+<p>顺流计算：计算地面上每一点沿水流方向到该点所在流域出水口最大地面距离的水平投影</p>
+<p>溯流计算：计算地面上每一点沿水流方向到其流向起点间的最大距离的水平投影</p>
+<h4 id="剖面分析"><a href="#剖面分析" class="headerlink" title="剖面分析"></a>剖面分析</h4><p>以数字地形模型(DEM)为基础构造某一个方向的剖面，以线代面，概括研究区域的地势、地质和水文特征；</p>
+<p>可在地形剖面上叠加表示其它地理变量，如坡度、土壤、岩石抗蚀性、植被覆盖类型、土地利用现状等，可以作为提供土地侵蚀速度研究、农业生产布局的立体背景分析、土地利用规划，以及工程决策等的参考依据</p>
+<h2 id="地形可视化分析"><a href="#地形可视化分析" class="headerlink" title="地形可视化分析"></a>地形可视化分析</h2><h2 id="城市空间三维分析"><a href="#城市空间三维分析" class="headerlink" title="城市空间三维分析"></a>城市空间三维分析</h2>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png" alt="Faith Hesper 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="//note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210556.jpg" alt="Faith Hesper 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Faith Hesper
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://faith-hesper.github.io/archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" title="表面与三维空间分析">https://faith-hesper.github.io/archives/表面与三维空间分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" rel="tag"><i class="fa fa-tag"></i> GIS空间分析</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/" rel="prev" title="空间相关性分析">
+      <i class="fa fa-chevron-left"></i> 空间相关性分析
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/typora%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="next" title="typora快捷键">
+      typora快捷键 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E5%BD%A2%E8%A1%A8%E9%9D%A2%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-text">地形表面参数计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9C%B0%E9%9D%A2%E6%A8%A1%E5%9E%8B-DTM"><span class="nav-text">数字地面模型(DTM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B-DEM"><span class="nav-text">数字高程模型(DEM)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E8%A1%A8%E7%A4%BA%E6%A8%A1%E5%9E%8B"><span class="nav-text">主要表示模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%84%E5%88%99%E6%A0%BC%E7%BD%91"><span class="nav-text">规则格网</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8D%E8%A7%84%E5%88%99%E4%B8%89%E8%A7%92%E7%BD%91-TIN"><span class="nav-text">不规则三角网(TIN)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AD%89%E9%AB%98%E7%BA%BF%E6%A8%A1%E5%9E%8B"><span class="nav-text">等高线模型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%9C%B0%E5%BD%A2%E5%88%86%E6%9E%90-DTA"><span class="nav-text">数字地形分析(DTA)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E7%A8%8B"><span class="nav-text">高程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%A1%E5%BA%A6%E3%80%81%E5%9D%A1%E5%90%91"><span class="nav-text">坡度、坡向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-text">曲率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%A1%E9%95%BF"><span class="nav-text">坡长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E7%A7%AF"><span class="nav-text">面积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF"><span class="nav-text">体积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E5%BD%A2%E8%B5%B7%E4%BC%8F%E5%BA%A6%E3%80%81%E7%B2%97%E7%B3%99%E5%BA%A6%E3%80%81%E5%88%87%E5%89%B2%E6%B7%B1%E5%BA%A6"><span class="nav-text">地形起伏度、粗糙度、切割深度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E5%BD%A2%E5%BD%A2%E6%80%81%E7%89%B9%E5%BE%81%E5%88%86%E6%9E%90"><span class="nav-text">地形形态特征分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E6%96%87%E5%88%86%E6%9E%90"><span class="nav-text">水文分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B0%B4%E6%B5%81%E6%96%B9%E5%90%91"><span class="nav-text">水流方向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%87%E6%B5%81%E7%B4%AF%E7%A7%AF%E9%87%8F"><span class="nav-text">汇流累积量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B0%B4%E6%B5%81%E9%95%BF%E5%BA%A6"><span class="nav-text">水流长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%96%E9%9D%A2%E5%88%86%E6%9E%90"><span class="nav-text">剖面分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E5%BD%A2%E5%8F%AF%E8%A7%86%E5%8C%96%E5%88%86%E6%9E%90"><span class="nav-text">地形可视化分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E7%A9%BA%E9%97%B4%E4%B8%89%E7%BB%B4%E5%88%86%E6%9E%90"><span class="nav-text">城市空间三维分析</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Faith Hesper"
+      src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png">
+  <p class="site-author-name" itemprop="name">Faith Hesper</p>
+  <div class="site-description" itemprop="description">Hesper</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/faith-hesper" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/623430957" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;623430957" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1841938408&auto=0&height=66">
+    </iframe>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/faith-hesper" title="https:&#x2F;&#x2F;github.com&#x2F;faith-hesper" rel="noopener" target="_blank">GitHub</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="mailto:yourname@gmail.com" title="mailto:yourname@gmail.com" rel="noopener" target="_blank">E-Mail</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">Bilibili</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://plus.google.com/" title="https:&#x2F;&#x2F;plus.google.com" rel="noopener" target="_blank">Google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://stackoverflow.com/" title="https:&#x2F;&#x2F;stackoverflow.com" rel="noopener" target="_blank">StackOverflow</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://youtube.com/" title="https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank">YouTube</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">冀ICP备2021022214号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love id="heart"">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Faith Hesper</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">88k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:20</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/clicklove.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
+      appKey     : 'GX4zcj14jkoD4ovKmt1DThwF',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":true},"log":false});</script></body>
+</html>
+

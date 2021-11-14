@@ -30,8 +30,17 @@
 <meta property="og:description" content="空间几何关系即是由空间目标几何特征所引起或决定的空间关系。即与空间目标的位置、形状、距离、方位等基本几何特征相关联的空间关系">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111183446.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111184045.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111185938.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190005.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190036.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190240.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190437.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190621.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111191207.png">
 <meta property="article:published_time" content="2021-11-11T01:50:49.000Z">
-<meta property="article:modified_time" content="2021-11-11T07:42:17.535Z">
+<meta property="article:modified_time" content="2021-11-11T11:12:28.447Z">
 <meta property="article:author" content="Faith Hesper">
 <meta property="article:tag" content="GIS空间分析">
 <meta name="twitter:card" content="summary">
@@ -236,7 +245,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-11 09:50:49 / 修改时间：15:42:17" itemprop="dateCreated datePublished" datetime="2021-11-11T09:50:49+08:00">2021-11-11</time>
+              <time title="创建时间：2021-11-11 09:50:49 / 修改时间：19:12:28" itemprop="dateCreated datePublished" datetime="2021-11-11T09:50:49+08:00">2021-11-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,7 +299,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -310,10 +319,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="邻近分析"><a href="#邻近分析" class="headerlink" title="邻近分析"></a>邻近分析</h2><p>邻近度：表达空间目标<strong>距离关系</strong>的重要物流量之一，表示地理空间中目标地物<strong>距离相近</strong>的程度</p>
-<h3 id="缓冲区分析"><a href="#缓冲区分析" class="headerlink" title="缓冲区分析"></a>缓冲区分析</h3><ol>
-<li><p>缓冲区、缓冲区分析</p>
-<p>缓冲区：为识别<strong>地理实体或空间物体(点、线、面)</strong>对周围地物的<strong>影响度</strong>而建立的具有一定宽度的带状区域，<strong>不包含原来点、线或面要素</strong>的多边形</p>
+        <h2 id="邻近分析">邻近分析</h2>
+<p>邻近度：表达空间目标<strong>距离关系</strong>的重要物流量之一，表示地理空间中目标地物<strong>距离相近</strong>的程度</p>
+<h3 id="缓冲区分析">缓冲区分析</h3>
+<ol>
+<li>
+<p>缓冲区、缓冲区分析</p>
+<p>缓冲区：为识别<strong>地理实体或空间物体(点、线、面)<strong>对周围地物的</strong>影响度</strong>而建立的具有一定宽度的带状区域，<strong>不包含原来点、线或面要素</strong>的多边形</p>
 <ul>
 <li>点、线、面要素缓冲区</li>
 <li>均质缓冲区</li>
@@ -321,7 +333,8 @@
 </ul>
 <p>缓冲区分析：对一组或一类地物按照缓冲的<strong>距离</strong>条件，建立缓冲，从而实现空间数据在<strong>二维空间得以扩展</strong>，来<strong>确定分析对象或筛选范围的</strong>信息分析方法</p>
 </li>
-<li><p>缓冲区类型</p>
+<li>
+<p>缓冲区类型</p>
 <p>基于点要素的缓冲区：</p>
 <blockquote>
 <p>通常以点为圆心、以一定距离为半径的圆</p>
@@ -341,31 +354,45 @@
 <li>对象的作用条件：表示主体邻近对象施加作用的影响条件或影响强度</li>
 </ul>
 </li>
-<li><p>缓冲区实现的基本算法</p>
+<li>
+<p>缓冲区实现的基本算法</p>
 </li>
 </ol>
 <p><strong>实例分析</strong></p>
 <ol>
-<li><p>已知一伐木公司，获准在某林区采伐，为防止水土流失，规定不得在河流周围1km内采伐林木。另外，为便于运输，决定将采伐区定在道路周围5km 之内。请找出符合上逑条件的采伐区，输出森林采伐图。</p>
+<li>
+<p>已知一伐木公司，获准在某林区采伐，为防止水土流失，规定不得在河流周围1km内采伐林木。另外，为便于运输，决定将采伐区定在道路周围5km 之内。请找出符合上逑条件的采伐区，输出森林采伐图。</p>
 <blockquote>
-<p>(1)将该地区具有相同比例尺且进行配准的道路分布图﹑河流分布图﹑森林分布图，进行预处理和数字化;<br>(2)利用河流分布图生成1km 的等距缓冲区;</p>
-<p>(3)利用道路分布图生成5km的等距缓冲区;<br>(4)森林分布图中可采伐林地﹑道路缓冲区及河流缓冲区图进行叠置，叠置条件表达式为:采伐区=森林分布图中可伐林地∩道路周围5km缓冲区∩非河流周围1 km缓冲区<br>(5)将上逑3张图进行两两叠置,所得结果即为森林采伐图</p>
+<p>(1)将该地区具有相同比例尺且进行配准的道路分布图﹑河流分布图﹑森林分布图，进行预处理和数字化;<br>
+(2)利用河流分布图生成1km 的等距缓冲区;</p>
+<p>(3)利用道路分布图生成5km的等距缓冲区;<br>
+(4)森林分布图中可采伐林地﹑道路缓冲区及河流缓冲区图进行叠置，叠置条件表达式为:采伐区=森林分布图中可伐林地∩道路周围5km缓冲区∩非河流周围1 km缓冲区<br>
+(5)将上逑3张图进行两两叠置,所得结果即为森林采伐图</p>
 </blockquote>
 </li>
 </ol>
-<h3 id="泰森多边形分析"><a href="#泰森多边形分析" class="headerlink" title="泰森多边形分析"></a>泰森多边形分析</h3><ol>
-<li><p>定义</p>
+<h3 id="泰森多边形分析">泰森多边形分析</h3>
+<ol>
+<li>
+<p>定义</p>
 <blockquote>
-<p>由<strong>点图层</strong>生成其<strong>近邻多边形图层</strong>，来表示该标识点的影响范围,<br>确保在一个多边形内的每个采样点与该多边形内的已知点更接近<br>而与其他的已知点相距较远，是<strong>局部拟合插值法</strong>的一种。每个<br>点对应一个新生成的多边形，该输入点作为多边形的标识点，<strong>相</strong><br><strong>邻标识点到其“公共边”的距离相等</strong></p>
+<p>由<strong>点图层</strong>生成其<strong>近邻多边形图层</strong>，来表示该标识点的影响范围,<br>
+确保在一个多边形内的每个采样点与该多边形内的已知点更接近<br>
+而与其他的已知点相距较远，是<strong>局部拟合插值法</strong>的一种。每个<br>
+点对应一个新生成的多边形，该输入点作为多边形的标识点，<strong>相</strong><br>
+<strong>邻标识点到其“公共边”的距离相等</strong></p>
 </blockquote>
 </li>
-<li><p>实现过程</p>
+<li>
+<p>实现过程</p>
 <blockquote>
-<p>由输入点相连生成三角网;<br>对每个三角形的边作垂直平分线;删除原三角形;</p>
+<p>由输入点相连生成三角网;<br>
+对每个三角形的边作垂直平分线;删除原三角形;</p>
 <p>而每个输入点作为多边形的标识点,垂直平分线作为泰森多边形的边</p>
 </blockquote>
 </li>
-<li><p>应用与特点分析</p>
+<li>
+<p>应用与特点分析</p>
 <p>特点：</p>
 <ul>
 <li>多边形的多少取决于采样点的数量</li>
@@ -379,18 +406,74 @@
 </ul>
 </li>
 </ol>
-<h2 id="叠置分析"><a href="#叠置分析" class="headerlink" title="叠置分析"></a>叠置分析</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>综合不同图层、可能改变图层内空间要素的分析方法。指<strong>同一地区、同种参考系统(坐标系统，分带与基准面)下</strong>的两组或两组以上要素的数据文件进行叠置，根据两组的属性来建立具有<strong>多重属性的多边形</strong>或进行多边形范围内的属性特性的统计分析。</p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p><strong>寻找和确定同时具有多种地理属性的分布区域</strong></p>
-<h3 id="矢量数据的叠置分析及问题"><a href="#矢量数据的叠置分析及问题" class="headerlink" title="矢量数据的叠置分析及问题"></a>矢量数据的叠置分析及问题</h3><h4 id="点面叠置"><a href="#点面叠置" class="headerlink" title="点面叠置"></a>点面叠置</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png" alt="点面叠置"><br>    应用</p>
+<h2 id="叠置分析">叠置分析</h2>
+<h3 id="定义">定义</h3>
+<p>综合不同图层、可能改变图层内空间要素的分析方法。指<strong>同一地区、同种参考系统(坐标系统，分带与基准面)下</strong>的两组或两组以上要素的数据文件进行叠置，根据两组的属性来建立具有<strong>多重属性的多边形</strong>或进行多边形范围内的属性特性的统计分析。</p>
+<h3 id="目的">目的</h3>
+<p><strong>寻找和确定同时具有多种地理属性的分布区域</strong></p>
+<h3 id="矢量数据的叠置分析及问题">矢量数据的叠置分析及问题</h3>
+<h4 id="点面叠置">点面叠置</h4>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png" alt="点面叠置"><br>
+应用</p>
 <ul>
-<li><p>得到某省内雨量站点的个数</p>
+<li>
+<p>得到某省内雨量站点的个数</p>
 </li>
-<li><p>某水文站点属于哪个行政区划</p>
+<li>
+<p>某水文站点属于哪个行政区划</p>
 </li>
-<li><p>城市邮局分布密度</p>
+<li>
+<p>城市邮局分布密度</p>
 </li>
 </ul>
-<h4 id="线面叠置"><a href="#线面叠置" class="headerlink" title="线面叠置"></a>线面叠置</h4><h4 id="面面叠置"><a href="#面面叠置" class="headerlink" title="面面叠置"></a>面面叠置</h4>
+<h4 id="线面叠置">线面叠置</h4>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111183446.png" alt="线面叠置"><br>
+应用</p>
+<ul>
+<li>某省区内高速公路的长度</li>
+<li>某段公路属于哪个行政区划</li>
+<li>城市的河网密度</li>
+<li>某条河流流经行政区</li>
+</ul>
+<h4 id="面面叠置">面面叠置</h4>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111184045.png" alt="面面叠置"></p>
+<p>应用</p>
+<ul>
+<li>某省区内有哪几种土地利用类型</li>
+<li>不同级别的灾害分区的植被覆盖情况</li>
+<li>某行政区划内的地层岩性分布情况</li>
+</ul>
+<h3 id="基本方法">基本方法</h3>
+<h4 id="图层合并">图层合并</h4>
+<p>并集：保留两个输入层中所有多边形</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111185938.png" alt="图层合并"></p>
+<h4 id="交集操作">交集操作</h4>
+<p>交集：保留两个输入层中的公共区域</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190005.png" alt="交集"></p>
+<h4 id="图层擦除">图层擦除</h4>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190036.png" alt="擦除"></p>
+<h4 id="识别叠加">识别叠加</h4>
+<blockquote>
+<p>以输入图层为界，保留边界内的所有多边形</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190240.png" alt="识别叠加"></p>
+<h4 id="对称差值">对称差值</h4>
+<h4 id="修正更新">修正更新</h4>
+<blockquote>
+<p>输出层为一个经删除处理后的图层与一个新特征图层进行合并后的结果</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190437.png" alt="修正更新"></p>
+<h4 id="裁剪">裁剪</h4>
+<blockquote>
+<p>输出层为按一个图层的边界，对另外一个图层的内容要素进行截取后的结果</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190621.png" alt="擦除"></p>
+<h4 id="交集取反">交集取反</h4>
+<blockquote>
+<p>保留两个输入层中的公共区域的反</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111191207.png" alt="交集取反"></p>
+
     </div>
 
     
@@ -541,7 +624,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E8%BF%91%E5%88%86%E6%9E%90"><span class="nav-text">邻近分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%86%E6%9E%90"><span class="nav-text">缓冲区分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%B0%E6%A3%AE%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%88%86%E6%9E%90"><span class="nav-text">泰森多边形分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90"><span class="nav-text">叠置分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90%E5%8F%8A%E9%97%AE%E9%A2%98"><span class="nav-text">矢量数据的叠置分析及问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">点面叠置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">线面叠置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">面面叠置</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E8%BF%91%E5%88%86%E6%9E%90"><span class="nav-text">邻近分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%86%E6%9E%90"><span class="nav-text">缓冲区分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%B0%E6%A3%AE%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%88%86%E6%9E%90"><span class="nav-text">泰森多边形分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90"><span class="nav-text">叠置分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90%E5%8F%8A%E9%97%AE%E9%A2%98"><span class="nav-text">矢量数据的叠置分析及问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%82%B9%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">点面叠置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">线面叠置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="nav-text">面面叠置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-text">基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%B1%82%E5%90%88%E5%B9%B6"><span class="nav-text">图层合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E9%9B%86%E6%93%8D%E4%BD%9C"><span class="nav-text">交集操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%B1%82%E6%93%A6%E9%99%A4"><span class="nav-text">图层擦除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%86%E5%88%AB%E5%8F%A0%E5%8A%A0"><span class="nav-text">识别叠加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%80%BC"><span class="nav-text">对称差值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%AD%A3%E6%9B%B4%E6%96%B0"><span class="nav-text">修正更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A3%81%E5%89%AA"><span class="nav-text">裁剪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E9%9B%86%E5%8F%96%E5%8F%8D"><span class="nav-text">交集取反</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,20 +640,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -653,12 +736,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">83k</span>
+    <span title="站点总字数">88k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:20</span>
 </div>
 
 
