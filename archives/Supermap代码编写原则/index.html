@@ -282,7 +282,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.4k</span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -301,22 +301,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="范例编写原则说明">范例编写原则说明</h2>
-<span id="more"></span>
+        <h2 id="范例编写原则说明"><a href="#范例编写原则说明" class="headerlink" title="范例编写原则说明"></a>范例编写原则说明</h2><span id="more"></span>
 <ol>
 <li><a href="#example-1">目录结构</a></li>
 <li><a href="#example-2">完整步骤</a></li>
-<li><a href="#example-3">范例创建</a>
-<ul>
+<li><a href="#example-3">范例创建</a><ul>
 <li><a href="#example-3-1">脚本引用</a></li>
 <li><a href="#example-3-2">服务地址</a></li>
-<li><a href="#example-3-3">统一样式</a></li>
+<li><a href="#example-3-3">统一样式</a>  </li>
 </ul>
 </li>
 <li><a href="#example-4">缩略图规范</a></li>
 <li><a href="#example-5">配置文件</a></li>
-<li><a href="#example-6">离线开发</a>
-<ul>
+<li><a href="#example-6">离线开发</a><ul>
 <li><a href="#example-6-1">克隆代码</a></li>
 <li><a href="#example-6-2">开发</a></li>
 </ul>
@@ -324,65 +321,63 @@
 <li><a href="#example-7">注意事项</a></li>
 </ol>
 <h3 id="example-1">目录结构</h3>
+
 <p>范例目录结构：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/example</span><br><span class="line">    ├─css         公共css目录</span><br><span class="line">    ├─fonts       公共字体目录</span><br><span class="line">    ├─<span class="selector-tag">img</span>         公共图片目录</span><br><span class="line">    ├─js          公共js目录</span><br><span class="line">    ├─<span class="selector-tag">section</span>     公共模板目录(包括范例站点的公共头部和主体框架等)</span><br><span class="line">    ├─data        范例中使用的公共数据</span><br><span class="line">    │</span><br><span class="line">    ├─leaflet         leaflet范例目录</span><br><span class="line">    │   ├─<span class="selector-tag">img</span>             缩略图目录</span><br><span class="line">    │   └─config<span class="selector-class">.js</span>       配置文件</span><br><span class="line">    ├─mapboxgl        mapboxgl范例目录</span><br><span class="line">    │   ├─<span class="selector-tag">img</span>             缩略图目录</span><br><span class="line">    │   └─config<span class="selector-class">.js</span>       配置文件</span><br><span class="line">    ├─openlay         openlay范例目录</span><br><span class="line">    │   ├─<span class="selector-tag">img</span>             缩略图目录</span><br><span class="line">    │   └─config<span class="selector-class">.js</span>       配置文件</span><br><span class="line">    ├─classic         classic范例目录</span><br><span class="line">    │   ├─<span class="selector-tag">img</span>             缩略图目录</span><br><span class="line">    │   └─config<span class="selector-class">.js</span>       配置文件</span><br><span class="line">    └─<span class="number">3</span>dwebgl         <span class="number">3</span>dwebgl范例目录</span><br><span class="line">        ├─<span class="selector-tag">img</span>             缩略图目录</span><br><span class="line">        └─config<span class="selector-class">.js</span>       配置文件  </span><br><span class="line">  </span><br><span class="line">  </span><br></pre></td></tr></table></figure>
 <h3 id="example-2">完整步骤</h3>
+
 <pre><code>  1. 在对应的客户端根目录下创建范例(具体规范请参考：[范例创建](#example-3))
   2. 截取范例缩略图(具体规范请参考：[缩略图规范](#example-4))，并存放到对应的客户端目录下img目录
   3. 修改对应的客户端根目录下的`config.js`文件(具体参数请参考：[配置文件](#example-5))
-</code></pre>
-<h3 id="example-3">范例创建</h3>
-<p>示例如下：</p>
+</code></pre><h3 id="example-3">范例创建</h3>
+
+<p> 示例如下：</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>quick start<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">include</span>=<span class="string">&quot;bootstrap-css&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../js/include-web.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">100%</span>;  <span class="attribute">height</span>: <span class="number">100%</span>;  <span class="attribute">margin</span>: <span class="number">0</span>;  <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#map</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">100%</span>;  <span class="attribute">height</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../../dist/include-leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//your code</span></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>为满足多元化使用需求，请将示例中的服务地址修改如下：</p>
+<p> 为满足多元化使用需求，请将示例中的服务地址修改如下：</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal </span><br><span class="line">         ? <span class="built_in">window</span>.server</span><br><span class="line">         : <span class="string">&quot;http://[public iServer domain/ip]:8090&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> mapUrl=host+<span class="string">&quot;/iserver/services/map-world/rest/maps/World&quot;</span>;</span><br><span class="line"><span class="comment">//other code </span></span><br><span class="line"><span class="comment">//...   </span></span><br></pre></td></tr></table></figure>
  <h4 id="example-3-1">脚本引用</h4>
-<p>以leaflet为例</p>
-<p>引入脚本主要有两个：</p>
-<p><code>/example/js/include-web.js</code>: 引入web相关库（如：jquery，bootstrap），所有库都使用公共CDN地址</p>
-<p><code>/dist/include-xxx.js</code>: 引入gis相关库（如：leaflet，iclient-leaflet，d3,echarts），除iclient的库之外，所有库都建议使用公共CDN地址</p>
+
+<p>   以leaflet为例</p>
+<p>   引入脚本主要有两个：</p>
+<p>   <code>/example/js/include-web.js</code>: 引入web相关库（如：jquery，bootstrap），所有库都使用公共CDN地址</p>
+<p>   <code>/dist/include-xxx.js</code>: 引入gis相关库（如：leaflet，iclient-leaflet，d3,echarts），除iclient的库之外，所有库都建议使用公共CDN地址</p>
 <ul>
-<li>
-<p>web相关库: 如果需要jquery，bootstrap等web相关库，引入<code>/example/js</code>公共目录下的<code>include-web.js</code>，引入格式如下：</p>
+<li><p>web相关库: 如果需要jquery，bootstrap等web相关库，引入<code>/example/js</code>公共目录下的<code>include-web.js</code>，引入格式如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&#x27;text/javascript&#x27;</span> <span class="attr">include</span>=<span class="string">&#x27;XXX,XXX&#x27;</span>  <span class="attr">src</span>=<span class="string">&#x27;../js/include-web.js&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>include</code>属性: 引入需要使用的库。多个库用&quot;,&quot;号隔开。没有默认引入的库</li>
+<li><code>include</code>属性: 引入需要使用的库。多个库用”,”号隔开。没有默认引入的库</li>
 <li>没有<code>exclude</code>属性</li>
 <li>include中参数的具体值参考<code>include-web.js</code></li>
 </ul>
 </li>
-<li>
-<p>gis相关库：script标签引入<code>dist</code>目录下的<code>include-leaflet.js</code>脚本，格式如下：</p>
+<li><p>gis相关库：script标签引入<code>dist</code>目录下的<code>include-leaflet.js</code>脚本，格式如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&#x27;text/javascript&#x27;</span> <span class="attr">include</span>=<span class="string">&#x27;XXX,XXX&#x27;</span> <span class="attr">exclude</span>=<span class="string">&#x27;XXXX,XXXX&#x27;</span> <span class="attr">src</span>=<span class="string">&#x27;../../dist/include-leaflet.js&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>include</code>属性: 需要使用的库(如leaflet相关插件,d3,mapv等)，多个库用&quot;,&quot;号隔开。默认引入的库不用再次填加。<br>
-默认引入的库：客户端（leflet/openlayers/mapboxgl/iclient8c）相关库以及其对应的iclient相关库。如在本例(leaflet)中，默认引入的是：<br>
-<code>leaflet.js</code>,<code>leaflet.css</code> ,<code>iclient-leaflet</code>，<code>iclient-leaflet-css</code></li>
-<li><code>exclude</code>属性: 排除默认引入的库，多个库用&quot;,&quot;号隔开。</li>
+<li><code>include</code>属性: 需要使用的库(如leaflet相关插件,d3,mapv等)，多个库用”,”号隔开。默认引入的库不用再次填加。<br>默认引入的库：客户端（leflet/openlayers/mapboxgl/iclient8c）相关库以及其对应的iclient相关库。如在本例(leaflet)中，默认引入的是：<br><code>leaflet.js</code>,<code>leaflet.css</code> ,<code>iclient-leaflet</code>，<code>iclient-leaflet-css</code></li>
+<li><code>exclude</code>属性: 排除默认引入的库，多个库用”,”号隔开。</li>
 <li><code>include</code>和<code>exclude</code>中参数的具体值参考<code>include-xxx.js</code></li>
 </ul>
 </li>
-<li>
-<p>新增库：如果<code>include-web.js</code>或者<code>include-xxx.js</code>中没有需要的库，则参照以下方法引入三方库：</p>
+<li><p>新增库：如果<code>include-web.js</code>或者<code>include-xxx.js</code>中没有需要的库，则参照以下方法引入三方库：</p>
 <ul>
 <li>找到<code>include-web.js</code>或者<code>include-xxx.js</code>中的load方法</li>
 <li>在load方法末尾添加如下代码:</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (inArray(includes, <span class="string">&#x27;xxxx&#x27;</span>)) &#123;<span class="comment">//&#x27;xxxx&#x27;为引入include-XXX.js的script标签中include属性的值</span></span><br><span class="line">   inputCSS(<span class="string">&quot; libs CDN url&quot;</span>);</span><br><span class="line">   inputScript(<span class="string">&quot;libs CDN url&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建议使用CDN地址。 推荐的公共CDN：<a target="_blank" rel="noopener" href="https://www.bootcdn.cn">BootCDN</a> (<a target="_blank" rel="noopener" href="https://www.bootcdn.cn">https://www.bootcdn.cn</a>)</p>
 </li>
 </ul>
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (inArray(includes, <span class="string">&#x27;xxxx&#x27;</span>)) &#123;<span class="comment">//&#x27;xxxx&#x27;为引入include-XXX.js的script标签中include属性的值</span></span><br><span class="line">   inputCSS(<span class="string">&quot; libs CDN url&quot;</span>);</span><br><span class="line">   inputScript(<span class="string">&quot;libs CDN url&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>建议使用CDN地址。 推荐的公共CDN：<a target="_blank" rel="noopener" href="https://www.bootcdn.cn">BootCDN</a> (<a target="_blank" rel="noopener" href="https://www.bootcdn.cn">https://www.bootcdn.cn</a>)</li>
-</ul>
 <h4 id="example-3-2">服务地址</h4>
-<p>公共iServer服务地址: <a target="_blank" rel="noopener" href="https://iserver.supermap.io">https://iserver.supermap.io</a></p>
-<p>可指定其他公网可访问的iServer地址</p>
+
+<p>   公共iServer服务地址: <a target="_blank" rel="noopener" href="https://iserver.supermap.io">https://iserver.supermap.io</a></p>
+<p>   可指定其他公网可访问的iServer地址</p>
  <h4 id="example-3-3">统一样式</h4>
+
 <ul>
 <li>底图建议全屏</li>
 <li>页面样式优先使用bootstrap，建议不要使用原生的HTML样式</li>
-<li>等待加载界面
-<ul>
+<li>等待加载界面<ul>
 <li>引入<code>include-web.js</code>脚本的script标签include属性中添加loader</li>
 <li>显示loader: <code>showLoader()</code></li>
 <li>移除loader: <code>removeLoader()</code></li>
@@ -391,57 +386,57 @@
 <li>…等待补充</li>
 </ul>
 <h3 id="example-4">缩略图规范</h3>
+
 <ul>
 <li>建议大小：260*208（1:0.8），PNG8格式压缩</li>
 <li>有动态效果的界面缩略图建议也使用gif格式动图</li>
 <li>存放目录：对应客户端下的img目录（如<code>/example/leaflet/img</code>）</li>
 </ul>
 <h3 id="example-5">配置文件</h3> 
-<p>每个客户端范例目录(如：<code>/example/leaflet</code>)下都有一个<code>config.js</code>文件，文件在站点初始化时读取。</p>
-<p><code>config.js</code>中范例相关的配置项为<code>exampleConfig</code>，参数如下：</p>
-<p>左边为侧边栏菜单，右边为示例列表</p>
-<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210713153504.png" alt="config"></p>
+
+<p> 每个客户端范例目录(如：<code>/example/leaflet</code>)下都有一个<code>config.js</code>文件，文件在站点初始化时读取。</p>
+<p> <code>config.js</code>中范例相关的配置项为<code>exampleConfig</code>，参数如下：</p>
+<p> 左边为侧边栏菜单，右边为示例列表</p>
+<p> <img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210713153504.png" alt="config"></p>
 <h3 id="example-6">离线开发</h3> 
+
 <div style="color:red">离线开发需要内部权限，非授权用户请直接忽略。</div>
+
 <p>为了使站点和示例在离线状态(如iServer中)能够正常使用，需要增加并修改另一个项目</p>
 <h4 id="example-6-1">克隆代码</h4>
-<p>离线开发项目地址：<a target="_blank" rel="noopener" href="https://gitee.com/isupermap/iclient-web">https://gitee.com/isupermap/iclient-web</a></p>
+
+<p>  离线开发项目地址：<a target="_blank" rel="noopener" href="https://gitee.com/isupermap/iclient-web">https://gitee.com/isupermap/iclient-web</a></p>
 <ul>
 <li>clone代码到本地</li>
 <li>更改项目目录名为web</li>
 <li>将项目移动到你的iclient项目的根目录下,与example同级</li>
 </ul>
 <h4 id="example-6-2">开发</h4>
+
 <p><strong>【脚本的使用跟在线的脚本一样，区别在于三方库全部为本地托管（<code>/web/libs</code>)】</strong></p>
 <p>离线开发涉及修改的相关的目录为：<code>/example</code>目录，<code>/web/build</code>目录，<code>/web/libs</code>目录</p>
 <ul>
-<li>
-<p><code>/web</code>: 站点目录</p>
+<li><p><code>/web</code>: 站点目录</p>
 <ul>
-<li>
-<p><code>/web/build</code>：离线引用脚本目录</p>
+<li><p><code>/web/build</code>：离线引用脚本目录   </p>
 </li>
-<li>
-<p><code>/web/libs</code>：离线三方库存放目录</p>
+<li><p><code>/web/libs</code>：离线三方库存放目录</p>
 </li>
 </ul>
 </li>
-<li>
-<p><code>/example</code>：范例目录</p>
+<li><p><code>/example</code>：范例目录 </p>
 </li>
 </ul>
-<h4 id="web">/web</h4>
-<p>脚本的使用跟在线的脚本一样，只不过路径不同，在具体范例中通过script标签引入<code>/web/build/</code>下的脚本</p>
+<h4 id="web"><a href="#web" class="headerlink" title="/web"></a>/web</h4><p>脚本的使用跟在线的脚本一样，只不过路径不同，在具体范例中通过script标签引入<code>/web/build/</code>下的脚本</p>
 <p>相关的脚本为 <code>/web/build/include-xxx.js</code>和 <code>/web/build/include-web.js</code>,</p>
 <ul>
-<li>
-<p><code>/web/build/include-web.js</code>: 引入web相关库（如：jquery，bootstrap）(使用相对路径)，相关库的存放目录为<code>/web/libs</code></p>
+<li><p><code>/web/build/include-web.js</code>: 引入web相关库（如：jquery，bootstrap）(使用相对路径)，相关库的存放目录为<code>/web/libs</code></p>
 </li>
-<li>
-<p><code>/web/build/include-xxx.js</code>: 引入gis相关库（如：iclient-leaflet，leaflet）(使用相对路径)，相关库的存放目录为<code>/web/libs</code></p>
+<li><p><code>/web/build/include-xxx.js</code>: 引入gis相关库（如：iclient-leaflet，leaflet）(使用相对路径)，相关库的存放目录为<code>/web/libs</code></p>
 </li>
-<li>
-<p>新增库：如果<code>include-web.js</code>或者<code>include-xxx.js</code>中没有需要的库，则参照以下方法引入三方库：</p>
+</ul>
+<ul>
+<li><p>新增库：如果<code>include-web.js</code>或者<code>include-xxx.js</code>中没有需要的库，则参照以下方法引入三方库：</p>
 <ul>
 <li>下载三方库到本地</li>
 <li>将三方库按文件夹移动到<code>/web/libs</code>目录</li>
@@ -449,18 +444,18 @@
 <li>找到<code>include-web.js</code>或者<code>include-xxx.js</code>中的load方法</li>
 <li>在load方法末尾添加如下代码，注意路径必须是：<code>../../web/libs</code></li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (inArray(includes, <span class="string">&quot;xxx&quot;</span>)) &#123;<span class="comment">//&quot;xxx&quot;为引入include-XXX.js的script标签中include属性的值</span></span><br><span class="line">   inputCSS(<span class="string">&quot;../../web/libs/name.css&quot;</span>);<span class="comment">//name为插件的名称</span></span><br><span class="line">   inputScript(<span class="string">&quot;../../web/libs/name.min.js&quot;</span>);<span class="comment">//name为插件的名称,使用压缩后的脚本</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (inArray(includes, <span class="string">&quot;xxx&quot;</span>)) &#123;<span class="comment">//&quot;xxx&quot;为引入include-XXX.js的script标签中include属性的值</span></span><br><span class="line">   inputCSS(<span class="string">&quot;../../web/libs/name.css&quot;</span>);<span class="comment">//name为插件的名称</span></span><br><span class="line">   inputScript(<span class="string">&quot;../../web/libs/name.min.js&quot;</span>);<span class="comment">//name为插件的名称,使用压缩后的脚本</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="example">/example</h4>
-<p>离线环境下范例除了修改引入的脚本（引入/web/build目录下的脚本）外，还需要修改范例服务地址。</p>
+<h4 id="example"><a href="#example" class="headerlink" title="/example"></a>/example</h4><p>   离线环境下范例除了修改引入的脚本（引入/web/build目录下的脚本）外，还需要修改范例服务地址。</p>
    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">title</span>&gt;</span>quick start<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">include</span>=<span class="string">&quot;bootstrap-css&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../../web/build/include-web.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">              <span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="css">                  <span class="attribute">width</span>: <span class="number">100%</span>;  <span class="attribute">height</span>: <span class="number">100%</span>;  <span class="attribute">margin</span>: <span class="number">0</span>;  <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">              &#125;</span></span><br><span class="line"><span class="css">              <span class="selector-id">#map</span> &#123;</span></span><br><span class="line"><span class="css">                  <span class="attribute">width</span>: <span class="number">100%</span>;  <span class="attribute">height</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="css">              &#125;</span></span><br><span class="line"><span class="css">          </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../../web/build/include-leaflet.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">          <span class="comment">//your code</span></span></span><br><span class="line"><span class="javascript">      </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>离线环境中，范例与服务【一般】在同一域下。保证范例在离线时使用的是本地的服务，所以需要修改范例中使用的地址（如地图服务，数据服务等地址）为：<code>http://localhost:port/xxx</code>。</p>
-<p>而为保证范例同时在离线和在线状态都能正常使用，建议修改示例中的服务地址如下：</p>
+<p>   离线环境中，范例与服务【一般】在同一域下。保证范例在离线时使用的是本地的服务，所以需要修改范例中使用的地址（如地图服务，数据服务等地址）为：<code>http://localhost:port/xxx</code>。</p>
+<p>   而为保证范例同时在离线和在线状态都能正常使用，建议修改示例中的服务地址如下：</p>
    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> host = <span class="built_in">window</span>.isLocal </span><br><span class="line">         ? <span class="built_in">window</span>.server</span><br><span class="line">         : <span class="string">&quot;http://[public iServer domain/ip]:8090&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> mapUrl=host+<span class="string">&quot;/iserver/services/map-world/rest/maps/World&quot;</span>;</span><br><span class="line"><span class="comment">//other code </span></span><br><span class="line"><span class="comment">//...   </span></span><br></pre></td></tr></table></figure>
 <h3 id="example-7">注意事项</h3>
+
 <p>暂无</p>
-<p>​</p>
+<p>​                               </p>
 
     </div>
 
@@ -724,12 +719,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">89k</span>
+    <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:21</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
 
 

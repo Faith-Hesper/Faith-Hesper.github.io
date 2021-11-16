@@ -306,13 +306,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="git-命令">git 命令</h2>
-<ul>
+        <h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><ul>
 <li>mkdir filename 创建文件夹 Linux 命令</li>
 <li>cd filename</li>
 <li>git init 初始化存储库</li>
-<li>git add 提交到暂存区
-<ul>
+<li>git add 提交到暂存区<ul>
 <li>git add . 添加所有文件</li>
 <li>git add document1.txt document2.txt</li>
 <li>git add *.txt 添加所有.txt 格式文件</li>
@@ -325,56 +323,34 @@
 <li>git rm document1.txt 删除文件</li>
 <li>git mv document1.txt document2.txt 移动文件</li>
 <li>.gitignore 忽略指定文件(暂存区没该文件之前起作用)</li>
-<li>git rm --cached document1.txt 移除暂存区文件</li>
-<li>git diff --staged 查看暂存区信息</li>
+<li>git rm —cached document1.txt 移除暂存区文件</li>
+<li>git diff —staged 查看暂存区信息</li>
 <li>git log commits 历史</li>
 <li>git restore</li>
-<li>git restore --staged document1.txt 撤销 git add 😄 document1.txt</li>
+<li>git restore —staged document1.txt 撤销 git add :smile: document1.txt</li>
 </ul>
 <hr>
-<h2 id="git-配置">git 配置</h2>
-<ul>
-<li>
-<p>git config --global core.editor &quot;code –</p>
-<p>wait&quot; 设置默认编辑器为 vscode</p>
+<h2 id="git-配置"><a href="#git-配置" class="headerlink" title="git 配置"></a>git 配置</h2><ul>
+<li><p>git config —global core.editor “code —</p>
+<p>wait” 设置默认编辑器为 vscode</p>
 </li>
-<li>
-<p>git config --global -e 使用 vscode 编辑全局配置文件</p>
+<li><p>git config —global -e 使用 vscode 编辑全局配置文件</p>
 </li>
-<li>
-<p>git version</p>
-</li>
-<li>
-<p>git config --global <a target="_blank" rel="noopener" href="http://user.name">user.name</a> “XXXX”</p>
-</li>
-<li>
-<p>git config --global user.email  “XXXXXXXXXX”</p>
-</li>
-<li>
-<p>git config --list</p>
-</li>
-<li>
-<p>ssh-keygen -t rsa  -C “用户邮箱” 配置git密钥</p>
-</li>
-<li>
-<p>ssh <a href="mailto:git@github.com">git@github.com</a> 验证git是否授权成功</p>
-</li>
-<li>
-<p>git config --global https.proxy ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8001">http://127.0.0.1:8001</a>’</p>
-</li>
-<li>
-<p>git config --global http.proxy ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8001">http://127.0.0.1:8001</a>’</p>
-</li>
-<li>
-<p>git config --global socks.proxy “127.0.0.1:1080”</p>
-</li>
+<li>git version</li>
+<li>git config —global user.name “XXXX”</li>
+<li>git config —global user.email  “XXXXXXXXXX”</li>
+<li>git config —list</li>
+<li>ssh-keygen -t rsa  -C “用户邮箱” 配置git密钥 </li>
+<li>ssh git@github.com 验证git是否授权成功</li>
+<li>git config —global https.proxy ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8001">http://127.0.0.1:8001</a>‘   </li>
+<li>git config —global http.proxy ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8001">http://127.0.0.1:8001</a>‘</li>
+<li>git config —global socks.proxy “127.0.0.1:1080”</li>
 </ul>
 <hr>
-<h2 id="git-初始化">git 初始化</h2>
-<ul>
-<li>echo “# fe” &gt;&gt; <a target="_blank" rel="noopener" href="http://README.md">README.md</a></li>
+<h2 id="git-初始化"><a href="#git-初始化" class="headerlink" title="git 初始化"></a>git 初始化</h2><ul>
+<li>echo “# fe” &gt;&gt; README.md</li>
 <li>git init</li>
-<li>git add <a target="_blank" rel="noopener" href="http://README.md">README.md</a></li>
+<li>git add README.md</li>
 <li>git commit -m “first commit”</li>
 <li>git branch -M main</li>
 <li>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/Faith-Hesper/fe.git">https://github.com/Faith-Hesper/fe.git</a></li>
@@ -643,12 +619,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">89k</span>
+    <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:21</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
 
 

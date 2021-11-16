@@ -29,15 +29,15 @@
 <meta property="og:site_name" content="Faith">
 <meta property="og:description" content="空间分析基本概念">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/blob/master/img/20211116094219.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211116220555.png">
 <meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184415.png">
 <meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184540.png">
 <meta property="article:published_time" content="2021-11-10T10:20:49.000Z">
-<meta property="article:modified_time" content="2021-11-16T02:02:48.758Z">
+<meta property="article:modified_time" content="2021-11-16T14:09:02.843Z">
 <meta property="article:author" content="Faith Hesper">
 <meta property="article:tag" content="GIS空间分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/blob/master/img/20211116094219.png">
+<meta name="twitter:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211116220555.png">
 
 <link rel="canonical" href="https://faith-hesper.github.io/archives/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E4%B8%8EGIS/">
 
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-16 10:02:48" itemprop="dateModified" datetime="2021-11-16T10:02:48+08:00">2021-11-16</time>
+                <time title="修改时间：2021-11-16 22:09:02" itemprop="dateModified" datetime="2021-11-16T22:09:02+08:00">2021-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,40 +319,30 @@
 
       
         <p><strong>地理学第一定律，即地理事物或属性在空间分布上互为相关，存在聚集、随机、规则分布</strong></p>
-<h1><center>基本概念</center><h1>
-<h2 id="1-空间">1. 空间</h2>
-<h2 id="2-地理空间">2. 地理空间</h2>
-<p>现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域</p>
+<p><h1><center>基本概念</center><h1></p>
+<h2 id="1-空间"><a href="#1-空间" class="headerlink" title="1. 空间"></a>1. 空间</h2><h2 id="2-地理空间"><a href="#2-地理空间" class="headerlink" title="2. 地理空间"></a>2. 地理空间</h2><p>现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域</p>
 <p>GIS中的地理空间：绝对空间 + 相对空间</p>
 <p>绝对空间：具有属性描述的空间几何位置的集合，由一系列不同位置的空间坐标组成，来源于地球坐标系中的绝对坐标</p>
 <p>相对空间：由不同实体之间的空间关系构成，根据实体之间的空间关系及推理机制定义</p>
 <p>综合定义：指<strong>球面坐标系</strong>中或者经过<strong>投影变换后</strong>在<strong>笛卡尔坐标系</strong>中的地球表达特征空间。是地理空间在信息层面的抽象表达。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/blob/master/img/20211116094219.png" alt=""></p>
-<h2 id="3-分析空间">3. 分析空间</h2>
-<p>用于分析实际应用问题的二维或三维范围，即研究范围</p>
-<h2 id="4-工作空间">4. 工作空间</h2>
-<p>计算机的<strong>文件系统中的工作路径</strong>。</p>
-<h2 id="5-地理空间分析">5.地理空间分析</h2>
-<h3 id="1-空间分析概念">1.空间分析概念</h3>
-<blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211116220555.png" alt=""></p>
+<h2 id="3-分析空间"><a href="#3-分析空间" class="headerlink" title="3. 分析空间"></a>3. 分析空间</h2><p>用于分析实际应用问题的二维或三维范围，即研究范围</p>
+<h2 id="4-工作空间"><a href="#4-工作空间" class="headerlink" title="4. 工作空间"></a>4. 工作空间</h2><p>计算机的<strong>文件系统中的工作路径</strong>。</p>
+<h2 id="5-地理空间分析"><a href="#5-地理空间分析" class="headerlink" title="5.地理空间分析"></a>5.地理空间分析</h2><h3 id="1-空间分析概念"><a href="#1-空间分析概念" class="headerlink" title="1.空间分析概念"></a>1.空间分析概念</h3><blockquote>
 <p>空间分析是对空间信息的获取</p>
 <p>空间分析是对空间问题的求解，获取空间信息是解决空间问题的必要手段</p>
 <p>空间分析是指在计算机技术的支撑下，提取地理对象在位置、属性、关系等方面的信息，以支持特定的空间问题的求解</p>
 </blockquote>
-<h3 id="2-空间分析内容">2. 空间分析内容</h3>
-<ul>
-<li>空间数据操作
-<ul>
+<h3 id="2-空间分析内容"><a href="#2-空间分析内容" class="headerlink" title="2. 空间分析内容"></a>2. 空间分析内容</h3><ul>
+<li>空间数据操作<ul>
 <li>主要是指在GIS中基于空间对象几何特征进行的<strong>拓扑分析，叠加分析，距离，面积，路径计算，以及基于空间关系的空间查询等</strong>；对于属性数据则主要表现为地图可视化操作</li>
 </ul>
 </li>
-<li>空间数据分析
-<ul>
+<li>空间数据分析<ul>
 <li>一般是指空间数据的<strong>描述性和探索性分析</strong>技术和方法，特别是对于大规模数据集，通过将数据图形化或地图化的探索性分析技术，研究数据中潜在的模式，异常等，为后续分析做准备，是所有空间分析过程中的首要一环</li>
 </ul>
 </li>
-<li>空间统计分析
-<ul>
+<li>空间统计分析<ul>
 <li>空间自相关目的是确定某一变量是否在空间上相关，其相关程度如何</li>
 <li>空间自相关系数常用来定量地描述事物在空间上的依赖关系</li>
 <li>用<strong>统计的方法</strong>描述和解释空间数据的性质，以及数据对于统计模型是否典型或是否所期望的。由于空间数据具有空间自相关性，这一特性违背了经典统计理论关于数据独立性的假设，因此需要专门用于空间数据分析的空间统计方法</li>
@@ -361,31 +351,22 @@
 <li>若所测值不表现出任何空间依赖关系，那么，这一变量表现出空间若所测值不表现出任何空间依赖关系，那么，这一变量表现出空<strong>间不相关性或空间随机性</strong></li>
 </ul>
 </li>
-<li>空间建模
-<ul>
+<li>空间建模<ul>
 <li>主要是指依据某些理论和假设，建立模型描述空间现象的<strong>分布模式，预测空间过程及结果</strong></li>
 </ul>
 </li>
 </ul>
-<h3 id="3-空间分析研究的内容">3. 空间分析研究的内容</h3>
-<ul>
+<h3 id="3-空间分析研究的内容"><a href="#3-空间分析研究的内容" class="headerlink" title="3. 空间分析研究的内容"></a>3. 空间分析研究的内容</h3><ul>
 <li>空间分析理论</li>
 <li>空间分析方法</li>
 <li>空间分析应用</li>
 </ul>
-<h2 id="讨论">讨论</h2>
-<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184415.png" alt="数字化纸质地图"></p>
-<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184540.png" alt=""></p>
-<h1>地理空间分析的基本内容与基本步骤</h1>
-<h2 id="1-地理空间分析的重要性">1. 地理空间分析的重要性</h2>
-<h2 id="2-地理空间分析的基本内容">2. 地理空间分析的基本内容</h2>
-<ul>
+<h2 id="地理空间分析的基本内容与基本步骤"><a href="#地理空间分析的基本内容与基本步骤" class="headerlink" title="地理空间分析的基本内容与基本步骤"></a>地理空间分析的基本内容与基本步骤</h2><h2 id="1-地理空间分析的重要性"><a href="#1-地理空间分析的重要性" class="headerlink" title="1. 地理空间分析的重要性"></a>1. 地理空间分析的重要性</h2><h2 id="2-地理空间分析的基本内容"><a href="#2-地理空间分析的基本内容" class="headerlink" title="2. 地理空间分析的基本内容"></a>2. 地理空间分析的基本内容</h2><ul>
 <li>空间格局</li>
 <li>空间位置：空间物体的<strong>个体定位</strong>信息，通过空间坐标系传递</li>
 <li>空间分布：同类空间事物的<strong>群体定位</strong>信息</li>
 <li>空间形态：运用空间问题的<strong>几何特征</strong>定量描述</li>
-<li>空间关系：涉及空间属性的关系
-<ul>
+<li>空间关系：涉及空间属性的关系<ul>
 <li>距离关系：空间对象之间的空间距离</li>
 <li>方位关系：俩空间对象之间距离所形成的方位角</li>
 <li>拓扑关系：拓扑属性是指图形(研究对象)在连续变形的条件下，保持不变的整体性质。拓扑关系是指空间对象之间的拓扑属性，具体的拓扑关系可包括：相邻、包含、相交等</li>
@@ -398,53 +379,46 @@
 </li>
 <li>空间过程：空间对象在空间和时间中所留下的轨迹，这种轨迹是时空要素的耦合，它反映了空间对象的属性的时空耦合关系。</li>
 </ul>
-<h2 id="3-地理空间分析的基本步骤">3. 地理空间分析的基本步骤</h2>
-<ol>
+<h2 id="3-地理空间分析的基本步骤"><a href="#3-地理空间分析的基本步骤" class="headerlink" title="3. 地理空间分析的基本步骤"></a>3. 地理空间分析的基本步骤</h2><ol>
 <li>确定问题</li>
 <li>选择分析工具</li>
 <li>准备空间数据</li>
 <li>制定空间分析流程</li>
 <li>展示并解释分析结果</li>
 </ol>
-<h2 id="空间分析的基本任务">空间分析的基本任务</h2>
-<ul>
-<li>
-<p>基本任务</p>
+<h2 id="空间分析的基本任务"><a href="#空间分析的基本任务" class="headerlink" title="空间分析的基本任务"></a><a href="#空间分析任务">空间分析的基本任务</a></h2><ul>
+<li><p>基本任务</p>
 <blockquote>
 <p>获取空间信息$\rightarrow$解决空间问题</p>
 </blockquote>
 </li>
-<li>
-<p>5类具体任务</p>
+<li><p>5类具体任务</p>
 <ul>
-<li>位置分析
-<ul>
+<li>位置分析<ul>
 <li>某一事物或现象在什么位置、在特定的位置有什么和是什么等</li>
 </ul>
 </li>
-<li>条件分析
-<ul>
+<li>条件分析<ul>
 <li>符合某些条件的地理对象是什么、在哪里等问题</li>
 </ul>
 </li>
-<li>变化趋势分析
-<ul>
+<li>变化趋势分析<ul>
 <li>地理对象随时间变化而变化$\rightarrow$预测未来的可能状况(根本目的)$\rightarrow$发生机理和变化因子$\rightarrow$做出科学的决策</li>
 </ul>
 </li>
-<li>模式认知
-<ul>
+<li>模式认知<ul>
 <li>地理对象实体或对象之间的空间关系模式、地球系统内部各要素之间或各子系统之间的关系模式等</li>
 </ul>
 </li>
-<li>模拟与预测
-<ul>
+<li>模拟与预测<ul>
 <li>对未发生或已发生的地理事件、现象、规律进行演变和反馈</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184415.png" alt="数字化纸质地图"></p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211110184540.png" alt=""></p>
 
     </div>
 
@@ -597,39 +571,29 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">基本概念
-1. 空间
-2. 地理空间
-现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域
+1. 空间2. 地理空间现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域
 GIS中的地理空间：绝对空间 + 相对空间
 绝对空间：具有属性描述的空间几何位置的集合，由一系列不同位置的空间坐标组成，来源于地球坐标系中的绝对坐标
 相对空间：由不同实体之间的空间关系构成，根据实体之间的空间关系及推理机制定义
 综合定义：指球面坐标系中或者经过投影变换后在笛卡尔坐标系中的地球表达特征空间。是地理空间在信息层面的抽象表达。
 
-3. 分析空间
-用于分析实际应用问题的二维或三维范围，即研究范围
-4. 工作空间
-计算机的文件系统中的工作路径。
-5.地理空间分析
-1.空间分析概念
-
+3. 分析空间用于分析实际应用问题的二维或三维范围，即研究范围
+4. 工作空间计算机的文件系统中的工作路径。
+5.地理空间分析1.空间分析概念
 空间分析是对空间信息的获取
 空间分析是对空间问题的求解，获取空间信息是解决空间问题的必要手段
 空间分析是指在计算机技术的支撑下，提取地理对象在位置、属性、关系等方面的信息，以支持特定的空间问题的求解
 
 2. 空间分析内容
-
 空间数据操作
-
 主要是指在GIS中基于空间对象几何特征进行的拓扑分析，叠加分析，距离，面积，路径计算，以及基于空间关系的空间查询等；对于属性数据则主要表现为地图可视化操作
 
 
 空间数据分析
-
 一般是指空间数据的描述性和探索性分析技术和方法，特别是对于大规模数据集，通过将数据图形化或地图化的探索性分析技术，研究数据中潜在的模式，异常等，为后续分析做准备，是所有空间分析过程中的首要一环
 
 
 空间统计分析
-
 空间自相关目的是确定某一变量是否在空间上相关，其相关程度如何
 空间自相关系数常用来定量地描述事物在空间上的依赖关系
 用统计的方法描述和解释空间数据的性质，以及数据对于统计模型是否典型或是否所期望的。由于空间数据具有空间自相关性，这一特性违背了经典统计理论关于数据独立性的假设，因此需要专门用于空间数据分析的空间统计方法
@@ -639,30 +603,21 @@ GIS中的地理空间：绝对空间 + 相对空间
 
 
 空间建模
-
 主要是指依据某些理论和假设，建立模型描述空间现象的分布模式，预测空间过程及结果
 
 
 
 3. 空间分析研究的内容
-
 空间分析理论
 空间分析方法
 空间分析应用
 
-讨论
-
-
-地理空间分析的基本内容与基本步骤
-1. 地理空间分析的重要性
-2. 地理空间分析的基本内容
-
+地理空间分析的基本内容与基本步骤1. 地理空间分析的重要性2. 地理空间分析的基本内容
 空间格局
 空间位置：空间物体的个体定位信息，通过空间坐标系传递
 空间分布：同类空间事物的群体定位信息
 空间形态：运用空间问题的几何特征定量描述
 空间关系：涉及空间属性的关系
-
 距离关系：空间对象之间的空间距离
 方位关系：俩空间对象之间距离所形成的方位角
 拓扑关系：拓扑属性是指图形(研究对象)在连续变形的条件下，保持不变的整体性质。拓扑关系是指空间对象之间的拓扑属性，具体的拓扑关系可包括：相邻、包含、相交等
@@ -676,7 +631,6 @@ GIS中的地理空间：绝对空间 + 相对空间
 空间过程：空间对象在空间和时间中所留下的轨迹，这种轨迹是时空要素的耦合，它反映了空间对象的属性的时空耦合关系。
 
 3. 地理空间分析的基本步骤
-
 确定问题
 选择分析工具
 准备空间数据
@@ -684,78 +638,62 @@ GIS中的地理空间：绝对空间 + 相对空间
 展示并解释分析结果
 
 空间分析的基本任务
-
-
 基本任务
 
 获取空间信息$\rightarrow$解决空间问题
 
 
-
 5类具体任务
 
 位置分析
-
 某一事物或现象在什么位置、在特定的位置有什么和是什么等
 
 
 条件分析
-
 符合某些条件的地理对象是什么、在哪里等问题
 
 
 变化趋势分析
-
 地理对象随时间变化而变化$\rightarrow$预测未来的可能状况(根本目的)$\rightarrow$发生机理和变化因子$\rightarrow$做出科学的决策
 
 
 模式认知
-
 地理对象实体或对象之间的空间关系模式、地球系统内部各要素之间或各子系统之间的关系模式等
 
 
 模拟与预测
-
 对未发生或已发生的地理事件、现象、规律进行演变和反馈
 
 
 
 
+
+讨论
 
 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">
-1. 空间
-2. 地理空间
-现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域
+1. 空间2. 地理空间现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域
 GIS中的地理空间：绝对空间 + 相对空间
 绝对空间：具有属性描述的空间几何位置的集合，由一系列不同位置的空间坐标组成，来源于地球坐标系中的绝对坐标
 相对空间：由不同实体之间的空间关系构成，根据实体之间的空间关系及推理机制定义
 综合定义：指球面坐标系中或者经过投影变换后在笛卡尔坐标系中的地球表达特征空间。是地理空间在信息层面的抽象表达。
 
-3. 分析空间
-用于分析实际应用问题的二维或三维范围，即研究范围
-4. 工作空间
-计算机的文件系统中的工作路径。
-5.地理空间分析
-1.空间分析概念
-
+3. 分析空间用于分析实际应用问题的二维或三维范围，即研究范围
+4. 工作空间计算机的文件系统中的工作路径。
+5.地理空间分析1.空间分析概念
 空间分析是对空间信息的获取
 空间分析是对空间问题的求解，获取空间信息是解决空间问题的必要手段
 空间分析是指在计算机技术的支撑下，提取地理对象在位置、属性、关系等方面的信息，以支持特定的空间问题的求解
 
 2. 空间分析内容
-
 空间数据操作
-
 主要是指在GIS中基于空间对象几何特征进行的拓扑分析，叠加分析，距离，面积，路径计算，以及基于空间关系的空间查询等；对于属性数据则主要表现为地图可视化操作
 
 
 空间数据分析
-
 一般是指空间数据的描述性和探索性分析技术和方法，特别是对于大规模数据集，通过将数据图形化或地图化的探索性分析技术，研究数据中潜在的模式，异常等，为后续分析做准备，是所有空间分析过程中的首要一环
 
 
 空间统计分析
-
 空间自相关目的是确定某一变量是否在空间上相关，其相关程度如何
 空间自相关系数常用来定量地描述事物在空间上的依赖关系
 用统计的方法描述和解释空间数据的性质，以及数据对于统计模型是否典型或是否所期望的。由于空间数据具有空间自相关性，这一特性违背了经典统计理论关于数据独立性的假设，因此需要专门用于空间数据分析的空间统计方法
@@ -765,30 +703,21 @@ GIS中的地理空间：绝对空间 + 相对空间
 
 
 空间建模
-
 主要是指依据某些理论和假设，建立模型描述空间现象的分布模式，预测空间过程及结果
 
 
 
 3. 空间分析研究的内容
-
 空间分析理论
 空间分析方法
 空间分析应用
 
-讨论
-
-
-地理空间分析的基本内容与基本步骤
-1. 地理空间分析的重要性
-2. 地理空间分析的基本内容
-
+地理空间分析的基本内容与基本步骤1. 地理空间分析的重要性2. 地理空间分析的基本内容
 空间格局
 空间位置：空间物体的个体定位信息，通过空间坐标系传递
 空间分布：同类空间事物的群体定位信息
 空间形态：运用空间问题的几何特征定量描述
 空间关系：涉及空间属性的关系
-
 距离关系：空间对象之间的空间距离
 方位关系：俩空间对象之间距离所形成的方位角
 拓扑关系：拓扑属性是指图形(研究对象)在连续变形的条件下，保持不变的整体性质。拓扑关系是指空间对象之间的拓扑属性，具体的拓扑关系可包括：相邻、包含、相交等
@@ -802,7 +731,6 @@ GIS中的地理空间：绝对空间 + 相对空间
 空间过程：空间对象在空间和时间中所留下的轨迹，这种轨迹是时空要素的耦合，它反映了空间对象的属性的时空耦合关系。
 
 3. 地理空间分析的基本步骤
-
 确定问题
 选择分析工具
 准备空间数据
@@ -810,45 +738,39 @@ GIS中的地理空间：绝对空间 + 相对空间
 展示并解释分析结果
 
 空间分析的基本任务
-
-
 基本任务
 
 获取空间信息$\rightarrow$解决空间问题
 
 
-
 5类具体任务
 
 位置分析
-
 某一事物或现象在什么位置、在特定的位置有什么和是什么等
 
 
 条件分析
-
 符合某些条件的地理对象是什么、在哪里等问题
 
 
 变化趋势分析
-
 地理对象随时间变化而变化$\rightarrow$预测未来的可能状况(根本目的)$\rightarrow$发生机理和变化因子$\rightarrow$做出科学的决策
 
 
 模式认知
-
 地理对象实体或对象之间的空间关系模式、地球系统内部各要素之间或各子系统之间的关系模式等
 
 
 模拟与预测
-
 对未发生或已发生的地理事件、现象、规律进行演变和反馈
 
 
 
 
 
-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%A9%BA%E9%97%B4"><span class="nav-text">1. 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4"><span class="nav-text">2. 地理空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E6%9E%90%E7%A9%BA%E9%97%B4"><span class="nav-text">3. 分析空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">4. 工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90"><span class="nav-text">5.地理空间分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E6%A6%82%E5%BF%B5"><span class="nav-text">1.空间分析概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%86%85%E5%AE%B9"><span class="nav-text">2. 空间分析内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">3. 空间分析研究的内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A8%E8%AE%BA"><span class="nav-text">讨论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">地理空间分析的基本内容与基本步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">1. 地理空间分析的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-text">2. 地理空间分析的基本内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-text">3. 地理空间分析的基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%BB%E5%8A%A1"><span class="nav-text">空间分析的基本任务</span></a></li></ol></li></ol></div>
+讨论
+
+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%A9%BA%E9%97%B4"><span class="nav-text">1. 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4"><span class="nav-text">2. 地理空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E6%9E%90%E7%A9%BA%E9%97%B4"><span class="nav-text">3. 分析空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">4. 工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90"><span class="nav-text">5.地理空间分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E6%A6%82%E5%BF%B5"><span class="nav-text">1.空间分析概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%86%85%E5%AE%B9"><span class="nav-text">2. 空间分析内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">3. 空间分析研究的内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-text">地理空间分析的基本内容与基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">1. 地理空间分析的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-text">2. 地理空间分析的基本内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-text">3. 地理空间分析的基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%BB%E5%8A%A1"><span class="nav-text">空间分析的基本任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A8%E8%AE%BA"><span class="nav-text">讨论</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -960,12 +882,12 @@ GIS中的地理空间：绝对空间 + 相对空间
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">89k</span>
+    <span title="站点总字数">90k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:21</span>
+    <span title="站点阅读时长">1:22</span>
 </div>
 
 
