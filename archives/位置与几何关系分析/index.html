@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>位置与几何关系分析 | Faith</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"faith-hesper.github.io","root":"/","title":"Faith-Hesper","version":"1.7.0","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn?c=a&c=c&c=d&c=i&c=k","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="空间几何关系即是由空间目标几何特征所引起或决定的空间关系。即与空间目标的位置、形状、距离、方位等基本几何特征相关联的空间关系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位置与几何关系分析">
+<meta property="og:url" content="https://faith-hesper.github.io/archives/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/">
+<meta property="og:site_name" content="Faith">
+<meta property="og:description" content="空间几何关系即是由空间目标几何特征所引起或决定的空间关系。即与空间目标的位置、形状、距离、方位等基本几何特征相关联的空间关系">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211119152726.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111184045.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111185938.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190005.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190036.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190240.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190437.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190621.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111191207.png">
+<meta property="og:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211122123502.png">
+<meta property="article:published_time" content="2021-11-11T01:50:49.000Z">
+<meta property="article:modified_time" content="2021-11-22T12:57:42.420Z">
+<meta property="article:author" content="Faith Hesper">
+<meta property="article:tag" content="GIS空间分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Faith Hesper"><img width="96" loading="lazy" src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210814.png" alt="Faith Hesper"></a><div class="site-author-name"><a href="/about/">Faith Hesper</a></div><span class="site-name">Faith</span><sub class="site-subtitle"></sub><div class="site-desciption">Hesper</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">43</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">37</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">21</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%BB%E8%BF%91%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">邻近分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">缓冲区分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E3%80%81%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%86%E6%9E%90"><span class="toc-number">1.1.1.</span> <span class="toc-text">缓冲区、缓冲区分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">缓冲区类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">缓冲区实现的基本算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%88%86%E6%9E%90%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.4.</span> <span class="toc-text">缓冲区分析应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">1. 案例一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%A1%88%E4%BE%8B%E4%BA%8C"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">2. 案例二</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%B0%E6%A3%AE%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">泰森多边形分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">叠置分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%A0%E7%BD%AE%E5%88%86%E6%9E%90%E5%8F%8A%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.</span> <span class="toc-text">矢量数据的叠置分析及问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%82%B9%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="toc-number">2.3.1.</span> <span class="toc-text">点面叠置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">线面叠置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E9%9D%A2%E5%8F%A0%E7%BD%AE"><span class="toc-number">2.3.3.</span> <span class="toc-text">面面叠置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="toc-number">2.4.</span> <span class="toc-text">基本方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E5%90%88%E5%B9%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">图层合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E9%9B%86%E6%93%8D%E4%BD%9C"><span class="toc-number">2.4.2.</span> <span class="toc-text">交集操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E6%93%A6%E9%99%A4"><span class="toc-number">2.4.3.</span> <span class="toc-text">图层擦除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%86%E5%88%AB%E5%8F%A0%E5%8A%A0"><span class="toc-number">2.4.4.</span> <span class="toc-text">识别叠加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%80%BC"><span class="toc-number">2.4.5.</span> <span class="toc-text">对称差值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E6%9B%B4%E6%96%B0"><span class="toc-number">2.4.6.</span> <span class="toc-text">修正更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%81%E5%89%AA"><span class="toc-number">2.4.7.</span> <span class="toc-text">裁剪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E9%9B%86%E5%8F%96%E5%8F%8D"><span class="toc-number">2.4.8.</span> <span class="toc-text">交集取反</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">栅格数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%E5%88%86%E6%9E%90"><span class="toc-number">3.1.</span> <span class="toc-text">距离分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">3.2.</span> <span class="toc-text">密度分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AE%80%E5%8D%95%E5%AF%86%E5%BA%A6"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. 简单密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A0%B8%E5%AF%86%E5%BA%A6"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.核密度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90"><span class="toc-number">3.3.</span> <span class="toc-text">统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8D%95%E5%85%83%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.3.1.</span> <span class="toc-text">1. 单元统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%A2%86%E5%9F%9F%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.领域统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%86%E5%8C%BA%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.分区统计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%88%86%E7%B1%BB%E5%88%86%E6%9E%90"><span class="toc-number">3.4.</span> <span class="toc-text">重分类分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E8%AE%A1%E7%AE%97-%E5%9C%B0%E5%9B%BE%E4%BB%A3%E6%95%B0"><span class="toc-number">3.5.</span> <span class="toc-text">栅格计算(地图代数)</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://Faith-Hesper.github.io/archives/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Faith Hesper"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Faith"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">位置与几何关系分析</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-11-11 09:50:49" itemprop="dateCreated datePublished" datetime="2021-11-11T09:50:49+08:00">2021-11-11</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2021-11-22 20:57:42" itemprop="dateModified" datetime="2021-11-22T20:57:42+08:00">2021-11-22</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.6k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">8m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/GIS/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">GIS</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">GIS空间分析</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">位置与几何关系分析</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">GIS空间分析</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="邻近分析"><a href="#邻近分析" class="headerlink" title="邻近分析"></a>邻近分析</h2><p>邻近度：表达空间目标<strong>距离关系</strong>的重要物流量之一，表示地理空间中目标地物<strong>距离相近</strong>的程度</p>
+<h3 id="缓冲区分析"><a href="#缓冲区分析" class="headerlink" title="缓冲区分析"></a><span id="缓冲区">缓冲区分析</span></h3><ol>
+<li><h4 id="缓冲区、缓冲区分析"><a href="#缓冲区、缓冲区分析" class="headerlink" title="缓冲区、缓冲区分析"></a>缓冲区、缓冲区分析</h4><p>缓冲区：为识别<strong>地理实体或空间物体(点、线、面)</strong>对周围地物的<strong>影响度</strong>而建立的具有一定宽度的带状区域，<strong>不包含原来点、线或面要素</strong>的多边形</p>
+<ul>
+<li>点、线、面要素缓冲区</li>
+<li>均质缓冲区</li>
+<li>非均质缓冲区</li>
+</ul>
+<p>缓冲区分析：对一组或一类地物按照缓冲的<strong>距离</strong>条件，建立缓冲，从而实现空间数据在<strong>二维空间得以扩展</strong>，来<strong>确定分析对象或筛选范围的</strong>信息分析方法</p>
+</li>
+<li><h4 id="缓冲区类型"><a href="#缓冲区类型" class="headerlink" title="缓冲区类型"></a>缓冲区类型</h4><p>基于点要素的缓冲区：</p>
+<blockquote>
+<p>通常以点为圆心、以一定距离为半径的圆</p>
+</blockquote>
+<p>基于线要素的缓冲区：</p>
+<blockquote>
+<p>通常是以线为中心轴线，距中心轴线一定距离的平行条带多边形</p>
+</blockquote>
+<p>基于面要素的缓冲区：</p>
+<blockquote>
+<p>向外或内扩展一定距离以生成新的多边形</p>
+</blockquote>
+<p>缓冲区分析三要素：</p>
+<ul>
+<li>主体：表示分析的主要目标，一般分为点源、线源、和面源三类</li>
+<li>邻近对象：表示受主体影响的客体，例如行政界限变更时所影响的水土流失范围等</li>
+<li>对象的作用条件：表示主体邻近对象施加作用的影响条件或影响强度</li>
+</ul>
+</li>
+<li><h4 id="缓冲区实现的基本算法"><a href="#缓冲区实现的基本算法" class="headerlink" title="缓冲区实现的基本算法"></a>缓冲区实现的基本算法</h4></li>
+<li><h4 id="缓冲区分析应用"><a href="#缓冲区分析应用" class="headerlink" title="缓冲区分析应用"></a><span id="缓冲区分析应用">缓冲区分析应用</span></h4><h5 id="1-案例一"><a href="#1-案例一" class="headerlink" title="1. 案例一"></a>1. 案例一</h5><p>实习背景</p>
+<blockquote>
+<p>如何找到环境好、购物方便、小孩上学方便的居住区地段是购房者最关心的问题，因此，为了辅助购房者的决策，需要从总体上对商品房的信息进行研究分析，<strong>找出满足购房者需要的区域</strong>，并对<strong>城市区域住房条件分定等级</strong>。</p>
+</blockquote>
+<p>所寻求的区域应满足：</p>
+<blockquote>
+<p>离主要交通要道200米之外，以减少噪音污染(ST为道路数据中的类型为交通要道要素)；<br>在商业中心服务范围之内，服务范围以商业中心700米之内；<br>距名牌高中750米之内，以便小孩上学便捷；<br>距名胜古迹500米之内，环境优雅</p>
+</blockquote>
+<p>步骤：</p>
+<blockquote>
+<ol>
+<li>交通网络图层栅格查询选择出市区的主要交通道路</li>
+<li>对选择的主干道进行缓冲区建立，指定缓冲区半径为200米</li>
+<li>建立商业中心缓冲区，缓冲半径为700米</li>
+<li>建立名胜古迹缓冲区，缓冲半径为500米</li>
+<li>建立名牌高中缓冲区，缓冲半径为750米</li>
+<li>对商业中心缓冲区、名牌高中缓冲区、名胜古迹缓冲区进行叠置分析的交集操作</li>
+<li><p>用主干道缓冲区对获得的三个区域的交集进行图层擦除，得到满足购房需求的区域</p>
+</li>
+<li><p>对前四个缓冲区添加字段，主干道缓冲区字段值赋值-1，另三个图层赋值为1</p>
+</li>
+<li>将四个图层进行合并，连接全部字段</li>
+<li>打开生成图层的属性列表，添加分类字段并计算4个字段的和进行分定等级</li>
+<li>设置分级显示图层，完成住房条件分定等级</li>
+</ol>
+</blockquote>
+<h5 id="2-案例二"><a href="#2-案例二" class="headerlink" title="2. 案例二"></a>2. 案例二</h5><p>  获准在某林区采伐，为防止水土流失，规定不得在河流周围1km内采伐林木。另外，为便于运输，决定将采伐区定在道路周围5km 之内。请找出符合上逑条件的采伐区，输出森林采伐图。</p>
+<blockquote>
+<p>(1)将该地区具有相同比例尺且进行配准的道路分布图﹑河流分布图﹑森林分布图，进行预处理和数字化;<br>(2)利用河流分布图生成1km 的等距缓冲区;</p>
+<p>(3)利用道路分布图生成5km的等距缓冲区;<br>(4)森林分布图中可采伐林地﹑道路缓冲区及河流缓冲区图进行叠置，叠置条件表达式为:采伐区=森林分布图中可伐林地∩道路周围5km缓冲区∩非河流周围1km缓冲区<br>(5)将上逑3张图进行两两叠置,所得结果即为森林采伐图</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="泰森多边形分析"><a href="#泰森多边形分析" class="headerlink" title="泰森多边形分析"></a><span id="泰森多边形">泰森多边形分析</span></h3><ol>
+<li><p>定义</p>
+<blockquote>
+<p>由<strong>点图层</strong>生成其<strong>近邻多边形图层</strong>，来表示该标识点的影响范围,<br>确保在一个多边形内的每个采样点与该多边形内的已知点更接近<br>而与其他的已知点相距较远，是<strong>局部拟合插值法</strong>的一种。每个<br>点对应一个新生成的多边形，该输入点作为多边形的标识点，<strong>相</strong><br><strong>邻标识点到其“公共边”的距离相等</strong></p>
+</blockquote>
+</li>
+<li><p>实现过程</p>
+<blockquote>
+<p>由输入点相连生成三角网<br>对每个三角形的边作垂直平分线;删除原三角形<br>而每个输入点作为多边形的标识点,垂直平分线作为泰森多边形的边</p>
+</blockquote>
+</li>
+<li><p>应用与特点分析</p>
+<p>特点：</p>
+<ul>
+<li>多边形的多少取决于采样点的数量</li>
+<li>多边形的面积和形状取决于样本点的分布</li>
+<li>多边形的属性来源于单个采样点，与其他点无关</li>
+<li>泰森多边形内部的均质与边界的突变</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>大气质量评估与污染气体分布</li>
+</ul>
+</li>
+</ol>
+<h2 id="叠置分析"><a href="#叠置分析" class="headerlink" title="叠置分析"></a><span id="叠加分析">叠置分析</span></h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>综合不同图层、可能改变图层内空间要素的分析方法。指<strong>同一地区、同种参考系统(坐标系统，分带与基准面)下</strong>的两组或两组以上要素的数据文件进行叠置，根据两组的属性来建立具有<strong>多重属性的多边形</strong>或进行多边形范围内的属性特性的统计分析。</p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p><strong>寻找和确定同时具有多种地理属性的分布区域</strong></p>
+<h3 id="矢量数据的叠置分析及问题"><a href="#矢量数据的叠置分析及问题" class="headerlink" title="矢量数据的叠置分析及问题"></a>矢量数据的叠置分析及问题</h3><h4 id="点面叠置"><a href="#点面叠置" class="headerlink" title="点面叠置"></a>点面叠置</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111153942.png" alt="点面叠置" loading="lazy"></p>
+<blockquote>
+<p>应用</p>
+</blockquote>
+<ul>
+<li><p>得到某省内雨量站点的个数</p>
+</li>
+<li><p>某水文站点属于哪个行政区划</p>
+</li>
+<li><p>城市邮局分布密度</p>
+</li>
+</ul>
+<h4 id="线面叠置"><a href="#线面叠置" class="headerlink" title="线面叠置"></a>线面叠置</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211119152726.png" alt="线面叠置" loading="lazy"></p>
+<blockquote>
+<p>​    应用</p>
+</blockquote>
+<ul>
+<li>某省区内高速公路的长度</li>
+<li>某段公路属于哪个行政区划</li>
+<li>城市的河网密度</li>
+<li>某条河流流经行政区</li>
+</ul>
+<h4 id="面面叠置"><a href="#面面叠置" class="headerlink" title="面面叠置"></a>面面叠置</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111184045.png" alt="面面叠置" loading="lazy"></p>
+<blockquote>
+<p>应用</p>
+</blockquote>
+<ul>
+<li>某省区内有哪几种土地利用类型</li>
+<li>不同级别的灾害分区的植被覆盖情况</li>
+<li>某行政区划内的地层岩性分布情况</li>
+</ul>
+<h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><h4 id="图层合并"><a href="#图层合并" class="headerlink" title="图层合并"></a>图层合并</h4><p>并集：保留两个输入层中所有多边形</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111185938.png" alt="图层合并" loading="lazy"></p>
+<h4 id="交集操作"><a href="#交集操作" class="headerlink" title="交集操作"></a>交集操作</h4><p>交集：保留两个输入层中的公共区域</p>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190005.png" alt="交集" loading="lazy"></p>
+<h4 id="图层擦除"><a href="#图层擦除" class="headerlink" title="图层擦除"></a>图层擦除</h4><p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190036.png" alt="擦除" loading="lazy"></p>
+<h4 id="识别叠加"><a href="#识别叠加" class="headerlink" title="识别叠加"></a>识别叠加</h4><blockquote>
+<p>以输入图层为界，保留边界内的所有多边形</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190240.png" alt="识别叠加" loading="lazy"></p>
+<h4 id="对称差值"><a href="#对称差值" class="headerlink" title="对称差值"></a>对称差值</h4><h4 id="修正更新"><a href="#修正更新" class="headerlink" title="修正更新"></a>修正更新</h4><blockquote>
+<p>输出层为一个经删除处理后的图层与一个新特征图层进行合并后的结果</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190437.png" alt="修正更新" loading="lazy"></p>
+<h4 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h4><blockquote>
+<p>输出层为按一个图层的边界，对另外一个图层的内容要素进行截取后的结果</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111190621.png" alt="擦除" loading="lazy"></p>
+<h4 id="交集取反"><a href="#交集取反" class="headerlink" title="交集取反"></a>交集取反</h4><blockquote>
+<p>保留两个输入层中的公共区域的反</p>
+</blockquote>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211111191207.png" alt="交集取反" loading="lazy"></p>
+<h2 id="栅格数据分析"><a href="#栅格数据分析" class="headerlink" title="栅格数据分析"></a>栅格数据分析</h2><h3 id="距离分析"><a href="#距离分析" class="headerlink" title="距离分析"></a><span id="距离分析">距离分析</span></h3><ol>
+<li><p>源栅格</p>
+<blockquote>
+<p>源即距离分析中的目标或目的地</p>
+</blockquote>
+</li>
+<li><p>成本栅格</p>
+<blockquote>
+<p>记录了通过每一单元的通行成本</p>
+</blockquote>
+</li>
+<li><p>成本距离</p>
+<blockquote>
+<p>记录每个栅格到距离最近、成本最低的源的最少累加成本</p>
+</blockquote>
+</li>
+<li><p>方向栅格</p>
+<blockquote>
+<p>从每一单元出发，沿着最低累计成本路径到达最近源的路线方向</p>
+</blockquote>
+</li>
+<li><p>分配栅格</p>
+<blockquote>
+<p>记录每一单元点隶属的最近源信息，单元值就是其最近源的值</p>
+</blockquote>
+</li>
+<li><p>直线距离</p>
+<blockquote>
+<p>通过直线距离函数，计算每个栅格与最近源之间的欧氏距离，并按距离远近分级</p>
+</blockquote>
+</li>
+<li><p>最短路径</p>
+<blockquote>
+<p>通过最短路径函数获取从一个起点或一组起点出发，到达一个目标地或一组目标地的最短直线路径或最小成本路径</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211122123502.png" alt="" loading="lazy"></p>
+<h3 id="密度分析"><a href="#密度分析" class="headerlink" title="密度分析"></a>密度分析</h3><p>针对一些点要素（或线要素）的特征值（如人口数）并不是集中在点上（或线上）的特点，对要素的特征值进行空间分配，从而更加真实地反映要素的分布</p>
+<h4 id="1-简单密度"><a href="#1-简单密度" class="headerlink" title="1. 简单密度"></a>1. 简单密度</h4><h4 id="2-核密度"><a href="#2-核密度" class="headerlink" title="2.核密度"></a>2.核密度</h4><h3 id="统计分析"><a href="#统计分析" class="headerlink" title="统计分析"></a><span id="统计分析">统计分析</span></h3><h4 id="1-单元统计"><a href="#1-单元统计" class="headerlink" title="1. 单元统计"></a>1. 单元统计</h4><p>以<strong>栅格单元为单位</strong>来进行单元统计分析，单元统计输入数据集必须是来源于同一个地理区域，并且采用相同的坐标系统</p>
+<h4 id="2-领域统计"><a href="#2-领域统计" class="headerlink" title="2.领域统计"></a>2.领域统计</h4><p>邻域统计是以待计算栅格为中心，向其周围扩展<strong>一定邻域</strong>，在单元对应的<strong>邻域范围指定的单元上</strong>进行统计分析，然后将结果值输出到该单元位置</p>
+<blockquote>
+<p>四种领域分析窗口：矩形领域、圆形领域、环形领域、扇形领域</p>
+</blockquote>
+<h4 id="3-分区统计"><a href="#3-分区统计" class="headerlink" title="3.分区统计"></a>3.分区统计</h4><p>分区统计，即以一个数据集的<strong>分区为基础</strong>，对另一个数据集进行统计分析，包括计算数值范围、最大值、最小值、标准差等等。分区统计是在每一个分区的基础上进行统计，输出结果时<strong>同一分区被赋予相同的单一输出统计值</strong></p>
+<p>一个分区就是在栅格数据中拥有相同值的栅格单元，而<strong>不考虑他们是否邻近</strong></p>
+<h3 id="重分类分析"><a href="#重分类分析" class="headerlink" title="重分类分析"></a><span id="重分类">重分类分析</span></h3><p>重分类是将<strong>属性数据的类别转换成新类</strong>，即基于栅格数据原有数值类型，对原有数值类型按照一定的原则重新进行分类，从而得到<strong>一组新值</strong>并输出</p>
+<p>重分类过程</p>
+<ul>
+<li>新值替换：用一组新值取代栅格数据原来一组数值</li>
+<li>重新分类：将原来几个数值重新组合成一个新的数值</li>
+<li>旧值合并：用一个新值取代栅格数据原来一段数值区间或几类数值</li>
+<li>空值设置：将栅格数据原来某个数值统一设置为空值</li>
+</ul>
+<h3 id="栅格计算-地图代数"><a href="#栅格计算-地图代数" class="headerlink" title="栅格计算(地图代数)"></a><span id="地图代数">栅格计算(地图代数)</span></h3><blockquote>
+<p>两个以上层面的栅格数据系统，以<strong>某种函数关系</strong>作为复合分析的依据进行<strong>逐网格运算</strong>，从而得到新的栅格数据系统的过程</p>
+</blockquote>
+<ol>
+<li><p>代数运算</p>
+<blockquote>
+<p>加减乘除、取整</p>
+</blockquote>
+</li>
+<li><p>逻辑运算</p>
+<blockquote>
+<p>关系、布尔</p>
+</blockquote>
+</li>
+</ol>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="//note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210556.jpg"><img loading="lazy" src="//note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210556.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png"><img loading="lazy" src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20210708210627.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Faith Hesper</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://faith-hesper.github.io/archives/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/" title="位置与几何关系分析">https://faith-hesper.github.io/archives/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/archives/%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/" rel="prev" title="空间相关性分析"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">空间相关性分析</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/archives/%E7%A9%BA%E9%97%B4%E9%87%8F%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8E%A2%E6%B5%8B/" rel="next" title="空间量算与数据探测"><span class="post-nav-text">空间量算与数据探测</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么？</span><br></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Faith Hesper</span></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="搜索..." value=""></div><div id="local-search-result"></div></div><div class="aplayer no-destroy" id="aplayer" data-id="308168565" data-server="netease" data-type="playlist" data-fixed="true" data-theme="#0078E7" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
