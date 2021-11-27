@@ -463,21 +463,56 @@ private void FormClose()
 </ul>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211126211212.png" alt="image-20211126211212542" loading="lazy"></p>
 <h3 id="方法-v2">方法</h3>
-<p>地图浏览</p>
+<ol>
+<li>地图浏览</li>
+</ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*SuperMap 为实际添加的 SuperMap Ctrl控件的Name值
+ViewEntire();	&#x2F;&#x2F;全图显示
+Close();	&#x2F;&#x2F; 关闭地图窗口
+Connect();	&#x2F;&#x2F; 建立SuperMap与SuperWorkspace控件的连接
+Disconnect();	&#x2F;&#x2F; 断开SuperMap与SuperWorkspace控件的连接
+OpenMap(strSavePath);	&#x2F;&#x2F; 打开工作空间中保存的地图
+SaveMap();	&#x2F;&#x2F; 保存工作空间中保存的地图
+SaveMapAs(strSavePath);
 *&#x2F;
-&#x2F;&#x2F;全图显示
-this.SuperMap.ViewEntire();</code></pre>
+this.SuperMap.ViewEntire();	&#x2F;&#x2F;全图显示
+this.SuperMap.Close();	&#x2F;&#x2F; 关闭地图窗口
+this.SuperMap.Connect();	&#x2F;&#x2F; 建立SuperMap与SuperWorkspace控件的连接
+this.SuperMap.Disconnect();	&#x2F;&#x2F; 断开SuperMap与SuperWorkspace控件的连接
+this.SuperMap.OpenMap(strSavePath);	&#x2F;&#x2F; 打开工作空间中保存的地图
+this.SuperMap.SaveMap();	&#x2F;&#x2F; 保存工作空间中保存的地图
+this.SuperMap.SaveMapAs(strSavePath);	&#x2F;&#x2F; 另存工作空间中保存的地图</code></pre>
 <h3 id="属性-v2">属性</h3>
 <p>地图浏览</p>
-<pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*SuperMap.Action 返回&#x2F;设置对SuperMap 控件的当前操作状态
+<pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*!important
+SuperMap.Action 返回&#x2F;设置对SuperMap 控件的当前操作状态
 *&#x2F;
 this.SuperMap.Action
-this.axSuperMap1.Action &#x3D; SuperMapLib.seAction.scaZoomIn;   &#x2F;&#x2F; 放大(scaZoomIn)
-this.axSuperMap1.Action &#x3D; SuperMapLib.seAction.scaZoomOut;	&#x2F;&#x2F; 缩小(scaZoomOut)
-this.axSuperMap1.Action &#x3D; SuperMapLib.seAction.scaZoomFree;  &#x2F;&#x2F; 自由缩放(scaZoomFree)
-this.axSuperMap1.Action &#x3D; SuperMapLib.seAction.scaPan;  &#x2F;&#x2F; 漫游(scaPan)
-this.axSuperMap1.Action &#x3D; SuperMapLib.seAction.scaSelect;	&#x2F;&#x2F;点选(scaSelect)</code></pre>
+this.SuperMap.Action &#x3D; SuperMapLib.seAction.scaZoomIn;   &#x2F;&#x2F; 放大(scaZoomIn)
+this.SuperMap.Action &#x3D; SuperMapLib.seAction.scaZoomOut;	&#x2F;&#x2F; 缩小(scaZoomOut)
+this.SuperMap.Action &#x3D; SuperMapLib.seAction.scaZoomFree;  &#x2F;&#x2F; 自由缩放(scaZoomFree)
+this.axSuperMap.Action &#x3D; SuperMapLib.seAction.scaPan;  &#x2F;&#x2F; 漫游(scaPan)
+this.axSuperMap.Action &#x3D; SuperMapLib.seAction.scaSelect;	&#x2F;&#x2F;点选(scaSelect)
+this.axSuperMap.Action &#x3D; SuperMapLib.seAction.scaRectSelect;	&#x2F;&#x2F;矩形方式选(scaRectSelect)
+this.SuperMap.Action &#x3D; SuperMapLib.seAction.scaCircleSelect;	&#x2F;&#x2F;圆形选(scaCircleSelect)
+this.SuperMap.Action &#x3D; SuperMapLib.seAction.scaRegionSelect;	&#x2F;&#x2F;多边形选(scaRegionSelect)
+&#x2F;*Bounds 返回值为 soRect类型对象 (SuperMap 地图的坐标范围)
+ViewBounds 返回值为 soRect类型对象 (SuperMap 地图的可视范围)
+CenterX、CenterY 返回值为 Double类型 (SuperMap 地图窗口的中心点坐标)
+*&#x2F;
+SuperMap.Bounds	&#x2F;&#x2F; 地图坐标范围(Bounds)
+SuperMap.ViewBounds	&#x2F;&#x2F; 可视地图范围(Bounds)
+SuperMap.CenterX	&#x2F;&#x2F; 返回&#x2F;设置SuperMap地图窗口的中心点X坐标值(CenterX)
+SuperMap.CenterY	&#x2F;&#x2F; 返回&#x2F;设置SuperMap地图窗口的中心点Y坐标值(CenterY)
+&#x2F;* !important
+Layers 返回值为 soLayers类型对象 (SuperMap 地图窗口的图层集合)
+Selection 返回值为 soSelection类型对象 (SuperMap 被选中的空间对象集合)
+Modified 返回值为 Bool类型值
+*&#x2F;
+SuperMap.Layers	&#x2F;&#x2F; 图层集合(Layers)
+SuperMap.Selection	&#x2F;&#x2F; 返回&#x2F;设置SuperMap 地图窗口中被选中的空间对象集合(Selection)
+soSelection objSelection &#x3D; this.SuperMap.selection;	&#x2F;&#x2F; 获取数据集
+SuperMap.Modified	&#x2F;&#x2F; 返回地图窗口中的数据、图层以及显示是否被修改(Modified)</code></pre>
 <h2 id="数据源-soDataSource">数据源(soDataSource)</h2>
 <p>数据源是存储空间数据的场所。空间数据存放于数据源中，<strong>任何对空间数据的操作</strong>都需要先<strong>打开或者获得</strong>数据源<br>
 空间数据的存储方式有两种:</p>
