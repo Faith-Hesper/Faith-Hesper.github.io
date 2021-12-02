@@ -268,37 +268,39 @@ markdown:
   <entry>
     <title>SuperMapObjects开发</title>
     <url>//archives/SuperMapObjects%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><h1 id="SuperMapObjects"><a href="#SuperMapObjects" class="headerlink" title="SuperMapObjects"></a>SuperMapObjects</h1><h2 id="工作空间-SuperWorkspace"><a href="#工作空间-SuperWorkspace" class="headerlink" title="工作空间(SuperWorkspace)"></a>工作空间(SuperWorkspace)</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li><p>SuperWorkspace工作空间控件创建</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><h1>SuperMapObjects</h1>
+<h2 id="工作空间-SuperWorkspace">工作空间(SuperWorkspace)</h2>
+<h3 id="概念">概念</h3>
+<ul>
+<li>
+<p>SuperWorkspace工作空间控件创建</p>
 </li>
-<li><p>扩展名为*.smw</p>
+<li>
+<p>扩展名为*.smw</p>
 </li>
-<li><p>系统初始会创建一个空的工作空间</p>
-<div class=“danger”>
-
-
-</li>
-</ul>
+<li>
+<p>系统初始会创建一个空的工作空间</p>
+<div class="danger">
 <blockquote>
 <p>该工作空间不存在数据源、地图和布局，只有系统默认的资源</p>
 </blockquote>
-<p>  &lt;/div&gt;</p>
+</div>
+</li>
+</ul>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211125210757.png" alt="" loading="lazy"></p>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211125215344.png" alt="image-20211125215343863" loading="lazy"></p>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211202132028.png" alt="" loading="lazy"></p>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211202132402.png" alt="" loading="lazy"></p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><div class="warning">
-
-> SuperWorkspace 为SuperWorkspace(工作空间) 控件的实际Name值
->
-> SuperWorkspaceManager 为SuperWorkspaceManager(工作空间管理器) 控件的实际Name值
->
-> SuperMap 为SuperMap(地图) 控件的实际Name值
->
-> SuperLengend 为SuperLengend(图例管理器) 控件的实际Name值
-
+<h3 id="方法">方法</h3>
+<p>方法</p>
+<div class="warning">
+<blockquote>
+<p>SuperWorkspace 为SuperWorkspace(工作空间) 控件的实际Name值</p>
+<p>SuperWorkspaceManager 为SuperWorkspaceManager(工作空间管理器) 控件的实际Name值</p>
+<p>SuperMap 为SuperMap(地图) 控件的实际Name值</p>
+<p>SuperLengend 为SuperLengend(图例管理器) 控件的实际Name值</p>
+</blockquote>
 </div>
-
 <ol>
 <li>打开</li>
 </ol>
@@ -330,7 +332,7 @@ private void ConnectSuperMap()
     this.SuperWkspManager.Connect(objWSHandle);	&#x2F;&#x2F;将关联工作空间管理器控件与工作空间控件
     this.SuperLegend.Connect(objMapHandle);	&#x2F;&#x2F;将图例管理器与地图控件关联
 &#125;</code></pre>
-<ol>
+<ol start="2">
 <li>保存</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*
@@ -342,7 +344,7 @@ SaveAs() 返回值为bool类型值
 *&#x2F;
 SuperWorkspace.Save()	&#x2F;&#x2F; 保存工作空间
 SuperWorkspace.SaveAs()	&#x2F;&#x2F;另存工作空间</code></pre>
-<ol>
+<ol start="3">
 <li>创建</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*
@@ -357,7 +359,7 @@ Create() 返回值为soDataSource 数据源类型对象
 *&#x2F;
 SuperWorkspace.Create()	&#x2F;&#x2F; 创建工作空间
 SuperWorkspace.CreateDataSource()	&#x2F;&#x2F; 新建数据源</code></pre>
-<ol>
+<ol start="4">
 <li>关闭</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">SuperWorkspace.Close()	&#x2F;&#x2F; 关闭工作空间
@@ -397,60 +399,76 @@ private void FormClose()
     this.SuperWorkspaceManager.Disconnect();
     this.SuperWorkspace.Close();
 &#125;</code></pre>
-<ol>
+<ol start="5">
 <li>获取</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">SuperWorkspace.GetWorkspaceName();	&#x2F;&#x2F; 获取当前工作空间对应的文件名</code></pre>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
-<li><p>Handle 属性</p>
+<h3 id="属性">属性</h3>
+<ol>
+<li>
+<p>Handle 属性</p>
 <blockquote>
 <p><strong>用于指定Supermap与SuperWorkspace的连接</strong>，即使地图与工作空间连接，使其能从工作空间获取数据。返回值为工作空间的句柄</p>
 </blockquote>
 </li>
-<li><p>Datasources 数据源的集合</p>
+<li>
+<p>Datasources 数据源的集合</p>
 <blockquote>
 <p>返回数据源集合对象(<strong>soDatasources</strong>)，只读属性。工作空间中<strong>有且仅有一个</strong>soDatasources对象，使用数据源都存放在当中</p>
 </blockquote>
 </li>
-<li><p>Maps 属性    </p>
+<li>
+<p>Maps 属性</p>
 <blockquote>
 <p>返回SuperWorkspace的地图名集合对象 (<strong>soMaps</strong>)</p>
 </blockquote>
 </li>
-<li><p>Layouts 属性</p>
+<li>
+<p>Layouts 属性</p>
 <blockquote>
 <p>返回SuperWorkspace的布局名集合对象 (<strong>soLayouts</strong>)</p>
 </blockquote>
 </li>
-<li><p>Resoures 属性</p>
+<li>
+<p>Resoures 属性</p>
 <blockquote>
 <p>返回SuperWorkspace的资源对象 (<strong>soResoures</strong>)</p>
 </blockquote>
 </li>
-<li><p>Modified 属性</p>
+<li>
+<p>Modified 属性</p>
 <blockquote>
 <p>返回数据源是否有改动，返回值为 bool 类型的值</p>
 </blockquote>
 </li>
 </ol>
-<h2 id="地图-soMaps"><a href="#地图-soMaps" class="headerlink" title="地图(soMaps)"></a>地图(soMaps)</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
-<li><p><strong>地图由一个或多个图层组成</strong>，<strong>存储于工作空间中</strong></p>
+<h2 id="地图-soMaps">地图(soMaps)</h2>
+<h3 id="概念-v2">概念</h3>
+<ul>
+<li>
+<p><strong>地图由一个或多个图层组成</strong>，<strong>存储于工作空间中</strong></p>
 </li>
-<li><p>保存地图必须把工作空间同时保存下来</p>
+<li>
+<p>保存地图必须把工作空间同时保存下来</p>
 </li>
-<li><p>地图中没有存储数据集</p>
+<li>
+<p>地图中没有存储数据集</p>
 </li>
-<li><p><strong>地图中的数据来源于数据源</strong></p>
+<li>
+<p><strong>地图中的数据来源于数据源</strong></p>
 <blockquote>
 <p>Map对象保存的是当前地图窗口中地图所打开的<strong>数据集的索引</strong>、<strong>地图风格设置</strong>、<strong>地图显示范围等信息</strong></p>
 <p>保存时所用的地图名称必须与当前工作空间中已有的地图名不同，否则会保存失败</p>
 <p>保存地图后，还需保存工作空间</p>
+</blockquote>
+<blockquote>
 <p>在制作地图并保存后，如将对应的数据源删除，则相应的地图也会清除</p>
 </blockquote>
 </li>
 </ul>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211126211212.png" alt="image-20211126211212542" loading="lazy"></p>
-<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ol>
+<h3 id="方法-v2">方法</h3>
+<ol>
 <li>地图浏览</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*SuperMap 为实际添加的 SuperMap Ctrl控件的Name值
@@ -473,7 +491,8 @@ this.SuperMap.SaveMap();	&#x2F;&#x2F; 保存工作空间中保存的地图
 this.SuperMap.SaveMapAs(strSavePath);	&#x2F;&#x2F; 另存工作空间中保存的地图
 this.SuperMap.Refresh()	&#x2F;&#x2F; 刷新地图窗口
 this.SuperMap.Zoom(num)	&#x2F;&#x2F; 放大或缩小地图窗口</code></pre>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>地图浏览</p>
+<h3 id="属性-v2">属性</h3>
+<p>地图浏览</p>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*!important
 SuperMap.Action 返回&#x2F;设置对SuperMap 控件的当前操作状态
 (SuperMap.ViewEnire())
@@ -504,7 +523,8 @@ SuperMap.Layers	&#x2F;&#x2F; 图层集合(Layers)
 SuperMap.Selection	&#x2F;&#x2F; 返回&#x2F;设置SuperMap 地图窗口中被选中的空间对象集合(Selection)
 soSelection objSelection &#x3D; this.SuperMap.selection;	&#x2F;&#x2F; 获取数据集
 SuperMap.Modified	&#x2F;&#x2F; 返回地图窗口中的数据、图层以及显示是否被修改(Modified)</code></pre>
-<h2 id="工作空间管理器-SuperWkspManager"><a href="#工作空间管理器-SuperWkspManager" class="headerlink" title="工作空间管理器(SuperWkspManager)"></a>工作空间管理器(SuperWkspManager)</h2><p>统一管理SuperWorkspace中的所有资源，以<strong>树的方式</strong>显示工作空间中的所有资源，如<strong>数据源、数据集、地图、布局、符号库和线型库</strong>等</p>
+<h2 id="工作空间管理器-SuperWkspManager">工作空间管理器(SuperWkspManager)</h2>
+<p>统一管理SuperWorkspace中的所有资源，以<strong>树的方式</strong>显示工作空间中的所有资源，如<strong>数据源、数据集、地图、布局、符号库和线型库</strong>等</p>
 <ol>
 <li>seSelectedItemFlag 常量</li>
 </ol>
@@ -519,15 +539,18 @@ scsSymboLib	<span class="token comment">// 选中符号库</span>
 scsLineStyleLib	<span class="token comment">// 选中线型库</span>
 scsFillStyleLib	<span class="token comment">// 选中填充库</span>
 scsNothing	<span class="token comment">// 没有任何节点选中</span></code></pre>
-<ol>
-<li><p>strSelected 选中项的文本</p>
+<ol start="2">
+<li>
+<p>strSelected 选中项的文本</p>
 <p>如果选中的是数据源，则返回数据源的别名；如果是数据集或者地图、布局则是其名称</p>
 </li>
-<li><p>strParent 选中项的父节点名称</p>
+<li>
+<p>strParent 选中项的父节点名称</p>
 <p>对数据集来说就是数据源的别名，其他类型选中则参数无效</p>
 </li>
 </ol>
-<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ol>
+<h3 id="事件">事件</h3>
+<ol>
 <li>LDbClick 工作空间管理器窗口双击</li>
 </ol>
 <pre class="language-c#" data-language="c#"><code class="language-c#">&#x2F;*
@@ -568,11 +591,14 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
             break;
     &#125;
  &#125;</code></pre>
-<h2 id="数据源-soDataSource"><a href="#数据源-soDataSource" class="headerlink" title="数据源(soDataSource)"></a>数据源(soDataSource)</h2><p>数据源是存储空间数据的场所。空间数据存放于数据源中，<strong>任何对空间数据的操作</strong>都需要先<strong>打开或者获得</strong>数据源<br>    空间数据的存储方式有两种:</p>
+<h2 id="数据源-soDataSource">数据源(soDataSource)</h2>
+<p>数据源是存储空间数据的场所。空间数据存放于数据源中，<strong>任何对空间数据的操作</strong>都需要先<strong>打开或者获得</strong>数据源<br>
+空间数据的存储方式有两种:</p>
 <blockquote>
 <p><em>文件存储与关系数据库存储</em></p>
 </blockquote>
-<h2 id="数据集-soDataset"><a href="#数据集-soDataset" class="headerlink" title="数据集(soDataset)"></a>数据集(soDataset)</h2><ol>
+<h2 id="数据集-soDataset">数据集(soDataset)</h2>
+<ol>
 <li>数据集</li>
 </ol>
 <ul>
@@ -580,7 +606,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
 <li>一个数据源通常由多个不同类型数据集组成</li>
 <li>分为栅格数据集、矢量数据集、非空间数据集(属性数据集)</li>
 </ul>
-<ol>
+<ol start="2">
 <li><strong>获取数据集方法</strong></li>
 </ol>
 <ul>
@@ -590,53 +616,73 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
 <li>从选择集获取</li>
 </ul>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211201160335.png" alt="" loading="lazy"></p>
-<h3 id="记录集-soRecordset"><a href="#记录集-soRecordset" class="headerlink" title="记录集(soRecordset)"></a>记录集(soRecordset)</h3><ul>
+<h3 id="记录集-soRecordset">记录集(soRecordset)</h3>
+<ul>
 <li>记录是处理和存储实体信息的基本单位，记录的集合叫记录集</li>
 <li><strong>每一个矢量数据集对应一个完整的记录集，每一个空间几何对象对应一条记录</strong></li>
 </ul>
-<h2 id="图层-soLayer"><a href="#图层-soLayer" class="headerlink" title="图层(soLayer)"></a>图层(soLayer)</h2><ul>
+<h2 id="图层-soLayer">图层(soLayer)</h2>
+<ul>
 <li>一个图层必然对应一个数据集</li>
 <li>同一个<strong>数据集可以对应多个图层</strong></li>
 <li><strong>数据集的显示</strong>是在地图窗口中以<strong>图层的方式显示</strong></li>
 </ul>
 <p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211125212307.png" alt="" loading="lazy"></p>
-<h2 id="布局-soLayout"><a href="#布局-soLayout" class="headerlink" title="布局(soLayout)"></a>布局(soLayout)</h2><ul>
-<li><p>SuperLayout控件创建</p>
+<h2 id="布局-soLayout">布局(soLayout)</h2>
+<ul>
+<li>
+<p>SuperLayout控件创建</p>
 <blockquote>
 <p>确切的说,把一个或者多个地图放置在SuperLayout布局窗口中，并辅以其他的辅助制图要素如图名﹑图例就成为布局</p>
 </blockquote>
 </li>
-<li><p>布局主要用于<strong>空间数据的输出</strong></p>
+<li>
+<p>布局主要用于<strong>空间数据的输出</strong></p>
 </li>
-<li><p>一个工作空间可以有多个布局</p>
+<li>
+<p>一个工作空间可以有多个布局</p>
 </li>
-<li><p>同地图保存一样，<strong>布局的保存依赖于工作空间保存</strong></p>
+<li>
+<p>同地图保存一样，<strong>布局的保存依赖于工作空间保存</strong></p>
 </li>
 </ul>
-<h2 id="三维场景-soScenes"><a href="#三维场景-soScenes" class="headerlink" title="三维场景(soScenes)"></a>三维场景(soScenes)</h2><p>主要存放保存的三维地图窗口。<strong>三维场景地图由一个或多个三维图层组成，存储于工作空间中</strong>。三维图层用so3DLayer表示，一个三维地图窗口上可以添加多个图层，即so3DLayers</p>
-<h2 id="资源-soResoures"><a href="#资源-soResoures" class="headerlink" title="资源(soResoures)"></a>资源(soResoures)</h2><ul>
+<h2 id="三维场景-soScenes">三维场景(soScenes)</h2>
+<p>主要存放保存的三维地图窗口。<strong>三维场景地图由一个或多个三维图层组成，存储于工作空间中</strong>。三维图层用so3DLayer表示，一个三维地图窗口上可以添加多个图层，即so3DLayers</p>
+<h2 id="资源-soResoures">资源(soResoures)</h2>
+<ul>
 <li>存放了系统中打开和制作的符号、线型和填充符</li>
 <li>资源用于管理符号库( <strong>soSymbolLib</strong> )、线型库( <strong>soLineStyleLib</strong> )和填充库( <strong>soFillStyleLib</strong> )</li>
 <li>线型库文件 后缀(<em>.lsl)、符号库文件 后缀(</em>.sym)</li>
 </ul>
-<h2 id="几何对象-soGeometry"><a href="#几何对象-soGeometry" class="headerlink" title="几何对象(soGeometry)"></a>几何对象(soGeometry)</h2><ol>
+<h2 id="几何对象-soGeometry">几何对象(soGeometry)</h2>
+<ol>
 <li>几何对象</li>
 </ol>
 <ul>
 <li>点、线、面、文本、复合几何对象、参数化几何对象</li>
 </ul>
-<ol>
+<ol start="2">
 <li>soGeometry 获得途径</li>
 </ol>
 <ul>
-<li>从记录集中获取</li>
-<li>从符号转化而来</li>
-<li>从参数化的几何对象通过ConvertToLine或者ConvertToRegion方法转化而来</li>
-</ul>
-<ul>
-<li>选择题30分 15题 设计 开发(方法、参数、返回值)</li>
-<li>简答题30分 5题</li>
-<li>编程题40分 4题 5个句子</li>
+<li>
+<p>从记录集中获取</p>
+</li>
+<li>
+<p>从符号转化而来</p>
+</li>
+<li>
+<p>从参数化的几何对象通过ConvertToLine或者ConvertToRegion方法转化而来</p>
+</li>
+<li>
+<p>选择题30分 15题 设计 开发(方法、参数、返回值)</p>
+</li>
+<li>
+<p>简答题30分 5题</p>
+</li>
+<li>
+<p>编程题40分 4题 5个句子</p>
+</li>
 </ul>
 ]]></content>
       <tags>
