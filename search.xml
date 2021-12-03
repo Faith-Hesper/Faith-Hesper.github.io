@@ -266,6 +266,177 @@ markdown:
       </tags>
   </entry>
   <entry>
+    <title>遥感认识</title>
+    <url>//archives/%E9%81%A5%E6%84%9F%E8%AE%A4%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><h2 id="遥感基本概念">遥感基本概念</h2>
+<h3 id="1-遥感的定义">1.遥感的定义</h3>
+<h3 id="2-遥感平台">2.遥感平台</h3>
+<p>地面平台、航空平台、航天平台</p>
+<h3 id="3-传感器-遥感器">3.传感器/遥感器</h3>
+<p>接收、记录目标物反射或发射电磁波特征的仪器。如扫描仪、雷达、摄影机、摄像机、辐射计</p>
+<h3 id="4-遥感技术系统">4.遥感技术系统</h3>
+<h3 id="5-遥感的分类">5.遥感的分类</h3>
+<ol>
+<li>
+<p>按照遥感的工作平台分类</p>
+<blockquote>
+<p>地面遥感、航空遥感、航天遥感</p>
+</blockquote>
+</li>
+<li>
+<p>按照探测电磁波的工作波段分类</p>
+<blockquote>
+<p>紫外遥感、可见光遥感、红外遥感、微波遥感、多波段遥感</p>
+</blockquote>
+</li>
+<li>
+<p>按照遥感应用的目的分类</p>
+<blockquote>
+<p>外层空间遥感、大气、陆地、海洋遥感</p>
+</blockquote>
+</li>
+<li>
+<p>按照资料的记录方式</p>
+<blockquote>
+<p>成像方式、非成像方式</p>
+</blockquote>
+</li>
+<li>
+<p>按照传感器工作方式分类</p>
+<blockquote>
+<p><a href="主动遥感">主动遥感</a>、<a href="被动遥感">被动遥感</a></p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>
+<p><span id="主动遥感">主动遥感</span></p>
+<p>传感器*<u>本身主动发射</u>*人工探测信号，这些信息与目标对象相互作用后一部分<u>被反射回来</u>，又被传感器所接收，依靠这种信息进行的遥感是主动遥感</p>
+</li>
+<li>
+<p><span id="被动遥感">被动遥感</span></p>
+<p>传感器本身*<u>不发射</u>*任何人工探测信号，只能被动地接收从目标对象返回的电磁波信息进行遥感</p>
+</li>
+</ul>
+<ol start="6">
+<li>
+<p>按应用领域分类</p>
+<p>资源遥感、环境遥感、林业遥感、渔业遥感、城市遥感、农业遥感、水利遥感、地质遥感、军事遥感</p>
+</li>
+<li>
+<p>按资源类型分类</p>
+<p>土地资源、矿产资源、生物资源、海洋资源、水资源</p>
+</li>
+</ol>
+<h3 id="6-遥感的特点">6.遥感的特点</h3>
+<p>大面积同步观测、时效性与动态性、多波段性、综合性与可比性、经济性、局限性</p>
+<h3 id="7-遥感的主要任务">7.遥感的主要任务</h3>
+<h2 id="电磁波与电磁波谱">电磁波与电磁波谱</h2>
+<ol>
+<li>电磁波(横波)</li>
+</ol>
+<ul>
+<li>
+<p>波动性</p>
+<p>干涉、衍射、偏振</p>
+</li>
+<li>
+<p>粒子性</p>
+</li>
+</ul>
+<ol start="2">
+<li>电磁波谱</li>
+</ol>
+<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211203160218.gif" alt="电磁波谱图" loading="lazy"></p>
+<h2 id="物体的发射辐射">物体的发射辐射</h2>
+<h3 id="1-黑体辐射">1.黑体辐射</h3>
+<ol>
+<li>绝对黑体</li>
+</ol>
+<blockquote>
+<p><u><strong>对任何波长</strong></u>的电磁辐射<u><strong>全部吸收</strong></u>的物体。即对任何波长的辐射，反射率和透射率都等于0。也叫完全辐射体</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>黑体辐射定律</p>
+<ol>
+<li>
+<p>辐射通量密度随温度增加而迅速增加，每条曲线只有一个最大值</p>
+<blockquote>
+<p>红外装置测定温度的理论基础</p>
+</blockquote>
+</li>
+<li>
+<p>随着温度的升高，辐射峰值波长向短波方向移动</p>
+<blockquote>
+<p>维恩位移定律，常用于选择传感器和最佳的遥感波段</p>
+</blockquote>
+</li>
+<li>
+<p>温度越高辐射通量密度也越高，每条曲线彼此不相交</p>
+</li>
+<li>
+<p>黑体微波波段的辐射亮度与温度成正比，与波长的平方成反比</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-太阳辐射计大气对辐射影响">2.太阳辐射计大气对辐射影响</h3>
+<h4 id="太阳辐射">太阳辐射</h4>
+<p>太阳常数</p>
+<blockquote>
+<p>指不受不受大气影响，在距太阳一个天文单位内，垂 直于太阳光辐射方向上，单位面积单位时间黑体所接收 的太阳辐射能量</p>
+</blockquote>
+<p>太阳光谱</p>
+<ul>
+<li>太阳辐射的光谱是**<u>连续的</u>**</li>
+<li>太阳辐射特性与绝对黑体的辐射特性基本一致</li>
+<li>从近紫外到中红外这一波段区间能力最<strong>集中</strong>而且相对<strong>稳定</strong>；被动遥感主要利用<strong>可见光、红外</strong>等稳定辐射</li>
+<li>在X射线、射线、远紫外及微波波段，能量小，变化大</li>
+<li>大气层对太阳辐射的吸收、反射和散射</li>
+</ul>
+<h4 id="大气对辐射的影响">大气对辐射的影响</h4>
+<ol>
+<li>散射、吸收</li>
+</ol>
+<ul>
+<li>大气**<u>散射</u><strong>集中在太阳辐射的</strong><u>可见光波段</u>**，<u>太阳辐射衰减主要原因</u></li>
+<li>大气<u>吸收</u>的影响主要是造成遥感<strong>影像暗淡</strong>，由于大气对<strong>紫外线</strong>有很强的<strong>吸收</strong>作用，遥感<strong>很少用到紫外</strong>波段</li>
+</ul>
+<ol start="2">
+<li>瑞利散射</li>
+</ol>
+<ul>
+<li>大气中粒子的直径远小于入射电磁波波长</li>
+<li>瑞利散射对可见光影响较大，对红外辐射的影响较小，对微波的影响可以不计(多波段不使用蓝紫光原因)</li>
+<li>主要发生在可见光和近红外波段</li>
+</ul>
+<ol start="3">
+<li>米氏散射</li>
+</ol>
+<ul>
+<li>
+<p>大气中不均匀颗粒直径与入射波长同数量级</p>
+</li>
+<li>
+<p>云、雾的粒子大小与红外线的波长接近</p>
+</li>
+</ul>
+<ol start="3">
+<li>均匀散射</li>
+</ol>
+<ul>
+<li>不均匀颗粒直径远远大于入射波长</li>
+</ul>
+<h4 id="大气窗口">大气窗口</h4>
+<p>大气窗口是指通过大气后衰减较小，透过率较高的电磁辐射波段</p>
+<p>大气屏障是指透过率很小，甚至完全无法透过电磁波的波段</p>
+]]></content>
+      <tags>
+        <tag>遥感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SuperMapObjects开发</title>
     <url>//archives/SuperMapObjects%E5%BC%80%E5%8F%91/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><h1>SuperMapObjects</h1>
@@ -323,6 +494,7 @@ SuperWorkspace.OpenDataSource()	&#x2F;&#x2F; 打开数据源
 工作空间---&gt;工作空间管理器
 地图---&gt;图例管理器
 *&#x2F;
+this.SuperWorkspace.Open(strOpenPath);	&#x2F;&#x2F; 打开
 private void ConnectSuperMap()
 &#123;
     object objWSHandle &#x3D; this.SuperWorkspace.ObjectHandle; &#x2F;&#x2F;工作空间
