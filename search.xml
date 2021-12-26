@@ -24,7 +24,7 @@ hexo d
 <span class="token comment"># 根据 标题名称  在root/source/_post 生成 markdown 文件</span>
 hexo new 标题名称
 hexo new post 标题名称
-hexo new page newpage
+hexo new page newpage 新建页面
 
 <span class="token comment"># 新建文章 (仅自己可见)</span>
 hexo new draft newdraft
@@ -174,7 +174,7 @@ theme: next</code></pre>
 <ul>
 <li>
 <p>上面网站登陆京东后扫码即可有每日资产推送<br>
-<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211223204327.jpeg" style="zoom:200%;" / loading="lazy"></p>
+<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211223204327.jpeg" style="zoom:200%;" /></p>
 </li>
 <li>
 <p>现在qq、微信机器人已经具备群聊、私聊登录jd账号并获取cookie（后简称ck）的能力，后面会截图给出使用方法</p>
@@ -422,8 +422,8 @@ theme: next</code></pre>
 <ol>
 <li>首先你需要完成上面的步骤，然后发送查询，机器人会回复你
 <ol>
-<li><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png" alt="image-20211109155838262" loading="lazy"></a></li>
-<li>京豆是可以抵现金的，详细请看官方<a href="https://help.jd.com/user/issue/167-331.html">京豆使用规则</a><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png" alt="image-20211109160041434" loading="lazy"></a></li>
+<li><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png" alt="image-20211109155838262"></a></li>
+<li>京豆是可以抵现金的，详细请看官方<a href="https://help.jd.com/user/issue/167-331.html">京豆使用规则</a><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png" alt="image-20211109160041434"></a></li>
 <li>你有惊喜的红包，但是不能在京东使用，可以这样
 <ol>
 <li>京东选择你想要的产品</li>
@@ -451,15 +451,15 @@ theme: next</code></pre>
 <li>
 <p><strong>京东app</strong></p>
 <ul>
-<li>首页搜索   <em>“玩一玩”</em> （改名了）  “边玩边赚” 四个字，把里面所有的链接点一遍，选择商品、建立账号啥的，然后脚本会给你做这些任务（参考上面的图片）<a href="https://img.menglei.xyz/images/2021/09/27/1117f69debbf7978899.jpg"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="111" loading="lazy"></a></li>
-<li>红包提现：京东玩一玩–领现金  ，点击即可提现到微信，第一次2元。第二次可以提现10元，第三次30元 ；反正我提了不少了<a href="https://img.menglei.xyz/images/2021/09/27/image-20210927160813550.png"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="image-20210927160813550" loading="lazy"></a></li>
+<li>首页搜索   <em>“玩一玩”</em> （改名了）  “边玩边赚” 四个字，把里面所有的链接点一遍，选择商品、建立账号啥的，然后脚本会给你做这些任务（参考上面的图片）</li>
+<li>红包提现：京东玩一玩–领现金  ，点击即可提现到微信，第一次2元。第二次可以提现10元，第三次30元 ；反正我提了不少了</li>
 </ul>
 </li>
 <li>
 <h4 id="京喜app">京喜app</h4>
 <ul>
 <li>很多红包是仅限在京喜app中使用的，你下载京喜后，登录你的京东账号，你就会发现头像下方有红包，可能是几块钱、也可能10几块，   但是你要记得，这个红包🧧周期短，可能每天过期几块钱，当你买东西花光了这里的红包，过几天他就会自动增长到几块钱（不知道卖啥的话，就买纸，哈哈哈哈哈）</li>
-<li>京喜牧场：牧场中有鸡蛋，鸡蛋可以换相应的东西，根据自身需求换购<a href="https://img.menglei.xyz/images/2021/09/27/image-202109271552456177bd2df71d1d2ceb7.png"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="image-20210927155245617" loading="lazy"></a></li>
+<li>京喜牧场：牧场中有鸡蛋，鸡蛋可以换相应的东西，根据自身需求换购</li>
 <li>京喜工厂： 可以选择商品，脚本会自动给你跑（比京东工厂靠谱感觉）</li>
 <li>京喜财富岛：可以换购商品，自行查看</li>
 <li>京喜还有很多不知道的，欢迎补充</li>
@@ -470,7 +470,7 @@ theme: next</code></pre>
 <ul>
 <li>这个app很爽呀，毕竟白嫖的多</li>
 <li>正常下载，登录京东账号</li>
-<li>下面有金币XXXX（个）–这里脚本每天会给你做任务，你会获得金币    10000=1元，基本每天可以获得1元左右，点击进入可以看到换红包🧧界面（推荐换购50元的）；红包属于无门槛宏红包，比如说你看到一个51元的产品，你可以花费1元+刚才的50元红包进行购买<a href="https://img.menglei.xyz/images/2021/09/27/image-20210927160151742.png"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="image-20210927160151742" loading="lazy"></a><a href="https://img.menglei.xyz/images/2021/09/27/image-20210927160159678.png"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="image-20210927160159678" loading="lazy"></a></li>
+<li>下面有金币XXXX（个）–这里脚本每天会给你做任务，你会获得金币  10000=1元，基本每天可以获得1元左右，点击进入可以看到换红包🧧界面（推荐换购50元的）；红包属于无门槛宏红包，比如说你看到一个51元的产品，你可以花费1元+刚才的50元红包进行购买</li>
 <li>别的我没怎么注意，这个金币已经很好了</li>
 </ul>
 </li>
