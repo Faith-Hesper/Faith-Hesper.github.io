@@ -164,6 +164,45 @@ theme: next</code></pre>
 > Yellow
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>butterfly</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index_img</td>
+<td>主页的 top_img</td>
+</tr>
+<tr>
+<td>default_top_img</td>
+<td>默认的 top_img，当页面的 top_img 沒有配置时，会显示default_top_img</td>
+</tr>
+<tr>
+<td>archive_img</td>
+<td>文档页面的 top_img</td>
+</tr>
+<tr>
+<td>tag_img</td>
+<td>tag 子页面 的 默认 top_img</td>
+</tr>
+<tr>
+<td>tag_per_img</td>
+<td>tag 子页面的 top_img，可配置每个 tag 的 top_img</td>
+</tr>
+<tr>
+<td>category_img</td>
+<td>category 子页面 的 默认 top_img</td>
+</tr>
+<tr>
+<td>category_per_img</td>
+<td>category 子页面的 top_img，可配置每个 category 的 top_img</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
   </entry>
   <entry>
@@ -478,6 +517,7 @@ theme: next</code></pre>
 </li>
 </ol>
 <h2 id="结束，撒花🎉">结束，撒花🎉</h2>
+<p><img src="%20https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211227152800.jpg" alt="20210729_025259-1024x877"></p>
 ]]></content>
   </entry>
   <entry>
