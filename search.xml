@@ -3,7 +3,7 @@
   <entry>
     <title>Faith Hesper</title>
     <url>//archives/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=450 height=86 src="//music.163.com/outchain/player?type=2&id=1857288529&auto=1&height=66"></iframe>
 <iframe src="//player.bilibili.com/player.html?aid=503717099&bvid=BV19g411g7jj&cid=357082727&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -208,12 +208,12 @@ theme: next</code></pre>
   <entry>
     <title>京东薅薅乐</title>
     <url>//archives/%E4%BA%AC%E4%B8%9C%E8%96%85%E8%96%85%E4%B9%90/</url>
-    <content><![CDATA[<h2 id="开始">开始</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="开始">开始</h2>
 <p><a href="http://114.115.150.215:8081/login">京东薅薅乐登陆地址</a></p>
 <ul>
 <li>
 <p>上面网站登陆京东后扫码即可有每日资产推送<br>
-<img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211223204327.jpeg" style="zoom:200%;" /></p>
+<img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160655.jpeg" style="zoom:200%;" /></p>
 </li>
 <li>
 <p>现在qq、微信机器人已经具备群聊、私聊登录jd账号并获取cookie（后简称ck）的能力，后面会截图给出使用方法</p>
@@ -522,7 +522,7 @@ theme: next</code></pre>
   <entry>
     <title>typora快捷键</title>
     <url>//archives/typora%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h2 id="一：菜单栏">一：菜单栏</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="一：菜单栏">一：菜单栏</h2>
 <ul>
 <li>文件：alt+F</li>
 <li>编辑：alt+</li>
@@ -618,7 +618,7 @@ theme: next</code></pre>
   <entry>
     <title>tools</title>
     <url>//archives/tools/</url>
-    <content><![CDATA[<center style='font-size:28px; font-weight: bold' >List</center>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><center style='font-size:28px; font-weight: bold' >List</center>
 <table>
 <thead>
 <tr>
@@ -827,7 +827,7 @@ theme: next</code></pre>
   <entry>
     <title>暴力破解防护</title>
     <url>//archives/%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E9%98%B2%E6%8A%A4/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="定义">定义</h2>
 <p>什么是暴力破解，简单来说就是对一个服务器进行无数次尝试登陆，并用不同的密码进行登陆直到可以登陆成功。暴力破解的基本步骤可以分为以下几步：</p>
 <p><strong>1. 找到对应的linux服务器   Ip地址</strong></p>
 <p>2.扫描端口号：22   nmap扫描端口</p>
@@ -1004,7 +1004,7 @@ PORT   STATE  SERVICE
   <entry>
     <title>翻墙基础知识</title>
     <url>//archives/%E7%BF%BB%E5%A2%99%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h3 id="一、中国（大陆）目前的互联网管制概况">一、中国（大陆）目前的互联网管制概况</h3>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、中国（大陆）目前的互联网管制概况">一、中国（大陆）目前的互联网管制概况</h3>
 <p>在中国大陆无法正常访问的网站很多，除了世界最大的搜索引擎谷歌 Google 、世界最大社交平台脸书 Facebook和推特 Twitter ，还有世界最大的财经网彭博社 Bloomberg 、世界最大视频网 YouTube 、世界最大图片分享平台 Instagram 、世界著名大报纽约时报 New York Times ，时断时续（部分屏蔽）的还有世界最大的百科全书维基百科 Wikipedia 、世界著名电台 BBC 中文网，以及英国《金融时报》、美国《华尔街日报》等等。据不完全统计，前后被中国政府屏蔽的网站在两千个以上，维基百科词条“<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E8%A2%AB%E5%B0%81%E9%94%81%E7%BD%91%E7%AB%99%E5%88%97%E8%A1%A8">中华人民共和国被封锁网站</a>”就列出了数百个，涵盖政治、经济、文化、邮箱、图片、视频、云存储等等方面，涉及国际互联网几乎所有门类，而且主要是业内领先的大型网站。</p>
 <p>很多海归以及初到中国的外国人对此表示很难受，这么多大型网站和手机app都不能用，来到中国就像来到了国际互联网的孤岛，立马与世界失去联系，无奈只得翻墙。翻墙是一件闹心的事，一是网速严重减慢，二是VPN等工具得时时更新，费力费钱。</p>
 <p>抓瞎的不止老外，所有需要从被封网站获取信息的国人，包括部分教师、学生（尤其是高校学生）、记者、科研人员、外贸和金融从业人员等等，都被逼天天修炼翻墙大法，学习、工作和生活不同程度受阻。而中国大陆对网络的封锁还在逐渐升级。</p>
@@ -1039,7 +1039,7 @@ SSR ：在 SS 作者被喝茶之后，Github 上出现了一个叫 breakwa11 (�
   <entry>
     <title>遥感平台与遥感成像原理</title>
     <url>//archives/%E9%81%A5%E6%84%9F%E5%B9%B3%E5%8F%B0%E4%B8%8E%E9%81%A5%E6%84%9F%E6%88%90%E5%83%8F%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="遥感平台">遥感平台</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="遥感平台">遥感平台</h2>
 <h3 id="概念">概念</h3>
 <ol>
 <li>遥感平台</li>
@@ -1155,7 +1155,7 @@ SSR ：在 SS 作者被喝茶之后，Github 上出现了一个叫 breakwa11 (�
   <entry>
     <title>遥感认识</title>
     <url>//archives/%E9%81%A5%E6%84%9F%E8%AE%A4%E8%AF%86/</url>
-    <content><![CDATA[<h2 id="遥感基本概念">遥感基本概念</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="遥感基本概念">遥感基本概念</h2>
 <h3 id="遥感的定义">遥感的定义</h3>
 <h3 id="遥感平台">遥感平台</h3>
 <p>地面平台、航空平台、航天平台</p>
@@ -1234,7 +1234,7 @@ SSR ：在 SS 作者被喝茶之后，Github 上出现了一个叫 breakwa11 (�
 <ol start="2">
 <li>电磁波谱</li>
 </ol>
-<p><img src="https://note-1306141435.cos.ap-beijing.myqcloud.com/img/20211204082900.jpeg" alt="电磁波谱图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160650.jpeg" alt="电磁波谱图"></p>
 <h2 id="物体的发射辐射">物体的发射辐射</h2>
 <h3 id="黑体辐射">黑体辐射</h3>
 <ol>
@@ -1418,7 +1418,7 @@ SSR ：在 SS 作者被喝茶之后，Github 上出现了一个叫 breakwa11 (�
   <entry>
     <title>SuperMapObjects开发</title>
     <url>//archives/SuperMapObjects%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h1>SuperMapObjects</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>SuperMapObjects</h1>
 <h2 id="工作空间-SuperWorkspace">工作空间(SuperWorkspace)</h2>
 <h3 id="概念">概念</h3>
 <ul>
@@ -1843,7 +1843,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>mysql数据库</title>
     <url>//archives/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="基本操作命令">基本操作命令</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="基本操作命令">基本操作命令</h2>
 <h3 id="1-基本介绍">1. 基本介绍</h3>
 <ul>
 <li><code>\G</code>格式化输出</li>
@@ -1994,7 +1994,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>GIS空间分析复习</title>
     <url>//archives/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="地理学第一定律">地理学第一定律</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="地理学第一定律">地理学第一定律</h2>
 <p><strong>地理学第一定律，即地理事物或属性在空间分布上互为相关，存在聚集、随机、规则分布</strong>。即距离越近的地理事物，其性质也必相近</p>
 <h2 id="a-href-空间分析与GIS-空间分析的一般过程-空间分析的一般过程-a"><a href="../空间分析与GIS#空间分析的一般过程">空间分析的一般过程</a></h2>
 <ol>
@@ -2468,7 +2468,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>GIS空间分析题目</title>
     <url>//archives/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E9%A2%98%E7%9B%AE/</url>
-    <content><![CDATA[<h2 id="空间分析与GIS">空间分析与GIS</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="空间分析与GIS">空间分析与GIS</h2>
 <ol>
 <li>
 <p>如何数字化一副纸质专题地图？或者扩展为“如何通过地形图或者土地利用图的扫描形式制作一副地图”？</p>
@@ -2518,7 +2518,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>表面与三维空间分析</title>
     <url>//archives/%E8%A1%A8%E9%9D%A2%E4%B8%8E%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="地形表面参数计算">地形表面参数计算</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="地形表面参数计算">地形表面参数计算</h2>
 <h3 id="数字地面模型-span-id-DTM-DTM-span"><strong>数字地面模型(<span id="DTM">DTM</span>)</strong></h3>
 <p>DTM是指地球表面形态多种信息空间分布的有序数值阵列</p>
 <h3 id="数字高程模型-DEM"><strong>数字高程模型(DEM)</strong></h3>
@@ -2742,7 +2742,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>空间相关性分析</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>一般统计分析指对GIS地理空间数据库中的属性数据进行常规统计分析包括统计描述和统计推断</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一般统计分析指对GIS地理空间数据库中的属性数据进行常规统计分析包括统计描述和统计推断</p>
 <span id="more"></span>
 <p>空间统计，就是将空间信息与属性信息进行统一的考虑，研究特点属性或属性之间与空间位置的关系</p>
 <p>空间统计分析，即空间数据的统计分析，是现代计量地理学中一个快速发展的方向和领域</p>
@@ -2804,7 +2804,7 @@ private void axSuperWkspManager1_LDbClick(object sender, AxSuperWkspManagerLib._
   <entry>
     <title>傻妞</title>
     <url>//archives/%E5%82%BB%E5%A6%9E/</url>
-    <content><![CDATA[<h2 id="官方配置文件">官方配置文件</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="官方配置文件">官方配置文件</h2>
 <pre class="language-bash" data-language="bash"><code class="language-bash">傻妞机器人名
 <span class="token builtin class-name">set</span> sillyGirl name 傻妞
 傻妞http服务端口
@@ -3073,25 +3073,25 @@ silly delete 小爱同学gjson
 <span class="token function">GetChatID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//群号</span>
 <span class="token function">GetChatname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//群名</span>
 <span class="token function">GetContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//获取接受到的消息</span>
-    <span class="token function">isAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//发送人是否管理员</span>
-    <span class="token comment">//系统功能相关</span>
-    <span class="token function">cancall</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token comment">//返回特殊调用的函数</span>
-    <span class="token function">call</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token comment">//特殊调用</span>
-    <span class="token function">Debug</span><span class="token punctuation">(</span>log<span class="token punctuation">)</span><span class="token comment">//打印日志</span>
-    <span class="token function">sleep</span><span class="token punctuation">(</span>millisecond<span class="token punctuation">)</span><span class="token comment">//休眠</span>
-    <span class="token function">GroupBan</span><span class="token punctuation">(</span>uid<span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token comment">//群禁言,需要在群聊才可用</span>
-    <span class="token function">GroupKick</span><span class="token punctuation">(</span>uid<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token comment">//群踢人,reject为是否拉黑名单,需要在群聊才可用</span>
-    <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+<span class="token function">isAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//发送人是否管理员</span>
+<span class="token comment">//系统功能相关</span>
+<span class="token function">cancall</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token comment">//返回特殊调用的函数</span>
+<span class="token function">call</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token comment">//特殊调用</span>
+<span class="token function">Debug</span><span class="token punctuation">(</span>log<span class="token punctuation">)</span><span class="token comment">//打印日志</span>
+<span class="token function">sleep</span><span class="token punctuation">(</span>millisecond<span class="token punctuation">)</span><span class="token comment">//休眠</span>
+<span class="token function">GroupBan</span><span class="token punctuation">(</span>uid<span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token comment">//群禁言,需要在群聊才可用</span>
+<span class="token function">GroupKick</span><span class="token punctuation">(</span>uid<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token comment">//群踢人,reject为是否拉黑名单,需要在群聊才可用</span>
+<span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
         url<span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token comment">//必须</span>
         method<span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token comment">//get,post,put,delete,可选,默认get</span>
         headers<span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token comment">//可选</span>
         body<span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token comment">//可选</span>
         dataType<span class="token operator">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token comment">//location=>重定向url,json=>尝试解析为对象,否则为body字符串,可选</span>
         useproxy<span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">//可选</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//发送请求</span>
-    <span class="token comment">//存储相关 sillyGirl存储结构为 &#123;mainKey1:&#123;key1:value,key2:value&#125;,mainKey2:&#123;key1:value,key2:value&#125;&#125;&#125;</span>
-    <span class="token function">bucketGet</span><span class="token punctuation">(</span>mainKey<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token comment">//取值</span>
-    <span class="token function">bucketSet</span><span class="token punctuation">(</span>mainKey<span class="token punctuation">,</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token comment">//存值</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//发送请求</span>
+<span class="token comment">//存储相关 sillyGirl存储结构为 &#123;mainKey1:&#123;key1:value,key2:value&#125;,mainKey2:&#123;key1:value,key2:value&#125;&#125;&#125;</span>
+<span class="token function">bucketGet</span><span class="token punctuation">(</span>mainKey<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token comment">//取值</span>
+<span class="token function">bucketSet</span><span class="token punctuation">(</span>mainKey<span class="token punctuation">,</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token comment">//存值</span>
     <span class="token function">bucketKeys</span><span class="token punctuation">(</span>mainKey<span class="token punctuation">)</span><span class="token comment">//获取所有key名称</span>
     <span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token comment">//同bucketGet("otto",key)</span>
     <span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token comment">//同bucketSet("otto",key,value)</span>
@@ -3122,7 +3122,7 @@ silly delete 小爱同学gjson
   <entry>
     <title>位置与几何关系分析</title>
     <url>//archives/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="邻近分析">邻近分析</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="邻近分析">邻近分析</h2>
 <p>邻近度：表达空间目标<strong>距离关系</strong>的重要物流量之一，表示地理空间中目标地物<strong>距离相近</strong>的程度</p>
 <h3 id="span-id-缓冲区-缓冲区分析-span"><span id="缓冲区">缓冲区分析</span></h3>
 <ol>
@@ -3415,7 +3415,7 @@ silly delete 小爱同学gjson
   <entry>
     <title>空间量算与数据探测</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E9%87%8F%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8E%A2%E6%B5%8B/</url>
-    <content><![CDATA[<h2 id="span-id-基本几何参数量测-基本几何参数量测-span"><span id="基本几何参数量测">基本几何参数量测</span></h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="span-id-基本几何参数量测-基本几何参数量测-span"><span id="基本几何参数量测">基本几何参数量测</span></h2>
 <h3 id="a-href-空间特征与空间问题-空间位置-位置量测-a"><a href="../空间特征与空间问题#空间位置">位置量测</a></h3>
 <p>空间位置是所有空间目标共有的描述参数，通过地理空间坐标系来表达</p>
 <div class="info">
@@ -3566,7 +3566,7 @@ $$</p>
   <entry>
     <title>空间特征与空间问题</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E7%89%B9%E5%BE%81%E4%B8%8E%E7%A9%BA%E9%97%B4%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="空间与地理空间">空间与地理空间</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="空间与地理空间">空间与地理空间</h2>
 <blockquote>
 <p>地理信息系统区别于其他信息系统的独特功能：空间分析处理的对象是地理空间目标，熟识地理空间数据的特征是进行GIS空间分析的前提和基础</p>
 <p><strong>本质上</strong>GIS是研究如何在数学化环境下进行空间目标获取，表达，存储，管理，分析与应用服务的相关理论，技术和方法</p>
@@ -3686,7 +3686,7 @@ $$</p>
   <entry>
     <title>空间分析与GIS</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E4%B8%8EGIS/</url>
-    <content><![CDATA[<p><strong>地理学第一定律，即地理事物或属性在空间分布上互为相关，存在聚集、随机、规则分布</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><strong>地理学第一定律，即地理事物或属性在空间分布上互为相关，存在聚集、随机、规则分布</strong></p>
 <h1><span id="基本概念">基本概念</span></h1>
 <h2 id="1-空间">1. 空间</h2>
 <p>指维度上的扩展或延续</p>
@@ -3868,7 +3868,7 @@ $$</p>
   <entry>
     <title>辐射分辨率</title>
     <url>//archives/%E8%BE%90%E5%B0%84%E5%88%86%E8%BE%A8%E7%8E%87/</url>
-    <content><![CDATA[<h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>
 	<span id="辐射分辨率">
     	<center>辐射分辨率</center>
     </span>
@@ -3905,7 +3905,7 @@ $$</p>
   <entry>
     <title>光谱分辨率</title>
     <url>//archives/%E5%85%89%E8%B0%B1%E5%88%86%E8%BE%A8%E7%8E%87/</url>
-    <content><![CDATA[<h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>
 	<span id="光谱分辨率">
 		<center>光谱分辨率</center>
 	</span>
@@ -3952,7 +3952,7 @@ $$</p>
   <entry>
     <title>时间分辨率</title>
     <url>//archives/%E6%97%B6%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
-    <content><![CDATA[<h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>
 	<span id="时间分辨率">
     	<center>时间分辨率</center>
     </span>
@@ -3982,7 +3982,7 @@ $$</p>
   <entry>
     <title>空间分辨率</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87/</url>
-    <content><![CDATA[<h1> 
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1> 
 	<span id="空间分辨率">
 		<center>空间分辨率<center>
 	</center></center></span>
@@ -4038,7 +4038,7 @@ GR：空间分辨率</p>
   <entry>
     <title>Markdown</title>
     <url>//archives/Markdown/</url>
-    <content><![CDATA[<h1>Gigthub markdown语法</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>Gigthub markdown语法</h1>
 <p>该文件用来测试和展示书写README的各种markdown语法。<br>
 GitHub的markdown语法在标准的markdown语法基础上做了扩充，<br>
 称之为<code>GitHub Flavored Markdown</code>，简称<code>GFM</code>。GFM在GitHub上有广泛应用，<br>
@@ -4950,9 +4950,9 @@ H<sub>2</sub>O</p>
   <entry>
     <title>freenom搭建网站</title>
     <url>//archives/freenom%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>申请freenom免费域名<br>
-[freenom]:<a href="https://www.freenom.com/zh/index.html?lang=zh">https://www.freenom.com/zh/index.html?lang=zh</a> “freenom网址”<br>
-DNSPOD解析域名<br>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>申请freenom免费域名</p>
+<p>选择可用域名，然后点击Checkout，选择免费时间(period)</p>
+<p>DNSPOD解析域名<br>
 [dnspod]:<a href="https://www.dnspod.cn/">https://www.dnspod.cn/</a><br>
 添加netlify记录</p>
 <ul>
@@ -4974,7 +4974,7 @@ netlify添加自定义域名</p>
   <entry>
     <title>linux命令</title>
     <url>//archives/linux%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><a href="https://wangchujiang.com/linux-command/">Linux命令搜索工具</a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://wangchujiang.com/linux-command/">Linux命令搜索工具</a></p>
 <p><a href="https://juejin.cn/post/6844904122244677639">ssh暴力破解防护</a></p>
 <p><a href="https://juejin.cn/post/6844904122244677639">ssh暴力破解防护</a></p>
 <p><a href="https://www.jianshu.com/p/556ff130fc65">zsh终端美化工具</a></p>
@@ -5000,7 +5000,7 @@ netlify添加自定义域名</p>
   <entry>
     <title>git技巧</title>
     <url>//archives/git%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h2 id="git-命令">git 命令</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="git-命令">git 命令</h2>
 <ul>
 <li>mkdir filename 创建文件夹 Linux 命令</li>
 <li>cd filename</li>
@@ -5085,7 +5085,7 @@ netlify添加自定义域名</p>
   <entry>
     <title>comments</title>
     <url>//archives/comments/</url>
-    <content><![CDATA[<pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">/***                                                                    
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">/***                                                                    
  *            .,,       .,:;;iiiiiiiii;;:,,.     .,,                   
  *          rGB##HS,.;iirrrrriiiiiiiiiirrrrri;,s&amp;##MAS,                
  *         r5s;:r3AH5iiiii;;;;;;;;;;;;;;;;iiirXHGSsiih1,               
@@ -5239,7 +5239,7 @@ netlify添加自定义域名</p>
   <entry>
     <title>Google Search tips</title>
     <url>//archives/Google%20Search%20tips/</url>
-    <content><![CDATA[<h2 id="Google-search-tips">Google search tips</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="Google-search-tips">Google search tips</h2>
 <ul>
 <li>related:youtube.com</li>
 <li>计算机filetype:doc</li>
@@ -5260,7 +5260,7 @@ netlify添加自定义域名</p>
   <entry>
     <title>PowerShell</title>
     <url>//archives/PowerShell/</url>
-    <content><![CDATA[<h2 id="筛选">筛选</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="筛选">筛选</h2>
 <h3 id="列出所有包含的项-Recurse">列出所有包含的项 (-Recurse)</h3>
 <h3 id="按名称筛选项-Name">按名称筛选项 (-Name)</h3>
 <h3 id="强制列出隐藏的项-Force">强制列出隐藏的项 (-Force)</h3>
@@ -5365,7 +5365,7 @@ C:\temp\textCopy<span class="token operator">-</span>Item <span class="token ope
   <entry>
     <title>CMD</title>
     <url>//archives/CMD/</url>
-    <content><![CDATA[<h1>启动</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>启动</h1>
 <ul>
 <li>win + r 输入 cmd</li>
 </ul>
@@ -5564,7 +5564,7 @@ setx <span class="token operator">/</span>m PATH <span class="token string">"%PA
   <entry>
     <title>Supermap实例</title>
     <url>//archives/Supermap%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h2 id="leaflet引用">leaflet引用</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="leaflet引用">leaflet引用</h2>
 <p>引入 Leaflet CSS 文件和 JS 文件，填入 BootCDN 的托管地址</p>
 <pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
@@ -6327,7 +6327,7 @@ day_tp_isogram_search<span class="token punctuation">.</span><span class="token 
   <entry>
     <title>命题开发组规则</title>
     <url>//archives/%E5%91%BD%E9%A2%98%E5%BC%80%E5%8F%91%E7%BB%84%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p><strong>2021 SuperMap杯全国高校GIS大赛赛制</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><strong>2021 SuperMap杯全国高校GIS大赛赛制</strong></p>
 <p><strong>命题开发组</strong></p>
 <p>作品要求根据给定的题目，使用SuperMap系列软件制作数据、开发并实现题目命题要求的GIS应用功能，综合考察参赛选手的GIS基础知识储备、软件操作能力和开发编程能力。</p>
 <p>本赛组将提供一个实际应用题目，并提供配套的原始数据。参赛作品必须使用提供的数据，自选系统开发方向，完成作品。</p>
@@ -6877,7 +6877,7 @@ day_tp_isogram_search<span class="token punctuation">.</span><span class="token 
   <entry>
     <title>vscode快捷键</title>
     <url>//archives/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h1>基础编辑</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>基础编辑</h1>
 <table>
 <thead>
 <tr>
@@ -7098,7 +7098,7 @@ day_tp_isogram_search<span class="token punctuation">.</span><span class="token 
   <entry>
     <title>Supermap代码编写原则</title>
     <url>//archives/Supermap%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99%E5%8E%9F%E5%88%99/</url>
-    <content><![CDATA[<h2 id="范例编写原则说明">范例编写原则说明</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="范例编写原则说明">范例编写原则说明</h2>
 <span id="more"></span>
 <ol>
 <li><a href="#example-1">目录结构</a></li>
@@ -7354,7 +7354,7 @@ day_tp_isogram_search<span class="token punctuation">.</span><span class="token 
   <entry>
     <title>Supermap</title>
     <url>//archives/Supermap/</url>
-    <content><![CDATA[<h1>iServer食用方法🤔:</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>iServer食用方法🤔:</h1>
 <span id="more"></span>
 <h2 id="iSever帮助文档路径">iSever帮助文档路径</h2>
 <p><code>root\supermap-iserver-10.1.1-win64-zip\docs</code></p>
@@ -7462,7 +7462,7 @@ L.map(<span class="token tag"><span class="token tag"><span class="token punctua
   <entry>
     <title>youtube-dl命令</title>
     <url>//archives/youtube-dl%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>实例</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>实例</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">youtube-dl --proxy http://127.0.0.1:10809 <span class="token string">"https://www.youtube.com/watch?v=6k8cpUkKK4c"</span>
 --merge-output-format mp4 --write-auto-sub --sub-lang zh-Hans --embed-sub -i 
 youtube-dl --proxy http://127.0.0.1:10809  --write-auto-sub --embed-subs --embed-thumbnail XyaBFh_6b-8</code></pre>
@@ -7646,7 +7646,7 @@ Adobe Pass Options:
   <entry>
     <title>空间查询与分析</title>
     <url>//archives/%E7%A9%BA%E9%97%B4%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="空间数据查询">空间数据查询</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="空间数据查询">空间数据查询</h2>
 <h3 id="查询概述">查询概述</h3>
 <h4 id="方式">方式</h4>
 <ul>
@@ -7782,7 +7782,7 @@ Adobe Pass Options:
   <entry>
     <title>数据编辑与处理</title>
     <url>//archives/%E6%95%B0%E6%8D%AE%E7%BC%96%E8%BE%91%E4%B8%8E%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1>数据编辑与处理</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>数据编辑与处理</h1>
 <h2 id="1-坐标与几何变换">1.坐标与几何变换</h2>
 <h3 id="1-几何纠正">1. 几何纠正</h3>
 <ul>
@@ -7835,7 +7835,7 @@ Adobe Pass Options:
   <entry>
     <title>SQL查询</title>
     <url>//archives/SQL%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">&lt;</span> 属性列表 attribute list <span class="token operator">></span>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">&lt;</span> 属性列表 attribute list <span class="token operator">></span>
 
 <span class="token keyword">from</span> <span class="token operator">&lt;</span> 关系表 relation <span class="token operator">></span>
 
@@ -7876,7 +7876,7 @@ Adobe Pass Options:
   <entry>
     <title>地理信息科学</title>
     <url>//archives/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/</url>
-    <content><![CDATA[<h1>基本概念</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>基本概念</h1>
 <h2 id="信息系统基本功能">信息系统基本功能</h2>
 <ul>
 <li>数据采集</li>
@@ -8147,7 +8147,7 @@ Adobe Pass Options:
   <entry>
     <title>数字高程模型</title>
     <url>//archives/%E6%95%B0%E5%AD%97%E9%AB%98%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="4D产品">4D产品</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="4D产品">4D产品</h2>
 <pre><code>1. DEM：数字高程模型
 2. DLG：数字线划图
 3. DRG：数字栅格
@@ -8226,7 +8226,7 @@ Adobe Pass Options:
   <entry>
     <title>数字摄影测量</title>
     <url>//archives/%E6%95%B0%E5%AD%97%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<h1>数字摄影测量</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>数字摄影测量</h1>
 <h3 id="概念">概念</h3>
 <ul>
 <li>数字摄影测量</li>
@@ -8299,7 +8299,7 @@ Adobe Pass Options:
   <entry>
     <title>像片纠正及正射影像制作</title>
     <url>//archives/%E5%83%8F%E7%89%87%E7%BA%A0%E6%AD%A3%E5%8F%8A%E6%AD%A3%E5%B0%84%E5%BD%B1%E5%83%8F%E5%88%B6%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1-像片纠正的概念">1.像片纠正的概念</h2>
 <p>将竖直摄影测量的航摄像片通过投影变换，获得相当于航摄相机物镜主光轴在铅锤位置摄影的水平像片，同时改化规定的比例尺</p>
 <h2 id="2-摄影测量外业工作">2.摄影测量外业工作</h2>
 <h3 id="1-外业工作任务">1.外业工作任务</h3>
@@ -8354,7 +8354,7 @@ Adobe Pass Options:
   <entry>
     <title>双像解析</title>
     <url>//archives/%E5%8F%8C%E5%83%8F%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<h2 id="单张像片后方交会">单张像片后方交会</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="单张像片后方交会">单张像片后方交会</h2>
 <h3 id="定义">定义</h3>
 <p>利用3个及以上的地面控制点及其在像片上的像点，确定一张像片外方位元素的方法</p>
 <h3 id="作用">作用</h3>
@@ -8524,7 +8524,7 @@ Adobe Pass Options:
   <entry>
     <title>解析空中三角测量</title>
     <url>//archives/%E8%A7%A3%E6%9E%90%E7%A9%BA%E4%B8%AD%E4%B8%89%E8%A7%92%E6%B5%8B%E9%87%8F/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="定义">定义</h2>
 <ul>
 <li>
 <p>利用少量控制点对整个区域所有影像恢复它们的外方位元素</p>
@@ -8581,7 +8581,7 @@ Adobe Pass Options:
   <entry>
     <title>人造立体视觉</title>
     <url>//archives/%E4%BA%BA%E9%80%A0%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</url>
-    <content><![CDATA[<h2 id="人眼分辨率">人眼分辨率</h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="人眼分辨率">人眼分辨率</h2>
 <h3 id="第一分辨率">第一分辨率</h3>
 <ul>
 <li>用单眼所能观察出<strong>两点</strong>间的的最小距离</li>
@@ -8689,7 +8689,7 @@ Adobe Pass Options:
   <entry>
     <title>单张像片解析</title>
     <url>//archives/%E5%8D%95%E5%BC%A0%E5%83%8F%E7%89%87%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<h1>单张像片解析</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>单张像片解析</h1>
 <h2 id="基本知识">基本知识</h2>
 <h3 id="1-航向重叠">1.航向重叠</h3>
 <ul>
