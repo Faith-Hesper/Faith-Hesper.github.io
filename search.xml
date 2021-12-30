@@ -996,6 +996,8 @@ PORT   STATE  SERVICE
 <span class="token keyword">done</span></code></pre>
 <h3 id="5-宝塔屏蔽某个ip">5.宝塔屏蔽某个ip</h3>
 <p>进入宝塔管理界面点击安全，防火墙屏蔽ip</p>
+<h3 id="实测效果">实测效果</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/img/20211230145321.png" alt=""></p>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -5015,6 +5017,7 @@ netlify添加自定义域名</p>
 <li>git status</li>
 <li>git commit -m “commits” || git commit 提交修改信息</li>
 <li>git commit -a -m “commits” || git commit -am “commits” 创建空提交</li>
+<li>git push</li>
 <li>git ls-files 列出文件信息</li>
 <li>git rm document1.txt 删除文件</li>
 <li>git mv document1.txt document2.txt 移动文件</li>
@@ -5065,6 +5068,7 @@ netlify添加自定义域名</p>
 </ul>
 <hr>
 <h2 id="git-初始化">git 初始化</h2>
+<h3 id="create-a-new-repository-on-the-command-line">create a new repository on the command line</h3>
 <ul>
 <li>echo “# fe” &gt;&gt; <a href="http://README.md">README.md</a></li>
 <li>git init</li>
@@ -5074,6 +5078,14 @@ netlify添加自定义域名</p>
 <li>git remote add origin <a href="https://github.com/Faith-Hesper/fe.git">https://github.com/Faith-Hesper/fe.git</a></li>
 <li>git push -u origin main</li>
 </ul>
+<h3 id="push-an-existing-repository-from-the-command-line">push an existing repository from the command line</h3>
+<ul>
+<li>git remote add origin <a href="https://github.com/Faith-Hesper/Postgraduate.git">https://github.com/Faith-Hesper/Postgraduate.git</a></li>
+<li>git branch -M main</li>
+<li>git push -u origin main</li>
+</ul>
+<p>git push 时出现<code>git config --global http.postBuffer 524288000</code>说明文件太大</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config --global http.postBuffer <span class="token number">524288000</span></code></pre>
 ]]></content>
       <categories>
         <category>工具</category>
