@@ -208,11 +208,11 @@ theme: next</code></pre>
   <entry>
     <title>京东薅薅乐</title>
     <url>/posts/10539342f990/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="开始">开始</h2>
-<p><a href="http://114.115.150.215:8081/login">京东薅薅乐登陆地址</a></p>
-<h2>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2>
     <center>活动一览</center>
 </h2>
+
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -324,20 +324,17 @@ theme: next</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>
-<p>上面网站登陆京东后扫码即可有每日资产推送<br>
-<img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160655.jpeg" style="zoom:200%;" /></p>
+<li><p>上面网站登陆京东后扫码即可有每日资产推送<br><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160655.jpeg" style="zoom:200%;" /></p>
 </li>
-<li>
-<p>现在qq、微信机器人已经具备群聊、私聊登录jd账号并获取cookie（后简称ck）的能力，后面会截图给出使用方法</p>
+<li><p>现在qq、微信机器人已经具备群聊、私聊登录jd账号并获取cookie（后简称ck）的能力，后面会截图给出使用方法</p>
 </li>
-<li>
-<p>可以在群里，或者加好友后发送“登陆”、“登录”都可以，根据提示进行登录，登陆后可以进行查询操作</p>
-</li>
+<li>可以在群里，或者加好友后发送“登陆”、“登录”都可以，根据提示进行登录，登陆后可以进行查询操作</li>
 </ul>
-<h4 id="一-登陆">一: 登陆</h4>
-<center>QQ机器人命令列表</center>
+<h4 id="一-登陆"><a href="#一-登陆" class="headerlink" title="一: 登陆"></a>一: 登陆</h4><center>QQ机器人命令列表</center>
+
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -387,7 +384,7 @@ theme: next</code></pre>
 <td>免会员看付费视频</td>
 </tr>
 <tr>
-<td>去水印https://www.iqiyi.com/v_1euutpl76d0.video</td>
+<td>去水印<a href="https://www.iqiyi.com/v_1euutpl76d0.video">https://www.iqiyi.com/v_1euutpl76d0.video</a></td>
 <td>抖音视频去水印</td>
 </tr>
 <tr>
@@ -412,9 +409,9 @@ theme: next</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
 <ol>
-<li>
-<p>私聊或在群里发送登陆”、“登录，机器人会回复你相关信息，请根据提示进行操作即可登录jd并获取ck</p>
+<li><p>私聊或在群里发送登陆”、“登录，机器人会回复你相关信息，请根据提示进行操作即可登录jd并获取ck</p>
 <ul>
 <li>短信登录的jd后，ck有效期一般为<strong>一个月</strong>，当ck过期后，需要重新进行短信登录</li>
 <li>做好登陆后私聊我进行备注，没有备注的到期后自动踢🦶“下车”</li>
@@ -423,45 +420,36 @@ theme: next</code></pre>
 <li><strong>记得关闭设置–支付设置–免密支付（没开通更好）</strong></li>
 </ul>
 </li>
-<li>
-<p>说说微信、qq的<strong>机器人</strong>可以做什么</p>
+<li><p>说说微信、qq的<strong>机器人</strong>可以做什么</p>
 <ul>
-<li>
-<p>帮你登录jd并获取ck，自动上传到服务器进行任务</p>
+<li><p>帮你登录jd并获取ck，自动上传到服务器进行任务</p>
 </li>
-<li>
-<p>可以进行性价比比价</p>
+<li><p>可以进行性价比比价</p>
 <ul>
 <li>你发送京东链接到群里，机器人会自动帮你对比商品价格</li>
 <li>淘宝链接还没有调试好，可以先发给我，我给你转链接</li>
 </ul>
 </li>
-<li>
-<p>可以自动搜索并领</p>
+<li><p>可以自动搜索并领</p>
 <p>取隐藏优惠券</p>
 <ul>
 <li>在商品界面，点击“复制连击”，把链接发到群里，机器人会自动领取优惠券，然后点击机器人的链接进行下单</li>
 <li>淘宝链接不回复的私聊我</li>
 </ul>
 </li>
-<li>
-<p>凡是通过机器人发送链接下单的，私聊我会有<strong>惊喜红包</strong>呦</p>
+<li><p>凡是通过机器人发送链接下单的，私聊我会有<strong>惊喜红包</strong>呦</p>
 </li>
-<li>
-<p>可以进行娱乐游戏：成语接龙等</p>
+<li><p>可以进行娱乐游戏：成语接龙等</p>
 </li>
-<li>
-<p>可以呼唤“小爱同学”</p>
+<li><p>可以呼唤“小爱同学”</p>
 </li>
-<li>
-<p>下面是登录教程：</p>
+<li><p>下面是登录教程：</p>
 <ul>
 <li>对机器人说 ”登录“，然后根据机器人回复输入”手机号“”验证码“，机器人会自动帮你登录，当提示登录成功后即完成，然后你可以发送查询，查询你的jd相关信息，如下图所示：</li>
 <li>发送登录</li>
 </ul>
 </li>
-<li>
-<p>当你的ck过期（一般一个月）后，你就需要重新按照以上步骤重新登录</p>
+<li><p>当你的ck过期（一般一个月）后，你就需要重新按照以上步骤重新登录</p>
 </li>
 </ul>
 </li>
@@ -470,33 +458,24 @@ theme: next</code></pre>
 <blockquote>
 <p>京东红包仅限京东APP使用、同理惊喜、极速版红包</p>
 </blockquote>
-<h5 id="为什么有些需要手动点击进去">为什么有些需要手动点击进去</h5>
-<ul>
-<li>
-<p>京东有很多小活动、任务、等</p>
+<h5 id="为什么有些需要手动点击进去"><a href="#为什么有些需要手动点击进去" class="headerlink" title="为什么有些需要手动点击进去"></a>为什么有些需要手动点击进去</h5><ul>
+<li><p>京东有很多小活动、任务、等</p>
 </li>
-<li>
-<p>有的需要创建你的账号、有的需要名字、有的需要手动选择想要的物品</p>
+<li><p>有的需要创建你的账号、有的需要名字、有的需要手动选择想要的物品</p>
 </li>
-<li>
-<p>所以很多活动需要你<strong>手动</strong>进去，完成<strong>新手教程</strong>后，脚本才能给你跑，就是说需要你开启活动</p>
+<li><p>所以很多活动需要你<strong>手动</strong>进去，完成<strong>新手教程</strong>后，脚本才能给你跑，就是说需要你开启活动</p>
 </li>
-<li>
-<p>目前可以根据这个图片指引，手动参加活动（图片很长，请仔细观看，有的活动找不到没关系，跳过就行了）</p>
+<li><p>目前可以根据这个图片指引，手动参加活动（图片很长，请仔细观看，有的活动找不到没关系，跳过就行了）</p>
 </li>
 </ul>
-<h5 id="我不想用了？怎么退出">我不想用了？怎么退出</h5>
-<ul>
+<h5 id="我不想用了？怎么退出"><a href="#我不想用了？怎么退出" class="headerlink" title="我不想用了？怎么退出"></a>我不想用了？怎么退出</h5><ul>
 <li>只需要私聊我，然后就可以退出</li>
 </ul>
-<h3 id="京豆使用">京豆使用</h3>
-<ol>
-<li>首先你需要完成上面的步骤，然后发送查询，机器人会回复你
-<ol>
+<h3 id="京豆使用"><a href="#京豆使用" class="headerlink" title="京豆使用"></a>京豆使用</h3><ol>
+<li>首先你需要完成上面的步骤，然后发送查询，机器人会回复你<ol>
 <li><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109155838262.png" alt="image-20211109155838262"></a></li>
 <li>京豆是可以抵现金的，详细请看官方<a href="https://help.jd.com/user/issue/167-331.html">京豆使用规则</a><a href="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png"><img src="https://img.menglei.xyz/images/2021/11/09/image-20211109160041434.png" alt="image-20211109160041434"></a></li>
-<li>你有惊喜的红包，但是不能在京东使用，可以这样
-<ol>
+<li>你有惊喜的红包，但是不能在京东使用，可以这样<ol>
 <li>京东选择你想要的产品</li>
 <li>你在京东看上了一条</li>
 <li>然后分享——复制链接——发到群里</li>
@@ -511,24 +490,19 @@ theme: next</code></pre>
 </ol>
 </li>
 </ol>
-<h2 id="下面是一些可能有用的">下面是一些可能有用的</h2>
-<ul>
+<h2 id="下面是一些可能有用的"><a href="#下面是一些可能有用的" class="headerlink" title="下面是一些可能有用的"></a>下面是一些可能有用的</h2><ul>
 <li>你最好需要下载的app有<strong>京喜、京东极速版</strong>app</li>
 </ul>
 <ol>
-<li>
-<p>下面按个看一下</p>
+<li><p>下面按个看一下</p>
 <ul>
-<li>
-<p><strong>京东app</strong></p>
+<li><p><strong>京东app</strong></p>
 <ul>
 <li>首页搜索   <em>“玩一玩”</em> （改名了）  “边玩边赚” 四个字，把里面所有的链接点一遍，选择商品、建立账号啥的，然后脚本会给你做这些任务（参考上面的图片）</li>
 <li>红包提现：京东玩一玩–领现金  ，点击即可提现到微信，第一次2元。第二次可以提现10元，第三次30元 ；反正我提了不少了</li>
 </ul>
 </li>
-<li>
-<h4 id="京喜app">京喜app</h4>
-<ul>
+<li><h4 id="京喜app"><a href="#京喜app" class="headerlink" title="京喜app"></a>京喜app</h4><ul>
 <li>很多红包是仅限在京喜app中使用的，你下载京喜后，登录你的京东账号，你就会发现头像下方有红包，可能是几块钱、也可能10几块，   但是你要记得，这个红包🧧周期短，可能每天过期几块钱，当你买东西花光了这里的红包，过几天他就会自动增长到几块钱（不知道卖啥的话，就买纸，哈哈哈哈哈）</li>
 <li>京喜牧场：牧场中有鸡蛋，鸡蛋可以换相应的东西，根据自身需求换购</li>
 <li>京喜工厂： 可以选择商品，脚本会自动给你跑（比京东工厂靠谱感觉）</li>
@@ -536,8 +510,7 @@ theme: next</code></pre>
 <li>京喜还有很多不知道的，欢迎补充</li>
 </ul>
 </li>
-<li>
-<p><strong>京东极速版app</strong></p>
+<li><p><strong>京东极速版app</strong></p>
 <ul>
 <li>这个app很爽呀，毕竟白嫖的多</li>
 <li>正常下载，登录京东账号</li>
@@ -548,8 +521,7 @@ theme: next</code></pre>
 </ul>
 </li>
 </ol>
-<h2 id="结束，撒花🎉">结束，撒花🎉</h2>
-]]></content>
+<h2 id="结束，撒花🎉"><a href="#结束，撒花🎉" class="headerlink" title="结束，撒花🎉"></a>结束，撒花🎉</h2>]]></content>
   </entry>
   <entry>
     <title>typora快捷键</title>
@@ -855,6 +827,190 @@ theme: next</code></pre>
       </categories>
       <tags>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue</title>
+    <url>/posts/6ae537b308ac/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="vue-CLI"><a href="#vue-CLI" class="headerlink" title="vue CLI"></a>vue CLI</h3><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建项目</span>
+<span class="token function">npm</span> create project
+<span class="token comment"># 本地运行</span>
+<span class="token function">npm</span> run serve
+<span class="token comment"># 打包</span>
+<span class="token function">npm</span> build</code></pre>
+<p>webpack</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 初始化包文件</span>
+<span class="token function">npm</span> init</code></pre>
+<h2 id="vue2基础语法"><a href="#vue2基础语法" class="headerlink" title="vue2基础语法"></a>vue2基础语法</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ol>
+<li><p>v-if</p>
+ <pre class="language-vue" data-language="vue"><code class="language-vue">	&lt;template&gt;
+	&lt;div&gt;
+		&lt;div v-if&#x3D;&quot;Math.random() &gt; 0.5&quot;&gt;
+	  	Now you see me
+		&lt;&#x2F;div&gt;
+		&lt;div v-else&gt;
+	 	 Now you don&#39;t
+		&lt;&#x2F;div&gt;
+	&lt;&#x2F;div&gt;
+	&lt;&#x2F;template&gt;
+
+2. v-for
+
+	&#96;&#96;&#96;vue
+	&lt;template&gt;
+	    &lt;div&gt;
+	        &lt;div v-for&#x3D;&quot;(item, index) in items&quot;&gt;&lt;&#x2F;div&gt;
+	        &lt;div v-for&#x3D;&quot;(val, key) in object&quot;&gt;&lt;&#x2F;div&gt;
+			&lt;div v-for&#x3D;&quot;(val, name, index) in object&quot;&gt;&lt;&#x2F;div&gt;
+	    &lt;&#x2F;div&gt;
+	&lt;&#x2F;template&gt;
+
+2. v-on
+
+   用于绑定和监听事件，
+
+   + 缩写: @
+   + 修饰符
+     + &#96;.stop&#96; - 调用 &#96;event.stopPropagation()&#96;。
+     + &#96;.prevent&#96; - 调用 &#96;event.preventDefault()&#96;。
+     + &#96;.capture&#96; - 添加事件侦听器时使用 capture 模式。
+     + &#96;.self&#96; - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
+     + &#96;.&#123;keyCode | keyAlias&#125;&#96; - 只当事件是从特定键触发时才触发回调。
+     + &#96;.native&#96; - 监听组件根元素的原生事件。
+     + &#96;.once&#96; - 只触发一次回调。
+     + &#96;.left&#96; - (2.2.0) 只当点击鼠标左键时触发。
+     + &#96;.right&#96; - (2.2.0) 只当点击鼠标右键时触发。
+     + &#96;.middle&#96; - (2.2.0) 只当点击鼠标中键时触发。
+     + &#96;.passive&#96; - (2.3.0) 以 &#96;&#123; passive: true &#125;&#96; 模式添加侦听器
+
+   &#96;&#96;&#96;vue
+   &lt;!-- 内联语句 $event为事件原型--&gt;
+   &lt;button v-on:click&#x3D;&quot;doThat(&#39;hello&#39;, $event)&quot;&gt;&lt;&#x2F;button&gt;
+   &lt;!-- 动态事件缩写 (2.6.0+) --&gt;
+   &lt;button @[event]&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;button&gt;
+   &lt;!-- 停止冒泡 --&gt;
+   &lt;button @click.stop&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;button&gt;
+   &lt;!-- 阻止默认行为 --&gt;
+   &lt;button @click.prevent&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;button&gt;</code></pre>
+</li>
+<li><p>v-bind</p>
+<p>动态绑定属性值</p>
+<ul>
+<li>缩写为 :</li>
+</ul>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;!-- class 绑定 --&gt;
+&lt;div :class&#x3D;&quot;&#123; red: isRed &#125;&quot;&gt;&lt;&#x2F;div&gt;
+&lt;div :class&#x3D;&quot;[classA, classB]&quot;&gt;&lt;&#x2F;div&gt;
+&lt;div :class&#x3D;&quot;[classA, &#123; classB: isB, classC: isC &#125;]&quot;&gt;
+
+&lt;!-- style 绑定 --&gt;
+&lt;div :style&#x3D;&quot;&#123; fontSize: size + &#39;px&#39; &#125;&quot;&gt;&lt;&#x2F;div&gt;
+&lt;div :style&#x3D;&quot;[styleObjectA, styleObjectB]&quot;&gt;&lt;&#x2F;div&gt;
+
+&lt;!-- 绑定一个全是 attribute 的对象 --&gt;
+&lt;div v-bind&#x3D;&quot;&#123; id: someProp, &#39;other-attr&#39;: otherProp &#125;&quot;&gt;&lt;&#x2F;div&gt;</code></pre>
+</li>
+<li><p>v-model</p>
+<p>表单数据双向绑定</p>
+<ul>
+<li><p><strong>限制</strong>：</p>
+<ul>
+<li><code>&lt;input&gt;</code></li>
+<li><code>&lt;select&gt;</code></li>
+<li><code>&lt;textarea&gt;</code></li>
+<li>components</li>
+</ul>
+<p><strong>修饰符</strong>：</p>
+<ul>
+<li><a href="https://cn.vuejs.org/v2/guide/forms.html#lazy"><code>.lazy</code></a> - 取代 <code>input</code> 监听 <code>change</code> 事件</li>
+<li><a href="https://cn.vuejs.org/v2/guide/forms.html#number"><code>.number</code></a> - 输入字符串转为有效</li>
+<li><a href="https://cn.vuejs.org/v2/guide/forms.html#trim"><code>.trim</code></a> - 输入首尾空格过滤</li>
+</ul>
+</li>
+</ul>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>One<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>picked<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>two<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Two<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>picked<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Picked: &#123;&#123; picked &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  el<span class="token operator">:</span> <span class="token string">'#example-4'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    picked<span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>v-slot</p>
+<p>组件A中有如下代码</p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+	&lt;div&gt;
+        &lt;p&gt;
+            xxxxx
+    	&lt;&#x2F;p&gt;
+        &lt;Cov&gt;
+            这里的代码将插入到组件Cov中的&lt;slot&gt;&lt;&#x2F;slot&gt;位置
+    	&lt;&#x2F;Cov&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<p>组件Cov中有如下代码🐎</p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+	&lt;div&gt;
+        &lt;p&gt;
+            xxxxx
+    	&lt;&#x2F;p&gt;
+        &lt;slot&gt;&lt;&#x2F;slot&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;</code></pre>
+</li>
+<li><p>综合实例</p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+&lt;div&gt;
+&lt;tr v-for&#x3D;&quot;(item, index) in riskArea&quot;  :key&#x3D;&quot;index&quot; style&#x3D;&quot;text-align: left;&quot;&gt;
+     &lt;td style&#x3D;&quot;background-color:#00bec9;&quot;&gt;&lt;div class&#x3D;&quot;bt&quot; @click&#x3D;&quot;listClick(item.cities,index,$event)&quot;&gt; &lt;img src&#x3D;&quot;..&#x2F;..&#x2F;assets&#x2F;img&#x2F;index.png&quot; style&#x3D;&quot;width: 0.8rem; margin-right: 5px&quot;&gt;&#123;&#123; item | cityName&#125;&#125;&lt;&#x2F;div&gt;&lt;&#x2F;td&gt;
+     &lt;td&gt;&#123;&#123; item.yesterdayLocalConfirmedCount | data_announced&#125;&#125;&lt;&#x2F;td&gt;
+     &lt;td&gt;&#123;&#123; item.currentConfirmedCount &#125;&#125;&lt;&#x2F;td&gt;
+     &lt;td&gt;&#123;&#123; item.currentDangerCount &#125;&#125;&lt;&#x2F;td&gt;
+     &lt;td @click&#x3D;&quot;detail(item.provinceShortName,item.statisticsData)&quot;&gt;&lt;a  :href&#x3D;&#39;&quot;#&#x2F;province&#x2F;&quot;+item.provinceShortName&#39;&gt;详情&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<h3 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h3><h3 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h3><h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// vue.config.js 配置</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    publicPath<span class="token operator">:</span> <span class="token string">'./'</span><span class="token punctuation">,</span> <span class="token comment">//基本路径</span>
+    outputDir<span class="token operator">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span> <span class="token comment">// 输出目录</span>
+    assetsDir<span class="token operator">:</span> <span class="token string">'static'</span><span class="token punctuation">,</span>	<span class="token comment">//放置生成的静态资源 (js、css、img、fonts) 的目录</span>
+    indexPath<span class="token operator">:</span> <span class="token string">"index.html"</span><span class="token punctuation">,</span>
+    productionSourceMap<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//生产环境是否生成 sourceMap 文件</span>
+    <span class="token comment">// 代理</span>
+    devServer<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        proxy<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 以/interface代替/interface.sina.cn,将所有https://interface.sina.cn请求重写为https:/interface</span>
+            <span class="token string">'/interface'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                target<span class="token operator">:</span> <span class="token string">'https://interface.sina.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 将/interface 代理为https://interface.sina.cn/</span>
+                ws<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题</span>
+                secure<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                pathRewrite<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">// 路径重写，</span>
+                    <span class="token string">'^/interface'</span><span class="token operator">:</span> <span class="token string">'https://interface.sina.cn'</span><span class="token punctuation">,</span> <span class="token comment">// 替换target中的请求地址，也就是说以后你在请求https://interface.sina.cn/xxx 只需填/interface/</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
