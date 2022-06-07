@@ -857,9 +857,93 @@ theme: next</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>supermapAPI函数封装</title>
+    <url>/posts/b82dae75fd55/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="框选查询"><a href="#框选查询" class="headerlink" title="框选查询"></a>框选查询</h2><h3 id="draw图形绘制"><a href="#draw图形绘制" class="headerlink" title="draw图形绘制"></a>draw图形绘制</h3><p>draw控件定义</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 新建绘制图层</span>
+<span class="token keyword">const</span> editableLayers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">L<span class="token punctuation">.</span>featureGroup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+map<span class="token punctuation">.</span><span class="token function">addLayer</span><span class="token punctuation">(</span>editableLayers<span class="token punctuation">)</span>
+<span class="token comment">// 定义绘制控件</span>
+<span class="token keyword">const</span> drawControl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">L<span class="token punctuation">.</span>Control<span class="token punctuation">.</span>Draw</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    draw<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">//绘制线</span>
+      polyline<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//绘制多边形</span>
+      polygon<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//绘制矩形</span>
+      rectangle<span class="token operator">:</span> <span class="token punctuation">{</span>
+        shapeOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+          color<span class="token operator">:</span> <span class="token string">'#0000FF'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">//绘制圆</span>
+      circle<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">//绘制标注</span>
+      marker<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token comment">//绘制圆形标注</span>
+      circlemarker<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    edit<span class="token operator">:</span> <span class="token punctuation">{</span>
+      featureGroup<span class="token operator">:</span> editableLayers<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 添加绘制控件</span>
+map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span>drawControl<span class="token punctuation">)</span></code></pre>
+<p>获取绘制图形坐标</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">drawLayer</span><span class="token punctuation">(</span><span class="token parameter">map<span class="token punctuation">,</span> editableLayers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    map<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">.</span>Draw<span class="token punctuation">.</span>Event<span class="token punctuation">.</span><span class="token constant">CREATED</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      editableLayers<span class="token punctuation">.</span><span class="token function">addLayer</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>layer<span class="token punctuation">)</span>
+      <span class="token keyword">let</span> layer <span class="token operator">=</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> e<span class="token punctuation">.</span>layerType<span class="token punctuation">,</span> layer<span class="token operator">:</span> e<span class="token punctuation">.</span>layer <span class="token punctuation">}</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h3 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h3><p>矩形框选查询</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">searchByBounds</span><span class="token punctuation">(</span><span class="token parameter">bounds</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 范围查询参数</span>
+  <span class="token keyword">const</span> boundsParam <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">L<span class="token punctuation">.</span>supermap<span class="token punctuation">.</span>GetFeaturesByBoundsParameters</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      datasetNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'ChengduFresh:Shop'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      bounds<span class="token operator">:</span> bounds<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">featureService</span><span class="token punctuation">(</span>dataUrl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFeaturesByBounds</span><span class="token punctuation">(</span>boundsParam<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">serviceResult</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>serviceResult<span class="token punctuation">.</span>result<span class="token punctuation">.</span>features<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>几何查询</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">searchByGeometry</span><span class="token punctuation">(</span><span class="token parameter">polygon</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 几何查询参数</span>
+  <span class="token keyword">const</span> geometryParam <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">L<span class="token punctuation">.</span>supermap<span class="token punctuation">.</span>GetFeaturesByGeometryParameters</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      datasetNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'ChengduFresh:Shop'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      geometry<span class="token operator">:</span> polygon<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token constant">L</span><span class="token punctuation">.</span>supermap
+      <span class="token punctuation">.</span><span class="token function">featureService</span><span class="token punctuation">(</span>dataUrl<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">getFeaturesByGeometry</span><span class="token punctuation">(</span>geometryParam<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">serviceResult</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>serviceResult<span class="token punctuation">.</span>result<span class="token punctuation">.</span>features<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+]]></content>
+  </entry>
+  <entry>
     <title>实习</title>
     <url>/posts/d89d89a1353f/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h2>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h2><h3 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h3><p>软件安装</p>
+<h3 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h3><p>天眼查表格</p>
+<h3 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h3><p>天眼查数据导出</p>
+<h3 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a>DAY4</h3><p>技术总结</p>
+]]></content>
   </entry>
   <entry>
     <title>专题图</title>
@@ -1032,23 +1116,26 @@ theme: next</code></pre>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span></code></pre>
 </li>
 <li><p>添加css预处理器</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># .scss and .sass</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash">   <span class="token comment"># .scss and .sass</span>
    <span class="token function">npm</span> <span class="token function">add</span> -D sass
-
+   
    <span class="token comment"># .less</span>
    <span class="token function">npm</span> <span class="token function">add</span> -D <span class="token function">less</span>
-
+   
    <span class="token comment"># .styl and .stylus</span>
-   <span class="token function">npm</span> <span class="token function">add</span> -D stylus</code></pre>
-</li>
-<li><p>解决Uncaught TypeError utils.inherits is not a function问题</p>
-<p>在package.json中添加Elasticsearch所需包</p>
-<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">"events"</span><span class="token operator">:</span> <span class="token string">"^3.3.0"</span><span class="token punctuation">,</span>
-    <span class="token property">"util"</span><span class="token operator">:</span> <span class="token string">"^0.12.4"</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span></code></pre>
+     <span class="token function">npm</span> <span class="token function">add</span> -D stylus
+
+<span class="token number">2</span>. 解决Uncaught TypeError utils.inherits is not a function问题
+
+   在package.json中添加Elasticsearch所需包
+
+   ```json
+<span class="token punctuation">&#123;</span>
+       <span class="token string">"devDependencies"</span><span class="token builtin class-name">:</span> <span class="token punctuation">&#123;</span>
+       <span class="token string">"events"</span><span class="token builtin class-name">:</span> <span class="token string">"^3.3.0"</span>,
+       <span class="token string">"util"</span><span class="token builtin class-name">:</span> <span class="token string">"^0.12.4"</span>
+     <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span></code></pre>
 <p>在vite.consfig.js文件中添加配置(无则创建)</p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
 <span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
