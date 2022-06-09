@@ -939,20 +939,107 @@ map<span class="token punctuation">.</span><span class="token function">addContr
   <entry>
     <title>实习</title>
     <url>/posts/d89d89a1353f/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h2><h3 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h3><p>软件安装</p>
-<h3 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h3><p>天眼查表格</p>
-<h3 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h3><p>天眼查数据导出</p>
-<h3 id="DAY4"><a href="#DAY4" class="headerlink" title="DAY4"></a>DAY4</h3><p>技术总结</p>
-<h3 id="DAY5"><a href="#DAY5" class="headerlink" title="DAY5"></a>DAY5</h3><h4 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h4><ol>
-<li><p>空白折叠现象</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="实习">实习</h2>
+<h3 id="DAY1">DAY1</h3>
+<h4 id="git配置">git配置</h4>
+<p>在git文件中</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.email <span class="token string">"your email"</span>
+<span class="token function">git</span> config --global user.name <span class="token string">"your name"</span>
+ssh-keygen -t rsa -C <span class="token string">"githubemail"</span>
+<span class="token function">ssh</span> -T git@github.com 测试连接
+<span class="token function">git</span> config --list 查看git配置</code></pre>
+<p>找到id_rsa.pub文件的公钥复制ssh公钥到GitHub</p>
+<p>初始化并推送仓库</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init
+<span class="token function">git</span> <span class="token function">add</span> README.md	<span class="token comment"># git add . 添加所有文件</span>
+<span class="token function">git</span> commit -m <span class="token string">"init commit"</span>
+<span class="token function">git</span> remote <span class="token function">add</span> origin https://gitee.com/xxx/xxx.git <span class="token comment"># 添加并推送已创建的仓库至远程仓库</span>
+<span class="token function">git</span> push -u origin master</code></pre>
+<p>拷贝库到本地</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init
+<span class="token function">git</span> clone https://gitee.com/xxx/xxx.git</code></pre>
+<h3 id="DAY2">DAY2</h3>
+<h4 id="XLSX">XLSX</h4>
+<p>安装</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> xlsx</code></pre>
+<p>导入</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> <span class="token constant">XLSX</span> <span class="token keyword">from</span> <span class="token string">'xlsx'</span>
+<span class="token keyword">import</span> <span class="token constant">XLSX</span> <span class="token keyword">from</span> <span class="token string">'xlsx'</span></code></pre>
+<p>新建工作簿</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> wb <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">book_new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>数据格式转换</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// json类型数据转换成sheet</span>
+<span class="token keyword">let</span> sheet1 <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">json_to_sheet</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+<span class="token comment">// json数据格式</span>
+<span class="token keyword">const</span> rows <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token string">'列1'</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'列2'</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'列3'</span><span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token string">'列1'</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'列2'</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'列3'</span><span class="token operator">:</span> <span class="token number">6</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token comment">// 二维数组</span>
+<span class="token keyword">let</span> sheet2 <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">aoa_to_sheet</span><span class="token punctuation">(</span>ws_data<span class="token punctuation">)</span>
+<span class="token comment">// 数组格式</span>
+<span class="token keyword">const</span> ws_data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">"姓名"</span><span class="token punctuation">,</span><span class="token string">"性别"</span><span class="token punctuation">,</span><span class="token string">"年龄"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"蔡徐坤"</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">,</span><span class="token string">"60"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"李明"</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">,</span><span class="token string">"30"</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span></code></pre>
+<p>添加工作表数据</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 参数：工作簿、sheet数据、工作表(sheet)名字</span>
+    <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">book_append_sheet</span><span class="token punctuation">(</span>wb<span class="token punctuation">,</span>sheet1<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'Sheet1'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>文件存储</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token constant">XLSX</span><span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>wb<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="性能优化">性能优化</h4>
+<ol>
+<li>节流</li>
+</ol>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 200ms内只执行一次事件</span>
+<span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay <span class="token operator">=</span> <span class="token number">200</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> retrun<span class="token punctuation">;</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+        timer <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="element-ui">element-ui</h4>
+<ol>
+<li>表头、单元格样式设置</li>
+</ol>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table</span>
+  <span class="token attr-name">max-height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:cell-style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{ textAlign: <span class="token punctuation">'</span>center<span class="token punctuation">'</span> }<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:header-cell-style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{
+    textAlign: <span class="token punctuation">'</span>center<span class="token punctuation">'</span>,
+    background: <span class="token punctuation">'</span>#E4EEF6<span class="token punctuation">'</span>,
+    height: <span class="token punctuation">'</span>21px<span class="token punctuation">'</span>,
+  }<span class="token punctuation">"</span></span>
+  <span class="token attr-name">@row-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>enterpriseDetail<span class="token punctuation">"</span></span>
+  
+  <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tableInfo<span class="token punctuation">"</span></span>
+<span class="token punctuation">&gt;</span></span></code></pre>
+<h3 id="DAY3">DAY3</h3>
+<p>天眼查数据导出</p>
+<h3 id="DAY4">DAY4</h3>
+<p>技术总结</p>
+<h3 id="DAY5">DAY5</h3>
+<h4 id="标准文档流">标准文档流</h4>
+<ol>
+<li>
+<p>空白折叠现象</p>
 <p>无论多少个空格、换行、tab，都会折叠为一个空格。</p>
 </li>
-<li><p>高矮不齐，底边对齐</p>
+<li>
+<p>高矮不齐，底边对齐</p>
 </li>
-<li><p>自动换行，一行写不满，换行写</p>
+<li>
+<p>自动换行，一行写不满，换行写</p>
 </li>
 </ol>
-<h5 id="行内元素和块级元素"><a href="#行内元素和块级元素" class="headerlink" title="行内元素和块级元素"></a>行内元素和块级元素</h5><p><strong>行内元素：</strong></p>
+<h5 id="行内元素和块级元素">行内元素和块级元素</h5>
+<p><strong>行内元素：</strong></p>
 <ul>
 <li><strong>只占据内容的一部分</strong></li>
 <li>与其他行内元素并排</li>
@@ -961,11 +1048,15 @@ map<span class="token punctuation">.</span><span class="token function">addContr
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span></code></pre>
 <p><strong>块级元素：</strong></p>
 <ul>
-<li><p><strong>占据一整行</strong></p>
+<li>
+<p><strong>占据一整行</strong></p>
 </li>
-<li><p>霸占一行，不能与其他任何元素并列</p>
+<li>
+<p>霸占一行，不能与其他任何元素并列</p>
 </li>
-<li>能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。</li>
+<li>
+<p>能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。</p>
+</li>
 </ul>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span></code></pre>
 <p>css中一共有三种手段，使一个元素脱离标准文档流：</p>
@@ -974,10 +1065,12 @@ map<span class="token punctuation">.</span><span class="token function">addContr
 <li>（2）绝对定位</li>
 <li>（3）固定定位</li>
 </ul>
-<h4 id="定位属性"><a href="#定位属性" class="headerlink" title="定位属性"></a>定位属性</h4><blockquote>
+<h4 id="定位属性">定位属性</h4>
+<blockquote>
 <p>默认文档流中，在一个父容器里放置多个块级的子元素，那么，这些子元素会默认从上往下排列。</p>
 </blockquote>
-<h5 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h5><p>相对定位：让元素相对于自己原来的位置，进行位置调整</p>
+<h5 id="相对定位">相对定位</h5>
+<p>相对定位：让元素相对于自己原来的位置，进行位置调整</p>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.div</span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     <span class="token property">left</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
@@ -986,14 +1079,15 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
     <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="C:/Users/23102/AppData/Roaming/Typora/typora-user-images/image-20220609202453294.png" alt="image-20220609202453294"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/img/20220609214047.png" alt="image-20220609202453294"></p>
 <p>相对定位：不脱离文档流。不脱标，老家留坑，<strong>别人不会把它的位置挤走</strong>。</p>
 <p>用途：</p>
 <ol>
 <li>微调元素</li>
 <li>做绝对定位的参考，子绝父相</li>
 </ol>
-<h5 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h5><p>绝对定位：定义横纵坐标。原点在父容器的左上角或左下角。</p>
+<h5 id="绝对定位">绝对定位</h5>
+<p>绝对定位：定义横纵坐标。原点在父容器的左上角或左下角。</p>
 <p><strong>绝对定位的盒子脱离了标准文档流。</strong></p>
 <p>所以，所有的标准文档流的性质，绝对定位之后都不遵守了。</p>
 <p>绝对定位之后，标签就不区分所谓的行内元素、块级元素了，不需要<code>display:block</code>就可以设置宽、高了。</p>
@@ -1052,8 +1146,9 @@ map<span class="token punctuation">.</span><span class="token function">addContr
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
-<p><img src="C:/Users/23102/AppData/Roaming/Typora/typora-user-images/image-20220609204650705.png" alt="image-20220609204650705"></p>
-<h5 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h5><p>固定定位：就是相对浏览器窗口进行定位。无论页面如何滚动，这个盒子显示的位置不变。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/img/20220609214102.png" alt="image-20220609204650705"></p>
+<h5 id="固定定位">固定定位</h5>
+<p>固定定位：就是相对浏览器窗口进行定位。无论页面如何滚动，这个盒子显示的位置不变。</p>
 <p><strong>用途1</strong>：网页右下角的“返回到顶部”</p>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.backtop</span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
@@ -1067,26 +1162,32 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">color</span><span class="token punctuation">:</span>white<span class="token punctuation">;</span>
     <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>   <span class="token comment">/*去掉超链接的下划线*/</span>
 <span class="token punctuation">}</span></code></pre>
-<p><strong>用途2：</strong>顶部导航条</p>
-<h4 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h4><ol>
+<p>**用途2：**顶部导航条</p>
+<h4 id="flex布局">flex布局</h4>
+<ol>
 <li><strong>flex 布局的子元素不会脱离文档流</strong>，很好地遵从了“流的特性”。</li>
 </ol>
 <p>但你如果用 float 来做布局，float 属性的元素会脱离文档流，而且会涉及到各种 BFC、清除浮动的问题。浮动相关的问题，比较麻烦，所以也成了面试必问的经典题目。但有了 flex 布局之后，这些问题都不存在的。</p>
-<ol>
+<ol start="2">
 <li><strong>flex 是一种现代的布局方式，是 W3C 第一次提供真正用于布局的 CSS 规范</strong>。 flex 非常提供了丰富的属性，非常灵活，让布局的实现更佳多样化，且方便易用。</li>
 </ol>
 <p>flex 唯一的缺点就在于，它不支持低版本的 IE 浏览器。</p>
 <ul>
-<li><p><strong>弹性盒子</strong>：指的是使用 <code>display:flex</code> 或 <code>display:inline-flex</code> 声明的<strong>父容器</strong>。</p>
+<li>
+<p><strong>弹性盒子</strong>：指的是使用 <code>display:flex</code> 或 <code>display:inline-flex</code> 声明的<strong>父容器</strong>。</p>
 </li>
-<li><p><strong>子元素/弹性元素</strong>：指的是父容器里面的子元素们（父容器被声明为 flex 盒子的情况下）。</p>
+<li>
+<p><strong>子元素/弹性元素</strong>：指的是父容器里面的子元素们（父容器被声明为 flex 盒子的情况下）。</p>
 </li>
-<li><p>主轴：flex容器的主轴，默认是水平方向，从左向右。</p>
+<li>
+<p>主轴：flex容器的主轴，默认是水平方向，从左向右。</p>
 </li>
-<li>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向，从上往下。</li>
+<li>
+<p>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向，从上往下。</p>
+</li>
 </ul>
-<h5 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h5><p>默认从左到右排列</p>
-<div class="table-container">
+<h5 id="flex-direction">flex-direction</h5>
+<p>默认从左到右排列</p>
 <table>
 <thead>
 <tr>
@@ -1113,10 +1214,11 @@ map<span class="token punctuation">.</span><span class="token function">addContr
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h5><p><code>flex-wrap</code>：控制子元素溢出时的换行处理。</p>
+<h5 id="flex-wrap">flex-wrap</h5>
+<p><code>flex-wrap</code>：控制子元素溢出时的换行处理。</p>
 <p>flex-wrap: wrap 换行</p>
-<h5 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h5><p><code>justify-content</code>：控制子元素在主轴上的排列方式。 水平方向</p>
+<h5 id="justify-content">justify-content</h5>
+<p><code>justify-content</code>：控制子元素在主轴上的排列方式。 水平方向</p>
 <ul>
 <li><code>flex-start</code> 从主轴的起点对齐（默认值）</li>
 <li><code>flex-end</code> 从主轴的终点对齐</li>
@@ -1124,23 +1226,28 @@ map<span class="token punctuation">.</span><span class="token function">addContr
 <li><code>space-around</code> 在父盒子里平分</li>
 <li><code>space-between</code> 两端对齐 平分</li>
 </ul>
-<h5 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h5><p><code>align-items</code>：设置子元素在<strong>侧轴上的对齐方式</strong>。 垂直方向</p>
+<h5 id="align-items">align-items</h5>
+<p><code>align-items</code>：设置子元素在<strong>侧轴上的对齐方式</strong>。 垂直方向</p>
 <ul>
-<li><code>flex-start</code> 从侧轴开始的方向对齐 </li>
-<li><code>flex-end</code> 从侧轴结束的方向对齐 </li>
-<li><code>baseline</code> 基线 默认同flex-start </li>
-<li><code>center</code> 中间对齐 </li>
+<li><code>flex-start</code> 从侧轴开始的方向对齐</li>
+<li><code>flex-end</code> 从侧轴结束的方向对齐</li>
+<li><code>baseline</code> 基线 默认同flex-start</li>
+<li><code>center</code> 中间对齐</li>
 <li><code>stretch</code> 拉伸</li>
 </ul>
-<h5 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h5><p> <code>flex</code>属性：设置子盒子的权重</p>
-<h4 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h4><h5 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h5><p>父容器设置</p>
+<h5 id="flex">flex</h5>
+<p><code>flex</code>属性：设置子盒子的权重</p>
+<h4 id="水平垂直居中">水平垂直居中</h4>
+<h5 id="行内元素">行内元素</h5>
+<p>父容器设置</p>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.father</span><span class="token punctuation">{</span>
     <span class="token comment">/*水平居中*/</span>
     <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
     <span class="token comment">/*垂直居中*/</span>
     <span class="token property">line-height</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h5><p>1.绝对定位 + margin（需要指定子元素的宽高，不推荐）</p>
+<h5 id="块级元素">块级元素</h5>
+<p>1.绝对定位 + margin（需要指定子元素的宽高，不推荐）</p>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.father</span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
@@ -1155,7 +1262,7 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">margin-top</span><span class="token punctuation">:</span> -50px<span class="token punctuation">;</span> <span class="token comment">/*高的一半*/</span>
     <span class="token property">margin-left</span><span class="token punctuation">:</span> -100px<span class="token punctuation">;</span> <span class="token comment">/*宽的一半*/</span>
 <span class="token punctuation">}</span></code></pre>
-<ol>
+<ol start="2">
 <li>绝对定位 + translate（无需指定子元素的宽高，推荐）</li>
 </ol>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.father</span><span class="token punctuation">{</span>
@@ -1170,7 +1277,7 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>这种写法，在没有指定子元素宽高的情况下，也能让其在父容器中垂直居中。因为 translate() 函数中使用百分比值时，是以这个元素自身的宽度和高度为基准进行换算和移动的（<strong>动态计算宽高</strong>）.</p>
-<ol>
+<ol start="3">
 <li>flex布局（待改进）</li>
 </ol>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.father</span><span class="token punctuation">{</span>
@@ -1183,7 +1290,7 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>父容器里的所有子元素们都垂直居中了</p>
-<ol>
+<ol start="4">
 <li>flex 布局 + margin: auto（推荐）</li>
 </ol>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.father</span><span class="token punctuation">{</span>
@@ -1195,7 +1302,8 @@ map<span class="token punctuation">.</span><span class="token function">addContr
     <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>当我们给父容器使用 Flex 布局 时，子元素的<code>margin: auto</code>不仅能让其在水平方向上居中，<strong>垂直方向上也是居中的</strong>。</p>
-<h3 id="DAY6"><a href="#DAY6" class="headerlink" title="DAY6"></a>DAY6</h3><p>css</p>
+<h3 id="DAY6">DAY6</h3>
+<p>css</p>
 ]]></content>
   </entry>
   <entry>
