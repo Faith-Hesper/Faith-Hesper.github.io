@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="text/html; charset=utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <title>服务大厅</title>
+    <link href="./css/chunk-vendors.css" rel="preload" as="style">
+    <link href="./css/index.css" rel="preload" as="style">
+    <link href="./js/chunk-vendors.js" rel="modulepreload" as="script">
+    <link href="./js/index.js" rel="modulepreload" as="script">
+    <link href="./css/chunk-vendors.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <script charset="utf-8" src="./js/platformCommon.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/AddressBookFlowMessageListMobilePortal.css">
+    <!-- <script charset="utf-8" src="./js/AddressBookFlowMessageListMobilePortal.js"></script> -->
+    <script charset="utf-8" src="./js/FlowMessageListMobilePmy_receiveortal.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/MobilePortal.css">
+    <script charset="utf-8" src="./js/MobilePortal.js"></script>
+    <!--<script src="./js/cookie.js" rel="modulepreload" as="script"></script>-->
+    <!--<script src="./js/random.js" rel="modulepreload" as="script"></script>-->
+    <style type="text/css">
+        img[onload^="SVGInject("] {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="htapp">
+        <div data-v-70419e1b="" id="home-tab" class="home-tab">
+            <ul data-v-0e16977e="" data-v-70419e1b="" class="nav-tab" style="">
+                <li data-v-0e16977e="" class="router-link-exact-active router-link-active"> 我的服务 </li>
+                <li data-v-0e16977e="" class="" id="my_receive"> 我收到的 </li>
+                <li data-v-0e16977e="" class="" id="my_send"> 我发出的 </li>
+                <li data-v-0e16977e="" class=""> 我转办的 </li>
+            </ul>
+            <div data-v-70419e1b="" class="content-wrap ht-scroll-vertical">
+                <div data-v-376ed35a="" data-v-70419e1b="" class="service-hall">
+                    <div data-v-55d5ddb6="" data-v-376ed35a="" class="search-bar">
+                        <div data-v-55d5ddb6="" class="round-corner van-search">
+                            <div data-v-55d5ddb6="" class="van-search__content van-search__content--square">
+                                <div data-v-55d5ddb6="" class="van-cell van-cell--borderless van-field">
+                                    <div class="van-field__left-icon"><i class="van-icon van-icon-search">
+                                        </i></div>
+                                    <div class="van-cell__value van-cell__value--alone van-field__value">
+                                        <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词"
+                                                class="van-field__control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-55d5ddb6="" class="search-result-wrap" style="display: none;">
+                            <div data-v-55d5ddb6="" class="search-result-inner" style="display: none;">
+                                <ul data-v-55d5ddb6="" class="search-result-ul"></ul>
+                            </div>
+                            <p data-v-55d5ddb6="" class="no-result">未搜索到相关服务</p><i data-v-55d5ddb6=""
+                                class="van-icon van-icon-clear" style="color: rgb(102, 102, 102);">
+                            </i>
+                        </div>
+                        <div data-v-55d5ddb6="" class="result-bg" style="display: none;"></div>
+                    </div>
+                    <div data-v-1a1d3091="" data-v-376ed35a="" class="notice-bar round-corner">
+                        <div data-v-1a1d3091="" class="icon-notice van-image" style="width: 35px; height: 14px;"><img
+                                class="van-image__img"
+                                data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAAsBAMAAACOBWtYAAAAMFBMVEUAAAD9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryetu292AAAAD3RSTlMAmSLdd7sRzGbuVUSqM4ip9ixaAAACoElEQVRIx62Vu24aQRiFN9wDOOENQEqiSGmgS5FiKayUIZVbtknhyqsobQRvgKsUaZYivZHyALhKC1IipTRvYDuswWsuJ/PPPzPsYDayFZ+Cvc1nn/nPYXEeQFlc3L6ZwuVDM2kc35t5jMa9mad3YlwoLeiqjvfmSRU7dPnfjNGn/fG/mY3qiKkWf1LEfGAu7sicA2snWSP0yZXFvIDQx2QmgLfNlAJEPaCbhOxh7jBjOTsoA0svgclgzQ43t14CoeOcAG8SmDJu6NDeMMUAtMVUG5gk1W3GjBWsLx1gPt7JnMHXjHEGLOnsO3Btyq9F7WxhYjFFIPrGrnIj4McuZgQZuBuZuHAgBhfSeUHwgx1MwIvdKSO/5cyyQJ+vYm3roK/jWRqGnU0HwlUHKz2PzzpoRCaeMM7oHTxDVONGmDo8wtrEs4oxP/Wk9mjcpA9mdodYKOZIvUG4QT2TyAn+8ElLMz3avXp2yswV36+YHr5VR1cxbTRNHZtx5uuOchm3nuC6coDjGPPLc5L0hAZcpXdHjgfIDCmPBX0tqsp8GqHuJXV5SLssqnhymjnDipieWltG5OmNH9NfDOk/3tjvwHP4xJSBmtpFV3dqQmlOCZzZTIAuMalAznM6aKOhFmBMdjAQ8fgWUxBeiHFa0gDCoUoyo18BFeFyYjFZcZRMGlM5mbzaaJqjHeKLsN/nAiqmjgUzJaBJTIE88WKNduApZq2a4jMjPi9kAi4qbOqULV7lyCUzqt5oKub5flMyLcxkFsIQH19hbTFFwGPGJH0on2Rg9I7jEYuZKVPENpORqeY3zGsVj1Ng5giLbSYnU00jJt9iWmhsM1y9jTgehq/VCKwfLmLq7F+L43ENUwJqt5gyfcRUpXh6hinQCLaZkmjEX5mirfscFR9IAAAAAElFTkSuQmCC"
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAAsBAMAAACOBWtYAAAAMFBMVEUAAAD9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryf9Ryetu292AAAAD3RSTlMAmSLdd7sRzGbuVUSqM4ip9ixaAAACoElEQVRIx62Vu24aQRiFN9wDOOENQEqiSGmgS5FiKayUIZVbtknhyqsobQRvgKsUaZYivZHyALhKC1IipTRvYDuswWsuJ/PPPzPsYDayFZ+Cvc1nn/nPYXEeQFlc3L6ZwuVDM2kc35t5jMa9mad3YlwoLeiqjvfmSRU7dPnfjNGn/fG/mY3qiKkWf1LEfGAu7sicA2snWSP0yZXFvIDQx2QmgLfNlAJEPaCbhOxh7jBjOTsoA0svgclgzQ43t14CoeOcAG8SmDJu6NDeMMUAtMVUG5gk1W3GjBWsLx1gPt7JnMHXjHEGLOnsO3Btyq9F7WxhYjFFIPrGrnIj4McuZgQZuBuZuHAgBhfSeUHwgx1MwIvdKSO/5cyyQJ+vYm3roK/jWRqGnU0HwlUHKz2PzzpoRCaeMM7oHTxDVONGmDo8wtrEs4oxP/Wk9mjcpA9mdodYKOZIvUG4QT2TyAn+8ElLMz3avXp2yswV36+YHr5VR1cxbTRNHZtx5uuOchm3nuC6coDjGPPLc5L0hAZcpXdHjgfIDCmPBX0tqsp8GqHuJXV5SLssqnhymjnDipieWltG5OmNH9NfDOk/3tjvwHP4xJSBmtpFV3dqQmlOCZzZTIAuMalAznM6aKOhFmBMdjAQ8fgWUxBeiHFa0gDCoUoyo18BFeFyYjFZcZRMGlM5mbzaaJqjHeKLsN/nAiqmjgUzJaBJTIE88WKNduApZq2a4jMjPi9kAi4qbOqULV7lyCUzqt5oKub5flMyLcxkFsIQH19hbTFFwGPGJH0on2Rg9I7jEYuZKVPENpORqeY3zGsVj1Ng5giLbSYnU00jJt9iWmhsM1y9jTgehq/VCKwfLmLq7F+L43ENUwJqt5gyfcRUpXh6hinQCLaZkmjEX5mirfscFR9IAAAAAElFTkSuQmCC"
+                                lazy="loaded"></div>
+                        <div data-v-1a1d3091="" class="my-swipe van-swipe">
+                            <div class="van-swipe__track van-swipe__track--vertical"
+                                style="height: 90px; transition-duration: 500ms; transform: translateY(0px);">
+                                <div data-v-1a1d3091="" class="van-ellipsis van-swipe-item"
+                                    style="height: 45px; font-size: 14px; color: rgb(51, 51, 51); font-weight: 400; line-height: 48px;">
+                                    暂无动态</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-90b79e46="" data-v-376ed35a="" class="service-swipe">
+                        <!---->
+                        <div data-v-90b79e46="" class="round-corner" style="display: none;">
+                            <div data-v-90b79e46="" class="van-swipe" style="background-color: rgb(255, 255, 255);">
+                                <div class="van-swipe__track"
+                                    style="width: 330px; transition-duration: 0ms; transform: translateX(0px);">
+                                    <div data-v-90b79e46="" class="van-swipe-item"
+                                        style="width: 330px; padding: 10px 10px 20px; box-sizing: border-box;">
+                                        <div data-v-90b79e46="" class="van-grid">
+                                            <div data-v-c6bffe06="" data-v-90b79e46=""
+                                                class="round-corner grid-inner van-grid-item"
+                                                style="flex-basis: 33.3333%;">
+                                                <div role="button" tabindex="0"
+                                                    class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable">
+                                                    <div class="van-grid-item__icon-wrapper"><img data-v-c6bffe06=""
+                                                            src="./img/icons8-customer-96.png" width="32" height="32">
+                                                        <!---->
+                                                    </div><span class="van-grid-item__text">人员信息登记表（研究生）</span>
+                                                </div>
+                                            </div>
+                                            <div data-v-c6bffe06="" data-v-90b79e46=""
+                                                class="round-corner grid-inner van-grid-item"
+                                                style="flex-basis: 33.3333%;">
+                                                <div role="button" tabindex="0"
+                                                    class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable">
+                                                    <div class="van-grid-item__icon-wrapper"><img data-v-c6bffe06=""
+                                                            src="./img/icons8-sign-up-96.png" width="32" height="32">
+                                                        <!---->
+                                                    </div><span class="van-grid-item__text">人员信息登记表 (学生)</span>
+                                                </div>
+                                            </div>
+                                            <div data-v-c6bffe06="" data-v-90b79e46=""
+                                                class="round-corner grid-inner van-grid-item"
+                                                style="flex-basis: 33.3333%;">
+                                                <div role="button" tabindex="0"
+                                                    class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable">
+                                                    <div class="van-grid-item__icon-wrapper"><img data-v-c6bffe06=""
+                                                            src="./img/icons8-apply-96.png" width="32" height="32">
+                                                        <!---->
+                                                    </div><span class="van-grid-item__text">辅导员考核测评</span>
+                                                </div>
+                                            </div>
+                                            <div data-v-c6bffe06="" data-v-90b79e46=""
+                                                class="round-corner grid-inner van-grid-item"
+                                                style="flex-basis: 33.3333%;">
+                                                <div role="button" tabindex="0"
+                                                    class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable">
+                                                    <div class="van-grid-item__icon-wrapper"><img data-v-c6bffe06=""
+                                                            src="./img/icons8-edit-row-96.png" width="32" height="32">
+                                                        <!---->
+                                                    </div><span class="van-grid-item__text">人员信息登记表（临时）</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-67f8625d="" data-v-376ed35a="" class="service-panel-wrap">
+                        <div data-v-67f8625d="" class="service-panel service-panel-0">
+                            <h3 data-v-67f8625d="" class="panel-title">圈子申请</h3>
+                            <div data-v-67f8625d="" class="service-box narrow">
+                                <div data-v-67f8625d="" class="service-wrap">
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">个人信息管理</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 70727次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="amlbcookie	service-item-img"><img
+                                                data-v-f208a0fc="" src="./img/downloadfile.htm.png" width="45"
+                                                height="45"></div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                        <div data-v-67f8625d="" class="service-panel service-panel-1">
+                            <h3 data-v-67f8625d="" class="panel-title">学生服务</h3>
+                            <div data-v-67f8625d="" class="service-box narrow">
+                                <div data-v-67f8625d="" class="service-wrap">
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">2022秋季返校申请
+                                            </h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 203550次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/icons8-students-96.png" width="45" height="45"></div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">2022新生入校申请
+                                            </h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 39619次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/icons8-apply-96.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">个人信息管理</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 70727次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile.htm.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">借用教室
+                                            </h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 11977次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile_002.htm.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">
+                                                学籍变动申请</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 4758次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile_003.htm.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text" id="reData">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">学生请假申请表(新版)
+                                            </h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 108330次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/icons8-administrator-male-96.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <a href="./src/backIng.html">
+                                                <h3 data-v-f208a0fc="" class="service-item-name max-two-line">学生销假单
+                                                </h3>
+                                            </a>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 140次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/icons8-students-96.png" width="45" height="45"></div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67f8625d="" class="expand-btn"><img data-v-67f8625d=""
+                                    src="./img/icon-arrow-down.svg" class="icon"></div>
+                            <!---->
+                        </div>
+                        <div data-v-67f8625d="" class="service-panel service-panel-2">
+                            <h3 data-v-67f8625d="" class="panel-title">教师服务</h3>
+                            <div data-v-67f8625d="" class="service-box narrow">
+                                <div data-v-67f8625d="" class="service-wrap">
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">借用教室</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 10281次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile_002.htm.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                        <div data-v-67f8625d="" class="service-panel service-panel-3">
+                            <h3 data-v-67f8625d="" class="panel-title">校内生活</h3>
+                            <div data-v-67f8625d="" class="service-box narrow">
+                                <div data-v-67f8625d="" class="service-wrap">
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">个人信息管理</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 46214次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile.htm.png" width="45" height="45"></div>
+                                        <!---->
+                                    </div>
+                                    <div data-v-f208a0fc="" data-v-67f8625d=""
+                                        class="service-item-landscape round-corner"><span data-v-f208a0fc=""
+                                            class="label"> 在线办理 </span>
+                                        <div data-v-f208a0fc="" class="service-item-text">
+                                            <h3 data-v-f208a0fc="" class="service-item-name max-two-line">借用教室</h3>
+                                            <p data-v-f208a0fc="" class="service-item-desc"> 10281次访问 </p>
+                                        </div>
+                                        <div data-v-f208a0fc="" class="service-item-img"><img data-v-f208a0fc=""
+                                                src="./img/downloadfile_002.htm.png" width="45" height="45">
+                                        </div>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+
+                    </div><span data-v-376ed35a="" class="float-btn service-toggle-btn">全部<br
+                            data-v-376ed35a="">服务</span>
+                </div>
+                <!---->
+            </div>
+        </div>
+        <!---->
+        <!---->
+    </div>
+    <script type="module" src="./js/chunk-vendors.js"></script>
+    <!-- <script type="module" src="./js/index.js"></script> -->
+    <script>!function () { var e = document, t = e.createElement("script"); if (!("noModule" in t) && "onbeforeload" in t) { var n = !1; e.addEventListener("beforeload", function (e) { if (e.target === t) n = !0; else if (!e.target.hasAttribute("nomodule") || !n) return; e.preventDefault() }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove() } }();</script>
+    <script src="./js/chunk-vendors-legacy.js" nomodule=""></script>
+    <script src="./js/index-legacy.js" nomodule=""></script>
+    <div class="van-toast van-toast--middle van-toast--loading" style="z-index: 2001; display: none;">
+        <div class="van-loading van-loading--circular van-toast__loading"><span
+                class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50"
+                    class="van-loading__circular">
+                    <circle cx="50" cy="50" r="20" fill="none"></circle>
+                </svg></span></div>
+        <div class="van-toast__text">加载中...</div>
+    </div>
+</body>
+<script>
+    const my_send = document.querySelector("#my_send");
+    const my_receive = document.querySelector("#my_receive");
+    const reData = document.querySelector("#reData");
+    my_receive.addEventListener('click', () => {
+        location.href = "./src/my_receive.html"
+    })
+    my_send.addEventListener('click', () => {
+        location.href = "./src/my_issues.html";
+    })
+    reData.addEventListener('click', () => {
+        location.href = "./src/leave_form.html";
+    })
+    // service-box narrow
+    const arrow = document.getElementsByClassName('expand-btn')
+    const van = document.querySelectorAll('.service-box')
+
+    arrow[0].addEventListener('click', (e) => {
+        if (van[1].className === "service-box narrow") {
+            van[1].className = "service-box"
+        } else {
+            van[1].className = "service-box narrow"
+        }
+        console.log(van[1].className);
+    })
+</script>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="text/html; charset=utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <title>我的事项</title>
+    <link href="../css/chunk-vendors.css" rel="preload" as="style">
+    <link href="../css/index.css" rel="preload" as="style">
+    <link href="../js/chunk-vendors.js" rel="modulepreload" as="script">
+    <!-- <link href="../js/index.js" rel="modulepreload" as="script"> -->
+    <link href="../css/chunk-vendors.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <script charset="utf-8" src="../js/platformCommon.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!--<script src="../js/cookie.js" rel="modulepreload" as="script"></script>-->
+    <script src="../js/random.js" rel="modulepreload" as="script"></script>
+    <link rel="stylesheet" type="text/css" href="../css/AddressBookFlowMessageListMobilePortal.css">
+    <!-- <script charset="utf-8"
+        src="../js/AddressBookFlowMessageListMobilePortal.js"></script> -->
+    <script charset="utf-8" src="../js/FlowMessageListMobilePortal.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/MobilePortal.css">
+    <script charset="utf-8" src="../js/MobilePortal.js"></script>
+    <style type="text/css">
+        img[onload^="SVGInject("] {
+            visibility: hidden;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/Flow.css">
+    <script charset="utf-8" src="../js/Flow.js"></script>
+</head>
+
+<body class="">
+    <div id="htapp">
+        <!---->
+        <div data-v-70419e1b="" id="home-tab" class="home-tab">
+            <ul data-v-0e16977e="" data-v-70419e1b="" class="nav-tab">
+                <li data-v-0e16977e="" class="" id="my_server"> 我的服务 </li>
+                <li data-v-0e16977e="" class="" id="my_receive"> 我收到的 </li>
+                <li data-v-0e16977e="" class="router-link-exact-active router-link-active"> 我发出的 </li>
+                <li data-v-0e16977e="" class=""> 我转办的 </li>
+            </ul>
+            <div data-v-70419e1b="" class="content-wrap ht-scroll-vertical">
+                <!---->
+                <div data-v-6ab90192="" data-v-70419e1b="" class="my-items ht-loading">
+                    <div data-v-6ab90192="" class="count-wrap">
+                        <div data-v-6ab90192="" class="count-item">
+                            <h3 data-v-6ab90192="" class="num-ongoing">2</h3><span data-v-6ab90192="">进行中总数</span>
+                        </div>
+                        <div data-v-6ab90192="" class="count-item">
+                            <h3 data-v-6ab90192="" class="num-end">36</h3><span data-v-6ab90192="">已结束总数</span>
+                        </div>
+                        <div data-v-6ab90192="" class="count-item">
+                            <h3 data-v-6ab90192="" class="num-draft">0</h3><span data-v-6ab90192="">草稿箱总数</span>
+                        </div>
+                    </div>
+                    <!---->
+                    <form data-v-6ab90192="" action="/">
+                        <div data-v-6ab90192="" class="van-search"
+                            style="background: rgb(245, 245, 245) none repeat scroll 0% 0%;">
+                            <div data-v-6ab90192="" class="van-search__content van-search__content--square">
+                                <div data-v-6ab90192="" class="van-cell van-cell--borderless van-field">
+                                    <div class="van-field__left-icon"><i class="van-icon van-icon-search">
+                                            <!---->
+                                        </i></div>
+                                    <div class="van-cell__value van-cell__value--alone van-field__value">
+                                        <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词"
+                                                class="van-field__control"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div data-v-6ab90192="" class="item-wrap">
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】学生离校请假审批表(新版)</h3>
+                                <span data-v-783d199a="" class="time">2 天前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">1</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item" id="issue_ends">
+                                    <h4 data-v-783d199a="" class="num-end">1</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】2022年秋季返校申请</h3>
+                                <span data-v-783d199a="" class="time">大约 1 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <a href="./ending.html">
+                                        <h4 data-v-783d199a="" class="num-end">3</h4>
+                                        <p data-v-783d199a="">已结束</p>
+                                    </a>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】辅导员考核测评表</h3><span
+                                    data-v-783d199a="" class="time">4 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <a href="./ending.html">
+                                        <h4 data-v-783d199a="" class="num-end">3</h4>
+                                        <p data-v-783d199a="">已结束</p>
+                                    </a>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】2021年寒假学生离校统计</h3>
+                                <span data-v-783d199a="" class="time">9 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">1</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】学生离校请假审批表</h3><span
+                                    data-v-783d199a="" class="time">9 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">1</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">0</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】2021年秋季学期返校申请</h3>
+                                <span data-v-783d199a="" class="time">9 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">2</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】2021年暑假学生离校统计表</h3>
+                                <span data-v-783d199a="" class="time">9 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">1</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】疫情防控期间学生离校请假表</h3>
+                                <span data-v-783d199a="" class="time">9 个月前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">1</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">1</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-783d199a="" data-v-6ab90192="" class="my-item round-corner">
+                            <div data-v-783d199a="" class="hd">
+                                <h3 data-v-783d199a="" class="title van-multi-ellipsis--l2">【流程】人员信息登记表(学生)</h3>
+                                <span data-v-783d199a="" class="time">将近 2 年前</span>
+                            </div>
+                            <div data-v-783d199a="" class="num-wrap">
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-ongoing">0</h4>
+                                    <p data-v-783d199a="">进行中</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-end">28</h4>
+                                    <p data-v-783d199a="">已结束</p>
+                                </div>
+                                <div data-v-783d199a="" class="num-item">
+                                    <h4 data-v-783d199a="" class="num-draft">0</h4>
+                                    <p data-v-783d199a="">草稿箱</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p data-v-6ab90192="" class="recount-wrap"><i data-v-6ab90192="" class="van-icon van-icon-replay"
+                            style="font-size: 22px;">
+                            <!---->
+                        </i><span data-v-6ab90192="" class="recount-btn">刷新数据</span></p>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <script type="module" src="../js/chunk-vendors.js"></script>
+        <!-- <script type="module" src="../js/index.js"></script> -->
+        <script>!function () { var e = document, t = e.createElement("script"); if (!("noModule" in t) && "onbeforeload" in t) { var n = !1; e.addEventListener("beforeload", function (e) { if (e.target === t) n = !0; else if (!e.target.hasAttribute("nomodule") || !n) return; e.preventDefault() }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove() } }();</script>
+        <script src="../js/chunk-vendors-legacy.js" nomodule=""></script>
+        <script src="../js/index-legacy.js" nomodule=""></script>
+        <div class="van-toast van-toast--middle van-toast--loading" style="z-index: 2004; display: none;">
+            <div class="van-loading van-loading--circular van-toast__loading"><span
+                    class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50"
+                        class="van-loading__circular">
+                        <circle cx="50" cy="50" r="20" fill="none"></circle>
+                    </svg></span></div>
+            <div class="van-toast__text">加载中...</div>
+        </div>
+    </div>
+</body>
+<script>
+    const my_server = document.querySelector("#my_server");
+    const my_receive = document.querySelector("#my_receive");
+    const ends = document.getElementById("issue_ends");
+    ends.addEventListener('click', () => {
+        location.href = "./ending.html"
+    })
+    my_receive.addEventListener('click', () => {
+        location.href = "./my_receive.html"
+    })
+    my_server.addEventListener('click', () => {
+        location.href = "../index.html";
+    })
+</script>
+
+</html>

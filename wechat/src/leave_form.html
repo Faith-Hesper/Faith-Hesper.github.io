@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请假表</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_3125574_dg7amy0ak5b.css"> -->
+    <script src="https://at.alicdn.com/t/font_3125574_scj6r0fpek.js"></script>
+    <script src="../js/cookie.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="../index.html" class="form-horizontal" method="get" style="margin-top: 15%;">
+            <div>
+                <div class="form-group" style="font-size: 1.5rem; text-align: center;">
+                    <label for="" class="control-label">请假表</label>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-lanbaimao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">姓名</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="name" placeholder="王德发"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-lanmao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">学院</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="college" value="画饼科技学院"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinjianceng"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">班级</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="class" placeholder="李信B192"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-jinjianceng"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">手机</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="phone" placeholder="15511287200"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-sifenkesiwumaomao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">离校原因</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="leave_reason" placeholder="就是玩"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-meiduan"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">离校去向</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="leave_to" placeholder="华北科技学院附近"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-xianluomao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">请假天数</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="leave_day" placeholder="1"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-buoumao-xiyouse"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">紧急联系人</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="emergeName" value="蔡徐坤 15511287200"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-lihuamao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">学号</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="stu_id" placeholder="201804126110"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-sanhuamao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">导员</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="tutor" placeholder="刘洋"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 " style="font-size: 1.4rem;">
+                        <svg class="icon svg-icon" aria-hidden="true">
+                            <use xlink:href="#icon-sanhuamao"></use>
+                        </svg>
+                        <!-- <i class="iconfont icon-sifenkesiwumaomao col-xs-offset-2" style="font-size: 30px;"></i> -->
+                        <label class="control-label " for="">回复</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" name="tutorIssue" placeholder="注意安全，戴好口罩"
+                            aria-describedby="inputSuccess3Status">
+                    </div>
+                </div>
+                <input type="submit" value="提交" id="submit" class="btn btn-primary btn-lg btn-block"
+                    onclick="setFormCookie()">
+            </div>
+        </form>
+    </div>
+    <script src="../js/form_check.js"></script>
+</body>
+
+</html>

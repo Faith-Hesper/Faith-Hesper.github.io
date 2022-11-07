@@ -1,0 +1,925 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Supermap实例 | Faith</title><meta name="keywords" content="Supermap,编程"><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="leaflet引用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Supermap实例">
+<meta property="og:url" content="https://faith-hesper.github.io/blog/639a82e62980/">
+<meta property="og:site_name" content="Faith">
+<meta property="og:description" content="leaflet引用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp">
+<meta property="article:published_time" content="2021-07-16T08:00:31.000Z">
+<meta property="article:modified_time" content="2021-08-11T07:26:24.870Z">
+<meta property="article:author" content="Faith Hesper">
+<meta property="article:tag" content="Supermap">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp"><link rel="shortcut icon" href="../../img/favicon.png"><link rel="canonical" href="https://faith-hesper.github.io/blog/639a82e62980/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="../../css/index.css"><link rel="stylesheet" href="../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '../https:/cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: '../https:/cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Supermap实例',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-11 15:26:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="../archives/"><div class="headline">文章</div><div class="length-num">63</div></a></div><div class="data-item"><a href="../tags/"><div class="headline">标签</div><div class="length-num">37</div></a></div><div class="data-item"><a href="/"><div class="headline">分类</div><div class="length-num">38</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="../wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="../postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="../index.html">Faith</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="../wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="../postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Supermap实例</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-16T08:00:31.000Z" title="发表于 2021-07-16 16:00:31">2021-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-11T07:26:24.870Z" title="更新于 2021-08-11 15:26:24">2021-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="../../categories/Supermap/">Supermap</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="../../categories/Supermap/%E7%BC%96%E7%A8%8B/">编程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Supermap实例"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="leaflet引用">leaflet引用</h2>
+<p>引入 Leaflet CSS 文件和 JS 文件，填入 BootCDN 的托管地址</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>引入 iclient-leaflet CSS 文件和 JS 文件，填入 SuperMap iClient for Leaflet 在线站点地址：</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://iclient.supermap.io/dist/leaflet/iclient-leaflet.min.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://iclient.supermap.io/dist/leaflet/iclient-leaflet.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="地图链接">地图链接</h2>
+<p>端口号</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> host <span class="token operator">=</span> window<span class="token punctuation">.</span>isLocal <span class="token operator">?</span> window<span class="token punctuation">.</span>server <span class="token operator">:</span> <span class="token string">"https://iserver.supermap.io"</span><span class="token punctuation">;</span></code></pre>
+<p>链接</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">url <span class="token operator">=</span> host <span class="token operator">+</span> <span class="token string">"/iserver/services/map-China/rest/maps/China"</span><span class="token punctuation">;</span></code></pre>
+<h2 id="矢量图层">矢量图层</h2>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> host <span class="token operator">=</span> window<span class="token punctuation">.</span>isLocal <span class="token operator">?</span> window<span class="token punctuation">.</span>server <span class="token operator">:</span> <span class="token string">"https://iserver.supermap.io"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> map<span class="token punctuation">,</span> themeService<span class="token punctuation">,</span> themeRange<span class="token punctuation">,</span> ThemeParameters<span class="token punctuation">,</span> thmemLayer<span class="token punctuation">,</span> url <span class="token operator">=</span> host <span class="token operator">+</span>
+    <span class="token string">"/iserver/services/map-China/rest/maps/China"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> resultLayer<span class="token punctuation">,</span>dataurl <span class="token operator">=</span> host<span class="token operator">+</span><span class="token string">"/iserver/services/data-China/rest/data"</span><span class="token punctuation">;</span> <span class="token comment">//数据服务地址</span>
+
+map <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    center<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    preferCanvas<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    crs<span class="token operator">:</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token constant">CRS</span><span class="token punctuation">.</span><span class="token constant">EPSG3857</span><span class="token punctuation">,</span> <span class="token comment">//坐标系设置错误不显示</span>
+    maxZoom<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>  <span class="token comment">// 最大缩放级别</span>
+    zoom<span class="token operator">:</span> <span class="token number">2</span>  <span class="token comment">// 缩放级别</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> selectId<span class="token punctuation">,</span> selectLayerName<span class="token punctuation">,</span> vectorLayer <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">tiledVectorLayer</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    noWrap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    cacheEnabled<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    returnAttributes<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    attribution<span class="token operator">:</span> <span class="token string">"Tile Data©SuperMap iServer with©SuperMap iClient"</span>
+    <span class="token comment">// transparent: true</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 为矢量图层注册点击事件</span>
+vectorLayer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">evt</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> id <span class="token operator">=</span> evt<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> layerName <span class="token operator">=</span> evt<span class="token punctuation">.</span>layer<span class="token punctuation">.</span>layerName<span class="token punctuation">;</span>
+    <span class="token function">clearHighlight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 判断是否有选中矢量数据，有则取消高亮</span>
+    selectId <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token comment">// alert(id);</span>
+    selectLayerName <span class="token operator">=</span> layerName<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> selectStyle <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        fillColor<span class="token operator">:</span> <span class="token string">'#800026'</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        color<span class="token operator">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span>
+        opacity<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        weight<span class="token operator">:</span> <span class="token number">2</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    vectorLayer<span class="token punctuation">.</span><span class="token function">setFeatureStyle</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> layerName<span class="token punctuation">,</span> selectStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">function</span> <span class="token function">clearHighlight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>selectId <span class="token operator">&amp;&amp;</span> selectLayerName<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        vectorLayer<span class="token punctuation">.</span><span class="token function">resetFeatureStyle</span><span class="token punctuation">(</span>selectId<span class="token punctuation">,</span> selectLayerName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    selectId <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    selectLayerName <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>图层切换</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> baseMaps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"China"</span><span class="token operator">:</span> China<span class="token punctuation">,</span>
+    <span class="token comment">// "vectorLayer": vectorLayer</span>
+<span class="token punctuation">&#125;</span>
+<span class="token constant">L</span><span class="token punctuation">.</span>control<span class="token punctuation">.</span><span class="token function">zoom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 缩放控件</span>
+<span class="token keyword">var</span> overmaps <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"vectorLayer"</span><span class="token operator">:</span> vectorLayer
+<span class="token punctuation">&#125;</span>
+<span class="token constant">L</span><span class="token punctuation">.</span>control<span class="token punctuation">.</span><span class="token function">layers</span><span class="token punctuation">(</span>baseMaps<span class="token punctuation">,</span> overmaps<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+            position<span class="token operator">:</span> <span class="token string">"topleft"</span> <span class="token comment">//图标位置</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>图表数据绑定</p>
+<p>main.js备份</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 图表初始化</span>
+option <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  legend<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"降雨量"</span><span class="token punctuation">,</span> <span class="token string">"径流量"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    align<span class="token operator">:</span> <span class="token string">"left"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  toolbox<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    feature<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      magicType<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        type<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"stack"</span><span class="token punctuation">,</span> <span class="token string">"tiled"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      saveAsImage<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        pixelRatio<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  tooltip<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  xAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"周一"</span><span class="token punctuation">,</span> <span class="token string">"周二"</span><span class="token punctuation">,</span> <span class="token string">"周三"</span><span class="token punctuation">,</span> <span class="token string">"周四"</span><span class="token punctuation">,</span> <span class="token string">"周五"</span><span class="token punctuation">,</span> <span class="token string">"周六"</span><span class="token punctuation">,</span> <span class="token string">"周日"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    silent<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    splitLine<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      show<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  yAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  series<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      type<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">animationDelay</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">"bar2"</span><span class="token punctuation">,</span>
+      type<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">animationDelay</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  animationEasing<span class="token operator">:</span> <span class="token string">"elasticOut"</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">animationDelayUpdate</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>DomUtil<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> chart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>div<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  width<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+  height<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//  数据绑定</span>
+<span class="token keyword">function</span> <span class="token function">chartSet</span><span class="token punctuation">(</span><span class="token parameter">layer</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// function (layer) &#123;</span>
+  <span class="token keyword">let</span> city <span class="token operator">=</span> layer<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> data1 <span class="token operator">=</span> cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> data2 <span class="token operator">=</span> cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">;</span>
+  chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    title<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      text<span class="token operator">:</span> city<span class="token punctuation">,</span>
+      subtext<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    series<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">"降雨量"</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> data1<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">"径流量"</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> data2<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> chart<span class="token punctuation">.</span><span class="token function">getDom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// &#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">resultBind</span><span class="token punctuation">(</span><span class="token parameter">resultLayer<span class="token punctuation">,</span>selecTime</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  resultLayer
+  <span class="token punctuation">.</span><span class="token function">bindPopup</span><span class="token punctuation">(</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">layer</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> city <span class="token operator">=</span> layer<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">;</span>
+      <span class="token comment">// let time=layer.feature.properties.DATE_USER;</span>
+      time<span class="token operator">=</span><span class="token function">timeTransfer</span><span class="token punctuation">(</span>selecTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>selecTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//time</span>
+      <span class="token comment">// let data1 = cityData.get(city).HUMIDITY;</span>
+      <span class="token comment">// let data2 = cityData.get(city).RAINFALL;</span>
+      <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;b>城市:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>city<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>相对湿度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>本日降雨量:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>AQI:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">AQI</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>PM2.5浓度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">PM25</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>温度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>天气:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">WEATHER</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      &lt;b>日期:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">DATE_USER</span><span class="token punctuation">[</span>time<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span> maxWidth<span class="token operator">:</span> <span class="token number">700</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 查询结果解析</span>
+<span class="token keyword">function</span> <span class="token function">sqlResult</span><span class="token punctuation">(</span><span class="token parameter">serviceResult</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// console.log(serviceResult);</span>
+
+  <span class="token comment">/*geoJSON数据解析*/</span>
+  resultLayer <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">geoJSON</span><span class="token punctuation">(</span>serviceResult<span class="token punctuation">.</span>result<span class="token punctuation">.</span>features<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">onEachFeature</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">feature<span class="token punctuation">,</span> layer</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// if (feature.geometry.coordinates[0] > 10000) &#123;</span>
+        <span class="token comment">// let latlng = L.CRS.EPSG3857.unproject(</span>
+        <span class="token comment">//   L.point(</span>
+        <span class="token comment">//     feature.geometry.coordinates[0],</span>
+        <span class="token comment">//     feature.geometry.coordinates[1]</span>
+        <span class="token comment">//   )</span>
+        <span class="token comment">// );</span>
+      <span class="token comment">//   latlng.alt = feature.geometry.coordinates[2];</span>
+        <span class="token comment">//  marker = L.marker(latlng).addTo(map);</span>
+        <span class="token comment">//  return latlng;</span>
+      <span class="token comment">//   // marker.bindPopup(`&lt;b>SMID:&lt;/b> $&#123;feature.properties.SMID&#125;`).openPopup().addTo(map)</span>
+      <span class="token comment">// &#125; </span>
+      <span class="token comment">//else &#123;</span>
+      <span class="token comment">//   layer.bindPopup(`&lt;b>SMID:&lt;/b> $&#123;feature.properties.SMID&#125;`).addTo(map);</span>
+      <span class="token comment">// &#125;</span>
+
+      <span class="token comment">// console.log(layer);</span>
+      <span class="token comment">// 创建对象</span>
+
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    style<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      
+        weight<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+        opacity<span class="token operator">:</span><span class="token number">0.5</span>
+      
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+    <span class="token function-variable function">coordsToLatLng</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">coords</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// console.log(L.point(coords[0], coords[1]));</span>
+      <span class="token keyword">let</span> latlng <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token constant">CRS</span><span class="token punctuation">.</span><span class="token constant">EPSG4326</span><span class="token punctuation">.</span><span class="token function">unproject</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span>coords<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> coords<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      latlng<span class="token punctuation">.</span>alt <span class="token operator">=</span> coords<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// console.log(latlng);</span>
+      <span class="token keyword">return</span> latlng<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 图表数据绑定</span>
+  <span class="token function">resultBind</span><span class="token punctuation">(</span>resultLayer<span class="token punctuation">,</span>gnl_infor_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// console.log(resultLayer);</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// SQL查询要素</span>
+<span class="token keyword">function</span> <span class="token function">sqlQuery</span><span class="token punctuation">(</span><span class="token parameter">attributeFilter<span class="token punctuation">,</span> datasetNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// sql查询参数</span>
+  <span class="token keyword">var</span> sqlParam <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperMap<span class="token punctuation">.</span>GetFeaturesBySQLParameters</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    queryParameter<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      attributeFilter<span class="token operator">:</span> <span class="token string">"date_User='"</span> <span class="token operator">+</span> attributeFilter <span class="token operator">+</span> <span class="token string">" 0:00:00'"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    datasetNames<span class="token operator">:</span> datasetNames<span class="token punctuation">,</span>
+    toIndex<span class="token operator">:</span> <span class="token number">238</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// sql查询服务</span>
+  <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">featureService</span><span class="token punctuation">(</span>dataurl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFeaturesBySQL</span><span class="token punctuation">(</span>sqlParam<span class="token punctuation">,</span> sqlResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 默认展示第一天的天气信息地图</span>
+<span class="token function">sqlQuery</span><span class="token punctuation">(</span>gnl_infor_date<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"ChinaClimate:weather"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 热力图</span>
+<span class="token comment">// gn_search.addEventListener("click",addHeatMapLayer)</span>
+
+gnl_search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">layerRemove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">resultBind</span><span class="token punctuation">(</span>resultLayer<span class="token punctuation">,</span>gnl_infor_date<span class="token punctuation">)</span>
+  <span class="token comment">// sqlQuery(gnl_infor_date, ["ChinaClimate:weather"]);</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// var n =L.layerGroup(resultLayer)</span>
+    <span class="token comment">// console.log(resultLayer);</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+day_tp_heat_search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+  <span class="token function">layerRemove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//  console.log(index);</span>
+  tp_HeatMAP<span class="token punctuation">.</span><span class="token function">addHeatMapLayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> layer<span class="token operator">=</span><span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">layerGroup</span><span class="token punctuation">(</span>heatMapLayer<span class="token punctuation">)</span>
+<span class="token keyword">let</span> baseMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  chinaMapLayer<span class="token operator">:</span> chinaMapLayer<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> overMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  layer<span class="token operator">:</span> layer<span class="token punctuation">,</span>
+  <span class="token comment">// heatMapLayer:heatMapLayer</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token constant">L</span><span class="token punctuation">.</span>control<span class="token punctuation">.</span><span class="token function">layers</span><span class="token punctuation">(</span>baseMap<span class="token punctuation">,</span> overMap<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console.log(myMap)</span>
+</code></pre>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 图表初始化</span>
+option <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  legend<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"降雨量"</span><span class="token punctuation">,</span> <span class="token string">"径流量"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    align<span class="token operator">:</span> <span class="token string">"left"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  toolbox<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    feature<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      magicType<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        type<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"stack"</span><span class="token punctuation">,</span> <span class="token string">"tiled"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      saveAsImage<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        pixelRatio<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  tooltip<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  xAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"周一"</span><span class="token punctuation">,</span> <span class="token string">"周二"</span><span class="token punctuation">,</span> <span class="token string">"周三"</span><span class="token punctuation">,</span> <span class="token string">"周四"</span><span class="token punctuation">,</span> <span class="token string">"周五"</span><span class="token punctuation">,</span> <span class="token string">"周六"</span><span class="token punctuation">,</span> <span class="token string">"周日"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    silent<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    splitLine<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      show<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  yAxis<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  series<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      type<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">animationDelay</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">"bar2"</span><span class="token punctuation">,</span>
+      type<span class="token operator">:</span> <span class="token string">"bar"</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">animationDelay</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  animationEasing<span class="token operator">:</span> <span class="token string">"elasticOut"</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">animationDelayUpdate</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">idx</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> idx <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> div <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>DomUtil<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> chart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>div<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  width<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+  height<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 存储SQL查询到的数据</span>
+<span class="token keyword">function</span> <span class="token function">sqlData</span><span class="token punctuation">(</span>
+  <span class="token parameter"><span class="token constant">NAME</span><span class="token punctuation">,</span>
+  <span class="token constant">AQI</span><span class="token punctuation">,</span>
+  <span class="token constant">HUMIDITY</span><span class="token punctuation">,</span>
+  <span class="token constant">RAINFALL</span><span class="token punctuation">,</span>
+  <span class="token constant">WEATHER</span><span class="token punctuation">,</span>
+  <span class="token constant">TEMPERATURE</span><span class="token punctuation">,</span>
+  <span class="token constant">PM25</span><span class="token punctuation">,</span>
+  <span class="token constant">DATE_USER</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token constant">NAME</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>weaher <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token constant">AQI</span><span class="token operator">:</span> <span class="token constant">AQI</span><span class="token punctuation">,</span>
+    <span class="token constant">HUMIDITY</span><span class="token operator">:</span> <span class="token constant">HUMIDITY</span><span class="token punctuation">,</span>
+    <span class="token constant">RAINFALL</span><span class="token operator">:</span> <span class="token constant">RAINFALL</span><span class="token punctuation">,</span>
+    <span class="token constant">WEATHER</span><span class="token operator">:</span> <span class="token constant">WEATHER</span><span class="token punctuation">,</span>
+    <span class="token constant">TEMPERATURE</span><span class="token operator">:</span> <span class="token constant">TEMPERATURE</span><span class="token punctuation">,</span>
+    <span class="token constant">PM25</span><span class="token operator">:</span> <span class="token constant">PM25</span><span class="token punctuation">,</span>
+    <span class="token constant">DATE_USER</span><span class="token operator">:</span> <span class="token constant">DATE_USER</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">let</span> myMap <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 各个城市每日天气信息</span>
+<span class="token keyword">let</span> cityData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 整理SQL查询到的数据</span>
+<span class="token keyword">function</span> <span class="token function">getData</span><span class="token punctuation">(</span><span class="token parameter">myMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// let dt = [];</span>
+
+  <span class="token comment">// 临时存储对象</span>
+  <span class="token keyword">function</span> <span class="token function">tmpObj</span><span class="token punctuation">(</span>
+    <span class="token parameter"><span class="token constant">NAME</span><span class="token punctuation">,</span>
+    <span class="token constant">AQI</span><span class="token punctuation">,</span>
+    <span class="token constant">HUMIDITY</span><span class="token punctuation">,</span>
+    <span class="token constant">RAINFALL</span><span class="token punctuation">,</span>
+    <span class="token constant">WEATHER</span><span class="token punctuation">,</span>
+    <span class="token constant">TEMPERATURE</span><span class="token punctuation">,</span>
+    <span class="token constant">PM25</span><span class="token punctuation">,</span>
+    <span class="token constant">DATE_USER</span></span>
+  <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token constant">NAME</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">AQI</span> <span class="token operator">=</span> <span class="token constant">AQI</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">HUMIDITY</span> <span class="token operator">=</span> <span class="token constant">HUMIDITY</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">RAINFALL</span> <span class="token operator">=</span> <span class="token constant">RAINFALL</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">WEATHER</span> <span class="token operator">=</span> <span class="token constant">WEATHER</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span> <span class="token operator">=</span> <span class="token constant">TEMPERATURE</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">PM25</span> <span class="token operator">=</span> <span class="token constant">PM25</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">DATE_USER</span> <span class="token operator">=</span> <span class="token constant">DATE_USER</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 、、、、</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> myMap<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> tmp <span class="token operator">=</span> myMap<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> temp <span class="token operator">=</span> index<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token constant">AQI</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">HUMIDITY</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">RAINFALL</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">WEATHER</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">TEMPERATURE</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">PM25</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token constant">DATE_USER</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> dx<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>temp<span class="token punctuation">;</span> temp <span class="token operator">&lt;</span> myMap<span class="token punctuation">.</span>length<span class="token punctuation">;</span> temp<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token constant">NAME</span> <span class="token operator">==</span> tmp<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token constant">AQI</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">AQI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">HUMIDITY</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">RAINFALL</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">WEATHER</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">WEATHER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">TEMPERATURE</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">PM25</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">PM25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token constant">DATE_USER</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>myMap<span class="token punctuation">[</span>temp<span class="token punctuation">]</span><span class="token punctuation">.</span>weaher<span class="token punctuation">.</span><span class="token constant">DATE_USER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// dt.push(myMap[temp])</span>
+
+        <span class="token comment">// console.log(myMap[temp].NAME);</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 临时对象存储每个城市每天的天气信息</span>
+    dx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">tmpObj</span><span class="token punctuation">(</span>
+      tmp<span class="token punctuation">,</span>
+      <span class="token constant">AQI</span><span class="token punctuation">,</span>
+      <span class="token constant">HUMIDITY</span><span class="token punctuation">,</span>
+      <span class="token constant">RAINFALL</span><span class="token punctuation">,</span>
+      <span class="token constant">WEATHER</span><span class="token punctuation">,</span>
+      <span class="token constant">TEMPERATURE</span><span class="token punctuation">,</span>
+      <span class="token constant">PM25</span><span class="token punctuation">,</span>
+      <span class="token constant">DATE_USER</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// dt.push(new Jsl(tmp, AQI, HUMIDITY));</span>
+    cityData<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> dx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// console.log(cityData.get("北京市"));</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//  数据绑定</span>
+<span class="token keyword">function</span> <span class="token function">chartSet</span><span class="token punctuation">(</span><span class="token parameter">layer</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// function (layer) &#123;</span>
+  <span class="token keyword">let</span> city <span class="token operator">=</span> layer<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> data1 <span class="token operator">=</span> cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> data2 <span class="token operator">=</span> cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">;</span>
+  chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    title<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      text<span class="token operator">:</span> city<span class="token punctuation">,</span>
+      subtext<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    series<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">"降雨量"</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> data1<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        name<span class="token operator">:</span> <span class="token string">"径流量"</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> data2<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> chart<span class="token punctuation">.</span><span class="token function">getDom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// &#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 查询结果解析</span>
+<span class="token keyword">function</span> <span class="token function">sqlResult</span><span class="token punctuation">(</span><span class="token parameter">serviceResult</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// console.log(serviceResult);</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token comment">/*geoJSON数据解析*/</span>
+  resultLayer <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">geoJSON</span><span class="token punctuation">(</span>serviceResult<span class="token punctuation">.</span>result<span class="token punctuation">.</span>features<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">onEachFeature</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">feature<span class="token punctuation">,</span> layer</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// if (feature.geometry.coordinates[0] > 10000) &#123;</span>
+      <span class="token comment">//   let latlng = L.CRS.EPSG3857.unproject(</span>
+      <span class="token comment">//     L.point(</span>
+      <span class="token comment">//       feature.geometry.coordinates[0],</span>
+      <span class="token comment">//       feature.geometry.coordinates[1]</span>
+      <span class="token comment">//     )</span>
+      <span class="token comment">//   );</span>
+      <span class="token comment">//   latlng.alt = feature.geometry.coordinates[2];</span>
+      <span class="token comment">//    marker = L.marker(latlng).addTo(map);</span>
+      <span class="token comment">//    return latlng;</span>
+      <span class="token comment">//   // marker.bindPopup(`&lt;b>SMID:&lt;/b> $&#123;feature.properties.SMID&#125;`).openPopup().addTo(map)</span>
+      <span class="token comment">// &#125; else &#123;</span>
+      <span class="token comment">//   layer.bindPopup(`&lt;b>SMID:&lt;/b> $&#123;feature.properties.SMID&#125;`).addTo(map);</span>
+      <span class="token comment">// &#125;</span>
+
+      <span class="token comment">// console.log(feature);</span>
+      <span class="token comment">// 创建对象</span>
+      myMap<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">sqlData</span><span class="token punctuation">(</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">AQI</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">WEATHER</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">PM25</span><span class="token punctuation">,</span>
+        feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">DATE_USER</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    style<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      
+        weight<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        color<span class="token operator">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+        opacity<span class="token operator">:</span><span class="token number">0.5</span>
+      
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+
+    <span class="token function-variable function">coordsToLatLng</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">coords</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> latlng <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token constant">CRS</span><span class="token punctuation">.</span><span class="token constant">EPSG3857</span><span class="token punctuation">.</span><span class="token function">unproject</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span>coords<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> coords<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      latlng<span class="token punctuation">.</span>alt <span class="token operator">=</span> coords<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment">//   console.log(latlng);</span>
+      <span class="token keyword">return</span> latlng<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">getData</span><span class="token punctuation">(</span>myMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 图表数据绑定</span>
+
+  resultLayer
+    <span class="token punctuation">.</span><span class="token function">bindPopup</span><span class="token punctuation">(</span>
+      <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">layer</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> city <span class="token operator">=</span> layer<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token constant">NAME</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// let data1 = cityData.get(city).HUMIDITY;</span>
+        <span class="token comment">// let data2 = cityData.get(city).RAINFALL;</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;b>城市:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>city<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>相对湿度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">HUMIDITY</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>本日降雨量:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">RAINFALL</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>AQI:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">AQI</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>PM2.5浓度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">PM25</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>温度:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>天气:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">WEATHER</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        &lt;b>日期:&lt;/b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cityData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">DATE_USER</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> maxWidth<span class="token operator">:</span> <span class="token number">700</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// SQL查询要素</span>
+<span class="token keyword">function</span> <span class="token function">sqlQuery</span><span class="token punctuation">(</span><span class="token parameter">attributeFilter<span class="token punctuation">,</span> datasetNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// sql查询参数</span>
+  <span class="token keyword">var</span> sqlParam <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperMap<span class="token punctuation">.</span>GetFeaturesBySQLParameters</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    queryParameter<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+      attributeFilter<span class="token operator">:</span> <span class="token string">"date_User='"</span> <span class="token operator">+</span> attributeFilter <span class="token operator">+</span> <span class="token string">" 0:00:00'"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    datasetNames<span class="token operator">:</span> datasetNames<span class="token punctuation">,</span>
+    toIndex<span class="token operator">:</span> <span class="token number">238</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// sql查询服务</span>
+  <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">featureService</span><span class="token punctuation">(</span>dataurl<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFeaturesBySQL</span><span class="token punctuation">(</span>sqlParam<span class="token punctuation">,</span> sqlResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// sqlQuery(gnl_infor_date, ["ChinaClimate:weather"]);</span>
+<span class="token comment">// 热力图</span>
+<span class="token comment">// gn_search.addEventListener("click",addHeatMapLayer)</span>
+
+<span class="token function">addHeatMapLayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> baseMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  chinaMapLayer<span class="token operator">:</span> chinaMapLayer<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> overMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  heatMapLayer<span class="token operator">:</span> heatMapLayer<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">// console.log(gnl_infor_date);</span>
+
+gn_search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>resultLayer<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    
+    resultLayer<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  
+  <span class="token function">sqlQuery</span><span class="token punctuation">(</span>gnl_infor_date<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"ChinaClimate:weather"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">L</span><span class="token punctuation">.</span>control<span class="token punctuation">.</span><span class="token function">layers</span><span class="token punctuation">(</span>baseMap<span class="token punctuation">,</span> overMap<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console.log(myMap)</span>
+</code></pre>
+<p>气温热力图</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 热力图基本设置</span>
+
+<span class="token comment">// 本地CSV数据转换为geojson数据</span>
+<span class="token keyword">function</span> <span class="token function">geojson</span><span class="token punctuation">(</span><span class="token parameter">params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> geojson <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    type<span class="token operator">:</span> <span class="token string">"FeatureCollection"</span><span class="token punctuation">,</span>
+    features<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> cityData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// console.log(value.lng,value.lat);</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token function">timeTransfer</span><span class="token punctuation">(</span>tp_heat_infor_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> feature <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      type<span class="token operator">:</span> <span class="token string">"feature"</span><span class="token punctuation">,</span>
+      geometry<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        type<span class="token operator">:</span> <span class="token string">"Point"</span><span class="token punctuation">,</span>
+        coordinates<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      properties<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        value<span class="token operator">:</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token comment">// let latlng = L.CRS.EPSG4326.latLngToPoint(L.latLng(value.lng, value.lat));</span>
+    <span class="token comment">// console.log(latlng);</span>
+    feature<span class="token punctuation">.</span>geometry<span class="token punctuation">.</span>coordinates <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">parseFloat</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>lng<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>lat<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> latlng <span class="token operator">=</span> <span class="token punctuation">[</span>value<span class="token punctuation">.</span>lat<span class="token punctuation">,</span> value<span class="token punctuation">.</span>lng<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// console.log(index);</span>
+    <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">marker</span><span class="token punctuation">(</span>latlng<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">bindPopup</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      城市：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>key<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;br>
+      气温：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>value<span class="token punctuation">.</span><span class="token constant">TEMPERATURE</span><span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">°&lt;br>
+      日期：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>tp_heat_infor_date<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    geojson<span class="token punctuation">.</span>features<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>feature<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  heatMapLayer<span class="token punctuation">.</span><span class="token function">addFeatures</span><span class="token punctuation">(</span>geojson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  heatMapLayer<span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// </span>
+<span class="token keyword">class</span> <span class="token class-name">HeatMap</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">addHeatMapLayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    heatMapLayer <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">heatMapLayer</span><span class="token punctuation">(</span>
+      <span class="token string">"heatMap"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        loadWhileAnimating<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        colors<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"blue"</span><span class="token punctuation">,</span> <span class="token string">"cyan"</span><span class="token punctuation">,</span> <span class="token string">"lime"</span><span class="token punctuation">,</span> <span class="token string">"yellow"</span><span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span>
+        id<span class="token operator">:</span> <span class="token string">"heatmap"</span><span class="token punctuation">,</span>
+        map<span class="token operator">:</span> map<span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+        <span class="token comment">// useGeoUnit:true,</span>
+        opacity<span class="token operator">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+        featureWeight<span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">geojson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// console.log(cityData.get("北京市"));</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> tp_HeatMAP <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HeatMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Isogram</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 等值线类</span>
+<span class="token keyword">class</span> <span class="token class-name">Isogram</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">layername</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>layername <span class="token operator">=</span> layername<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">surfaceAnalystProcess</span><span class="token punctuation">(</span><span class="token parameter">zValueFieldName<span class="token punctuation">,</span> attributeFilter</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/*
+   X:7714861.994943,Y:6903997.060186   经度:69°18'13.62",纬度:52°34'14.85" 左上
+   X:7722476.375537,Y:2007950.338151   经度:69°22'19.87",纬度:17°44'49.01" 左下
+   X:14628719.574426,Y:6835467.634838   经度:131°24'43.29",纬度:52°11'42.13" 右上
+   X:14491660.723731,Y:1992721.576963   经度:130°10'50.89",纬度:17°36'59.79" 右下
+   软件坐标系 右 X 下 Y
+   坐标系上 X 右 Y
+  */</span>
+    <span class="token keyword">let</span> region <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">polygon</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">[</span><span class="token number">7095467.634838</span><span class="token punctuation">,</span> <span class="token number">8014861.994943</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">2007950.338151</span><span class="token punctuation">,</span> <span class="token number">8014861.994943</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">2007950.338151</span><span class="token punctuation">,</span> <span class="token number">15191660.723731</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token number">7095467.634838</span><span class="token punctuation">,</span> <span class="token number">15191660.723731</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 表面分析参数</span>
+    surfaceAnalystParameters <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperMap<span class="token punctuation">.</span>DatasetSurfaceAnalystParameters</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      extractParameter<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">SuperMap<span class="token punctuation">.</span>SurfaceAnalystParametersSetting</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        datumValue<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//基准值</span>
+        interval<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 等值距</span>
+        resampleTolerance<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 采样容限</span>
+        smoothMethod<span class="token operator">:</span> SuperMap<span class="token punctuation">.</span>SmoothMethod<span class="token punctuation">.</span><span class="token constant">BSPLINE</span><span class="token punctuation">,</span>
+        smoothness<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        clipRegion<span class="token operator">:</span> region<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      dataset<span class="token operator">:</span> <span class="token string">"weather@ChinaClimate"</span><span class="token punctuation">,</span>
+      resolution<span class="token operator">:</span> <span class="token number">9000</span><span class="token punctuation">,</span> <span class="token comment">// 分辨率</span>
+      zValueFieldName<span class="token operator">:</span> zValueFieldName<span class="token punctuation">,</span>
+      filterQueryParameter<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">SuperMap<span class="token punctuation">.</span>FilterParameter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        attributeFilter<span class="token operator">:</span> <span class="token string">"date_User='"</span> <span class="token operator">+</span> attributeFilter <span class="token operator">+</span> <span class="token string">" 0:00:00'"</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 空间分析服务</span>
+    surfaceAnalystService <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span>supermap<span class="token punctuation">.</span><span class="token function">spatialAnalystService</span><span class="token punctuation">(</span>serviceUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 表面分析</span>
+    surfaceAnalystService<span class="token punctuation">.</span><span class="token function">surfaceAnalysis</span><span class="token punctuation">(</span>surfaceAnalystParameters<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">serviceResult</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">var</span> result <span class="token operator">=</span> serviceResult<span class="token punctuation">.</span>result<span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">&amp;&amp;</span> result<span class="token punctuation">.</span>recordset <span class="token operator">&amp;&amp;</span> result<span class="token punctuation">.</span>recordset<span class="token punctuation">.</span>features<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        isogramlayer <span class="token operator">=</span> <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">geoJSON</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>recordset<span class="token punctuation">.</span>features<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          weight<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          <span class="token function-variable function">style</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">feature</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">polyline</span><span class="token punctuation">(</span>feature<span class="token punctuation">.</span>geometry<span class="token punctuation">.</span>coordinates<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#7879b0"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">bindPopup</span><span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#f1e0ab"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">>=</span> <span class="token number">10</span> <span class="token operator">&amp;&amp;</span> feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">&lt;</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#b0cda1"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">>=</span> <span class="token number">25</span> <span class="token operator">&amp;&amp;</span> feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#a5ba81"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">>=</span> <span class="token number">50</span> <span class="token operator">&amp;&amp;</span> feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#8dc4e1"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">>=</span> <span class="token number">100</span> <span class="token operator">&amp;&amp;</span> feature<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>dZvalue <span class="token operator">&lt;</span> <span class="token number">250</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#8eacd6"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                color<span class="token operator">:</span> <span class="token string">"#7879b0"</span><span class="token punctuation">,</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token comment">// return true;</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addTo</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"图层未加载成功，请刷新重试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+rain_isogram <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Isogram</span><span class="token punctuation">(</span><span class="token string">"rain"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tp_isogram <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Isogram</span><span class="token punctuation">(</span><span class="token string">"temprature"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// surfaceAnalystProcess("temperature");</span>
+
+day_rain_isogram_search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">layerRemove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  rain_isogram<span class="token punctuation">.</span><span class="token function">surfaceAnalystProcess</span><span class="token punctuation">(</span><span class="token string">"rainfall"</span><span class="token punctuation">,</span> rain_isogram_infor_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// surfaceAnalystProcess("temperature");</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+day_tp_isogram_search<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">layerRemove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tp_isogram<span class="token punctuation">.</span><span class="token function">surfaceAnalystProcess</span><span class="token punctuation">(</span><span class="token string">"temperature"</span><span class="token punctuation">,</span> tp_isogram_infor_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>isogramlayer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Faith Hesper</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="../../https:/faith-hesper.github.io/blog/639a82e62980/">https://faith-hesper.github.io/blog/639a82e62980/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Faith-Hesper.github.io" target="_blank">Faith</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../tags/Supermap/">Supermap</a><a class="post-meta__tags" href="../../tags/%E7%BC%96%E7%A8%8B/">编程</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" target="_blank"><img class="post-qr-code-img" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" target="_blank"><img class="post-qr-code-img" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="../df5903a7ffee/"><img class="prev-cover" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="onerror=null;src='../../img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CMD</div></div></a></div><div class="next-post pull-right"><a href="../e108faea8316/"><img class="next-cover" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='../../img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">命题开发组规则</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="../e108faea8316/" title="命题开发组规则"><img class="cover" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-07-16</div><div class="title">命题开发组规则</div></div></a></div><div><a href="../5a1efc3eac33/" title="Supermap代码编写原则"><img class="cover" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-07-13</div><div class="title">Supermap代码编写原则</div></div></a></div><div><a href="../94b4f9f985fe/" title="Supermap"><img class="cover" src="../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160531.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-07-16</div><div class="title">Supermap</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='../img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Faith Hesper</div><div class="author-info__description">Hesper</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="../archives/"><div class="headline">文章</div><div class="length-num">63</div></a></div><div class="card-info-data-item"><a href="../tags/"><div class="headline">标签</div><div class="length-num">37</div></a></div><div class="card-info-data-item"><a href="/"><div class="headline">分类</div><div class="length-num">38</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Faith-Hesper"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="../https:/github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leaflet%E5%BC%95%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">leaflet引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E9%93%BE%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">地图链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">矢量图层</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="../blog/ff35a4a03b30/" title="Npm"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160703.png" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="Npm"/></a><div class="content"><a class="title" href="../blog/ff35a4a03b30/" title="Npm">Npm</a><time datetime="2022-10-24T00:57:27.997Z" title="更新于 2022-10-24 08:57:27">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../blog/d89d89a1353f/" title="前端知识点"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160654.webp" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="前端知识点"/></a><div class="content"><a class="title" href="../blog/d89d89a1353f/" title="前端知识点">前端知识点</a><time datetime="2022-10-22T14:13:02.932Z" title="更新于 2022-10-22 22:13:02">2022-10-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../blog/471b702faede/" title="计算机网络"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160531.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="计算机网络"/></a><div class="content"><a class="title" href="../blog/471b702faede/" title="计算机网络">计算机网络</a><time datetime="2022-10-22T08:25:26.801Z" title="更新于 2022-10-22 16:25:26">2022-10-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../blog/a62532939648/" title="Html"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="Html"/></a><div class="content"><a class="title" href="../blog/a62532939648/" title="Html">Html</a><time datetime="2022-10-03T11:30:32.517Z" title="更新于 2022-10-03 19:30:32">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../blog/788cd9ebfda4/" title="Git技巧"><img src="../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="Git技巧"/></a><div class="content"><a class="title" href="../blog/788cd9ebfda4/" title="Git技巧">Git技巧</a><time datetime="2022-09-16T01:09:57.117Z" title="更新于 2022-09-16 09:09:57">2022-09-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('../../https:/cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160657.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By Faith Hesper</div><div class="footer_custom_text">Hi welcome <a href="https://faith-hesper.github.io/">my blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="../../js/utils.js"></script><script src="../../js/main.js"></script><script src="../../js/tw_cn.js"></script><script src="../../https:/cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="../../https:/cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="../../js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
+      appKey: 'GX4zcj14jkoD4ovKmt1DThwF',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('../https:/cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="click-heart" src="../https:/cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="../../busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
