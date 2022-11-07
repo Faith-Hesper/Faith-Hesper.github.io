@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>考研倒计时</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: content-box;
+    }
+
+    .main {
+      max-width: 600px;
+      margin: 0 auto;
+      background: url(./djsbg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .header {
+      text-align: center;
+      color: #cc0000;
+    }
+
+    .content {
+      font-size: 14px;
+      line-height: 30px;
+      color: #666666;
+      text-align: center;
+    }
+
+    .time {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      margin: 10px 5px;
+    }
+
+    .box {
+      width: 100px;
+      /* height: 100px; */
+      border-radius: 4px;
+      /* line-height: 100px; */
+      padding: 15px 0;
+      text-align: center;
+      background: linear-gradient(0deg, #FFE082 0%, #F9BA3C 49%, #FFCC56 100%);
+      box-shadow: inset 0px 1px 30px 0px rgba(245, 145, 68, 0.76);
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .time p {
+      color: #333;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .happy {
+      position: relative;
+      min-height: 60px;
+      text-align: center;
+      font-weight: bold;
+      color: #333333;
+      line-height: 36px;
+      margin: 10px 60px;
+      padding: 20px 40px;
+    }
+
+    .happy span {
+      display: block;
+      position: absolute;
+      font-size: 80px;
+      color: #FCD2AC;
+      font-weight: bold;
+      font-family: Arial;
+      top: 15px;
+      left: 0;
+    }
+
+    .happy span:last-child {
+      top: auto;
+      left: auto;
+      bottom: -15px;
+      right: 0;
+    }
+  </style>
+  <script>
+
+    timer = setInterval(getRTime, 1000)
+
+    function getRTime() {
+      var EndTime = new Date("2022/12/24 00:00:00"); //截止时间
+      var NowTime = new Date();
+      var t = EndTime.getTime() - NowTime.getTime();
+      if (t > 0) {
+        var d = Math.floor(t / 1000 / 60 / 60 / 24);
+        var h = Math.floor(t / 1000 / 60 / 60 % 24);
+        var m = Math.floor(t / 1000 / 60 % 60);
+        var s = Math.floor(t / 1000 % 60);
+        // $('#CountMsg').show()
+        document.querySelector(".t_d").innerHTML = d;
+        document.querySelector(".t_h").innerHTML = h;
+        document.querySelector(".t_m").innerHTML = m;
+        document.querySelector(".t_s").innerHTML = s;
+      } else {
+        clearInterval(timer)
+      }
+    }
+
+    function diffBetweenTwoDays(datatime) {
+      var endTime = new Date(datatime).getTime() / 1000 - parseInt(new Date().getTime() / 1000);
+      var timeDay = Math.ceil(endTime / 60 / 60 / 24); //相差天数
+      document.writeln("(还有" + timeDay + "天)");
+    }
+    const biaoyu = ["你笔下拥有一个色彩绚丽的世界：愿你，也相信你，拥有另一个笔下灿烂的图景。", "一年一次的人生大迈步又要到来了，相信你一定会比别人走的更远；跑的更快；考得更好。",
+      "别驻足，梦想要不停追逐；不认输，熬过黑夜是日出；都清楚，成功就在下一步；路很苦，汗水是最美的书；狂欢呼，相约在巅峰共舞！",
+      "考研的路途充满了艰辛和泪水，但结果会是快乐的，只要你认真的努力了，全心的投入了，我相信在考研的路上你收获的不仅仅只是最后的录取通知书，而更多的是一份受益终生的经历，一段永远难忘的经历！", "考研的成功，不在于你复习多长的时间，而在于时间、效率、耐力三者的乘积。",
+      "考研是一项伟大的工程，它是对人的意志力，判断力，交际力等综合能力的考验。", "考研是个漫长的过程，途中风风雨雨，荆棘丛生，要走完这段路，需要的是坚持，需要的是不断的从堕落中重生，从放松中觉醒！",
+      "不到最后时刻，永远不要放弃；不到最后胜利，永远不要掉以轻心。", "路漫漫其修远兮，吾将上下而求索"];
+
+    let rand = biaoyu[parseInt(Math.ceil(Math.random() * (biaoyu.length - 1)))];
+    console.log(rand);
+    setTimeout(() => {
+
+      document.querySelector(".happy .text").textContent = rand
+    }, 300);
+
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <h1>2023年考研倒计时</h1>
+    </div>
+    <div class="content">
+      <h4>2023全国硕士研究生初试时间：2022年12月24日至25日（考试时间超过3小时或有使用画板等特殊要求的少数考试科目安排在12月26日）具体考试时间以官方公布为准。
+      </h4>
+      <h4>目前距离2023年考研倒计时还有</h4>
+    </div>
+    <div class="time">
+      <div class="box t_d">
+      </div>
+      <p>天</p>
+      <div class="box t_h">
+      </div>
+      <p>时</p>
+      <div class="box t_m">
+      </div>
+      <p>分</p>
+      <div class="box t_s">
+      </div>
+      <p>秒</p>
+    </div>
+    <div class="happy">
+      <span>“</span>
+      <div class="text"></div>
+      <span>”</span>
+    </div>
+  </div>
+</body>
+
+</html>
