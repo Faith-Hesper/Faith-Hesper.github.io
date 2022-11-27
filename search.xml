@@ -12391,4 +12391,326 @@ d_{12}=|X_{1}-X_{2}|+|y_1-y_2|</script><h5 id="3-路网距离"><a href="#3-路�
         <tag>遥感</tag>
       </tags>
   </entry>
+  <entry>
+    <title>React</title>
+    <url>/blog/28a621ac695f/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="react"><a href="#react" class="headerlink" title="react"></a>react</h3><h4 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h4><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><ol>
+<li><p><code>count</code>: 数据状态</p>
+<p><code>setCount</code>： 修改<code>count</code>的专有函数</p>
+</li>
+<li><p><code>useState</code>中的参数是作为<strong>状态</strong><code>count</code>的初始值</p>
+</li>
+<li><p><code>[count,setCount]</code> 这里的写法是一个解构赋值<code>useState</code>返回值是一个数组</p>
+<p>名字可以自定义</p>
+<p>顺序不可调换</p>
+</li>
+</ol>
+<p>首次渲染：</p>
+<ol>
+<li><p>首次渲染的时候，组件内部的代码会被执行一次</p>
+</li>
+<li><p>首次渲染时会执行<code>useState</code>，初始化数据状态，且初始值只在首次渲染时生效</p>
+</li>
+</ol>
+<p>更新渲染：</p>
+<ol>
+<li><p>组件会被再次渲染，setCount会被再次执行</p>
+</li>
+<li><p>useState 再次执行，得到新的状态<code>count</code>的值</p>
+</li>
+</ol>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><h6 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h6><pre class="language-react" data-language="react"><code class="language-react">const [count,setCount] = useState(0)</code></pre>
+<pre class="language-react" data-language="react"><code class="language-react">import { useState } from 'react';
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    &lt;button onClick={handleClick}&gt;
+      You pressed me {count} times
+    &lt;/button&gt;
+  );
+}</code></pre>
+<h6 id="基础用法-1"><a href="#基础用法-1" class="headerlink" title="基础用法"></a>基础用法</h6><pre class="language-react" data-language="react"><code class="language-react">import { useState } from 'react';
+
+export default function Form() {
+  const [name, setName] = useState('Taylor');
+  const [age, setAge] = useState(42);
+
+  return (
+    &lt;&gt;
+      &lt;input
+        value={name}
+        onChange={e =&gt; setName(e.target.value)}
+      /&gt;
+      &lt;button onClick={() =&gt; setAge(age + 1)}&gt;
+        Increment age
+      &lt;/button&gt;
+      &lt;p&gt;Hello, {name}. You are {age}.&lt;/p&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+<h6 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h6><p>箭头函数形成闭包，保存了+1后的结果</p>
+<pre class="language-react" data-language="react"><code class="language-react">import { useState } from 'react';
+
+export default function Counter() {
+  const [age, setAge] = useState(42);
+	
+    // 闭包
+  function increment() {
+    setAge(a =&gt; a + 1);
+  }
+   
+  function increment1() {
+    setAge(a + 1)
+  }
+
+  return (
+    &lt;&gt;
+      &lt;h1&gt;Your age: {age}&lt;/h1&gt;
+      &lt;button onClick={() =&gt; {
+        increment();
+        increment();
+        increment();
+      }}&gt;+3&lt;/button&gt;
+      &lt;button onClick={() =&gt; {
+        increment1();
+        increment1();
+        increment1();
+      }}&gt;+1&lt;/button&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+<h5 id="对象类型状态更新"><a href="#对象类型状态更新" class="headerlink" title="对象类型状态更新"></a>对象类型状态更新</h5><pre class="language-rea" data-language="rea"><code class="language-rea">import { useState } from 'react';
+
+export default function Form() {
+  const [person, setPerson] = useState({
+    name: 'Niki de Saint Phalle',
+    artwork: {
+      title: 'Blue Nana',
+      city: 'Hamburg',
+      image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+    }
+  });
+
+  function handleNameChange(e) {
+    setPerson({
+      ...person,
+      name: e.target.value
+    });
+  }
+
+  function handleTitleChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        title: e.target.value
+      }
+    });
+  }
+
+
+  return (
+    &lt;&gt;
+      &lt;label&gt;
+        Name:
+        &lt;input
+          value={person.name}
+          onChange={handleNameChange}
+        /&gt;
+      &lt;/label&gt;
+      &lt;label&gt;
+        Title:
+        &lt;input
+          value={person.artwork.title}
+          onChange={handleTitleChange}
+        /&gt;
+      &lt;/label&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+<h5 id="数组类型状态更新"><a href="#数组类型状态更新" class="headerlink" title="数组类型状态更新"></a>数组类型状态更新</h5><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> initialTodos <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Buy milk'</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Eat tacos'</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'Brew tea'</span><span class="token punctuation">,</span> done<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>todos<span class="token punctuation">,</span> setTodos<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>initialTodos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">handleAddTodo</span><span class="token punctuation">(</span><span class="token parameter">title</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token operator">...</span>todos<span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> nextId<span class="token operator">++</span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> title<span class="token punctuation">,</span>
+        done<span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">handleChangeTodo</span><span class="token punctuation">(</span><span class="token parameter">nextTodo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">t</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>id <span class="token operator">===</span> nextTodo<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> nextTodo<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> t<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">handleDeleteTodo</span><span class="token punctuation">(</span><span class="token parameter">todoId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span>
+      todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">t</span> <span class="token operator">=&gt;</span> t<span class="token punctuation">.</span>id <span class="token operator">!==</span> todoId<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<h4 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>获取组件<code>context</code>(上下文)，跨组件传参</p>
+<h6 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h6><p>context值取决于组件树中最近的context provider的值</p>
+<pre class="language-react" data-language="react"><code class="language-react">import { createContext, useContext } from 'react';
+
+//
+const ThemeContext = createContext(null);
+
+export default function MyApp() {
+  return (
+    &lt;ThemeContext.Provider value="dark"&gt;
+      &lt;Form /&gt;
+    &lt;/ThemeContext.Provider&gt;
+  )
+}
+
+function Form() {
+  return (
+    &lt;Panel title="Welcome"&gt;
+      &lt;Button&gt;Sign up&lt;/Button&gt;
+      &lt;Button&gt;Log in&lt;/Button&gt;
+    &lt;/Panel&gt;
+  );
+}
+
+function Panel({ title, children }) {
+  const theme = useContext(ThemeContext);
+  const className = 'panel-' + theme;
+  return (
+    &lt;section className={className}&gt;
+      &lt;h1&gt;{title}&lt;/h1&gt;
+      {children}
+    &lt;/section&gt;
+  )
+}
+
+function Button({ children }) {
+  const theme = useContext(ThemeContext);
+  const className = 'button-' + theme;
+  return (
+    &lt;button className={className}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}</code></pre>
+<h4 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h4><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><p>副作用</p>
+<p>执行时机：DOM更新完后执行，每次组件重新渲染都会执行，包括首次渲染</p>
+<h5 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h5><p><code>setup</code>：要执行的副作用</p>
+<p><code>dependencies</code>：执行依赖，当依赖变化时就会执行<code>setup</code>里面的方法</p>
+<pre class="language-react" data-language="react"><code class="language-react">useEffect(setup, dependencies?)</code></pre>
+<p>当 roomId、serverUrl 值变化时会执行<code>useEffect</code></p>
+<pre class="language-react" data-language="react"><code class="language-react">const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  useEffect(() =&gt; {
+    const connection = createConnection(serverUrl, roomId);
+  }, [roomId, serverUrl]);</code></pre>
+<p>当传入的依赖为空数组时，<code>useEffect</code>只会在首次渲染时执行</p>
+<pre class="language-react" data-language="react"><code class="language-react">useEffect(setup, [])</code></pre>
+<pre class="language-react" data-language="react"><code class="language-react">function Example() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    document.title = `You clicked ${count} times`;
+  },[]);
+}</code></pre>
+<p>没有设置依赖时，当组件重新渲染时都会执行该方法</p>
+<pre class="language-react" data-language="react"><code class="language-react">useEffect(setup)</code></pre>
+<pre class="language-react" data-language="react"><code class="language-react">function Example() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    document.title = `You clicked ${count} times`;
+  });
+}</code></pre>
+<p>通过<code>return</code>取消副作用</p>
+<pre class="language-r" data-language="r"><code class="language-r">import <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> from <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+export <span class="token keyword">function</span> createConnection<span class="token punctuation">(</span>serverUrl<span class="token punctuation">,</span> roomId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">/</span><span class="token operator">/</span> A real implementation would actually connect to the server
+  return <span class="token punctuation">{</span>
+    connect<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span><span class="token string">'✅ Connecting to "'</span> <span class="token operator">+</span> roomId <span class="token operator">+</span> <span class="token string">'" room at '</span> <span class="token operator">+</span> serverUrl <span class="token operator">+</span> <span class="token string">'...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    disconnect<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span><span class="token string">'❌ Disconnected from "'</span> <span class="token operator">+</span> roomId <span class="token operator">+</span> <span class="token string">'" room at '</span> <span class="token operator">+</span> serverUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> ChatRoom<span class="token punctuation">(</span><span class="token punctuation">{</span> roomId <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const <span class="token punctuation">[</span>serverUrl<span class="token punctuation">,</span> setServerUrl<span class="token punctuation">]</span> <span class="token operator">=</span> useState<span class="token punctuation">(</span><span class="token string">'https://localhost:1234'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  useEffect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    const connection <span class="token operator">=</span> createConnection<span class="token punctuation">(</span>serverUrl<span class="token punctuation">,</span> roomId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    connection.connect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    return <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      connection.disconnect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>roomId<span class="token punctuation">,</span> serverUrl<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  return <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>label<span class="token operator">&gt;</span>
+        Server URL<span class="token operator">:</span><span class="token punctuation">{</span><span class="token string">' '</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>input
+          value<span class="token operator">=</span><span class="token punctuation">{</span>serverUrl<span class="token punctuation">}</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> setServerUrl<span class="token punctuation">(</span>e.target.value<span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Welcome to the <span class="token punctuation">{</span>roomId<span class="token punctuation">}</span> room<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+export default <span class="token keyword">function</span> App<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  const <span class="token punctuation">[</span>roomId<span class="token punctuation">,</span> setRoomId<span class="token punctuation">]</span> <span class="token operator">=</span> useState<span class="token punctuation">(</span><span class="token string">'general'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  const <span class="token punctuation">[</span>show<span class="token punctuation">,</span> setShow<span class="token punctuation">]</span> <span class="token operator">=</span> useState<span class="token punctuation">(</span>false<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  return <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>label<span class="token operator">&gt;</span>
+        Choose the chat room<span class="token operator">:</span><span class="token punctuation">{</span><span class="token string">' '</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>select
+          value<span class="token operator">=</span><span class="token punctuation">{</span>roomId<span class="token punctuation">}</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> setRoomId<span class="token punctuation">(</span>e.target.value<span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">"general"</span><span class="token operator">&gt;</span>general<span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">"travel"</span><span class="token operator">&gt;</span>travel<span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">"music"</span><span class="token operator">&gt;</span>music<span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> setShow<span class="token punctuation">(</span><span class="token operator">!</span>show<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>show ? <span class="token string">'Close chat'</span> <span class="token operator">:</span> <span class="token string">'Open chat'</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>show <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span>
+      <span class="token punctuation">{</span>show <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>ChatRoom roomId<span class="token operator">=</span><span class="token punctuation">{</span>roomId<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+]]></content>
+      <categories>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
 </search>
