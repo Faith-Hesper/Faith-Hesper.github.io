@@ -12,6 +12,7 @@ npm-debug.log*
 .pnpm-debug.log
 tests/**/coverage/
 
+public
 .deploy_git
 
 # Editor directories and files
