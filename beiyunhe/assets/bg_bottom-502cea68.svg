@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1944px" height="69px" viewBox="0 0 1944 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>底部边框</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#138FFC" offset="0%"></stop>
+            <stop stop-color="#138FFC" stop-opacity="0.79595307" offset="30.0269725%"></stop>
+            <stop stop-color="#00D8FF" offset="50.292236%"></stop>
+            <stop stop-color="#138FFC" stop-opacity="0.79984054" offset="70.0478775%"></stop>
+            <stop stop-color="#138FFC" offset="100%"></stop>
+        </linearGradient>
+        <path d="M222,44 C222,44 571.5,15 960.5,15 C1349.5,15 1698,43.5 1698,43.5" id="path-2"></path>
+        <filter x="-1.1%" y="-55.2%" width="102.2%" height="210.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0823529412   0 0 0 0 0.745098039   0 0 0 0 1  0 0 0 0.599545352 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#138FFC" offset="0%"></stop>
+            <stop stop-color="#138FFC" stop-opacity="0.79595307" offset="30.0269725%"></stop>
+            <stop stop-color="#00D8FF" offset="50.292236%"></stop>
+            <stop stop-color="#138FFC" stop-opacity="0.79984054" offset="70.0478775%"></stop>
+            <stop stop-color="#138FFC" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0,46 C0,46 454.634146,0 960.650407,0 C1466.66667,0 1920,45.2068966 1920,45.2068966" id="path-5"></path>
+        <filter x="-0.8%" y="-34.8%" width="101.7%" height="169.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0823529412   0 0 0 0 0.745098039   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="10.24" transform="translate(12.000000, -1032.000000)">
+            <g id="底部边框（庄森设计/盗卖必究）-+-左边框（庄森设计/盗卖必究）-+-左边框（庄森设计/盗卖必究）备份蒙版" transform="translate(-0.200000, 0.000000)">
+                <g id="底部边框" transform="translate(0.200000, 1043.000000)">
+                    <g id="底部点缀点">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use stroke="url(#linearGradient-1)" stroke-width="2" xlink:href="#path-2"></use>
+                    </g>
+                    <g id="底部点缀点" opacity="0.5">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use stroke="url(#linearGradient-4)" stroke-width="2" xlink:href="#path-5"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

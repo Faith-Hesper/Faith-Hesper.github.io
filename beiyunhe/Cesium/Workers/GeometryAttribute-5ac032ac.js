@@ -1,0 +1,1 @@
+define(["exports","./defaultValue-9f6a6288"],(function(t,e){"use strict";t.GeometryAttribute=function(t){t=e.defaultValue(t,e.defaultValue.EMPTY_OBJECT),this.componentDatatype=t.componentDatatype,this.componentsPerAttribute=t.componentsPerAttribute,this.normalize=e.defaultValue(t.normalize,!1),this.values=t.values}}));

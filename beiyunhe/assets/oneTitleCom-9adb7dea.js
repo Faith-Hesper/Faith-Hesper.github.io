@@ -1,0 +1,1 @@
+import{_ as t,I as s,o,c as n,a,t as i,b8 as r}from"./index-267246aa.js";const _=s({name:"TitleCom",props:{titleName:String},setup(){return{}}}),c={class:"title"},l={class:"name"};function d(e,p,m,u,f,v){return o(),n("div",c,[a("div",l,i(e.titleName),1),r(e.$slots,"title-right",{},void 0,!0)])}const g=t(_,[["render",d],["__scopeId","data-v-69509538"]]);export{g as t};

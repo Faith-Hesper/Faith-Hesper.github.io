@@ -1,0 +1,132 @@
+{
+	"type": "FeatureCollection",
+	"crs": {
+		"type": "name",
+		"properties": {
+			"name": "EPSG:4326"
+		}
+	},
+	"features": [{
+		"type": "Feature",
+		"id": 0,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03494023640745, 35.716422901751528]
+		},
+		"properties": {
+			"FID": 0,
+			"GPSX": 114.06825268999999,
+			"GPSY": 35.717612632300003
+		}
+	}, {
+		"type": "Feature",
+		"id": 1,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10560854408308, 35.659104913332335]
+		},
+		"properties": {
+			"FID": 1,
+			"GPSX": 114.26146324,
+			"GPSY": 35.516337253000003
+		}
+	}, {
+		"type": "Feature",
+		"id": 2,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13095293409602, 35.829659059400733]
+		},
+		"properties": {
+			"FID": 2,
+			"GPSX": 114.13095293400001,
+			"GPSY": 35.829659059400001
+		}
+	}, {
+		"type": "Feature",
+		"id": 3,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20791776515132, 35.7993691036976]
+		},
+		"properties": {
+			"FID": 3,
+			"GPSX": 114.26264536799999,
+			"GPSY": 35.744046635300002
+		}
+	}, {
+		"type": "Feature",
+		"id": 4,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21792637585149, 35.924086072914477]
+		},
+		"properties": {
+			"FID": 4,
+			"GPSX": 114.21792637599999,
+			"GPSY": 35.924086072900003
+		}
+	}, {
+		"type": "Feature",
+		"id": 5,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04088739935524, 35.953660923871013]
+		},
+		"properties": {
+			"FID": 5,
+			"GPSX": 114.04053048,
+			"GPSY": 35.946879459999998
+		}
+	}, {
+		"type": "Feature",
+		"id": 6,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.37790349959523, 35.590955716165283]
+		},
+		"properties": {
+			"FID": 6,
+			"GPSX": 114.3779035,
+			"GPSY": 35.5909557162
+		}
+	}, {
+		"type": "Feature",
+		"id": 7,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.53977639135559, 35.663483307419632]
+		},
+		"properties": {
+			"FID": 7,
+			"GPSX": 114.570709384,
+			"GPSY": 35.733677407099997
+		}
+	}, {
+		"type": "Feature",
+		"id": 8,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.57457618384596, 35.826515125281773]
+		},
+		"properties": {
+			"FID": 8,
+			"GPSX": 114.57457618399999,
+			"GPSY": 35.826515125299998
+		}
+	}, {
+		"type": "Feature",
+		"id": 9,
+		"geometry": {
+			"type": "Point",
+			"coordinates": [
+        114.09083146202374,35.970080017972194
+      ]
+		},
+		"properties": {
+			"FID": 9,
+			"GPSX": 114.099201818,
+			"GPSY": 35.977511176699998
+		}
+	}]
+}

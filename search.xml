@@ -3,11 +3,11 @@
   <entry>
     <title>Faith Hesper</title>
     <url>/blog/77247b1241a5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can:smile: find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can😄 find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=450 height=86 src="//music.163.com/outchain/player?type=2&id=1857288529&auto=1&height=66"></iframe>
-
-<p><iframe src="//player.bilibili.com/player.html?aid=503717099&bvid=BV19g411g7jj&cid=357082727&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><br><a href="https://hexo.io/zh-cn/docs/plugins">Hexo官方文档</a></p>
+<iframe src="//player.bilibili.com/player.html?aid=503717099&bvid=BV19g411g7jj&cid=357082727&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+[Hexo官方文档](https://hexo.io/zh-cn/docs/plugins)
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 本地预览</span>
 hexo s
 
@@ -36,6 +36,7 @@ hexo server --draft
 hexo publish draft newdraft
 <span class="token comment"># 完成后部署</span>
 hexo g --d
+<span class="token comment"># 部署网站（部署前生成）</span>
 hexo d --g</code></pre>
 <p>1.NexT使用文档</p>
 <p><a href="http://theme-next.iissnan.com/getting-started.html">NexT</a></p>
@@ -48,7 +49,7 @@ $ <span class="token function">git</span> pull</code></pre>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 文件位置：~/blog/_config.yml</span>
 <span class="token comment">## Themes: https://hexo.io/themes/</span>
 theme: next</code></pre>
-<p>如何使用emoji:question:</p>
+<p>如何使用emoji❓</p>
 <p>安装</p>
 <hr>
 <pre class="language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> un hexo-renderer-marked --save
@@ -77,7 +78,7 @@ theme: next</code></pre>
     <span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
     <span class="token key atrule">permalinkClass</span><span class="token punctuation">:</span> header<span class="token punctuation">-</span>anchor
     <span class="token key atrule">permalinkSymbol</span><span class="token punctuation">:</span> ¶</code></pre>
-<p> <a href="https://github.com/mrdoob/three.js">JavaScript 3D library</a> for <a href="https://github.com/theme-next">NexT</a></p>
+<p><a href="https://github.com/mrdoob/three.js">JavaScript 3D library</a> for <a href="https://github.com/theme-next">NexT</a></p>
 <p>CDN配置</p>
 <pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">vendors</span><span class="token punctuation">:</span>
   <span class="token punctuation">...</span>
@@ -96,46 +97,37 @@ theme: next</code></pre>
 <details>
   <summary>使用方式</summary>
   > Primary
-
   <div class="success">
-
-  > Success
-
+<blockquote>
+<p>Success</p>
+</blockquote>
   </div>
-
   <div class="warning">
-
-  > Warning
-
+<blockquote>
+<p>Warning</p>
+</blockquote>
   </div>
-
   <div class="danger">
-
-  > Danger
-
+<blockquote>
+<p>Danger</p>
+</blockquote>
   </div>
-
   <div class="info">
-
-  > Info
-
+<blockquote>
+<p>Info</p>
+</blockquote>
   </div>
-
   <div class="gray">
-
-  > Gray
-
+<blockquote>
+<p>Gray</p>
+</blockquote>
   </div>
-
   <div class="yellow">
-
-  > Yellow
-
+<blockquote>
+<p>Yellow</p>
+</blockquote>
   </div>
 </details>
-
-
-
 <pre class="language-html" data-language="html"><code class="language-html">> Primary
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -174,7 +166,6 @@ theme: next</code></pre>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>butterfly</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -213,7 +204,6 @@ theme: next</code></pre>
 </tr>
 </tbody>
 </table>
-</div>
 ]]></content>
   </entry>
   <entry>

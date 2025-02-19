@@ -1,0 +1,453 @@
+{
+	"data": [{
+		"district": "鹤壁市",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 238,
+				"house": 4005.6,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 150.4,
+				"house": 0,
+				"business": 3495.3
+			},
+			{
+				"month": "十月",
+				"factory": 320.6,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	},{
+		"district": "淇滨区",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 198.3,
+				"house": 4005.6,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 270.2,
+				"house": 0,
+				"business": 3495.3
+			},
+			{
+				"month": "十月",
+				"factory": 260,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	}, {
+		"district": "山城区",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 160.8,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十月",
+				"factory": 260.4,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	}, {
+		"district": "鹤山区",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十月",
+				"factory": 268.3,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	}, {
+		"district": "淇县",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 286.2,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 131.8,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	}, {
+		"district": "浚县",
+		"dataValue": [{
+				"month": "一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "三月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "四月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "五月",
+				"factory": 286.2,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "六月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "七月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "八月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "九月",
+				"factory": 131.8,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十一月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			},
+			{
+				"month": "十二月",
+				"factory": 0,
+				"house": 0,
+				"business": 0
+			}
+		]
+	}]
+}

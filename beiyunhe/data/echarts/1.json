@@ -1,0 +1,170 @@
+{
+	"data": [{
+			"district": "鹤壁市",
+			"dataValue": [{
+					"num": 21,
+					"area": 1585168.3,
+					"name": "工矿仓储",
+          "ratio":"93%"
+				},
+				{
+					"num": 1,
+					"area": 52676,
+					"name": "住宅",
+          "ratio":"3%"
+				},
+				{
+					"num": 1,
+					"area": 41570,
+					"name": "商服",
+          "ratio":"2%"
+				},
+				{
+					"num": 2,
+					"area": 41610.4,
+					"name": "其他",
+          "ratio":"2%"
+				}
+			]
+		}, {
+			"district": "淇滨区",
+			"dataValue": [{
+					"num": 5,
+					"area": 270618.2,
+					"name": "工矿仓储",
+          "ratio":"67%"
+				},
+				{
+					"num": 1,
+					"area": 52676.0,
+					"name": "住宅",
+          "ratio":"13%"
+				},
+				{
+					"num": 1,
+					"area": 41570.0,
+					"name": "商服",
+          "ratio":"10%"
+				},
+				{
+					"num": 2,
+					"area": 41610.4,
+					"name": "其他",
+          "ratio":"10%"
+				}
+			]
+		},
+		{
+			"district": "山城区",
+			"dataValue": [{
+					"num": 2,
+					"area": 131453.9,
+					"name": "工矿仓储",
+          "ratio":"100%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "住宅",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "商服",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "其他",
+          "ratio":"0%"
+				}
+			]
+		},
+		{
+			"district": "鹤山区",
+			"dataValue": [{
+					"num": 2,
+					"area": 359162.8,
+					"name": "工矿仓储",
+          "ratio":"100%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "住宅",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "商服",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "其他",
+          "ratio":"0%"
+				}
+			]
+		},
+		{
+			"district": "淇县",
+			"dataValue": [{
+					"num": 2,
+					"area": 823933.4,
+					"name": "工矿仓储",
+          "ratio":"100%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "住宅",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "商服",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "其他",
+          "ratio":"0%"
+				}
+			]
+		},
+		{
+			"district": "浚县",
+			"dataValue": [{
+					"num": 0,
+					"area": 0,
+					"name": "工矿仓储",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "住宅",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "商服",
+          "ratio":"0%"
+				},
+				{
+					"num": 0,
+					"area": 0,
+					"name": "其他",
+          "ratio":"0%"
+				}
+			]
+		}
+	]
+}

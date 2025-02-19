@@ -1,0 +1,383 @@
+{
+	"data": [{
+			"district": "鹤壁市",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 617853.7,
+					"num": 6
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 438929.0,
+					"num": 5
+				},
+				{
+					"month": "十月",
+					"area": 459519.3,
+					"num": 10
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		},
+		{
+			"district": "淇滨区",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 213792.4,
+					"num": 4
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 113060.1,
+					"num": 4
+				},
+				{
+					"month": "十月",
+					"area": 79622.1,
+					"num": 1
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		}, {
+			"district": "山城区",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 110719.6,
+					"num": 1
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十月",
+					"area": 20734.3,
+					"num": 1
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		}, {
+			"district": "鹤山区",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十月",
+					"area": 359162.8,
+					"num": 8
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		}, {
+			"district": "淇县",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 0,
+					"num": 293341.6
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 325868.9,
+					"num": 1
+				},
+				{
+					"month": "十月",
+					"area": 359162.8,
+					"num": 8
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		}, {
+			"district": "浚县",
+			"dataValue": [{
+					"month": "一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "二月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "三月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "四月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "五月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "六月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "七月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "八月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "九月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十一月",
+					"area": 0,
+					"num": 0
+				},
+				{
+					"month": "十二月",
+					"area": 0,
+					"num": 0
+				}
+			]
+		}
+	]
+}
