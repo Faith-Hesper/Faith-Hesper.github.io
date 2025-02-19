@@ -30,6 +30,9 @@ hexo new page newpage 新建页面
 hexo new draft newdraft
 
 <span class="token comment"># 预览文章</span>
+hexo server
+
+<span class="token comment"># 预览文章</span>
 hexo server --draft
 
 <span class="token comment"># 发表文章</span>
