@@ -6,11 +6,15 @@ type: "outlink"
 
 [假条1](https://faith-hesper.github.io/wechat/)
 
-[假条2](http://114.115.150.215/wechat/index.html)
+[假条2](https://wehcat-gyk4.vercel.app/)
 
-[假条3](https://wehcat-gyk4.vercel.app/)
+[ChatGPT聊天工具](https://chat-next-web-rho.vercel.app/)
 
-[京东薅薅乐](http://114.115.150.215:8081/login)
+![image-20250219114648393](../../public/img/image-20250219114648393.png)
+
+[武汉大学图书馆招聘信息爬取工具](https://library-d6at.vercel.app/)
+
+
 
 [丁香园项目](https://lntano.top/dxy/#/)
 

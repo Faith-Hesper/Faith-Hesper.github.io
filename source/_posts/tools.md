@@ -7,6 +7,8 @@ categories: 工具
 description: 一些实用工具
 ---
 
+## 工具
+
 <center style='font-size:28px; font-weight: bold' >List</center>
 
 | nickname       | tools          | usage                                                        |
@@ -36,17 +38,23 @@ description: 一些实用工具
 | Xshell 7       | Xshell7        | [终端ssh](https://wwt.lanzouj.com/iqmiGxxsp1a)密码:ai3b      |
 | Xftp 7         | Xftp 7         | [linux与windows文件交互工具](https://wwt.lanzouj.com/iDuWqxxsjve)密码:19zp |
 | Xmind          | Xmind          | [思维导图](https://wwt.lanzouj.com/iK2omxxsnmj)密码:cnf1     |
+| OCR            | OCR            | [图片识别](https://wwmt.lanzoue.com/iSjTI0puqm6f)密码:5bkn   |
+| v2rayN-Core    | v2rayN-Core    | [v2ray](https://wwmt.lanzoue.com/iAPsx0puqfxa)               |
+
+## 网站
 
 <center>网站</center>
 
-| 网站           | 网址                                                         |
-| -------------- | ------------------------------------------------------------ |
-| 博客站点       | [faith-hesper]([https://faith-hesper.github.io](https://faith-hesper.github.io/) ) |
-| 网站           | [lntano]([https://lntano.top](https://lntano.top/) )         |
-| 假条           | [lntano](https://lntano.top/wechat )                         |
-| 网盘资源下载器 | [AriaNg](http://114.115.150.215/AriaNg )                     |
-| 私有云盘       | [Cloudreve]([http://114.115.150.215:5212](http://114.115.150.215:5212/) ) |
-| 京东薅薅乐     | [Nolan](http://114.115.150.215:8081/login )                  |
+|      网站      |                             网址                             |
+| :------------: | :----------------------------------------------------------: |
+|    博客站点    |       [faith-hesper](https://faith-hesper.github.io/)        |
+|      假条      |          [wechat](https://wehcat-gyk4.vercel.app/)           |
+|      假条      |      [wechat](https://faith-hesper.github.io/wechat/ )       |
+|     备忘录     |      [reference]( https://wangchujiang.com/reference/ )      |
+|    chatgpt     |             [chatgpt](https://chat.openai.com/)              |
+|   chatExcel    |             [chatexcel](https://chatexcel.com/)              |
+|    chatpdf     |             [chatpdf](https://www.chatpdf.com/ )             |
+|      chat      | [chat](https://faith-chatgpt-web-production.up.railway.app/#/chat/1002) |
 | 京东薅薅乐方法 | [faith-hesper]([https://faith-hesper.github.io/archives/%E4%BA%AC%E4%B8%9C%E8%96%85%E8%96%85%E4%B9%90/?t=1640264684355](https://faith-hesper.github.io/archives/京东薅薅乐/?t=1640264684355) ) |
 
 
