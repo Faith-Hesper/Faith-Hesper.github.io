@@ -1,0 +1,1 @@
+import{_ as e,o as _,c}from"./index-79e36b83.js";const s={},t={class:"safe"};function n(o,a){return _(),c("div",t," 工程应急事件处理 ")}const r=e(s,[["render",n],["__scopeId","data-v-84e51ba2"]]);export{r as default};

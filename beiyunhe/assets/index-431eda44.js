@@ -1,0 +1,1 @@
+import{_ as o,r as _,o as t,c,b as n}from"./index-79e36b83.js";const s={},a={class:"flood"};function r(d,i){const e=_("router-view");return t(),c("div",a,[n(e)])}const l=o(s,[["render",r],["__scopeId","data-v-57f99a0a"]]);export{l as default};
