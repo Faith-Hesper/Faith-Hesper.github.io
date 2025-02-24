@@ -1,0 +1,1 @@
+import{_ as a}from"./navbar.CIKOMo9R.js";import{a as s,c as r,w as o,i as t,o as n,b as e}from"./index-BrufAkfy.js";import{_ as i,r as m}from"./uni-app.es.BDelRtJL.js";const d=i({data:()=>({}),methods:{}},[["render",function(i,d,f,p,u,b){const c=m(s("navbar"),a),l=t;return n(),r(l,null,{default:o((()=>[e(c)])),_:1})}]]);export{d as default};

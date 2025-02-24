@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>空间量算与数据探测 | Faith</title><meta name="keywords" content="GIS空间分析"><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="空间量算与数据探测">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>空间量算与数据探测 | Faith</title><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="空间量算与数据探测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="空间量算与数据探测">
 <meta property="og:url" content="https://faith-hesper.github.io/blog/5fc53494e8b9/">
@@ -11,24 +11,131 @@
 <meta property="article:author" content="Faith Hesper">
 <meta property="article:tag" content="GIS空间分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://faith-hesper.github.io/blog/5fc53494e8b9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "空间量算与数据探测",
+  "url": "https://faith-hesper.github.io/blog/5fc53494e8b9/",
+  "image": "https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg",
+  "datePublished": "2021-11-10T13:45:03.000Z",
+  "dateModified": "2021-12-27T08:07:36.831Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Faith Hesper",
+      "url": "https://faith-hesper.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://faith-hesper.github.io/blog/5fc53494e8b9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  localSearch: undefined,
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '天',
-  date_suffix: {
+  runtime: '',
+  dateSuffix: {
     just: '刚刚',
     min: '分钟前',
     hour: '小时前',
@@ -36,117 +143,26 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'mediumZoom',
+  lightbox: 'null',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '空间量算与数据探测',
-  isPost: true,
-  isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2021-12-27 16:07:36'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const now = new Date()
-          const hour = now.getHours()
-          const isNight = hour <= 6 || hour >= 18
-          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  pageType: 'post'
+}</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -258,7 +274,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Faith</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">空间量算与数据探测</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-10T13:45:03.000Z" title="发表于 2021-11-10 21:45:03">2021-11-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-27T08:07:36.831Z" title="更新于 2021-12-27 16:07:36">2021-12-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/">GIS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">GIS空间分析</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E9%87%8F%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8E%A2%E6%B5%8B/">空间量算与数据探测</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">828</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="空间量算与数据探测"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/blog/5fc53494e8b9/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/5fc53494e8b9/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="基本几何参数量测"><a href="#基本几何参数量测" class="headerlink" title="基本几何参数量测"></a><span id="基本几何参数量测">基本几何参数量测</span></h2><h3 id="位置量测"><a href="#位置量测" class="headerlink" title="位置量测"></a><a href="../空间特征与空间问题#空间位置">位置量测</a></h3><p>空间位置是所有空间目标共有的描述参数，通过地理空间坐标系来表达</p>
+</style></head><body><div id="web_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160632.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Faith</span></a><a class="nav-page-title" href="/"><span class="site-name">空间量算与数据探测</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">空间量算与数据探测</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-10T13:45:03.000Z" title="发表于 2021-11-10 21:45:03">2021-11-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-27T08:07:36.831Z" title="更新于 2021-12-27 16:07:36">2021-12-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/">GIS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">GIS空间分析</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E9%87%8F%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8E%A2%E6%B5%8B/">空间量算与数据探测</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">828</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/blog/5fc53494e8b9/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/5fc53494e8b9/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="基本几何参数量测"><a href="#基本几何参数量测" class="headerlink" title="基本几何参数量测"></a><span id="基本几何参数量测">基本几何参数量测</span></h2><h3 id="位置量测"><a href="#位置量测" class="headerlink" title="位置量测"></a><a href="../空间特征与空间问题#空间位置">位置量测</a></h3><p>空间位置是所有空间目标共有的描述参数，通过地理空间坐标系来表达</p>
 <div class="info">
 
 &gt; 包括绝对位置、相对位置
@@ -359,29 +375,55 @@ d_{12}=|X_{1}-X_{2}|+|y_1-y_2|</script><h5 id="3-路网距离"><a href="#3-路�
 </ul>
 <h4 id="线分布空间量测"><a href="#线分布空间量测" class="headerlink" title="线分布空间量测"></a>线分布空间量测</h4><p>线密度、最近邻分析、线状对象的定向、连通度</p>
 <h3 id="面分布空间量测"><a href="#面分布空间量测" class="headerlink" title="面分布空间量测"></a>面分布空间量测</h3><p>离散区域分布模式、连续区域分布模式</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Faith Hesper</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://faith-hesper.github.io/blog/5fc53494e8b9/">https://faith-hesper.github.io/blog/5fc53494e8b9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Faith-Hesper.github.io" target="_blank">Faith</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">GIS空间分析</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/bf6d928f6c2c/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">位置与几何关系分析</div></div></a></div><div class="next-post pull-right"><a href="/blog/51ded6389d80/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">空间特征与空间问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/e9e683d8fa7f/" title="GIS空间分析复习"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-12-27</div><div class="title">GIS空间分析复习</div></div></a></div><div><a href="/blog/2882e3cc2023/" title="表面与三维空间分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160700.webp" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-12-27</div><div class="title">表面与三维空间分析</div></div></a></div><div><a href="/blog/3a138a640710/" title="空间相关性分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160623.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-11-21</div><div class="title">空间相关性分析</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Faith Hesper</div><div class="author-info__description">Hesper</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Faith-Hesper"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%A0%E4%BD%95%E5%8F%82%E6%95%B0%E9%87%8F%E6%B5%8B"><span class="toc-number">1.</span> <span class="toc-text">基本几何参数量测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E9%87%8F%E6%B5%8B"><span class="toc-number">1.1.</span> <span class="toc-text">位置量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83-%E5%87%A0%E4%BD%95-%E9%87%8F%E6%B5%8B"><span class="toc-number">1.2.</span> <span class="toc-text">中心(几何)量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%BF%83%E9%87%8F%E6%B5%8B-%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E4%B8%AD%E5%BF%83"><span class="toc-number">1.3.</span> <span class="toc-text">重心量测(加权平均中心)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E9%87%8F%E6%B5%8B"><span class="toc-number">1.4.</span> <span class="toc-text">长度量测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%B5%8B%E9%87%8F-%E8%B7%9D%E7%A6%BB%E6%B5%8B%E9%87%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">长度测量(距离测量)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB-%E7%AE%80%E5%8D%95%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1. 欧氏距离(简单距离)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2. 曼哈顿距离</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%B7%AF%E7%BD%91%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">3. 路网距离</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E7%A7%AF%E9%87%8F%E6%B5%8B"><span class="toc-number">1.5.</span> <span class="toc-text">面积量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%A7%AF%E9%87%8F%E6%B5%8B"><span class="toc-number">1.6.</span> <span class="toc-text">体积量测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E7%9B%AE%E6%A0%87%E5%BD%A2%E6%80%81%E9%87%8F%E6%B5%8B"><span class="toc-number">2.</span> <span class="toc-text">地理空间目标形态量测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%8A%B6%E5%9C%B0%E7%89%A9%E5%BD%A2%E6%80%81%E7%9A%84%E9%87%8F%E6%B5%8B"><span class="toc-number">2.1.</span> <span class="toc-text">线状地物形态的量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E7%8A%B6%E5%9C%B0%E7%89%A9%E7%9A%84%E5%BD%A2%E6%80%81"><span class="toc-number">2.2.</span> <span class="toc-text">面状地物的形态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83%E8%AE%A1%E7%AE%97%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">空间分布计算与分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">3.1.</span> <span class="toc-text">空间分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text">空间分布类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.3.</span> <span class="toc-text">点分布空间量测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E4%B8%AD%E5%BF%83"><span class="toc-number">3.3.1.</span> <span class="toc-text">分布中心</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E8%BD%B4%E7%BA%BF"><span class="toc-number">3.3.2.</span> <span class="toc-text">分布轴线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%BA%A6"><span class="toc-number">3.3.3.</span> <span class="toc-text">离散度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%AF%86%E5%BA%A6"><span class="toc-number">3.3.4.</span> <span class="toc-text">分布密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.3.5.</span> <span class="toc-text">线分布空间量测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.4.</span> <span class="toc-text">面分布空间量测</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/04806edd4911/" title="数组方法"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组方法"/></a><div class="content"><a class="title" href="/blog/04806edd4911/" title="数组方法">数组方法</a><time datetime="2025-02-19T09:16:07.528Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/d89d89a1353f/" title="前端知识点"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160703.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端知识点"/></a><div class="content"><a class="title" href="/blog/d89d89a1353f/" title="前端知识点">前端知识点</a><time datetime="2025-02-19T09:16:07.526Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/236d1eaf660f/" title="Tools"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tools"/></a><div class="content"><a class="title" href="/blog/236d1eaf660f/" title="Tools">Tools</a><time datetime="2025-02-19T09:16:07.524Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/77247b1241a5/" title="Faith Hesper"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Faith Hesper"/></a><div class="content"><a class="title" href="/blog/77247b1241a5/" title="Faith Hesper">Faith Hesper</a><time datetime="2025-02-19T08:51:42.184Z" title="更新于 2025-02-19 16:51:42">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/28a621ac695f/" title="React"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160654.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React"/></a><div class="content"><a class="title" href="/blog/28a621ac695f/" title="React">React</a><time datetime="2022-11-27T06:36:01.428Z" title="更新于 2022-11-27 14:36:01">2022-11-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160657.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By Faith Hesper</div><div class="footer_custom_text">Hi welcome <a href="https://faith-hesper.github.io/">my blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
-  function initValine () {
-    const valine = new Valine(Object.assign({
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Faith-Hesper.github.io">Faith Hesper</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://faith-hesper.github.io/blog/5fc53494e8b9/">https://faith-hesper.github.io/blog/5fc53494e8b9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Faith-Hesper.github.io" target="_blank">Faith</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">GIS空间分析</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160524.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160523.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/51ded6389d80/" title="空间特征与空间问题"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">空间特征与空间问题</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/blog/bf6d928f6c2c/" title="位置与几何关系分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">位置与几何关系分析</div></div><div class="info-2"><div class="info-item-1">邻近分析邻近度：表达空间目标距离关系的重要物流量之一，表示地理空间中目标地物距离相近的程度 缓冲区分析 缓冲区、缓冲区分析缓冲区：为识别地理实体或空间物体(点、线、面)对周围地物的影响度而建立的具有一定宽度的带状区域，不包含原来点、线或面要素的多边形  点、线、面要素缓冲区 均质缓冲区 非均质缓冲区  缓冲区分析：对一组或一类地物按照缓冲的距离条件，建立缓冲，从而实现空间数据在二维空间得以扩展，来确定分析对象或筛选范围的信息分析方法  缓冲区类型基于点要素的缓冲区：  通常以点为圆心、以一定距离为半径的圆  基于线要素的缓冲区：  通常是以线为中心轴线，距中心轴线一定距离的平行条带多边形  基于面要素的缓冲区：  向外或内扩展一定距离以生成新的多边形  缓冲区分析三要素：  主体：表示分析的主要目标，一般分为点源、线源、和面源三类 邻近对象：表示受主体影响的客体，例如行政界限变更时所影响的水土流失范围等 对象的作用条件：表示主体邻近对象施加作用的影响条件或影响强度   缓冲区实现的基本算法 缓冲区分析应用1....</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/e9e683d8fa7f/" title="GIS空间分析复习"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-16</div><div class="info-item-2">GIS空间分析复习</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/blog/2882e3cc2023/" title="表面与三维空间分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160700.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-12</div><div class="info-item-2">表面与三维空间分析</div></div><div class="info-2"><div class="info-item-1">地形表面参数计算数字地面模型(DTM)DTM是指地球表面形态多种信息空间分布的有序数值阵列 数字高程模型(DEM)DEM是DTM的一个特例或者子集 DEM是DTM中基本的部分，是对地球表面地形地貌的一种离散的数学表达 应用 测绘  绘制等高线、坡度图、坡向图、立体透视图、立体景观图、制作正射影像图、立体匹配图、立体地形模型及地图的修测   工程应用  体积和面积的计算、各种剖面图的绘制及线路的设计   军事  导航、通讯、作战任务的计划   遥感  分类的辅助数据   环境与规划  土地现状分析、规划及洪水险情预报    主要表示模型规则格网 优点：  结构简单、易于计算机处理，特别是栅格数据结构的地理信息系统 可以很容易地计算等高线、坡度、坡向、山坡阴影和自动提取流域地形  缺点：  地形简单的地区存在大量冗余数据 地形起伏差别大的地区无法适用 对某些特殊计算(如视线计算)的格网轴线方向被夸大 如栅格过于粗略，则不能精确表示地形的关键特征，如山峰、坑洼、山脊、山谷等  不规则三角网(TIN)       ...</div></div></div></a><a class="pagination-related" href="/blog/3a138a640710/" title="空间相关性分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160623.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-11</div><div class="info-item-2">空间相关性分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/blog/bf6d928f6c2c/" title="位置与几何关系分析"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-11</div><div class="info-item-2">位置与几何关系分析</div></div><div class="info-2"><div class="info-item-1">邻近分析邻近度：表达空间目标距离关系的重要物流量之一，表示地理空间中目标地物距离相近的程度 缓冲区分析 缓冲区、缓冲区分析缓冲区：为识别地理实体或空间物体(点、线、面)对周围地物的影响度而建立的具有一定宽度的带状区域，不包含原来点、线或面要素的多边形  点、线、面要素缓冲区 均质缓冲区 非均质缓冲区  缓冲区分析：对一组或一类地物按照缓冲的距离条件，建立缓冲，从而实现空间数据在二维空间得以扩展，来确定分析对象或筛选范围的信息分析方法  缓冲区类型基于点要素的缓冲区：  通常以点为圆心、以一定距离为半径的圆  基于线要素的缓冲区：  通常是以线为中心轴线，距中心轴线一定距离的平行条带多边形  基于面要素的缓冲区：  向外或内扩展一定距离以生成新的多边形  缓冲区分析三要素：  主体：表示分析的主要目标，一般分为点源、线源、和面源三类 邻近对象：表示受主体影响的客体，例如行政界限变更时所影响的水土流失范围等 对象的作用条件：表示主体邻近对象施加作用的影响条件或影响强度   缓冲区实现的基本算法 缓冲区分析应用1....</div></div></div></a><a class="pagination-related" href="/blog/51ded6389d80/" title="空间特征与空间问题"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-10</div><div class="info-item-2">空间特征与空间问题</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/blog/892a4ffdb837/" title="空间分析与GIS"><img class="cover" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-10</div><div class="info-item-2">空间分析与GIS</div></div><div class="info-2"><div class="info-item-1">地理学第一定律，即地理事物或属性在空间分布上互为相关，存在聚集、随机、规则分布 基本概念1. 空间指维度上的扩展或延续 2. 地理空间现实中的地理空间：具有空间参考信息的地理实体或地理现象发生、发展的时空位置集是GIS表达和研究的对象区域 GIS中的地理空间：绝对空间 + 相对空间 绝对空间：具有属性描述的空间几何位置的集合，由一系列不同位置的空间坐标组成，来源于地球坐标系中的绝对坐标 相对空间：由不同实体之间的空间关系构成，根据实体之间的空间关系及推理机制定义 综合定义：指球面坐标系中或者经过投影变换后在笛卡尔坐标系中的地球表达特征空间。是地理空间在信息层面的抽象表达 GIS的基本原则:同区域的不同图层或者相邻图层在空间上必须相匹配，否则将会出现明显的错误   3. 分析空间用于分析实际应用问题的二维或三维范围，即研究范围 4....</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Faith Hesper</div><div class="author-info-description">Hesper</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Faith-Hesper"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%A0%E4%BD%95%E5%8F%82%E6%95%B0%E9%87%8F%E6%B5%8B"><span class="toc-number">1.</span> <span class="toc-text">基本几何参数量测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E9%87%8F%E6%B5%8B"><span class="toc-number">1.1.</span> <span class="toc-text">位置量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83-%E5%87%A0%E4%BD%95-%E9%87%8F%E6%B5%8B"><span class="toc-number">1.2.</span> <span class="toc-text">中心(几何)量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%BF%83%E9%87%8F%E6%B5%8B-%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E4%B8%AD%E5%BF%83"><span class="toc-number">1.3.</span> <span class="toc-text">重心量测(加权平均中心)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E9%87%8F%E6%B5%8B"><span class="toc-number">1.4.</span> <span class="toc-text">长度量测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%B5%8B%E9%87%8F-%E8%B7%9D%E7%A6%BB%E6%B5%8B%E9%87%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">长度测量(距离测量)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB-%E7%AE%80%E5%8D%95%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1. 欧氏距离(简单距离)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2. 曼哈顿距离</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%B7%AF%E7%BD%91%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">3. 路网距离</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E7%A7%AF%E9%87%8F%E6%B5%8B"><span class="toc-number">1.5.</span> <span class="toc-text">面积量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%A7%AF%E9%87%8F%E6%B5%8B"><span class="toc-number">1.6.</span> <span class="toc-text">体积量测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E7%9B%AE%E6%A0%87%E5%BD%A2%E6%80%81%E9%87%8F%E6%B5%8B"><span class="toc-number">2.</span> <span class="toc-text">地理空间目标形态量测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%8A%B6%E5%9C%B0%E7%89%A9%E5%BD%A2%E6%80%81%E7%9A%84%E9%87%8F%E6%B5%8B"><span class="toc-number">2.1.</span> <span class="toc-text">线状地物形态的量测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E7%8A%B6%E5%9C%B0%E7%89%A9%E7%9A%84%E5%BD%A2%E6%80%81"><span class="toc-number">2.2.</span> <span class="toc-text">面状地物的形态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83%E8%AE%A1%E7%AE%97%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">空间分布计算与分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">3.1.</span> <span class="toc-text">空间分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text">空间分布类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.3.</span> <span class="toc-text">点分布空间量测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E4%B8%AD%E5%BF%83"><span class="toc-number">3.3.1.</span> <span class="toc-text">分布中心</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E8%BD%B4%E7%BA%BF"><span class="toc-number">3.3.2.</span> <span class="toc-text">分布轴线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%BA%A6"><span class="toc-number">3.3.3.</span> <span class="toc-text">离散度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%AF%86%E5%BA%A6"><span class="toc-number">3.3.4.</span> <span class="toc-text">分布密度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.3.5.</span> <span class="toc-text">线分布空间量测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%88%86%E5%B8%83%E7%A9%BA%E9%97%B4%E9%87%8F%E6%B5%8B"><span class="toc-number">3.4.</span> <span class="toc-text">面分布空间量测</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/04806edd4911/" title="数组方法"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组方法"/></a><div class="content"><a class="title" href="/blog/04806edd4911/" title="数组方法">数组方法</a><time datetime="2025-02-19T09:16:07.528Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/d89d89a1353f/" title="前端知识点"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160703.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端知识点"/></a><div class="content"><a class="title" href="/blog/d89d89a1353f/" title="前端知识点">前端知识点</a><time datetime="2025-02-19T09:16:07.526Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/236d1eaf660f/" title="Tools"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tools"/></a><div class="content"><a class="title" href="/blog/236d1eaf660f/" title="Tools">Tools</a><time datetime="2025-02-19T09:16:07.524Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/77247b1241a5/" title="Faith Hesper"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Faith Hesper"/></a><div class="content"><a class="title" href="/blog/77247b1241a5/" title="Faith Hesper">Faith Hesper</a><time datetime="2025-02-19T08:51:42.184Z" title="更新于 2025-02-19 16:51:42">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/28a621ac695f/" title="React"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160654.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React"/></a><div class="content"><a class="title" href="/blog/28a621ac695f/" title="React">React</a><time datetime="2022-11-27T06:36:01.428Z" title="更新于 2022-11-27 14:36:01">2022-11-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160657.png);"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By Faith Hesper</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 5.4.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text">Hi welcome <a href="https://faith-hesper.github.io/">my blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
       el: '#vcomment',
       appId: 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
       appKey: 'GX4zcj14jkoD4ovKmt1DThwF',
       avatar: 'monsterid',
       serverURLs: '',
       emojiMaps: "",
-      path: window.location.pathname,
-      visitor: false
-    }, null))
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
   }
 
-  if (typeof Valine === 'function') initValine() 
-  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
-}
-
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
-  else setTimeout(loadValine, 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
   }
-}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

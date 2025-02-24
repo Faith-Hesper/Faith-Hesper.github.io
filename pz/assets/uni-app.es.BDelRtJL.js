@@ -1,0 +1,1 @@
+import{Y as s,Z as a,_ as o,a0 as t,a1 as n}from"./index-BrufAkfy.js";const r=(s,a)=>{const o=s.__vccOpts||s;for(const[t,n]of a)o[t]=n;return o};function c(s,a){return"string"==typeof s?a:s}const e=t=>(n,r=o())=>{!s&&a(t,n,r)},f=e(t),i=e(n);export{r as _,f as a,i as o,c as r};

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Faith</title><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Hesper">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Faith</title><meta name="author" content="Faith Hesper"><meta name="copyright" content="Faith Hesper"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hesper">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Faith">
 <meta property="og:url" content="https://faith-hesper.github.io/page/2/">
@@ -8,24 +8,116 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp">
 <meta property="article:author" content="Faith Hesper">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://faith-hesper.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://faith-hesper.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  localSearch: undefined,
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
     homepage: false,
     post: false
   },
-  runtime: '天',
-  date_suffix: {
+  runtime: '',
+  dateSuffix: {
     just: '刚刚',
     min: '分钟前',
     hour: '小时前',
@@ -33,117 +125,26 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'mediumZoom',
+  lightbox: 'null',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: 'Faith',
-  isPost: false,
-  isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-02-20 14:46:10'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const now = new Date()
-          const hour = now.getHours()
-          const isNight = hour <= 6 || hour >= 18
-          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.0"><style>mjx-container[jax="SVG"] {
+  pageType: 'home'
+}</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.4.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -255,140 +256,141 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Faith</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Faith</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/blog/1544e7c72f29/" title="常见配置文件"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常见配置文件"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/1544e7c72f29/" title="常见配置文件">常见配置文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-03T06:48:30.000Z" title="发表于 2022-07-03 14:48:30">2022-07-03</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/config/">config</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/1544e7c72f29/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/1544e7c72f29/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">开发中一些常见的`config`配置文件的作用</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/ff35a4a03b30/" title="Npm"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160700.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Npm"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/ff35a4a03b30/" title="Npm">Npm</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-03T06:44:36.000Z" title="发表于 2022-07-03 14:44:36">2022-07-03</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/npm/">npm</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/ff35a4a03b30/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/ff35a4a03b30/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">npm相关知识点</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/b82dae75fd55/" title="supermapAPI函数封装"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/img/20220124161839.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="supermapAPI函数封装"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/b82dae75fd55/" title="supermapAPI函数封装">supermapAPI函数封装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-06T13:39:44.000Z" title="发表于 2022-06-06 21:39:44">2022-06-06</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/leaflet/">leaflet</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/draw/">draw</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/b82dae75fd55/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/b82dae75fd55/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">框选查询draw图形绘制draw控件定义
-// 新建绘制图层
-const editableLayers = new L.featureGroup()
-map.addLayer(editableLayers)
-// 定义绘制控件
-const drawControl = new L.Control.Draw({
-    draw: {
-      //绘制线
-      polyline: true,
-      //绘制多边形
-      polygon: true,
-      //绘制矩形
-      rectangle: {
-        shapeOptions: {
-          color: '#0000FF',
-        },
-      },
-      //绘制圆
-      circle: true,
-      //绘制标注
-      marker: false,
-      //绘制圆形标注
-      circlemarker: false,
-    },
-    edit: {
-      featureGroup: editableLayer ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/1bee79822b08/" title="专题图"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="专题图"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/1bee79822b08/" title="专题图">专题图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-05T01:11:57.000Z" title="发表于 2022-05-05 09:11:57">2022-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/1bee79822b08/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/1bee79822b08/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">专题图
-专题地图有哪些基本特征？说明与普通地图的不同
-
-专题地图只将一种或几种与主题相关联的要素特别完备而详细的显示,而其他要素的现实则较为概略,甚至不予显示。
-内容更加广泛多样
-不仅可以表示现象的现状及其分布，而且能表示现象的动态变化和发展规律
-
-
-说明学习专题图课程对学习遥感、地理信息系统俩课程的关系
-  遥感技术出现以前，专题地图的编制方法停留在从图到图、从统计资料到制图的传统作业过程。随着遥感技术的产生和发展，使专题地图制图从内容、形式到成图方法都有了根本性的突破。遥感信息在图像的分辨率、几何精度﹑影像质量及构建立体像对方面都伴随着传感器的不断改进、技术处理方法的不断完善而越来越能满足不同比例尺专题制图对资料提出的要求。遥感信息的现势性、宏观性、多时相性和立体覆盖能力,使其成为专题地图制图的重要信息源。
-  地理信息系统的发展是从地图制图和地籍管理开始的,因此地理信息系统的主要功能之一是用于地图制图,但是它把地图这种独特的视觉化的效果和空间分析功能同数据库操作集成在-起,强调空间概念,注重空间分析,形成了强大的分析功能。
-  各种专题地图可以作为地理信息系统中的数据源之一被采用 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/25300747fb12/" title="Vite + Vue3 + SuperMap iClient初构建"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vite + Vue3 + SuperMap iClient初构建"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/25300747fb12/" title="Vite + Vue3 + SuperMap iClient初构建">Vite + Vue3 + SuperMap iClient初构建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-18T03:13:54.000Z" title="发表于 2022-03-18 11:13:54">2022-03-18</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/supermap/">supermap</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/25300747fb12/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/25300747fb12/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">挖坑</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/6ae537b308ac/" title="Vue"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/6ae537b308ac/" title="Vue">Vue</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-28T09:18:13.000Z" title="发表于 2022-02-28 17:18:13">2022-02-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/vue/">vue</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/6ae537b308ac/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/6ae537b308ac/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基本命令vue CLI# 创建项目
-npm create project
-# 本地运行
-npm run serve
-# 打包
-npm build
-webpack
-# 初始化包文件
-npm init
-vue2基础语法指令
-v-if
- 	&lt;template&gt;
-	&lt;div&gt;
-		&lt;div v-if&#x3D;&quot;Math.random() &gt; 0.5&quot;&gt;
-	  	Now you see me
-		&lt;&#x2F;div&gt;
-		&lt;div v-else&gt;
-	 	 Now you don&#39;t
-		&lt;&#x2F;div&gt;
-	&lt;&#x2F;div&gt;
-	&lt;&#x2F;template&gt;
-
-2. v-for
-
-	&#96;&#96;&#96;vue
-	&lt;template&gt;
-	    &lt;div&gt;
-	        &lt;div v-for&#x3D;&quot;(item, index) in items&quot;&gt;&lt;&#x2F;div&gt; ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/3cd91baf66f6/" title="前端小知识"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160531.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端小知识"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/3cd91baf66f6/" title="前端小知识">前端小知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-09T12:08:36.000Z" title="发表于 2022-01-09 20:08:36">2022-01-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/3cd91baf66f6/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/3cd91baf66f6/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Bootstrap表单状态校验添加 .has-warning、.has-error 或 .has-success 类到这些控件的父元素即可。任何包含在此元素之内的 .control-label、.form-control 和 .help-block 元素都将接受这些校验状态的样式。
-label标签上的for用于与input标签绑定，label的for值与input的id值相同
-input标签上的.aria-describedby与其他标签id绑定
-&lt;div class="form-group has-success">
-  &lt;label class="control-label" for="inputSuccess1">Input with success&lt;/label>
-  &lt;input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
-  &lt;span id="helpBlock2" class="help-block">A block o ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/832bb4310a1d/" title="Php"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Php"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/832bb4310a1d/" title="Php">Php</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-07T08:39:41.000Z" title="发表于 2022-01-07 16:39:41">2022-01-07</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/php/">php</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/832bb4310a1d/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/832bb4310a1d/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">PHP连接数据库
-连接数据库
-// 服务器链接、用户名、密码、数据库名
-$link = mysqli_connect('localhost','user','123','sql');
-
-验证连接
-   if(!$link)
-   &#123;
-       echo "连接失败";
-       // 返回最近调用函数的最后一个错误描述
-       exit(mysqli_connect_error());
-   &#125;
-
-3. 设置默认字符编码
-
-   ```php
-   mysqli_set_charset($link,'utf8');
-
-SQL查询
-// sql查询语句 随机生成一个数并将查询到的name值赋给num
-$sql = "select floor(rand() * count(*)) as `num` from `name`";
-// 执行sql语句
-$query = mysqli_query($link,$sql);
-
-获取记录
-// 从结果集中取得所有行作为关联数组，或数字数组
-mysqli_fetch_all($name);
-// 从结果集中取得一行作为 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/474c98dd14ff/" title="Docker常用命令"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/474c98dd14ff/" title="Docker常用命令">Docker常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-04T07:48:29.000Z" title="发表于 2022-01-04 15:48:29">2022-01-04</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/docker/">docker</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/474c98dd14ff/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/474c98dd14ff/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Docker常用命令
-搜索及拉取docker镜像
-
-$ docker search [NAME]              # 搜索docker镜像（搜索结果里OFFICIAL为OK的是官方镜像）
-$ docker pull [NAME]                # 拉取指定docker镜像（NAME是搜索出来的指定镜像名）
-
-查看docker容器实例和镜像$ docker ps -a                      # 查看所有docker容器实例
-$ docker ps                         # 查看所有正在运行的docker容器实例
-$ docker images                     # 查看所有docker镜像
-$ docker images [REPOSITORY]        # 查看指定docker镜像（REPOSITORY为镜像名）
-开启停止docker容器实例和镜像$ docker start [ID/NAMES]             # 开启指定docker容器实例
-$ docker stop [I ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/66a2fc5fad74/" title="暴力破解防护"><img class="post_bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="暴力破解防护"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/66a2fc5fad74/" title="暴力破解防护">暴力破解防护</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-12-27T03:33:27.000Z" title="发表于 2021-12-27 11:33:27">2021-12-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/linux/">linux</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/66a2fc5fad74/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/blog/66a2fc5fad74/" itemprop="commentCount"></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">linux服务器防暴力破解的基本方法</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Faith Hesper</div><div class="author-info__description">Hesper</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Faith-Hesper"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/04806edd4911/" title="数组方法"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组方法"/></a><div class="content"><a class="title" href="/blog/04806edd4911/" title="数组方法">数组方法</a><time datetime="2025-02-19T09:16:07.528Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/d89d89a1353f/" title="前端知识点"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160703.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端知识点"/></a><div class="content"><a class="title" href="/blog/d89d89a1353f/" title="前端知识点">前端知识点</a><time datetime="2025-02-19T09:16:07.526Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/236d1eaf660f/" title="Tools"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tools"/></a><div class="content"><a class="title" href="/blog/236d1eaf660f/" title="Tools">Tools</a><time datetime="2025-02-19T09:16:07.524Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/77247b1241a5/" title="Faith Hesper"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Faith Hesper"/></a><div class="content"><a class="title" href="/blog/77247b1241a5/" title="Faith Hesper">Faith Hesper</a><time datetime="2025-02-19T08:51:42.184Z" title="更新于 2025-02-19 16:51:42">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/28a621ac695f/" title="React"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160654.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React"/></a><div class="content"><a class="title" href="/blog/28a621ac695f/" title="React">React</a><time datetime="2022-11-27T06:36:01.428Z" title="更新于 2022-11-27 14:36:01">2022-11-27</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+</style></head><body><div id="web_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160632.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Faith</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/wechat/"><i class="fa-fw fas fa-video"></i><span> wechat</span></a></li><li><a class="site-page child" href="/postgraduate/"><i class="fa-fw fas fa-video"></i><span> postgraduate</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/outlink/"><i class="fa-fw fas fa-link"></i><span> 外链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Faith</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/blog/1544e7c72f29/" title="常见配置文件"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常见配置文件"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/1544e7c72f29/" title="常见配置文件">常见配置文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-03T06:48:30.000Z" title="发表于 2022-07-03 14:48:30">2022-07-03</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/config/">config</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/1544e7c72f29/#post-comment"><span class="valine-comment-count" data-xid="/blog/1544e7c72f29/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">配置文件jsconfig.json用于webpack配置别名，要让vscode正确提示路径，需在Vscode的中启用js文件语义检查 {   "compilerOptions": {     "target": "es6",     "experimentalDecorators": true,     "allowSyntheticDefaultImports": true,     "baseUrl": ".",     "paths": {       "@/*": [       "./src/*"       ],       "@assets/*": ["./src/assets/*"],       "@components/*": ["./src/components/*"],       "@config/*": ["./src/config/*"],       "@service/*": ["./src/service/*"],       "@mixins/*": ["./src/mixins/*"]     }   },   "exclude":...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/ff35a4a03b30/" title="Npm"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160700.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Npm"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/ff35a4a03b30/" title="Npm">Npm</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-03T06:44:36.000Z" title="发表于 2022-07-03 14:44:36">2022-07-03</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/npm/">npm</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/ff35a4a03b30/#post-comment"><span class="valine-comment-count" data-xid="/blog/ff35a4a03b30/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">查看包安装版本npm list # 查看已安装的 npm 的包 npm list -g # 查看全局安装的包 npm list cowsay # 查看特点的包 npm view cowsay version # 查看包的版本 安装包npm install cowsay npm i cowsay # 简化命令 npm install -g cowsay # 全局安装 npm install -S cowsay #  npm install -D cowsay #  npm install cowsay@1.2.0 # 安装特点版本的包 npm view cowsay versions # 查看已发布的包的所有版本 卸载包npm uninsatll cowsay  npm uninstall -g cowsay npm uninstall -S cowsay # 移除依赖包 --save-dev npm uninstall -D cowsay # 移除开发时的依赖...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/b82dae75fd55/" title="supermapAPI函数封装"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/img/20220124161839.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="supermapAPI函数封装"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/b82dae75fd55/" title="supermapAPI函数封装">supermapAPI函数封装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-06T13:39:44.000Z" title="发表于 2022-06-06 21:39:44">2022-06-06</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/leaflet/">leaflet</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/draw/">draw</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/b82dae75fd55/#post-comment"><span class="valine-comment-count" data-xid="/blog/b82dae75fd55/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">框选查询draw图形绘制draw控件定义 // 新建绘制图层 const editableLayers = new L.featureGroup() map.addLayer(editableLayers) // 定义绘制控件 const drawControl = new L.Control.Draw({     draw: {       //绘制线       polyline: true,       //绘制多边形       polygon: true,       //绘制矩形       rectangle: {         shapeOptions: {           color: '#0000FF',         },       },       //绘制圆       circle: true,       //绘制标注       marker: false,       //绘制圆形标注       circlemarker: false,     },     edit: {       featureGroup:...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/1bee79822b08/" title="专题图"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="专题图"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/1bee79822b08/" title="专题图">专题图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-05T01:11:57.000Z" title="发表于 2022-05-05 09:11:57">2022-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/1bee79822b08/#post-comment"><span class="valine-comment-count" data-xid="/blog/1bee79822b08/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">专题图 专题地图有哪些基本特征？说明与普通地图的不同  专题地图只将一种或几种与主题相关联的要素特别完备而详细的显示,而其他要素的现实则较为概略,甚至不予显示。 内容更加广泛多样 不仅可以表示现象的现状及其分布，而且能表示现象的动态变化和发展规律   说明学习专题图课程对学习遥感、地理信息系统俩课程的关系   遥感技术出现以前，专题地图的编制方法停留在从图到图、从统计资料到制图的传统作业过程。随着遥感技术的产生和发展，使专题地图制图从内容、形式到成图方法都有了根本性的突破。遥感信息在图像的分辨率、几何精度﹑影像质量及构建立体像对方面都伴随着传感器的不断改进、技术处理方法的不断完善而越来越能满足不同比例尺专题制图对资料提出的要求。遥感信息的现势性、宏观性、多时相性和立体覆盖能力,使其成为专题地图制图的重要信息源。   地理信息系统的发展是从地图制图和地籍管理开始的,因此地理信息系统的主要功能之一是用于地图制图,但是它把地图这种独特的视觉化的效果和空间分析功能同数据库操作集成在-起,强调空间概念,注重空间分析,形成了强大的分析功能。  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/25300747fb12/" title="Vite + Vue3 + SuperMap iClient初构建"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vite + Vue3 + SuperMap iClient初构建"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/25300747fb12/" title="Vite + Vue3 + SuperMap iClient初构建">Vite + Vue3 + SuperMap iClient初构建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-18T03:13:54.000Z" title="发表于 2022-03-18 11:13:54">2022-03-18</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/supermap/">supermap</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/25300747fb12/#post-comment"><span class="valine-comment-count" data-xid="/blog/25300747fb12/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">配置创建项目 创建vue3项目模板  # npm 6.x npm create vite@latest my-vue-app --template vue npm create vite@latest  cd到项目文件夹  安装包 npm i  创建vite配置文件 在项目根目录创建vite.consfig.js文件   项目配置 安装所需依赖 axios、@supermap/iclient-leaflet、leaflet等     npm i axios @supermap/iclient-leaflet leaflet -S  2. router配置     ```bash    npm install vue-router@4 在src目录中创建router文件夹，并创建index.js，添加路由配置 import &#123; createRouter,createWebHistory &#125; from 'vue-router'  const routes = [&#123;   path: '/',   name: 'home',   component:...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/6ae537b308ac/" title="Vue"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160705.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/6ae537b308ac/" title="Vue">Vue</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-28T09:18:13.000Z" title="发表于 2022-02-28 17:18:13">2022-02-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/vue/">vue</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/vue/">vue</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/6ae537b308ac/#post-comment"><span class="valine-comment-count" data-xid="/blog/6ae537b308ac/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基本命令vue CLI# 创建项目 npm create project # 本地运行 npm run serve # 打包 npm build webpack # 初始化包文件 npm init vue2基础语法指令 v-if  	&lt;template&gt; 	&lt;div&gt; 		&lt;div v-if&#x3D;&quot;Math.random() &gt; 0.5&quot;&gt; 	  	Now you see me 		&lt;&#x2F;div&gt; 		&lt;div v-else&gt; 	 	 Now you don&#39;t 		&lt;&#x2F;div&gt; 	&lt;&#x2F;div&gt; 	&lt;&#x2F;template&gt;  2. v-for  	&#96;&#96;&#96;vue 	&lt;template&gt; 	    &lt;div&gt; 	        &lt;div v-for&#x3D;&quot;(item, index) in...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/3cd91baf66f6/" title="前端小知识"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160531.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端小知识"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/3cd91baf66f6/" title="前端小知识">前端小知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-09T12:08:36.000Z" title="发表于 2022-01-09 20:08:36">2022-01-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/3cd91baf66f6/#post-comment"><span class="valine-comment-count" data-xid="/blog/3cd91baf66f6/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Bootstrap表单状态校验添加 .has-warning、.has-error 或 .has-success 类到这些控件的父元素即可。任何包含在此元素之内的 .control-label、.form-control 和 .help-block 元素都将接受这些校验状态的样式。 label标签上的for用于与input标签绑定，label的for值与input的id值相同 input标签上的.aria-describedby与其他标签id绑定 &lt;div class="form-group has-success">   &lt;label class="control-label" for="inputSuccess1">Input with success&lt;/label>   &lt;input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">   &lt;span id="helpBlock2" class="help-block">A...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/832bb4310a1d/" title="Php"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Php"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/832bb4310a1d/" title="Php">Php</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-07T08:39:41.000Z" title="发表于 2022-01-07 16:39:41">2022-01-07</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/php/">php</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/832bb4310a1d/#post-comment"><span class="valine-comment-count" data-xid="/blog/832bb4310a1d/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">PHP连接数据库 连接数据库 // 服务器链接、用户名、密码、数据库名 $link = mysqli_connect('localhost','user','123','sql');  验证连接    if(!$link)    &#123;        echo "连接失败";        // 返回最近调用函数的最后一个错误描述        exit(mysqli_connect_error());    &#125;  3. 设置默认字符编码     ```php    mysqli_set_charset($link,'utf8');  SQL查询 // sql查询语句 随机生成一个数并将查询到的name值赋给num $sql = "select floor(rand() * count(*)) as `num` from `name`"; // 执行sql语句 $query = mysqli_query($link,$sql);  获取记录 // 从结果集中取得所有行作为关联数组，或数字数组 mysqli_fetch_all($name); //...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/474c98dd14ff/" title="Docker常用命令"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/474c98dd14ff/" title="Docker常用命令">Docker常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-04T07:48:29.000Z" title="发表于 2022-01-04 15:48:29">2022-01-04</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/docker/">docker</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/474c98dd14ff/#post-comment"><span class="valine-comment-count" data-xid="/blog/474c98dd14ff/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Docker常用命令 搜索及拉取docker镜像  $ docker search [NAME]              # 搜索docker镜像（搜索结果里OFFICIAL为OK的是官方镜像） $ docker pull [NAME]                # 拉取指定docker镜像（NAME是搜索出来的指定镜像名）  查看docker容器实例和镜像$ docker ps -a                      # 查看所有docker容器实例 $ docker ps                         # 查看所有正在运行的docker容器实例 $ docker images                     # 查看所有docker镜像 $ docker images [REPOSITORY]        # 查看指定docker镜像（REPOSITORY为镜像名） 开启停止docker容器实例和镜像$ docker start [ID/NAMES]             # 开启指定docker容器实例 $ docker...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/66a2fc5fad74/" title="暴力破解防护"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160624.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="暴力破解防护"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/66a2fc5fad74/" title="暴力破解防护">暴力破解防护</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-12-27T03:33:27.000Z" title="发表于 2021-12-27 11:33:27">2021-12-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/linux/">linux</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/blog/66a2fc5fad74/#post-comment"><span class="valine-comment-count" data-xid="/blog/66a2fc5fad74/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">定义什么是暴力破解，简单来说就是对一个服务器进行无数次尝试登陆，并用不同的密码进行登陆直到可以登陆成功。暴力破解的基本步骤可以分为以下几步：　　　　　　 1. 找到对应的linux服务器   Ip地址 2.扫描端口号：22   nmap扫描端口 3.开始暴力破解: 一般root 破解你的密码 登录你的机器破坏盗取你的重要的数据 方法 将密码设置复杂，长度大于8位或者最好大于14位，密码的复杂度：由大小写字母以及字符和数字组成。 0-9  a-z  A-Z  @!#$%*. 等等。 更改端口号，默认的端口是sshd(22),修改默认端口号。 不用root用户登陆(禁止root用户登陆)，使用其他用户登陆并且拥有root用户权限。 sshd服务，直接编写脚本检查/var/log/secure 内登录失败次数超过某个阈值的ip并将它添加到/etc/hosts.deny（fail2ban的优点更多） 屏蔽IP  1.设置复杂密码...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Faith Hesper</div><div class="author-info-description">Hesper</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">39</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Faith-Hesper"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Faith-Hesper" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/04806edd4911/" title="数组方法"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组方法"/></a><div class="content"><a class="title" href="/blog/04806edd4911/" title="数组方法">数组方法</a><time datetime="2025-02-19T09:16:07.528Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/d89d89a1353f/" title="前端知识点"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160703.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端知识点"/></a><div class="content"><a class="title" href="/blog/d89d89a1353f/" title="前端知识点">前端知识点</a><time datetime="2025-02-19T09:16:07.526Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/236d1eaf660f/" title="Tools"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160701.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tools"/></a><div class="content"><a class="title" href="/blog/236d1eaf660f/" title="Tools">Tools</a><time datetime="2025-02-19T09:16:07.524Z" title="更新于 2025-02-19 17:16:07">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/77247b1241a5/" title="Faith Hesper"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160704.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Faith Hesper"/></a><div class="content"><a class="title" href="/blog/77247b1241a5/" title="Faith Hesper">Faith Hesper</a><time datetime="2025-02-19T08:51:42.184Z" title="更新于 2025-02-19 16:51:42">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/28a621ac695f/" title="React"><img src="https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160654.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React"/></a><div class="content"><a class="title" href="/blog/28a621ac695f/" title="React">React</a><time datetime="2022-11-27T06:36:01.428Z" title="更新于 2022-11-27 14:36:01">2022-11-27</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a>
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CMD/"><span class="card-category-list-name">CMD</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/"><span class="card-category-list-name">GIS</span><span class="card-category-list-count">23</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/"><span class="card-category-list-name">GIS空间分析</span><span class="card-category-list-count">8</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90/"><span class="card-category-list-name">位置与几何关系分析</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E4%B8%8EGIS/"><span class="card-category-list-name">空间分析与GIS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E7%89%B9%E5%BE%81%E4%B8%8E%E7%A9%BA%E9%97%B4%E9%97%AE%E9%A2%98/"><span class="card-category-list-name">空间特征与空间问题</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/"><span class="card-category-list-name">空间相关性分析</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GIS/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/%E7%A9%BA%E9%97%B4%E9%87%8F%E7%AE%97%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8E%A2%E6%B5%8B/"><span class="card-category-list-name">空间量算与数据探测</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CMD/" style="font-size: 1.15em; color: rgb(51, 98, 85)">CMD</a><a href="/tags/css/" style="font-size: 1.15em; color: rgb(76, 23, 94)">css</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.39em; color: rgb(112, 33, 131)">前端</a><a href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" style="font-size: 1.45em; color: rgb(168, 161, 99)">GIS空间分析</a><a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 1.15em; color: rgb(113, 1, 127)">题目</a><a href="/tags/tips/" style="font-size: 1.15em; color: rgb(129, 147, 166)">tips</a><a href="/tags/PowerShell/" style="font-size: 1.15em; color: rgb(155, 31, 35)">PowerShell</a><a href="/tags/markdown/" style="font-size: 1.15em; color: rgb(66, 139, 163)">markdown</a><a href="/tags/GIS/" style="font-size: 1.15em; color: rgb(141, 30, 69)">GIS</a><a href="/tags/SuperMapObjects/" style="font-size: 1.15em; color: rgb(1, 100, 119)">SuperMapObjects</a><a href="/tags/Supermap/" style="font-size: 1.33em; color: rgb(132, 28, 191)">Supermap</a><a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 1.15em; color: rgb(117, 156, 195)">编程</a><a href="/tags/comments/" style="font-size: 1.15em; color: rgb(49, 21, 127)">comments</a><a href="/tags/docker/" style="font-size: 1.15em; color: rgb(73, 141, 165)">docker</a><a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.15em; color: rgb(166, 174, 116)">网站</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(158, 39, 121)">git</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(103, 77, 85)">HTML</a><a href="/tags/linux/" style="font-size: 1.27em; color: rgb(160, 86, 90)">linux</a><a href="/tags/sql/" style="font-size: 1.15em; color: rgb(31, 40, 181)">sql</a><a href="/tags/npm/" style="font-size: 1.15em; color: rgb(189, 175, 29)">npm</a><a href="/tags/php/" style="font-size: 1.15em; color: rgb(40, 94, 56)">php</a><a href="/tags/leaflet/" style="font-size: 1.15em; color: rgb(41, 45, 9)">leaflet</a><a href="/tags/draw/" style="font-size: 1.15em; color: rgb(79, 192, 16)">draw</a><a href="/tags/supermap/" style="font-size: 1.15em; color: rgb(171, 141, 145)">supermap</a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(193, 122, 16)">工具</a><a href="/tags/tool/" style="font-size: 1.15em; color: rgb(8, 41, 109)">tool</a><a href="/tags/typora/" style="font-size: 1.15em; color: rgb(143, 160, 150)">typora</a><a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 1.21em; color: rgb(140, 138, 18)">快捷键</a><a href="/tags/vscode/" style="font-size: 1.15em; color: rgb(144, 146, 74)">vscode</a><a href="/tags/youtube-dl/" style="font-size: 1.15em; color: rgb(45, 55, 58)">youtube-dl</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(13, 123, 75)">vue</a><a href="/tags/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/" style="font-size: 1.45em; color: rgb(71, 74, 45)">摄影测量</a><a href="/tags/%E5%82%BB%E5%A6%9E/" style="font-size: 1.15em; color: rgb(112, 129, 84)">傻妞</a><a href="/tags/%E9%81%A5%E6%84%9F/" style="font-size: 1.39em; color: rgb(143, 50, 165)">遥感</a><a href="/tags/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/" style="font-size: 1.27em; color: rgb(182, 135, 68)">地理信息科学</a><a href="/tags/config/" style="font-size: 1.15em; color: rgb(123, 197, 136)">config</a><a href="/tags/%E7%BF%BB%E5%A2%99/" style="font-size: 1.15em; color: rgb(63, 11, 175)">翻墙</a><a href="/tags/react/" style="font-size: 1.15em; color: rgb(156, 102, 53)">react</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">64</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-06-30T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">93.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-02-20T06:45:23.603Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160657.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By Faith Hesper</div><div class="footer_custom_text">Hi welcome <a href="https://faith-hesper.github.io/">my blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CMD/" style="font-size: 1.15em; color: rgb(50, 54, 180);">CMD</a><a href="/tags/css/" style="font-size: 1.15em; color: rgb(115, 117, 150);">css</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.39em; color: rgb(185, 158, 111);">前端</a><a href="/tags/GIS%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" style="font-size: 1.45em; color: rgb(50, 130, 118);">GIS空间分析</a><a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 1.15em; color: rgb(50, 50, 183);">题目</a><a href="/tags/tips/" style="font-size: 1.15em; color: rgb(198, 198, 88);">tips</a><a href="/tags/PowerShell/" style="font-size: 1.15em; color: rgb(189, 84, 50);">PowerShell</a><a href="/tags/markdown/" style="font-size: 1.15em; color: rgb(192, 50, 132);">markdown</a><a href="/tags/GIS/" style="font-size: 1.15em; color: rgb(78, 50, 50);">GIS</a><a href="/tags/SuperMapObjects/" style="font-size: 1.15em; color: rgb(170, 153, 50);">SuperMapObjects</a><a href="/tags/Supermap/" style="font-size: 1.33em; color: rgb(184, 50, 50);">Supermap</a><a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 1.15em; color: rgb(50, 168, 50);">编程</a><a href="/tags/comments/" style="font-size: 1.15em; color: rgb(66, 142, 85);">comments</a><a href="/tags/docker/" style="font-size: 1.15em; color: rgb(189, 96, 88);">docker</a><a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 1.15em; color: rgb(119, 50, 191);">网站</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(130, 56, 109);">git</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(70, 172, 94);">HTML</a><a href="/tags/linux/" style="font-size: 1.27em; color: rgb(195, 50, 161);">linux</a><a href="/tags/sql/" style="font-size: 1.15em; color: rgb(109, 50, 142);">sql</a><a href="/tags/npm/" style="font-size: 1.15em; color: rgb(95, 75, 158);">npm</a><a href="/tags/php/" style="font-size: 1.15em; color: rgb(198, 168, 147);">php</a><a href="/tags/leaflet/" style="font-size: 1.15em; color: rgb(95, 139, 62);">leaflet</a><a href="/tags/draw/" style="font-size: 1.15em; color: rgb(50, 123, 135);">draw</a><a href="/tags/supermap/" style="font-size: 1.15em; color: rgb(81, 166, 136);">supermap</a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(130, 50, 50);">工具</a><a href="/tags/tool/" style="font-size: 1.15em; color: rgb(52, 157, 50);">tool</a><a href="/tags/typora/" style="font-size: 1.15em; color: rgb(121, 50, 153);">typora</a><a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 1.21em; color: rgb(138, 155, 176);">快捷键</a><a href="/tags/vscode/" style="font-size: 1.15em; color: rgb(130, 182, 95);">vscode</a><a href="/tags/youtube-dl/" style="font-size: 1.15em; color: rgb(50, 54, 199);">youtube-dl</a><a href="/tags/vue/" style="font-size: 1.15em; color: rgb(115, 182, 143);">vue</a><a href="/tags/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/" style="font-size: 1.45em; color: rgb(146, 132, 58);">摄影测量</a><a href="/tags/%E5%82%BB%E5%A6%9E/" style="font-size: 1.15em; color: rgb(188, 50, 137);">傻妞</a><a href="/tags/%E9%81%A5%E6%84%9F/" style="font-size: 1.39em; color: rgb(185, 199, 83);">遥感</a><a href="/tags/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/" style="font-size: 1.27em; color: rgb(55, 117, 141);">地理信息科学</a><a href="/tags/config/" style="font-size: 1.15em; color: rgb(185, 50, 50);">config</a><a href="/tags/%E7%BF%BB%E5%A2%99/" style="font-size: 1.15em; color: rgb(92, 87, 194);">翻墙</a><a href="/tags/react/" style="font-size: 1.15em; color: rgb(56, 152, 106);">react</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/11/">
+            <span class="card-archive-list-date">
+              十一月 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/09/">
+            <span class="card-archive-list-date">
+              九月 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/08/">
+            <span class="card-archive-list-date">
+              八月 2022
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/07/">
+            <span class="card-archive-list-date">
+              七月 2022
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/06/">
+            <span class="card-archive-list-date">
+              六月 2022
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/05/">
+            <span class="card-archive-list-date">
+              五月 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/03/">
+            <span class="card-archive-list-date">
+              三月 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/02/">
+            <span class="card-archive-list-date">
+              二月 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">64</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">93.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-02-24T05:00:11.833Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/faith-hesper/Note/20211229160657.png);"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By Faith Hesper</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 5.4.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text">Hi welcome <a href="https://faith-hesper.github.io/">my blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
   function loadValine () {
     function initValine () {
       let initData = {
         el: '#vcomment',
         appId: 'xzcraE0YKrRpyeshFfdGIFDe-gzGzoHsz',
         appKey: 'GX4zcj14jkoD4ovKmt1DThwF',
+        serverURLs: ''
       }
       
       const valine = new Valine(initData)
     }
 
     if (typeof Valine === 'function') initValine() 
-    else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
   }
 
   window.pjax ? loadValine() : window.addEventListener('load', loadValine)
-})()</script><script>function subtitleType () {
+})()</script><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
   fetch('https://v1.hitokoto.cn')
     .then(response => response.json())
     .then(data => {
@@ -396,26 +398,11 @@ $ docker stop [I ...</div></div></div><div class="recent-post-item"><div class="
         const from = '出自 ' + data.from
         const sub = []
         sub.unshift(data.hitokoto, from)
-        window.typed = new Typed('#subtitle', {
-          strings: sub,
-          startDelay: 300,
-          typeSpeed: 150,
-          loop: true,
-          backSpeed: 50,
-        })
+        typedJSFn.init(sub)
       } else {
-        document.getElementById('subtitle').innerHTML = data.hitokoto
+        document.getElementById('subtitle').textContent = data.hitokoto
       }
     })
 }
-
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
-  }
-} else {
-  subtitleType()
-}
-</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+typedJSFn.run(subtitleType)
+</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
